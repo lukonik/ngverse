@@ -42,7 +42,7 @@ const CHAR_AT_TS = `
 const CHAR_AT_SPEC_TS = 'CHAR AT SPEC';
 
 function createElementPath(name: string, extension: string) {
-  return `node_modules/@ngverse/ui/src/lib/pipes/${name}.${extension}`;
+  return `node_modules/ngverse/src/lib/pipes/${name}.${extension}`;
 }
 
 // function getProjectPath(name: string, extension: string) {

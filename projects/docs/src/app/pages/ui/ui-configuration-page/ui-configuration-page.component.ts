@@ -35,7 +35,7 @@ export class UiConfigurationPageComponent implements OnInit {
   ...
   "projectType": "application",
   "schematics": {
-    "@ngverse/ui:ui": {
+    "ngverse:ui": {
       "path": "ui" // the path where ui components will be generated, adjust as needed
       // you can add other options as well
     }

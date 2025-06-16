@@ -14,7 +14,7 @@ export class PipeConfigurationPageComponent {
   ...
   "projectType": "application",
   "schematics": {
-    "@ngverse/ui:pipe": {
+    "ngverse:pipe": {
       "path": "pipes" // the path where pipes generated, adjust as needed
       // you can add other options as well
     }

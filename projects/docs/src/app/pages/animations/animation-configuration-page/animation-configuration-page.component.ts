@@ -14,7 +14,7 @@ export class AnimationConfigurationPageComponent {
   ...
   "projectType": "application",
   "schematics": {
-    "@ngverse/ui:animation": {
+    "ngverse:animation": {
       "path": "animations" // the path where animations generated, adjust as needed
       // you can add other options as well
     }

@@ -1,6 +1,6 @@
 module.exports = {
   branches: ['main'],
-  repositoryUrl: 'https://github.com/ngverse/ui',
+  repositoryUrl: 'https://github.com/ngverse',
   preset: 'conventionalcommits',
   releaseRules: [{ type: 'refactor', release: 'patch' }],
   plugins: [
@@ -9,7 +9,7 @@ module.exports = {
     [
       '@semantic-release/npm',
       {
-        pkgRoot: 'dist/@ngverse/ui',
+        pkgRoot: 'dist/ngverse',
       },
     ],
     [
