@@ -1,0 +1,14 @@
+:host {
+  animation: dialogOnEnter 0.25s;
+}
+
+@keyframes dialogOnEnter {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  to {
+    transform: scale3d(1, 1, 1);
+    opacity: 1;
+  }
+}

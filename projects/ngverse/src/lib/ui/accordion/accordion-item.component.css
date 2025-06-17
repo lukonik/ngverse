@@ -1,0 +1,23 @@
+.accordion-body {
+  opacity: 1;
+  height: auto;
+  transition:
+    height 250ms ease-out,
+    opacity 250ms ease-out;
+  height: calc-size(auto, size);
+  @starting-style {
+    height: 0;
+    opacity: 0;
+  }
+}
+
+.accordion-body-on-leave {
+  animation: accordion-body-on-leave 250ms ease-out;
+}
+
+@keyframes accordion-body-on-leave {
+  to {
+    height: 0;
+    opacity: 0;
+  }
+}

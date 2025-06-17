@@ -52,7 +52,7 @@ describe('ToastComponent', () => {
   });
   it("click close icon should emit 'close' event", async () => {
     await fixture.whenStable();
-    const spy = spyOn(component, 'exit');
+    const spy = spyOn(component, 'leave');
     fixture.nativeElement.querySelector('.toast-close-icon').click();
     expect(spy).toHaveBeenCalled();
   });

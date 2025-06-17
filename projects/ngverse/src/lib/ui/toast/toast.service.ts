@@ -81,11 +81,11 @@ export class ToastService {
     instance.position.set(position);
     if (autoClose) {
       this.timeoutId = setTimeout(() => {
-        instance.exit();
+        instance.leave();
       }, closeDelay);
     }
 
-    instance.onExit.subscribe(() => {
+    instance.onLeave.subscribe(() => {
       this.close();
     });
     const closed$ = new Subject<void>();

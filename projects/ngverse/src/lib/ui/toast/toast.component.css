@@ -1,0 +1,15 @@
+:host {
+  transition:
+    opacity 250ms ease-out,
+    transform 250ms ease-out;
+  transform: scale3d(1, 1, 1);
+  opacity: 1;
+  @starting-style {
+    transform: scale3d(0, 0, 0);
+    opacity: 0;
+  }
+  &.toast-on-leave {
+    opacity: 0;
+    transform: scale3d(0, 0, 0);
+  }
+}

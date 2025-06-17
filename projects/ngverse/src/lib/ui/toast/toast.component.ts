@@ -1,29 +1,26 @@
-import { AnimationEvent, transition, trigger } from '@angular/animations';
 import { NgClass } from '@angular/common';
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
-import { zoomIn, zoomOut } from '@ngverse/motion/animatecss';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  inject,
+  signal,
+} from '@angular/core';
 import { Subject } from 'rxjs';
 import { ToastCloseIconComponent } from './toast-close.component';
 import { TOAST_POSITION } from './toast.service';
-
+const TOAST_LEAVE_CLASS = 'toast-on-leave';
 @Component({
   selector: 'app-toast',
   imports: [ToastCloseIconComponent, NgClass],
   templateUrl: './toast.component.html',
   styleUrl: './toast.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  animations: [
-    trigger('toggle', [
-      transition('* => enter', [zoomIn({ duration: 250 })]),
-      transition('* => exit', [zoomOut({ duration: 250 })]),
-    ]),
-  ],
   host: {
     role: 'alert',
     '[class.toaster]': 'true',
     '[class]': 'type()',
-    '[@toggle]': 'animationState()',
-    '(@toggle.done)': 'onDone($event)',
+    '(transitionend)': 'onTransitionEnd()',
   },
 })
 export class ToastComponent {
@@ -31,18 +28,18 @@ export class ToastComponent {
   type = signal<string | undefined>(undefined);
   showCloseIcon = signal<boolean>(true);
   position = signal<TOAST_POSITION>('right_bottom');
-  animationState = signal<'enter' | 'exit'>('enter');
-  private _onExit = new Subject<void>();
-  onExit = this._onExit.asObservable();
+  private _onLeave = new Subject<void>();
+  onLeave = this._onLeave.asObservable();
+  private _el = inject<ElementRef<HTMLElement>>(ElementRef).nativeElement;
 
-  onDone($event: AnimationEvent) {
-    if ($event.toState === 'exit') {
-      this._onExit.next();
-      this._onExit.complete();
+  protected onTransitionEnd() {
+    if (this._el.classList.contains(TOAST_LEAVE_CLASS)) {
+      this._onLeave.next();
+      this._onLeave.complete();
     }
   }
 
-  exit() {
-    this.animationState.set('exit');
+  leave() {
+    this._el.classList.add(TOAST_LEAVE_CLASS);
   }
 }

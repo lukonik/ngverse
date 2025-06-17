@@ -48,10 +48,10 @@ export class HeaderComponent {
       label: 'Pipes',
       url: '/doc/pipes',
     },
-    {
-      label: 'Animations',
-      url: '/doc/animations',
-    },
+    // {
+    //   label: 'Animations',
+    //   url: '/doc/animations',
+    // },
   ];
 
   constructor() {

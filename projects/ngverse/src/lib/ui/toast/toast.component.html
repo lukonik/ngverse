@@ -9,7 +9,7 @@
 >
   <div>{{ message() }}</div>
   @if (showCloseIcon()) {
-    <button (click)="exit()" class="cursor-pointer" aria-label="Close toast">
+    <button (click)="leave()" class="cursor-pointer" aria-label="Close toast">
       <app-toast-close-icon class="toast-close-icon"></app-toast-close-icon>
     </button>
   }

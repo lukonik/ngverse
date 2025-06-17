@@ -15,9 +15,9 @@ export const MODULE_NAVIGATIONS: ModuleNavigation[] = [
     icon: 'valve',
     url: '/doc/pipes',
   },
-  {
-    name: 'Animations',
-    url: '/doc/animations',
-    icon: 'animation',
-  },
+  // {
+  //   name: 'Animations',
+  //   url: '/doc/animations',
+  //   icon: 'animation',
+  // },
 ];

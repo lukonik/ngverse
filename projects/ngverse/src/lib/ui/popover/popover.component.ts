@@ -1,4 +1,3 @@
-import { AnimationEvent, transition, trigger } from '@angular/animations';
 import { ConnectedPosition, Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { DomPortal } from '@angular/cdk/portal';
 import { DOCUMENT, NgTemplateOutlet } from '@angular/common';
@@ -17,7 +16,6 @@ import {
   untracked,
   viewChild,
 } from '@angular/core';
-import { zoomIn, zoomOut } from '@ngverse/motion/animatecss';
 import {
   asyncScheduler,
   filter,
@@ -29,18 +27,14 @@ import {
 import { PopoverOriginDirective } from './popover-origin.directive';
 export type POPOVER_POSITIONS_Y = 'top' | 'right' | 'bottom' | 'left';
 
+const POPOVER_LEAVE_CLASS = 'toast-on-leave';
+
 @Component({
   selector: 'app-popover',
   imports: [NgTemplateOutlet],
   templateUrl: './popover.component.html',
   styleUrl: './popover.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  animations: [
-    trigger('toggle', [
-      transition('false => true', [zoomIn({ duration: 250 })]),
-      transition('true => false', [zoomOut({ duration: 250 })]),
-    ]),
-  ],
 })
 export class PopoverComponent implements OnDestroy {
   isOpen = model(false);
@@ -113,15 +107,11 @@ export class PopoverComponent implements OnDestroy {
     });
   }
 
-  onDone(event: AnimationEvent) {
-    if (
-      event.fromState.toString() === 'true' &&
-      event.toState.toString() === 'false'
-    ) {
+  protected onTransitionEnd() {
+    if (this.popover().nativeElement.classList.contains(POPOVER_LEAVE_CLASS)) {
       this.dispose();
       return;
-    }
-    if (event.toState.toString() === 'true') {
+    } else {
       this.listenToGlobalEvents();
       this.opened.emit();
     }

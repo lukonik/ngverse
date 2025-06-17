@@ -7,7 +7,6 @@ import {
   ComponentType,
 } from '@angular/cdk/portal';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { zoomInOnEnter } from '@ngverse/motion/animatecss';
 import { DialogCloseDirective } from '../dialog-close.directive';
 
 export interface DialogOptions
@@ -28,7 +27,6 @@ export interface DialogOptions
   templateUrl: './dialog.component.html',
   styleUrl: './dialog.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  animations: [zoomInOnEnter({ duration: 250 })],
 })
 export class DialogComponent {
   dialogData = inject<DialogOptions>(DIALOG_DATA);
