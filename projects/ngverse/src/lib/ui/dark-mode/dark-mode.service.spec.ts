@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { provideExperimentalZonelessChangeDetection } from '@angular/core';
+import { provideZonelessChangeDetection } from '@angular/core';
 import { DarkModeService } from './dark-mode.service';
 
 describe('DarkModeService', () => {
@@ -8,7 +8,7 @@ describe('DarkModeService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [provideZonelessChangeDetection()],
     });
     service = TestBed.inject(DarkModeService);
   });

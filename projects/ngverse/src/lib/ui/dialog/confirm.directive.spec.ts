@@ -3,7 +3,7 @@ import {
   Component,
   EventEmitter,
   Output,
-  provideExperimentalZonelessChangeDetection,
+  provideZonelessChangeDetection,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
@@ -57,7 +57,7 @@ describe('ConfirmDirective', () => {
       imports: [TestHostComponent],
       providers: [
         { provide: DialogService, useClass: MockDialogService },
-        provideExperimentalZonelessChangeDetection(),
+        provideZonelessChangeDetection(),
       ],
     });
 

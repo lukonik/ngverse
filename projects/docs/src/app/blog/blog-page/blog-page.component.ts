@@ -1,5 +1,4 @@
-import { DOCUMENT } from '@angular/common';
-import { Component, effect, inject, input } from '@angular/core';
+import { Component, effect, inject, input, DOCUMENT } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 
 @Component({

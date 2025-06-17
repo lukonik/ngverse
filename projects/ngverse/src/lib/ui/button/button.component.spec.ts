@@ -5,7 +5,7 @@ import {
   Component,
   DebugElement,
   input,
-  provideExperimentalZonelessChangeDetection,
+  provideZonelessChangeDetection,
   signal,
 } from '@angular/core';
 import { By } from '@angular/platform-browser';
@@ -22,7 +22,7 @@ describe('ButtonComponent', () => {
   beforeEach(async () => {
     TestBed.configureTestingModule({
       imports: [ButtonComponent],
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [provideZonelessChangeDetection()],
     });
     fixture = TestBed.createComponent(ButtonTestComponent);
     await fixture.whenStable();

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { provideExperimentalZonelessChangeDetection } from '@angular/core';
+import { provideZonelessChangeDetection } from '@angular/core';
 import { TabGroupHeaderComponent } from './tab-group-header.component';
 
 describe('TabGroupHeaderComponent', () => {
@@ -9,7 +9,7 @@ describe('TabGroupHeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [provideZonelessChangeDetection()],
       imports: [TabGroupHeaderComponent],
     }).compileComponents();
 

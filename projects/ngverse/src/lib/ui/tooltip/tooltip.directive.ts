@@ -1,6 +1,6 @@
 import { ConnectedPosition, Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
-import { DOCUMENT } from '@angular/common';
+
 import {
   Directive,
   ElementRef,
@@ -9,6 +9,7 @@ import {
   numberAttribute,
   OnDestroy,
   TemplateRef,
+  DOCUMENT,
 } from '@angular/core';
 import { fromEvent, Subscription } from 'rxjs';
 import { TooltipContainerComponent } from './tooltip-container.component';

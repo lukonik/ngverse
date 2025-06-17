@@ -4,7 +4,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   DebugElement,
-  provideExperimentalZonelessChangeDetection,
+  provideZonelessChangeDetection,
   signal,
 } from '@angular/core';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -24,10 +24,7 @@ describe('CheckboxComponent', () => {
   beforeEach(async () => {
     TestBed.configureTestingModule({
       imports: [CheckboxComponent],
-      providers: [
-        provideNoopAnimations(),
-        provideExperimentalZonelessChangeDetection(),
-      ],
+      providers: [provideNoopAnimations(), provideZonelessChangeDetection()],
     });
     fixture = TestBed.createComponent(CheckboxTestComponent);
     debugElement = fixture.debugElement;

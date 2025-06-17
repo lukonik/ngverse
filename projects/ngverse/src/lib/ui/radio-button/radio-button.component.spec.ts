@@ -3,7 +3,7 @@ import {
   Component,
   ComponentRef,
   input,
-  provideExperimentalZonelessChangeDetection,
+  provideZonelessChangeDetection,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
@@ -18,7 +18,7 @@ describe('RadioButtonComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [RadioButtonTestComponent],
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [provideZonelessChangeDetection()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(RadioButtonTestComponent);

@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import {
   ChangeDetectionStrategy,
   Component,
-  provideExperimentalZonelessChangeDetection,
+  provideZonelessChangeDetection,
   signal,
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -21,10 +21,7 @@ describe('OptionComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [OptionTestComponent],
-      providers: [
-        provideNoopAnimations(),
-        provideExperimentalZonelessChangeDetection(),
-      ],
+      providers: [provideNoopAnimations(), provideZonelessChangeDetection()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(OptionTestComponent);

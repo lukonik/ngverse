@@ -4,7 +4,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   computed,
-  provideExperimentalZonelessChangeDetection,
+  provideZonelessChangeDetection,
   signal,
   TemplateRef,
   viewChild,
@@ -18,7 +18,7 @@ describe('TooltipContainerComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [TooltipTestComponent],
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [provideZonelessChangeDetection()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TooltipTestComponent);

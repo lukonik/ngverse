@@ -6,7 +6,7 @@ import {
   AnimationPlayer,
 } from '@angular/animations';
 import { Platform } from '@angular/cdk/platform';
-import { DOCUMENT } from '@angular/common';
+
 import {
   ChangeDetectionStrategy,
   Component,
@@ -17,6 +17,7 @@ import {
   input,
   signal,
   viewChild,
+  DOCUMENT,
 } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { capitalCase, kebabCase } from 'change-case';

@@ -2,7 +2,7 @@ import { CdkMenu } from '@angular/cdk/menu';
 import {
   ChangeDetectionStrategy,
   Component,
-  provideExperimentalZonelessChangeDetection,
+  provideZonelessChangeDetection,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
@@ -15,10 +15,7 @@ describe('ContextMenuItemDirective', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      providers: [
-        provideExperimentalZonelessChangeDetection(),
-        provideNoopAnimations(),
-      ],
+      providers: [provideZonelessChangeDetection(), provideNoopAnimations()],
       imports: [ContextMenuTestComponent],
     }).compileComponents();
     fixture = TestBed.createComponent(ContextMenuTestComponent);

@@ -1,4 +1,3 @@
-import { DOCUMENT } from '@angular/common';
 import {
   Directive,
   effect,
@@ -7,6 +6,7 @@ import {
   input,
   OnDestroy,
   output,
+  DOCUMENT,
 } from '@angular/core';
 import { filter, fromEvent, Subscription, take } from 'rxjs';
 

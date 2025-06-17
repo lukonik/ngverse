@@ -1,6 +1,6 @@
 import { IconRegistry } from '@/ui/icon/icon.registry';
-import { DOCUMENT } from '@angular/common';
-import { Component, inject } from '@angular/core';
+
+import { Component, inject, DOCUMENT } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { filter } from 'rxjs';
 import { HeaderComponent } from './features/header/header.component';

@@ -1,7 +1,7 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  provideExperimentalZonelessChangeDetection,
+  provideZonelessChangeDetection,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
@@ -17,10 +17,7 @@ describe('OtpInputComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [OtpTestComponent],
-      providers: [
-        provideNoopAnimations(),
-        provideExperimentalZonelessChangeDetection(),
-      ],
+      providers: [provideNoopAnimations(), provideZonelessChangeDetection()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(OtpTestComponent);

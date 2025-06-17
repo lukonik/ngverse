@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { provideExperimentalZonelessChangeDetection } from '@angular/core';
+import { provideZonelessChangeDetection } from '@angular/core';
 import { FontIconComponent } from './font-icon.component';
 
 describe('FontIconComponent', () => {
@@ -10,7 +10,7 @@ describe('FontIconComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [FontIconComponent],
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [provideZonelessChangeDetection()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(FontIconComponent);

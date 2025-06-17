@@ -8,7 +8,7 @@ import {
 import {
   ChangeDetectionStrategy,
   Component,
-  provideExperimentalZonelessChangeDetection,
+  provideZonelessChangeDetection,
 } from '@angular/core';
 import { IconLoaderService } from './icon-loader.service';
 import { IconComponent } from './icon.component';
@@ -29,7 +29,7 @@ describe('IconComponent', () => {
         provideHttpClientTesting(),
         IconLoaderService,
         IconRegistry,
-        provideExperimentalZonelessChangeDetection(),
+        provideZonelessChangeDetection(),
       ],
     }).compileComponents();
 

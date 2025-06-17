@@ -2,7 +2,7 @@ import { DialogRef } from '@angular/cdk/dialog';
 import {
   ChangeDetectionStrategy,
   Component,
-  provideExperimentalZonelessChangeDetection,
+  provideZonelessChangeDetection,
   signal,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
@@ -29,7 +29,7 @@ describe('DialogCloseDirective', () => {
       imports: [TestCloseComponent],
       providers: [
         { provide: DialogRef, useValue: mockDialogRef },
-        provideExperimentalZonelessChangeDetection(),
+        provideZonelessChangeDetection(),
       ],
     });
 
