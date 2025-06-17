@@ -97,17 +97,11 @@
           "builder": "@angular/build:extract-i18n"
         },
         "test": {
-          "builder": "@angular/build:karma",
+          "builder": "@angular/build:unit-test",
           "options": {
             "tsConfig": "projects/docs/tsconfig.spec.json",
-            "inlineStyleLanguage": "css",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "projects/docs/public"
-              }
-            ],
-            "scripts": []
+            "buildTarget": "::development",
+            "runner": "vitest"
           }
         },
         "lint": {
@@ -150,9 +144,11 @@
           "defaultConfiguration": "production"
         },
         "test": {
-          "builder": "@angular/build:karma",
+          "builder": "@angular/build:unit-test",
           "options": {
-            "tsConfig": "projects/ngverse/tsconfig.spec.json"
+            "tsConfig": "projects/ngverse/tsconfig.spec.json",
+            "buildTarget": "::development",
+            "runner": "vitest"
           }
         },
         "lint": {
