@@ -10,16 +10,16 @@ import { SourceCodeComponent } from '../../../blueprint/source-code/source-code.
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PipeConfigurationPageComponent {
-  configCode = ` 
+  configCode = `
   ...
   "projectType": "application",
   "schematics": {
-    "@ngverse/ui:pipe": {
+    "ngverse:pipe": {
       "path": "pipes" // the path where pipes generated, adjust as needed
       // you can add other options as well
     }
   }
-  ...  
+  ...
   `;
 
   tsImportPath = `

@@ -1,10 +1,10 @@
 {
-  "name": "@ngverse/ui",
-  "version": "2.0.0",
+  "name": "ngverse",
+  "version": "1.0.0",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/ngverse/ui"
+    "url": "https://github.com/lukonik/ngverse"
   },
   "scripts": {
     "ng": "ng",
@@ -18,7 +18,7 @@
     "format:write": "prettier --write .",
     "semantic-release": "semantic-release",
     "serve:ssr:docs": "node dist/docs/server/server.mjs",
-    "schema:test-watch": "nodemon --watch dist/@ngverse/ui --ext js --exec 'jasmine dist/@ngverse/ui/**/*_spec.js'",
+    "schema:test-watch": "nodemon --watch dist/ngverse --ext js --exec 'jasmine dist/ngverse/**/*_spec.js'",
     "build:ngverse": "ng build --project=ngverse && cd projects/ngverse && npm run build",
     "build:docs": "ng build --project=docs",
     "check:docs": "npm run build:docs && ng lint docs && npm run format:check",
