@@ -42,10 +42,6 @@ export const UI_LINKS: SidebarGroup = {
       url: 'dark-mode',
     },
     {
-      name: 'Datepicker',
-      url: 'datepicker',
-    },
-    {
       name: 'Dialog',
       url: 'dialog',
     },
@@ -128,11 +124,6 @@ export const UI_LINKS: SidebarGroup = {
     {
       name: 'Tooltip',
       url: 'tooltip',
-    },
-    {
-      name: 'Table',
-      url: 'table',
-      mode: 'experimental',
     },
   ],
 };

@@ -9,22 +9,6 @@
   }
 </app-multi-select>
 
-<p class="mt-4 mb-2">Custom label</p>
-<app-multi-select
-  [formControl]="formControlMulti"
-  placeholder="Countries"
-  class="w-[250px]"
->
-  <ng-template appMultiSelectLabel let-options>
-    <p>values: {{ options | map: 'content' | join: ',' }}</p>
-  </ng-template>
-  @for (option of countries; track $index) {
-    <app-multi-option [value]="option.code">
-      {{ option.name }}
-    </app-multi-option>
-  }
-</app-multi-select>
-
 <p class="mt-4 mb-2">Directories</p>
 <app-multi-select
   [formControl]="dirFormControl"

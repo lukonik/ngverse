@@ -1,9 +1,6 @@
-import { JoinPipe } from '@/pipes/join.pipe';
-import { MapPipe } from '@/pipes/map.pipe';
 import { MultiOptionGroupLabelComponent } from '@/ui/multi-select/multi-option-group-label.component';
 import { MultiOptionGroupComponent } from '@/ui/multi-select/multi-option-group.component';
 import { MultiOptionComponent } from '@/ui/multi-select/multi-option.component';
-import { MultiSelectLabelDirective } from '@/ui/multi-select/multi-select-label.directive';
 import { MultiSelectComponent } from '@/ui/multi-select/multi-select.component';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -69,9 +66,6 @@ const customOptions = [
     ReactiveFormsModule,
     MultiOptionGroupComponent,
     MultiOptionGroupLabelComponent,
-    MultiSelectLabelDirective,
-    MapPipe,
-    JoinPipe,
   ],
   templateUrl: './show-case-multi-select.component.html',
   styleUrl: './show-case-multi-select.component.css',
