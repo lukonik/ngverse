@@ -53,7 +53,7 @@ function createButtonComponent(appTree: UnitTestTree) {
   );
 }
 
-xdescribe('element', () => {
+describe('element', () => {
   const testRunner = new SchematicTestRunner('ngverse', collectionPath);
   const workspaceOptions: WorkspaceOptions = {
     name: 'workspace',
@@ -97,6 +97,7 @@ xdescribe('element', () => {
   });
 
   it('should throw an exception on invalid name', async () => {
+    expect(2).toBe(4);
     const componentName = 'foo';
     await expectAsync(
       testRunner.runSchematic(
