@@ -1,7 +1,6 @@
 import { computed, inject, Injectable, signal } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
-import { ANIMATION_LINKS } from './animation-links';
 import { GUIDES_LINKS } from './guide-links';
 import { PIPE_LINKS } from './pipe-links';
 import { SidebarGroup, SidebarLink } from './sidebar-types';
@@ -23,7 +22,6 @@ export const SIDEBAR_ROUTES = [
     ],
   },
   PIPE_LINKS,
-  ANIMATION_LINKS,
 ] as SidebarGroup[];
 @Injectable({
   providedIn: 'root',

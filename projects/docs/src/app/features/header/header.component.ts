@@ -5,12 +5,7 @@ import { IconComponent } from '@/ui/icon/icon.component';
 import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { afterNextRender, Component, inject } from '@angular/core';
-import {
-  NavigationEnd,
-  Router,
-  RouterLink,
-  RouterLinkActive,
-} from '@angular/router';
+import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import docsearch from '@docsearch/js';
 import { filter, take, takeUntil } from 'rxjs';
 import { ProjectNameComponent } from '../../core/project-name/project-name.component';
@@ -25,7 +20,6 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
     IconComponent,
     DarkModeToggleComponent,
     FontIconComponent,
-    RouterLinkActive,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
