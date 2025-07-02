@@ -19,7 +19,7 @@ import { MODULE_NAVIGATIONS } from '../../module-navigations';
 export class UsagePageComponent {
   configCode = ` "projectType": "application",
   "schematics": {
-    "@ngverse/ui:add": {
+    "ngverse:add": {
       "path": "ui"
     }
   }`;

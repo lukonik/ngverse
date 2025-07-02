@@ -10,16 +10,16 @@ import { SourceCodeComponent } from '../../../blueprint/source-code/source-code.
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AnimationConfigurationPageComponent {
-  configCode = ` 
+  configCode = `
   ...
   "projectType": "application",
   "schematics": {
-    "@ngverse/ui:animation": {
+    "ngverse:animation": {
       "path": "animations" // the path where animations generated, adjust as needed
       // you can add other options as well
     }
   }
-  ...  
+  ...
   `;
 
   tsImportPath = `

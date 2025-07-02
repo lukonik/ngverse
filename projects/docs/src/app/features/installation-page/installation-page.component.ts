@@ -18,7 +18,7 @@ export class InstallationPageComponent {
 
   configCode = ` "projectType": "application",
   "schematics": {
-    "@ngverse/ui:add": {
+    "ngverse:add": {
       "path": "ui"
     }
   }`;
