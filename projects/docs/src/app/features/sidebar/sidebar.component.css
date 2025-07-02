@@ -5,7 +5,7 @@ a {
 }
 
 .selected {
-  @apply bg-slate-100 font-medium;
+  @apply bg-slate-100;
 }
 
 .sidebar {
@@ -26,7 +26,7 @@ a {
 .sidebar-link {
   &:hover,
   &.selected {
-    @apply font-medium;
+    /* @apply font-medium; */
     background: var(--color-accent);
     color: var(--color-accent-foreground);
   }

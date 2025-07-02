@@ -1,6 +1,6 @@
 export interface SidebarGroup {
   name: string;
-  children: SidebarLink[];
+  children: (SidebarLink | SidebarGroup)[];
   statics?: SidebarLink[];
 }
 
