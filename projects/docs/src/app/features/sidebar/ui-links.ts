@@ -10,17 +10,68 @@ export const UI_LINKS: SidebarGroup = {
   ],
   children: [
     {
-      name: 'Accordion',
-      url: 'accordion',
+      name: 'Form',
+      children: [
+        {
+          name: 'Input',
+          url: 'input',
+        },
+        {
+          name: 'Form Field',
+          url: 'form-field',
+        },
+        {
+          name: 'Multi Select',
+          url: 'multi-select',
+        },
+        {
+          name: 'OTP Input',
+          url: 'otp-input',
+        },
+        {
+          name: 'Select',
+          url: 'select',
+        },
+        {
+          name: 'Checkbox',
+          url: 'checkbox',
+        },
+        {
+          name: 'Radio Button',
+          url: 'radio-button',
+        },
+        {
+          name: 'Textarea',
+          url: 'textarea',
+        },
+        {
+          name: 'Switch',
+          url: 'switch',
+        },
+      ],
     },
     {
-      name: 'Alert',
-      url: 'alert',
+      name: 'Panel',
+      children: [
+        {
+          name: 'Accordion',
+          url: 'accordion',
+        },
+        {
+          name: 'Alert',
+          url: 'alert',
+        },
+        {
+          name: 'Card',
+          url: 'card',
+        },
+        {
+          name: 'Tab',
+          url: 'tab',
+        },
+      ],
     },
-    {
-      name: 'Badge',
-      url: 'badge',
-    },
+
     {
       name: 'Button',
       children: [
@@ -31,104 +82,91 @@ export const UI_LINKS: SidebarGroup = {
       ],
     },
     {
-      name: 'Card',
-      url: 'card',
+      name: 'Overlay',
+      children: [
+        {
+          name: 'Dialog',
+          url: 'dialog',
+        },
+        {
+          name: 'Drawer',
+          url: 'drawer',
+        },
+        {
+          name: 'Popover',
+          url: 'popover',
+        },
+        {
+          name: 'Toast',
+          url: 'toast',
+        },
+        {
+          name: 'Tooltip',
+          url: 'tooltip',
+        },
+      ],
     },
     {
-      name: 'Checkbox',
-      url: 'checkbox',
+      name: 'Menu',
+      children: [
+        {
+          name: 'Context Menu',
+          url: 'context-menu',
+        },
+      ],
     },
     {
-      name: 'Context Menu',
-      url: 'context-menu',
+      name: 'Data',
+      children: [
+        {
+          name: 'Pagination',
+          url: 'pagination',
+        },
+      ],
     },
     {
-      name: 'Dark Mode',
-      url: 'dark-mode',
-    },
-    {
-      name: 'Dialog',
-      url: 'dialog',
-    },
-    {
-      name: 'Divider',
-      url: 'divider',
-    },
-    {
-      name: 'Drawer',
-      url: 'drawer',
-    },
-    {
-      name: 'Font Icon',
-      url: 'font-icon',
-    },
-    {
-      name: 'Form Field',
-      url: 'form-field',
+      name: 'Misc',
+      children: [
+        {
+          name: 'Dark Mode',
+          url: 'dark-mode',
+        },
+        {
+          name: 'Divider',
+          url: 'divider',
+        },
+        {
+          name: 'Loader',
+          url: 'loader',
+        },
+
+        {
+          name: 'Progress Bar',
+          url: 'progress-bar',
+        },
+        {
+          name: 'Skeleton',
+          url: 'skeleton',
+        },
+        {
+          name: 'Badge',
+          url: 'badge',
+        },
+      ],
     },
     {
       name: 'Icon',
-      url: 'icon',
-    },
-    {
-      name: 'Input',
-      url: 'input',
-    },
-    {
-      name: 'Loader',
-      url: 'loader',
-    },
-    {
-      name: 'Multi Select',
-      url: 'multi-select',
-    },
-    {
-      name: 'OTP Input',
-      url: 'otp-input',
-    },
-    {
-      name: 'Pagination',
-      url: 'pagination',
-    },
-    {
-      name: 'Popover',
-      url: 'popover',
-    },
-    {
-      name: 'Progress Bar',
-      url: 'progress-bar',
-    },
-    {
-      name: 'Radio Button',
-      url: 'radio-button',
-    },
-    {
-      name: 'Select',
-      url: 'select',
-    },
-    {
-      name: 'Skeleton',
-      url: 'skeleton',
-    },
-    {
-      name: 'Switch',
-      url: 'switch',
-    },
-    {
-      name: 'Tab',
-      url: 'tab',
-    },
-    {
-      name: 'Textarea',
-      url: 'textarea',
-    },
-    {
-      name: 'Toast',
-      url: 'toast',
-    },
-    {
-      name: 'Tooltip',
-      url: 'tooltip',
+      children: [
+        {
+          name: 'Font Icon',
+          url: 'font-icon',
+        },
+
+        {
+          name: 'Icon',
+          url: 'icon',
+        },
+      ],
     },
   ],
 };
