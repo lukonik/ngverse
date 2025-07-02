@@ -1,8 +1,7 @@
 import { coerceBooleanProperty } from '@angular/cdk/coercion';
 import { Platform } from '@angular/cdk/platform';
-import { DOCUMENT } from '@angular/common';
-import { effect, inject, Injectable, signal } from '@angular/core';
-import { LocalStorageService } from '../local-storage/local-storage.service';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { afterRenderEffect, inject, Injectable, signal } from '@angular/core';
 
 const DARK_MODE_STORAGE_KEY = 'dark-mode';
 
@@ -15,7 +14,6 @@ export class DarkModeService {
   isEnabled = this._isEnabled.asReadonly();
 
   private readonly platform = inject(Platform);
-  private readonly localStorageService = inject(LocalStorageService);
   private readonly document = inject(DOCUMENT);
 
   private readonly rootHtml = this.document.documentElement;
@@ -24,9 +22,9 @@ export class DarkModeService {
   constructor() {
     this.initialize();
 
-    effect(() => {
+    afterRenderEffect(() => {
       const darkMode = this._isEnabled();
-      this.localStorageService.setItem(DARK_MODE_STORAGE_KEY, darkMode + '');
+      localStorage.setItem(DARK_MODE_STORAGE_KEY, darkMode + '');
       this.setHtmlDarkModeAttribute(darkMode);
     });
   }
@@ -51,10 +49,8 @@ export class DarkModeService {
   }
 
   private initialize() {
-    if (this.localStorageService.enabled) {
-      const storedDarkMode = this.localStorageService.getItem(
-        DARK_MODE_STORAGE_KEY
-      );
+    if (isPlatformBrowser(this.platform)) {
+      const storedDarkMode = localStorage.getItem(DARK_MODE_STORAGE_KEY);
 
       if (storedDarkMode) {
         this._isEnabled.set(coerceBooleanProperty(storedDarkMode));
