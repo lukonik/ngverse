@@ -2,27 +2,9 @@ import { computed, inject, Injectable, signal } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
 import { GUIDES_LINKS } from './guide-links';
-import { PIPE_LINKS } from './pipe-links';
 import { SidebarGroup, SidebarLink } from './sidebar-types';
 import { UI_LINKS } from './ui-links';
-export const SIDEBAR_ROUTES = [
-  GUIDES_LINKS,
-  UI_LINKS,
-  {
-    name: 'Utils',
-    children: [
-      {
-        name: 'LocalStorage',
-        url: 'local-storage',
-      },
-      {
-        name: 'SessionStorage',
-        url: 'session-storage',
-      },
-    ],
-  },
-  PIPE_LINKS,
-] as SidebarGroup[];
+export const SIDEBAR_ROUTES = [GUIDES_LINKS, UI_LINKS] as SidebarGroup[];
 @Injectable({
   providedIn: 'root',
 })

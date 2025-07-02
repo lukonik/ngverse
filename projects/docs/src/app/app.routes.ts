@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 import { GUIDES_ROUTES } from './guides.routes';
-import { PIPES_ROUTES } from './pipes.routes';
 import { UI_ROUTES } from './ui.routes';
 
 export const routes: Routes = [
@@ -10,7 +9,7 @@ export const routes: Routes = [
       import('./features/doc-container-page/doc-container-page.component').then(
         (d) => d.DocContainerPageComponent
       ),
-    children: [GUIDES_ROUTES, UI_ROUTES, PIPES_ROUTES],
+    children: [GUIDES_ROUTES, UI_ROUTES],
   },
   {
     path: '',
