@@ -23,7 +23,12 @@ export const UI_LINKS: SidebarGroup = {
     },
     {
       name: 'Button',
-      url: 'button',
+      children: [
+        {
+          name: 'Button',
+          url: 'button',
+        },
+      ],
     },
     {
       name: 'Card',

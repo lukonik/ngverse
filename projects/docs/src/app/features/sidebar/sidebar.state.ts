@@ -28,7 +28,7 @@ export class SidebarState {
       links.push(
         ...group.children.map((c) => ({
           name: c.name,
-          url: group.name.toLowerCase() + '/' + c.url,
+          url: '', //group.name.toLowerCase() + '/' + c.url,
         }))
       );
     }
