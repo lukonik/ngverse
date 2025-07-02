@@ -1,16 +1,7 @@
 import { SchematicsException } from '@angular-devkit/schematics';
-import {
-  SchematicTestRunner,
-  UnitTestTree,
-} from '@angular-devkit/schematics/testing';
+import { UnitTestTree } from '@angular-devkit/schematics/testing';
 import { InvalidInputOptions } from '@angular-devkit/schematics/tools/schema-option-transform';
-import {
-  Schema as ApplicationOptions,
-  Style,
-} from '@schematics/angular/application/schema';
-import { Schema as WorkspaceOptions } from '@schematics/angular/workspace/schema';
-
-const collectionPath = require.resolve('../collection.json');
+import { createTestRunner } from '../utils_spec';
 
 const PROJECT_NAME = 'demo';
 
@@ -53,24 +44,10 @@ function createButtonComponent(appTree: UnitTestTree) {
   );
 }
 
-xdescribe('element', () => {
-  const testRunner = new SchematicTestRunner('ngverse', collectionPath);
-  const workspaceOptions: WorkspaceOptions = {
-    name: 'workspace',
+describe('element', () => {
+  const { testRunner, workspaceOptions, appOptions } =
+    createTestRunner(PROJECT_NAME);
 
-    newProjectRoot: 'projects',
-    version: '19.0.6',
-  };
-
-  const appOptions: ApplicationOptions = {
-    name: PROJECT_NAME,
-    inlineStyle: false,
-    inlineTemplate: false,
-    routing: false,
-    style: Style.Css,
-    skipTests: false,
-    skipPackageJson: false,
-  };
   let appTree: UnitTestTree;
   beforeEach(async () => {
     appTree = await testRunner.runExternalSchematic(
@@ -87,7 +64,12 @@ xdescribe('element', () => {
     createButtonComponent(appTree);
   });
 
+  it('should', () => {
+    expect(1).toBe(10);
+  });
+
   it('should throw error on empty name', async () => {
+    expect(2).toBe(10);
     await expectAsync(
       testRunner.runSchematic('add', appTree)
     ).toBeRejectedWithError(
@@ -97,6 +79,7 @@ xdescribe('element', () => {
   });
 
   it('should throw an exception on invalid name', async () => {
+    console.log('RUNNING');
     const componentName = 'foo';
     await expectAsync(
       testRunner.runSchematic(

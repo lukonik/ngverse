@@ -1,56 +1,16 @@
-import { basename, normalize } from '@angular-devkit/core';
-import { SchematicsException, Tree } from '@angular-devkit/schematics';
-import { getProjectFromWorkspace } from '@angular/cdk/schematics';
-import { getWorkspace } from '@schematics/angular/utility/workspace';
-import { join } from 'path';
+import { Tree } from '@angular-devkit/schematics';
+import { getElementPath, getTargetPath } from '../utils';
 import { Schema } from './schema';
-
-function getElementName(inputPath: string): string {
-  // Normalize the input path to handle different OS separators
-  const normalizedPath = normalize(inputPath);
-
-  // Get the last part of the path
-  return basename(normalizedPath);
-}
 
 export function ui(options: Schema) {
   return async (host: Tree) => {
-    const workspace = await getWorkspace(host);
+    const targetPath = await getTargetPath(host, options);
+    const elementPath = getElementPath(host, options.name, 'ui');
+    const elementDir = host.getDir(elementPath);
+    const prefix = options.prefix;
 
-    const project = getProjectFromWorkspace(workspace, options.project);
-    if (!project) {
-      throw new SchematicsException(`Invalid project name: ${options.project}`);
-    }
-    const projectType =
-      project.extensions['projectType'] === 'application' ? 'app' : 'lib';
-    const prefix = options.prefix || project.prefix;
-
-    const rootPath = normalize(`${project.sourceRoot}/${projectType}`);
-    let path = './';
-    if (options.path) {
-      path = `./${options.path}`;
-    }
-    const applicationPath = normalize(join(rootPath, path, options.name));
-    const elementName = getElementName(options.name);
-
-    const elementsPath = normalize(
-      join('node_modules', 'ngverse', 'src', 'lib', 'ui', elementName)
-    );
-    const dir = host.getDir(elementsPath);
-    const directoryExists = dir.subfiles.length > 0 || dir.subdirs.length > 0;
-    if (!directoryExists) {
-      throw new SchematicsException(`Could not find ${elementName}`);
-    }
-    const applicationDir = host.getDir(applicationPath);
-    const applicationDirExists =
-      applicationDir.subfiles.length > 0 || applicationDir.subdirs.length > 0;
-    if (applicationDirExists && !options.replace) {
-      throw new SchematicsException(
-        `the ${elementName} already exists in ${applicationPath}, use --replace=true option to overwrite`
-      );
-    }
     // Copy element files from the library to the application
-    dir.visit((filePath) => {
+    elementDir.visit((filePath) => {
       if (!options.includeTests && filePath.endsWith('.spec.ts')) {
         return;
       }
@@ -60,12 +20,11 @@ export function ui(options: Schema) {
         if (!prefixIsDefault(prefix)) {
           content = updatePrefix(content, prefix);
         }
-
-        const targetPath = filePath.replace(elementsPath, applicationPath);
-        if (host.exists(targetPath)) {
-          host.overwrite(targetPath, content);
+        const mergedPath = filePath.replace(elementPath, targetPath);
+        if (host.exists(mergedPath)) {
+          host.overwrite(mergedPath, content);
         } else {
-          host.create(targetPath, content);
+          host.create(mergedPath, content);
         }
       }
     });
