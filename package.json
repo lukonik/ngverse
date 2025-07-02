@@ -1,6 +1,6 @@
 {
   "name": "ngverse",
-  "version": "1.0.0",
+  "version": "4.1.0",
   "private": true,
   "repository": {
     "type": "git",
@@ -22,7 +22,10 @@
     "build:ngverse": "ng build --project=ngverse && cd projects/ngverse && npm run build",
     "build:docs": "ng build --project=docs",
     "check:docs": "npm run build:docs && ng lint docs && npm run format:check",
-    "check:ngverse": "ng lint ngverse && npm run format:check && ng test --no-watch --no-progress --browsers=ChromeHeadless --project=ngverse && ng build --project=ngverse && cd projects/ngverse && npm run build"
+    "check:ngverse": "ng lint ngverse && npm run format:check && ng test --no-watch --no-progress --browsers=ChromeHeadless --project=ngverse && ng build --project=ngverse && cd projects/ngverse && npm run build",
+    "publish:patch": "cd projects/ngverse && npm version patch && cd ../../ && npm run build:ngverse && cd dist/ngverse && npm publish",
+    "publish:minor": "cd projects/ngverse && npm version minor && cd ../../ && npm run build:ngverse && cd dist/ngverse && npm publish",
+    "publish:major": "npm version major && npm publish"
   },
   "lint-staged": {
     "**/*.{html,ts,json,css,md}": "prettier --write"
