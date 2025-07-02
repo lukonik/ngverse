@@ -22,10 +22,7 @@
     "build:ngverse": "ng build --project=ngverse && cd projects/ngverse && npm run build",
     "build:docs": "ng build --project=docs",
     "check:docs": "npm run build:docs && ng lint docs && npm run format:check",
-    "check:ngverse": "ng lint ngverse && npm run format:check && ng test --no-watch --no-progress --browsers=ChromeHeadless --project=ngverse && ng build --project=ngverse && cd projects/ngverse && npm run build",
-    "publish:patch": "cd projects/ngverse && npm version patch && cd ../../ && npm run build:ngverse && cd dist/ngverse && npm publish",
-    "publish:minor": "cd projects/ngverse && npm version minor && cd ../../ && npm run build:ngverse && cd dist/ngverse && npm publish",
-    "publish:major": "npm version major && npm publish"
+    "check:ngverse": "ng lint ngverse && npm run format:check && ng test --no-watch --no-progress --browsers=ChromeHeadless --project=ngverse && ng build --project=ngverse && cd projects/ngverse && npm run build"
   },
   "lint-staged": {
     "**/*.{html,ts,json,css,md}": "prettier --write"
