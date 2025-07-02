@@ -2,7 +2,6 @@ import { SidebarGroup } from './sidebar-types';
 
 export const ANIMATION_LINKS: SidebarGroup = {
   name: 'Animations',
-  sort: true,
   statics: [
     {
       name: 'Configuration',

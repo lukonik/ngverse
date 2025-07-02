@@ -8,16 +8,6 @@
       <doc-project-name class="text-xl font-bold"></doc-project-name>
     </a>
   </div>
-  <div class="ml-4 hidden items-center gap-2 lg:flex">
-    @for (nav of navigations; track $index) {
-      <a
-        class="rounded-md px-4 py-2 font-medium hover:bg-slate-100"
-        [routerLinkActive]="'bg-slate-200'"
-        [routerLink]="nav.url"
-        >{{ nav.label }}</a
-      >
-    }
-  </div>
 
   <app-dark-mode-toggle class="mr-2 ml-auto"></app-dark-mode-toggle>
   <a href="https://github.com/ngverse/ui" target="_blank">

@@ -1,11 +1,10 @@
 import { computed, inject, Injectable, signal } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import orderBy from 'lodash/orderBy';
 import { filter } from 'rxjs';
 import { ANIMATION_LINKS } from './animation-links';
 import { GUIDES_LINKS } from './guide-links';
 import { PIPE_LINKS } from './pipe-links';
-import { SidebarGroup } from './sidebar-types';
+import { SidebarGroup, SidebarLink } from './sidebar-types';
 import { UI_LINKS } from './ui-links';
 export const SIDEBAR_ROUTES = [
   GUIDES_LINKS,
@@ -34,21 +33,26 @@ export class SidebarState {
   private _group = signal<SidebarGroup | undefined>(undefined);
   private _router = inject(Router);
 
-  group = this._group.asReadonly();
-
   allLinks = computed(() => {
-    const group = this.group();
-    if (!group) {
-      return [];
-    }
-    return [...(group.statics ?? []), ...(this.links() ?? [])];
-  });
+    const links: SidebarLink[] = [];
 
-  links = computed(() => {
-    if (this.group()?.sort) {
-      return orderBy(this.group()?.children, 'name');
+    for (const group of this.allRoutes) {
+      if (group.statics) {
+        links.push(
+          ...group.statics.map((s) => ({
+            name: s.name,
+            url: group.name.toLowerCase() + '/' + s.url,
+          }))
+        );
+      }
+      links.push(
+        ...group.children.map((c) => ({
+          name: c.name,
+          url: group.name.toLowerCase() + '/' + c.url,
+        }))
+      );
     }
-    return this.group()?.children;
+    return links;
   });
 
   constructor() {

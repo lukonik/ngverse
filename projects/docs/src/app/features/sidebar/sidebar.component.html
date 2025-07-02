@@ -1,19 +1,8 @@
 <div class="sidebar h-[600px] w-[250px] overflow-auto px-5 pt-4 lg:w-[300px]">
   <nav>
-    <div class="w-full overflow-x-auto p-2 pb-4 lg:hidden">
-      @for (nav of navigations; track $index) {
-        <a
-          class="rounded-md px-4 py-2 font-medium hover:bg-slate-100"
-          [routerLinkActive]="'bg-slate-200'"
-          [routerLink]="nav.url"
-          >{{ nav.name }}</a
-        >
-      }
-    </div>
-    <app-divider class="mb-4 lg:hidden"></app-divider>
-    @if (sidebarState.group(); as group) {
-      <ul class="list-none pl-0">
-        <li class="mb-3 font-medium">{{ group.name }}</li>
+    @for (group of sidebarState.allRoutes; track $index) {
+      <ul class="mt-4 list-none pl-0">
+        <li class="mb-2 font-medium">{{ group.name }}</li>
         @for (link of group.statics; track $index) {
           <li>
             <a
@@ -21,19 +10,11 @@
               class="sidebar-link my-3 ml-0 flex h-8 cursor-pointer items-center justify-between rounded-md pr-2 pl-4 hover:bg-slate-100"
               [routerLink]="['/doc/', group.name | lowercase, link.url]"
               >{{ link.name }}
-              @if (link.mode === 'experimental') {
-                <span
-                  class="inline-flex items-center gap-1 rounded-xl bg-slate-200 px-2 py-1 text-xs"
-                >
-                  {{ link.mode }}
-                </span>
-              }
             </a>
           </li>
         }
-        <app-divider></app-divider>
 
-        @for (link of sidebarState.links(); track $index) {
+        @for (link of group.children; track $index) {
           <li>
             <a
               [routerLinkActive]="'selected'"
@@ -51,6 +32,7 @@
           </li>
         }
       </ul>
+      <app-divider></app-divider>
     }
   </nav>
 </div>

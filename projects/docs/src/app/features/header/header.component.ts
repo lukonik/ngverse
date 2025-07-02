@@ -35,25 +35,6 @@ export class HeaderComponent {
   overlayRef: OverlayRef | undefined;
   router = inject(Router);
 
-  navigations: { label: string; url: string }[] = [
-    {
-      label: 'Guides',
-      url: '/doc/guides',
-    },
-    {
-      label: 'UI',
-      url: '/doc/ui',
-    },
-    {
-      label: 'Pipes',
-      url: '/doc/pipes',
-    },
-    {
-      label: 'Animations',
-      url: '/doc/animations',
-    },
-  ];
-
   constructor() {
     afterNextRender(() => {
       docsearch({
