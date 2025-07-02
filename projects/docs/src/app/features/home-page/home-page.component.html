@@ -18,19 +18,5 @@
         </a>
       </div>
     </div>
-    <h2 class="mt-20 text-center text-4xl">Pick the module</h2>
-    <div class="not-prose flex flex-col gap-3 p-10 lg:flex-row">
-      @for (item of modules; track $index) {
-        <a
-          [routerLink]="item.url"
-          class="flex flex-1 flex-col items-center justify-center rounded-xl border border-slate-300 p-3 hover:bg-slate-100 lg:h-80"
-        >
-          <app-font-icon size="120" class="text-blue-500">{{
-            item.icon
-          }}</app-font-icon>
-          <p class="mt-6 text-4xl font-bold">{{ item.name }}</p>
-        </a>
-      }
-    </div>
   </div>
 </div>
