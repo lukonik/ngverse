@@ -23,9 +23,8 @@ export class DocSiblingNavigationsComponent {
       .pipe(filter((e) => e instanceof NavigationEnd))
       .subscribe(() => {
         const currentPath = this.router.url;
-        const group = this._sidebarState.group();
         const allLinks = this._sidebarState.allLinks();
-        if (!allLinks.length || !group) {
+        if (!allLinks.length) {
           return;
         }
 
@@ -39,16 +38,14 @@ export class DocSiblingNavigationsComponent {
             const prevRouteIndex = foundRouteIndex - 1;
             this.prevRoute.set({
               name: allLinks[prevRouteIndex].name,
-              url:
-                group.name.toLowerCase() + '/' + allLinks[prevRouteIndex].url,
+              url: allLinks[prevRouteIndex].url,
             });
           }
           if (foundRouteIndex !== allLinks.length - 1) {
             const nextRouteIndex = foundRouteIndex + 1;
             this.nextRoute.set({
               name: allLinks[nextRouteIndex].name,
-              url:
-                group.name.toLowerCase() + '/' + allLinks[nextRouteIndex].url,
+              url: allLinks[nextRouteIndex].url,
             });
           }
         }

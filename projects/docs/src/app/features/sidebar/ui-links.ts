@@ -2,7 +2,6 @@ import { SidebarGroup } from './sidebar-types';
 
 export const UI_LINKS: SidebarGroup = {
   name: 'UI',
-  sort: true,
   statics: [
     {
       name: 'Configuration',
@@ -10,10 +9,6 @@ export const UI_LINKS: SidebarGroup = {
     },
   ],
   children: [
-    {
-      name: 'Font Icon',
-      url: 'font-icon',
-    },
     {
       name: 'Accordion',
       url: 'accordion',
@@ -23,100 +18,20 @@ export const UI_LINKS: SidebarGroup = {
       url: 'alert',
     },
     {
-      name: 'Button',
-      url: 'button',
-    },
-    {
       name: 'Badge',
       url: 'badge',
     },
     {
-      name: 'Drawer',
-      url: 'drawer',
-    },
-    {
-      name: 'Datepicker',
-      url: 'datepicker',
-    },
-    {
-      name: 'Checkbox',
-      url: 'checkbox',
+      name: 'Button',
+      url: 'button',
     },
     {
       name: 'Card',
       url: 'card',
     },
     {
-      name: 'Divider',
-      url: 'divider',
-    },
-    {
-      name: 'Skeleton',
-      url: 'skeleton',
-    },
-    {
-      name: 'Loader',
-      url: 'loader',
-    },
-    {
-      name: 'Radio Button',
-      url: 'radio-button',
-    },
-    {
-      name: 'Switch',
-      url: 'switch',
-    },
-    {
-      name: 'Toast',
-      url: 'toast',
-    },
-    {
-      name: 'Tooltip',
-      url: 'tooltip',
-    },
-    {
-      name: 'Textarea',
-      url: 'textarea',
-    },
-    {
-      name: 'Select',
-      url: 'select',
-    },
-    {
-      name: 'Progress Bar',
-      url: 'progress-bar',
-    },
-    {
-      name: 'Dialog',
-      url: 'dialog',
-    },
-    {
-      name: 'Tab',
-      url: 'tab',
-    },
-    {
-      name: 'Input',
-      url: 'input',
-    },
-    {
-      name: 'Form Field',
-      url: 'form-field',
-    },
-    {
-      name: 'OTP Input',
-      url: 'otp-input',
-    },
-    {
-      name: 'Icon',
-      url: 'icon',
-    },
-    {
-      name: 'Popover',
-      url: 'popover',
-    },
-    {
-      name: 'Pagination',
-      url: 'pagination',
+      name: 'Checkbox',
+      url: 'checkbox',
     },
     {
       name: 'Context Menu',
@@ -127,13 +42,97 @@ export const UI_LINKS: SidebarGroup = {
       url: 'dark-mode',
     },
     {
-      name: 'Table',
-      url: 'table',
-      mode: 'experimental',
+      name: 'Datepicker',
+      url: 'datepicker',
+    },
+    {
+      name: 'Dialog',
+      url: 'dialog',
+    },
+    {
+      name: 'Divider',
+      url: 'divider',
+    },
+    {
+      name: 'Drawer',
+      url: 'drawer',
+    },
+    {
+      name: 'Font Icon',
+      url: 'font-icon',
+    },
+    {
+      name: 'Form Field',
+      url: 'form-field',
+    },
+    {
+      name: 'Icon',
+      url: 'icon',
+    },
+    {
+      name: 'Input',
+      url: 'input',
+    },
+    {
+      name: 'Loader',
+      url: 'loader',
     },
     {
       name: 'Multi Select',
       url: 'multi-select',
+    },
+    {
+      name: 'OTP Input',
+      url: 'otp-input',
+    },
+    {
+      name: 'Pagination',
+      url: 'pagination',
+    },
+    {
+      name: 'Popover',
+      url: 'popover',
+    },
+    {
+      name: 'Progress Bar',
+      url: 'progress-bar',
+    },
+    {
+      name: 'Radio Button',
+      url: 'radio-button',
+    },
+    {
+      name: 'Select',
+      url: 'select',
+    },
+    {
+      name: 'Skeleton',
+      url: 'skeleton',
+    },
+    {
+      name: 'Switch',
+      url: 'switch',
+    },
+    {
+      name: 'Tab',
+      url: 'tab',
+    },
+    {
+      name: 'Textarea',
+      url: 'textarea',
+    },
+    {
+      name: 'Toast',
+      url: 'toast',
+    },
+    {
+      name: 'Tooltip',
+      url: 'tooltip',
+    },
+    {
+      name: 'Table',
+      url: 'table',
+      mode: 'experimental',
     },
   ],
 };
