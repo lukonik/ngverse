@@ -12,26 +12,24 @@ import { Component } from '@angular/core';
 export class ShowCaseAccordionComponent {
   items = [
     {
-      title: 'How to add ngverse to a project?',
-      description: 'run: ng add ngverse',
-    },
-    {
-      title: 'How to add an element?',
-      description: 'run: ng g ngverse:element [name]',
-    },
-    {
-      title: 'How to customize an element?',
-      description: 'The source code is yours. do whatever you want to',
-    },
-    {
-      title: 'How to style an element',
+      title: 'Why do cats purr?',
       description:
-        'Elements come with default styles for a polished look right out of the box, but you can easily customize them within their SCSS files to suit your needs.',
+        'Cats purr for various reasons, including relaxation, self-healing, or to communicate contentment or stress.',
     },
     {
-      title: 'Why it is called element and not component?',
+      title: 'How long can a turtle live?',
       description:
-        'The term element is used because ngverse is not limited to components.  It includes directives, pipes, functions, and more, making element a broader and more inclusive term.',
+        'Some turtles can live over 100 years, depending on the species and environment.',
+    },
+    {
+      title: 'Do dogs see in color?',
+      description:
+        'Yes, but not like humans. Dogs see a limited range of colors, mostly shades of blue and yellow.',
+    },
+    {
+      title: 'Can parrots really talk?',
+      description:
+        'Parrots can mimic human speech and sounds, especially when trained and exposed to repeated words.',
     },
   ];
 }
