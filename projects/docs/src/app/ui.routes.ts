@@ -4,11 +4,18 @@ export const UI_ROUTES: Route = {
   path: 'ui',
   children: [
     {
-      path: 'configuration',
+      path: 'schematics',
       loadComponent: () =>
         import(
-          './pages/ui/ui-configuration-page/ui-configuration-page.component'
-        ).then((b) => b.UiConfigurationPageComponent),
+          './pages/ui/ui-schematics-page/ui-schematics-page.component'
+        ).then((b) => b.UiSchematicsPageComponent),
+    },
+    {
+      path: 'theming',
+      loadComponent: () =>
+        import('./pages/ui/ui-theming-page/ui-theming-page.component').then(
+          (b) => b.UiThemingPageComponent
+        ),
     },
     {
       path: 'font-icon',

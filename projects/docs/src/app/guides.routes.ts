@@ -23,13 +23,6 @@ export const GUIDES_ROUTES: Route = {
       redirectTo: 'usage',
     },
     {
-      path: 'usage',
-      loadComponent: () =>
-        import('./features/usage-page/usage-page.component').then(
-          (u) => u.UsagePageComponent
-        ),
-    },
-    {
       path: '',
       pathMatch: 'full',
       redirectTo: 'introduction',

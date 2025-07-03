@@ -10,13 +10,13 @@ import { SourceCodeComponent } from '../../../blueprint/source-code/source-code.
 import { FileService } from '../../../services/file.service';
 
 @Component({
-  selector: 'doc-ui-configuration-page',
+  selector: 'doc-ui-schematics-page',
   imports: [BlogPageComponent, SourceCodeComponent],
-  templateUrl: './ui-configuration-page.component.html',
-  styleUrl: './ui-configuration-page.component.css',
+  templateUrl: './ui-schematics-page.component.html',
+  styleUrl: './ui-schematics-page.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class UiConfigurationPageComponent implements OnInit {
+export class UiSchematicsPageComponent implements OnInit {
   postcssCode = `{
     "plugins": {
       "@tailwindcss/postcss": {}
