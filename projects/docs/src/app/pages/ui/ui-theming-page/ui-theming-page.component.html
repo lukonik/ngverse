@@ -1,0 +1,31 @@
+<doc-blog-page label="Theming">
+  <p>
+    <span class="font-bold">UI</span> module comes with a predefined Tailwind
+    CSS theme configuration, that is shared across the components. It includes
+    light and dark mode. copy the styles and paste it into your
+    <code>styles.css</code>
+  </p>
+  <p>
+    For example, by default, the primary color is:
+    <code>--color-blue-500 </code> If you want to change it to amber, simply
+    update it to: <code>--color-amber-500</code>
+    This makes customization easy and ensures design consistency across your
+    project.
+  </p>
+
+  <doc-source-code language="css" [code]="globalsCode()"></doc-source-code>
+
+  <p class="!mt-6">CSS Variables follow the following pattern:</p>
+  <ul>
+    <li><code>--color-name</code>: Background color</li>
+    <li><code>--color-name-foreground</code>: Text color</li>
+  </ul>
+  <p>
+    These styles are meant to help you get started quickly with beautiful
+    components that share a consistent look and feel. Your designers can explore
+    countless ways to customize the design—such as updating color tokens and
+    more. Don’t hesitate to modify the component styles directly to suit your
+    needs.
+  </p>
+  <p class="italic">After all the steps you are ready to add components.</p>
+</doc-blog-page>

@@ -25,13 +25,28 @@ export class SidebarState {
           }))
         );
       }
-      links.push(
-        ...group.children.map((c) => ({
-          name: c.name,
-          url: '', //group.name.toLowerCase() + '/' + c.url,
-        }))
-      );
+      const children = group.children;
+
+      for (const child of children) {
+        if ('url' in child) {
+          links.push({
+            name: child.name,
+            url: group.name.toLowerCase() + '/' + child.url,
+          });
+        } else {
+          for (const childChild of child.children) {
+            links.push({
+              name: childChild.name,
+              url:
+                group.name.toLowerCase() +
+                '/' +
+                (childChild as SidebarLink).url,
+            });
+          }
+        }
+      }
     }
+
     return links;
   });
 

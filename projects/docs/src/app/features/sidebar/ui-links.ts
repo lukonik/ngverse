@@ -4,8 +4,12 @@ export const UI_LINKS: SidebarGroup = {
   name: 'UI',
   statics: [
     {
-      name: 'Configuration',
-      url: 'configuration',
+      name: 'Schematics',
+      url: 'schematics',
+    },
+    {
+      name: 'Theming',
+      url: 'theming',
     },
   ],
   children: [

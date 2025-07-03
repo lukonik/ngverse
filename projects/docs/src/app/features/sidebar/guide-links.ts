@@ -12,9 +12,5 @@ export const GUIDES_LINKS: SidebarGroup = {
       name: 'Installation',
       url: 'installation',
     },
-    {
-      name: 'Usage',
-      url: 'usage',
-    },
   ],
 };
