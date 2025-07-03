@@ -13,7 +13,7 @@ import { Subject } from 'rxjs';
 import { ToastCloseIconComponent } from './toast-close.component';
 import { TOAST_POSITION } from './toast.service';
 
-const ZOOM_IN_ANIMATION = transition('* => enter', [
+const ENTER_ANIMATION = transition('* => enter', [
   animation(
     animate(
       '250ms ease-in',
@@ -25,7 +25,7 @@ const ZOOM_IN_ANIMATION = transition('* => enter', [
   ),
 ]);
 
-const ZOOM_OUT_ANIMATION = transition('* => exit', [
+const LEAVE_ANIMATION = transition('* => exit', [
   animation(
     animate(
       '250ms ease-out',
@@ -44,7 +44,7 @@ const ZOOM_OUT_ANIMATION = transition('* => exit', [
   templateUrl: './toast.component.html',
   styleUrl: './toast.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  animations: [trigger('toggle', [ZOOM_IN_ANIMATION, ZOOM_OUT_ANIMATION])],
+  animations: [trigger('toggle', [ENTER_ANIMATION, LEAVE_ANIMATION])],
   host: {
     role: 'alert',
     '[class.toaster]': 'true',
