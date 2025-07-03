@@ -7,21 +7,12 @@ import {
   inject,
   input,
 } from '@angular/core';
-import { collapseOnLeave, expandOnEnter } from '@ngverse/motion/generalcss';
 
 @Component({
   selector: 'app-accordion-item',
   imports: [FontIconComponent],
   templateUrl: './accordion-item.component.html',
   styleUrl: './accordion-item.component.css',
-  animations: [
-    expandOnEnter({
-      duration: 150,
-    }),
-    collapseOnLeave({
-      duration: 150,
-    }),
-  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     class: 'block mb-3 pb-3 border-b border-divider',
