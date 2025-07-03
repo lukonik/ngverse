@@ -1,0 +1,84 @@
+<div class="home">
+  <div class="relative container mx-auto min-h-screen justify-center pt-10">
+    <div>
+      <h1
+        class="mb-4 text-center text-4xl font-bold text-blue-600 lg:mb-8 lg:text-7xl dark:text-violet-500"
+      >
+        NgVerse
+      </h1>
+      <h2 class="mt-0 mb-4 text-center text-4xl">
+        <div>Copy/Paste components in your Angular app</div>
+      </h2>
+      <div class="mt-6 flex items-center justify-center gap-2">
+        <a [routerLink]="['/doc/guides/introduction']">
+          <button appButton color="primary" class="h-14 w-40" size="none">
+            <span class="text-xl">Get Started</span>
+          </button>
+        </a>
+      </div>
+    </div>
+    <div class="mt-10 grid grid-cols-1 gap-4 px-4 lg:grid-cols-3 lg:px-0">
+      <doc-home-page-card label="Button" link="/doc/ui/button">
+        <button appButton>Button</button>
+        <button appButton color="danger">Button</button>
+        <button appButton variant="outline" color="success">Button</button>
+      </doc-home-page-card>
+      <doc-home-page-card label="Input" link="/doc/ui/input">
+        <input appInput placeholder="Input" class="w-full" />
+      </doc-home-page-card>
+      <doc-home-page-card label="Checkbox" link="/doc/ui/checkbox">
+        <app-checkbox>Checkbox</app-checkbox>
+      </doc-home-page-card>
+      <doc-home-page-card label="Switch" link="/doc/ui/switch">
+        <app-switch>Switch</app-switch>
+      </doc-home-page-card>
+      <doc-home-page-card label="OTP Input" link="/doc/ui/otp-input">
+        <app-otp-input></app-otp-input>
+      </doc-home-page-card>
+      <doc-home-page-card label="Accordion" link="/doc/ui/accordion">
+        <app-accordion [multi]="true" class="w-full">
+          <app-accordion-item [label]="'Do dogs see in color?'">
+            <app-accordion-body
+              >Yes, but not like humans. Dogs see a limited range of colors,
+              mostly shades of blue and yellow.
+            </app-accordion-body>
+          </app-accordion-item>
+          <app-accordion-item [label]="'Can parrots really talk?'">
+            <app-accordion-body
+              >Parrots can mimic human speech and sounds, especially when
+              trained and exposed to repeated words.
+            </app-accordion-body>
+          </app-accordion-item>
+        </app-accordion>
+      </doc-home-page-card>
+      <doc-home-page-card label="Tab" link="/doc/ui/tab">
+        <app-tab-group class="w-full">
+          <app-tab label="Users">
+            <p>Content for Tab 1</p>
+          </app-tab>
+          <app-tab label="Transactions">
+            <p>Content for Tab 2</p>
+          </app-tab>
+          <app-tab label="History">
+            <p>Content for Tab 3</p>
+          </app-tab>
+        </app-tab-group>
+      </doc-home-page-card>
+      <doc-home-page-card label="Skeleton" link="/doc/ui/skeleton">
+        <div class="w-full">
+          <app-skeleton class="h-12 w-12 rounded-full"></app-skeleton>
+          <app-skeleton class="my-2 h-6 w-full rounded-md"></app-skeleton>
+          <app-skeleton class="h-6 w-full rounded-md"></app-skeleton>
+        </div>
+      </doc-home-page-card>
+      <app-card class="h-[200px] text-4xl hover:bg-gray-50">
+        <a
+          [routerLink]="'/doc/guides/introduction'"
+          class="flex h-full w-full items-center justify-center"
+        >
+          See More...
+        </a>
+      </app-card>
+    </div>
+  </div>
+</div>

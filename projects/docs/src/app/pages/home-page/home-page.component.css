@@ -2,7 +2,5 @@
 
 .home {
   @apply dark:!bg-black dark:!bg-none;
-
-  background: url(/home-bg.png);
   background-size: cover;
 }
