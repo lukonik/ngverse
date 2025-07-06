@@ -1,12 +1,53 @@
 import { ButtonComponent } from '@/ui/button/button.component';
 import { FontIconComponent } from '@/ui/font-icon/font-icon.component';
-import { AnimationEvent, transition, trigger } from '@angular/animations';
+import {
+  animate,
+  animation,
+  AnimationEvent,
+  keyframes,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
 import { ComponentType } from '@angular/cdk/portal';
 import { NgComponentOutlet } from '@angular/common';
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
-import { slideInRight, slideOutRight } from '@ngverse/motion/animatecss';
 import { Subject } from 'rxjs';
 import { DrawerCloseDirective } from './drawer-close.directive';
+
+const ENTER_ANIMATION = transition('* => enter', [
+  animation(
+    animate(
+      '250ms ease-in',
+      keyframes([
+        style({
+          visibility: 'visible',
+          transform: 'translate3d(100%, 0, 0)',
+          easing: 'ease',
+          offset: 0,
+        }),
+        style({ transform: 'translate3d(0, 0, 0)', offset: 1 }),
+      ])
+    )
+  ),
+]);
+
+const LEAVE_ANIMATION = transition('* => exit', [
+  animation(
+    animate(
+      '250ms ease-out',
+      keyframes([
+        style({ transform: 'translate3d(0, 0, 0)', easing: 'ease', offset: 0 }),
+        style({
+          transform: 'translate3d(100%, 0, 0)',
+          visibility: 'hidden',
+          easing: 'ease',
+          offset: 1,
+        }),
+      ])
+    )
+  ),
+]);
 
 @Component({
   selector: 'app-drawer',
@@ -18,12 +59,7 @@ import { DrawerCloseDirective } from './drawer-close.directive';
   ],
   templateUrl: './drawer.component.html',
   styleUrl: './drawer.component.css',
-  animations: [
-    trigger('toggle', [
-      transition('* => enter', [slideInRight({ duration: 250 })]),
-      transition('* => exit', [slideOutRight({ duration: 250 })]),
-    ]),
-  ],
+  animations: [trigger('toggle', [ENTER_ANIMATION, LEAVE_ANIMATION])],
   host: {
     '[@toggle]': 'animationState()',
     '(@toggle.done)': 'onDone($event)',

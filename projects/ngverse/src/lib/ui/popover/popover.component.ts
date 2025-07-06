@@ -1,4 +1,3 @@
-import { AnimationEvent, transition, trigger } from '@angular/animations';
 import { ConnectedPosition, Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { DomPortal } from '@angular/cdk/portal';
 import { DOCUMENT, NgTemplateOutlet } from '@angular/common';
@@ -17,7 +16,6 @@ import {
   untracked,
   viewChild,
 } from '@angular/core';
-import { zoomIn, zoomOut } from '@ngverse/motion/animatecss';
 import {
   asyncScheduler,
   filter,
@@ -35,12 +33,6 @@ export type POPOVER_POSITIONS_Y = 'top' | 'right' | 'bottom' | 'left';
   templateUrl: './popover.component.html',
   styleUrl: './popover.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  animations: [
-    trigger('toggle', [
-      transition('false => true', [zoomIn({ duration: 250 })]),
-      transition('true => false', [zoomOut({ duration: 250 })]),
-    ]),
-  ],
 })
 export class PopoverComponent implements OnDestroy {
   isOpen = model(false);
@@ -85,6 +77,7 @@ export class PopoverComponent implements OnDestroy {
       return;
     }
     this.isOpen.set(false);
+    this.dispose();
   }
 
   show() {
@@ -110,21 +103,9 @@ export class PopoverComponent implements OnDestroy {
       });
       this.overlayRef.attach(new DomPortal(this.popover()));
       this.tryStretch();
-    });
-  }
-
-  onDone(event: AnimationEvent) {
-    if (
-      event.fromState.toString() === 'true' &&
-      event.toState.toString() === 'false'
-    ) {
-      this.dispose();
-      return;
-    }
-    if (event.toState.toString() === 'true') {
       this.listenToGlobalEvents();
       this.opened.emit();
-    }
+    });
   }
 
   private listenToGlobalEvents() {
