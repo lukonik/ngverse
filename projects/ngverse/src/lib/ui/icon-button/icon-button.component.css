@@ -1,0 +1,97 @@
+@import 'tailwindcss';
+
+:host {
+  /** General styles **/
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-radius: 100%;
+  padding: 4px;
+  position: relative;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--icon-button-color);
+  &:hover {
+    background-color: var(--icon-button-hover-bg);
+  }
+  &:active {
+    background-color: var(--icon-button-active-bg);
+  }
+  &:disabled {
+    cursor: not-allowed;
+    color: var(--icon-button-disabled-color);
+    background-color: var(--icon-button-disabled-bg);
+  }
+
+  &.icon-btn-primary {
+    --icon-button-color: var(--color-neutral-900);
+    --icon-button-hover-bg: var(--color-neutral-100);
+    --icon-button-active-bg: var(--color-neutral-200);
+    --icon-button-disabled-color: var(--color-neutral-300);
+    --icon-button-disabled-bg: var(--color-neutral-50);
+    --spinner-color: var(--color-neutral-900);
+  }
+
+  &.icon-btn-secondary {
+    --icon-button-color: var(--color-neutral-500);
+    --icon-button-hover-bg: var(--color-neutral-100);
+    --icon-button-active-bg: var(--color-neutral-200);
+    --icon-button-disabled-color: var(--color-neutral-300);
+    --icon-button-disabled-bg: var(--color-neutral-50);
+    --spinner-color: var(--color-neutral-500);
+  }
+
+  &.icon-btn-danger {
+    --icon-button-color: var(--color-red-500);
+    --icon-button-hover-bg: var(--color-red-100);
+    --icon-button-active-bg: var(--color-red-200);
+    --icon-button-disabled-color: var(--color-red-300);
+    --icon-button-disabled-bg: var(--color-red-50);
+    --spinner-color: var(--color-red-500);
+  }
+
+  &.icon-btn-success {
+    --icon-button-color: var(--color-green-500);
+    --icon-button-hover-bg: var(--color-green-100);
+    --icon-button-active-bg: var(--color-green-200);
+    --icon-button-disabled-color: var(--color-green-300);
+    --icon-button-disabled-bg: var(--color-green-50);
+    --spinner-color: var(--color-green-500);
+  }
+
+  &.icon-btn-warning {
+    --icon-button-color: var(--color-amber-500);
+    --icon-button-hover-bg: var(--color-amber-100);
+    --icon-button-active-bg: var(--color-amber-200);
+    --icon-button-disabled-color: var(--color-amber-300);
+    --icon-button-disabled-bg: var(--color-amber-50);
+    --spinner-color: var(--color-amber-500);
+  }
+  &.btn-loading {
+    pointer-events: none;
+    color: transparent;
+  }
+
+  .button-loader {
+    @apply pointer-events-none absolute top-0 right-0 bottom-0 left-0 flex h-full w-full items-center justify-center;
+  }
+
+  .spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid var(--spinner-color, white);
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    animation: rotation 1s linear infinite;
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -11,6 +11,16 @@
   "miscellaneous": {
     "variables": [
       {
+        "name": "link",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "projects/ngverse/.storybook/preview.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "",
+        "defaultValue": "document.createElement('link')"
+      },
+      {
         "name": "LoggedIn",
         "ctype": "miscellaneous",
         "subtype": "variable",
@@ -58,7 +68,7 @@
         "deprecated": false,
         "deprecationMessage": "",
         "type": "Meta<ButtonStory>",
-        "defaultValue": "{\n  title: 'Example/Button',\n  component: ButtonStory,\n  tags: ['autodocs'],\n  argTypes: {\n    label: {\n      control: 'text',\n    },\n    variant: {\n      control: {\n        type: 'select',\n      },\n      options: ['primary', 'secondary', 'danger', 'success', 'warning'],\n      defaultValue: {\n        summary: 'primary',\n      },\n    },\n    size: {\n      control: {\n        type: 'select',\n      },\n      options: ['sm', 'md', 'lg', 'none'],\n    },\n    disabled: {\n      control: 'boolean',\n    },\n    loading: {\n      control: 'boolean',\n    },\n  },\n}"
+        "defaultValue": "{\n  title: 'Example/Button',\n  component: ButtonStory,\n  tags: ['autodocs'],\n  argTypes: {\n    label: {\n      control: 'text',\n    },\n    color: {\n      control: {\n        type: 'select',\n      },\n      options: ['primary', 'secondary', 'danger', 'success', 'warning'],\n      defaultValue: {\n        summary: 'primary',\n      },\n    },\n    size: {\n      control: {\n        type: 'select',\n      },\n      options: ['sm', 'md', 'lg', 'none'],\n      defaultValue: {\n        summary: 'md',\n      },\n    },\n    disabled: {\n      control: 'boolean',\n    },\n    loading: {\n      control: 'boolean',\n    },\n  },\n}"
       },
       {
         "name": "meta",
@@ -69,6 +79,16 @@
         "deprecationMessage": "",
         "type": "Meta<HeaderComponent>",
         "defaultValue": "{\n  title: 'Example/Header',\n  component: HeaderComponent,\n  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs\n  tags: ['autodocs'],\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout\n    layout: 'fullscreen',\n  },\n  args: {\n    onLogin: fn(),\n    onLogout: fn(),\n    onCreateAccount: fn(),\n  },\n}"
+      },
+      {
+        "name": "meta",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "projects/ngverse/src/stories/icon-button.stories.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "Meta<ButtonStory>",
+        "defaultValue": "{\n  title: 'Example/Icon Button',\n  component: IconButtonStory,\n  tags: ['autodocs'],\n  argTypes: {\n    label: {\n      control: 'text',\n    },\n    color: {\n      control: {\n        type: 'select',\n      },\n      options: ['primary', 'secondary', 'danger', 'success', 'warning'],\n      defaultValue: {\n        summary: 'primary',\n      },\n    },\n    size: {\n      control: {\n        type: 'select',\n      },\n      options: ['sm', 'md', 'lg', 'none'],\n      defaultValue: {\n        summary: 'md',\n      },\n    },\n    disabled: {\n      control: 'boolean',\n    },\n    loading: {\n      control: 'boolean',\n    },\n  },\n}"
       },
       {
         "name": "meta",
@@ -99,6 +119,16 @@
         "deprecationMessage": "",
         "type": "Story",
         "defaultValue": "{\n  args: {\n    label: 'Button',\n  },\n}"
+      },
+      {
+        "name": "Primary",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "projects/ngverse/src/stories/icon-button.stories.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "type": "Story",
+        "defaultValue": "{\n  args: {\n    label: 'Icon Button',\n  },\n}"
       }
     ],
     "functions": [],
@@ -129,6 +159,17 @@
         "name": "Story",
         "ctype": "miscellaneous",
         "subtype": "typealias",
+        "rawtype": "StoryObj<ButtonStory>",
+        "file": "projects/ngverse/src/stories/icon-button.stories.ts",
+        "deprecated": false,
+        "deprecationMessage": "",
+        "description": "",
+        "kind": 183
+      },
+      {
+        "name": "Story",
+        "ctype": "miscellaneous",
+        "subtype": "typealias",
         "rawtype": "StoryObj<PageComponent>",
         "file": "projects/ngverse/src/stories/page.stories.ts",
         "deprecated": false,
@@ -139,6 +180,28 @@
     ],
     "enumerations": [],
     "groupedVariables": {
+      "projects/ngverse/.storybook/preview.ts": [
+        {
+          "name": "link",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "projects/ngverse/.storybook/preview.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "",
+          "defaultValue": "document.createElement('link')"
+        },
+        {
+          "name": "preview",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "projects/ngverse/.storybook/preview.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "Preview",
+          "defaultValue": "{\n  parameters: {\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n  },\n}"
+        }
+      ],
       "projects/ngverse/src/stories/header.stories.ts": [
         {
           "name": "LoggedIn",
@@ -212,7 +275,7 @@
           "deprecated": false,
           "deprecationMessage": "",
           "type": "Meta<ButtonStory>",
-          "defaultValue": "{\n  title: 'Example/Button',\n  component: ButtonStory,\n  tags: ['autodocs'],\n  argTypes: {\n    label: {\n      control: 'text',\n    },\n    variant: {\n      control: {\n        type: 'select',\n      },\n      options: ['primary', 'secondary', 'danger', 'success', 'warning'],\n      defaultValue: {\n        summary: 'primary',\n      },\n    },\n    size: {\n      control: {\n        type: 'select',\n      },\n      options: ['sm', 'md', 'lg', 'none'],\n    },\n    disabled: {\n      control: 'boolean',\n    },\n    loading: {\n      control: 'boolean',\n    },\n  },\n}"
+          "defaultValue": "{\n  title: 'Example/Button',\n  component: ButtonStory,\n  tags: ['autodocs'],\n  argTypes: {\n    label: {\n      control: 'text',\n    },\n    color: {\n      control: {\n        type: 'select',\n      },\n      options: ['primary', 'secondary', 'danger', 'success', 'warning'],\n      defaultValue: {\n        summary: 'primary',\n      },\n    },\n    size: {\n      control: {\n        type: 'select',\n      },\n      options: ['sm', 'md', 'lg', 'none'],\n      defaultValue: {\n        summary: 'md',\n      },\n    },\n    disabled: {\n      control: 'boolean',\n    },\n    loading: {\n      control: 'boolean',\n    },\n  },\n}"
         },
         {
           "name": "Primary",
@@ -225,16 +288,26 @@
           "defaultValue": "{\n  args: {\n    label: 'Button',\n  },\n}"
         }
       ],
-      "projects/ngverse/.storybook/preview.ts": [
+      "projects/ngverse/src/stories/icon-button.stories.ts": [
         {
-          "name": "preview",
+          "name": "meta",
           "ctype": "miscellaneous",
           "subtype": "variable",
-          "file": "projects/ngverse/.storybook/preview.ts",
+          "file": "projects/ngverse/src/stories/icon-button.stories.ts",
           "deprecated": false,
           "deprecationMessage": "",
-          "type": "Preview",
-          "defaultValue": "{\n  parameters: {\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n  },\n}"
+          "type": "Meta<ButtonStory>",
+          "defaultValue": "{\n  title: 'Example/Icon Button',\n  component: IconButtonStory,\n  tags: ['autodocs'],\n  argTypes: {\n    label: {\n      control: 'text',\n    },\n    color: {\n      control: {\n        type: 'select',\n      },\n      options: ['primary', 'secondary', 'danger', 'success', 'warning'],\n      defaultValue: {\n        summary: 'primary',\n      },\n    },\n    size: {\n      control: {\n        type: 'select',\n      },\n      options: ['sm', 'md', 'lg', 'none'],\n      defaultValue: {\n        summary: 'md',\n      },\n    },\n    disabled: {\n      control: 'boolean',\n    },\n    loading: {\n      control: 'boolean',\n    },\n  },\n}"
+        },
+        {
+          "name": "Primary",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "projects/ngverse/src/stories/icon-button.stories.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "Story",
+          "defaultValue": "{\n  args: {\n    label: 'Icon Button',\n  },\n}"
         }
       ]
     },
@@ -267,6 +340,19 @@
           "kind": 183
         }
       ],
+      "projects/ngverse/src/stories/icon-button.stories.ts": [
+        {
+          "name": "Story",
+          "ctype": "miscellaneous",
+          "subtype": "typealias",
+          "rawtype": "StoryObj<ButtonStory>",
+          "file": "projects/ngverse/src/stories/icon-button.stories.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "description": "",
+          "kind": 183
+        }
+      ],
       "projects/ngverse/src/stories/page.stories.ts": [
         {
           "name": "Story",
@@ -287,6 +373,16 @@
     "count": 0,
     "status": "low",
     "files": [
+      {
+        "filePath": "projects/ngverse/.storybook/preview.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "link",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
       {
         "filePath": "projects/ngverse/.storybook/preview.ts",
         "type": "variable",
@@ -359,6 +455,36 @@
       },
       {
         "filePath": "projects/ngverse/src/stories/header.stories.ts",
+        "type": "type alias",
+        "linktype": "miscellaneous",
+        "linksubtype": "typealias",
+        "name": "Story",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "projects/ngverse/src/stories/icon-button.stories.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "meta",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "projects/ngverse/src/stories/icon-button.stories.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "Primary",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "projects/ngverse/src/stories/icon-button.stories.ts",
         "type": "type alias",
         "linktype": "miscellaneous",
         "linksubtype": "typealias",

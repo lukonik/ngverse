@@ -4,6 +4,13 @@ export const UI_ROUTES: Route = {
   path: 'ui',
   children: [
     {
+      path: 'icon-button',
+      loadComponent: () =>
+        import('./pages/icon-button-page/icon-button-page.component').then(
+          (b) => b.IconButtonPageComponent
+        ),
+    },
+    {
       path: 'schematics',
       loadComponent: () =>
         import(

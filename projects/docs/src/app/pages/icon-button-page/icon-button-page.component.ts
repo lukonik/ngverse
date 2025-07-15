@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import {
   ApiInfo,
   ApiInfoComponent,
@@ -11,10 +11,11 @@ import {
   SourceTreeFolder,
 } from '../../blueprint/source-tree/source-tree-builder';
 import { SourceTreeComponent } from '../../blueprint/source-tree/source-tree.component';
-import { ShowCaseButtonComponent } from '../../examples/button/show-case-button/show-case-button.component';
-const ROOT = 'button';
+import { ShowCaseIconButtonComponent } from '../../examples/icon-button/show-case-icon-button/show-case-icon-button.component';
+const ROOT = 'icon-button';
+
 @Component({
-  selector: 'doc-button-page',
+  selector: 'doc-icon-button-page',
   imports: [
     BlueprintPageComponent,
     ShowCaseComponent,
@@ -22,12 +23,13 @@ const ROOT = 'button';
     ApiInfoComponent,
     SourceTreeComponent,
     CommandInstallationComponent,
-    ShowCaseButtonComponent,
+    ShowCaseIconButtonComponent,
   ],
-  templateUrl: './button-page.component.html',
-  styleUrl: './button-page.component.css',
+  templateUrl: './icon-button-page.component.html',
+  styleUrl: './icon-button-page.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ButtonPageComponent {
+export class IconButtonPageComponent {
   sourceTreeBuilder = inject(SourceTreeBuilder);
   sourceTree: SourceTreeFolder[] = [
     {
@@ -39,12 +41,12 @@ export class ButtonPageComponent {
 
   apiInfo: ApiInfo = {
     ariaDescription:
-      'The Button component uses the native <button> element as its host, making all accessibility features readily available.',
+      'The Icon Button component uses the native <button> element as its host, making all accessibility features readily available.',
     entities: [
       {
-        name: 'ButtonComponent',
+        name: 'IconButtonComponent',
         type: 'component',
-        selector: 'button[appButton]',
+        selector: 'button[appIconButton]',
         description:
           'appButton is used with native button element, so all native input attributes can be used',
         inputs: [
@@ -53,12 +55,6 @@ export class ButtonPageComponent {
             type: 'primary | secondary | danger | success',
             description: "Defines the button's color type",
             default: 'primary',
-          },
-          {
-            name: 'size',
-            type: 'sm | md | lg | none',
-            description: 'changes the size of the button',
-            default: 'md',
           },
           {
             name: 'disabled',

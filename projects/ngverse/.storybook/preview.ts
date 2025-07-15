@@ -15,3 +15,8 @@ const preview: Preview = {
 };
 
 export default preview;
+const link = document.createElement('link');
+link.href =
+  'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@0;1';
+link.rel = 'stylesheet';
+document.head.appendChild(link);
