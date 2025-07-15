@@ -7,11 +7,16 @@ import {
 } from '@angular/core';
 import { ButtonLoaderComponent } from './button-loader.component';
 
-type COLOR_TYPES = 'primary' | 'secondary' | 'danger' | 'success' | 'none';
+export type BUTTON_COLOR_TYPES =
+  | 'primary'
+  | 'secondary'
+  | 'danger'
+  | 'success'
+  | 'none';
 
-type VARIANT_TYPES = 'fill' | 'outline' | 'link' | 'none';
+export type BUTTON_VARIANT_TYPES = 'fill' | 'outline' | 'link' | 'none';
 
-type SIZE_TYPES = 'sm' | 'md' | 'lg' | 'none';
+export type BUTTON_SIZE_TYPES = 'sm' | 'md' | 'lg' | 'none';
 
 @Component({
   // eslint-disable-next-line @angular-eslint/component-selector
@@ -28,13 +33,13 @@ type SIZE_TYPES = 'sm' | 'md' | 'lg' | 'none';
   },
 })
 export class ButtonComponent {
-  color = input<COLOR_TYPES>('primary');
+  color = input<BUTTON_COLOR_TYPES>('primary');
 
-  variant = input<VARIANT_TYPES>('fill');
+  variant = input<BUTTON_VARIANT_TYPES>('fill');
 
   disabled = input<boolean>();
 
-  size = input<SIZE_TYPES>('md');
+  size = input<BUTTON_SIZE_TYPES>('md');
 
   icon = input(undefined, { transform: booleanAttribute });
 

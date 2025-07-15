@@ -172,7 +172,8 @@
             "browserTarget": "ngverse:build",
             "compodoc": true,
             "compodocArgs": ["-e", "json", "-d", "projects/ngverse"],
-            "port": 6006
+            "port": 6006,
+            "styles": ["projects/ngverse/src/lib/ngverse.css"]
           }
         },
         "build-storybook": {

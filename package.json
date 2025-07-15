@@ -22,7 +22,8 @@
     "build:ngverse": "ng build --project=ngverse && cd projects/ngverse && npm run build",
     "build:docs": "ng build --project=docs",
     "check:docs": "npm run build:docs && ng lint docs && npm run format:check",
-    "check:ngverse": "ng lint ngverse && npm run format:check && ng test --no-watch --no-progress --browsers=ChromeHeadless --project=ngverse && ng build --project=ngverse && cd projects/ngverse && npm run build"
+    "check:ngverse": "ng lint ngverse && npm run format:check && ng test --no-watch --no-progress --browsers=ChromeHeadless --project=ngverse && ng build --project=ngverse && cd projects/ngverse && npm run build",
+    "storybook": "ng run ngverse:storybook"
   },
   "lint-staged": {
     "**/*.{html,ts,json,css,md}": "prettier --write"

@@ -11,16 +11,6 @@
   "miscellaneous": {
     "variables": [
       {
-        "name": "Large",
-        "ctype": "miscellaneous",
-        "subtype": "variable",
-        "file": "projects/ngverse/src/stories/button.stories.ts",
-        "deprecated": false,
-        "deprecationMessage": "",
-        "type": "Story",
-        "defaultValue": "{\n  args: {\n    size: 'large',\n    label: 'Button',\n  },\n}"
-      },
-      {
         "name": "LoggedIn",
         "ctype": "miscellaneous",
         "subtype": "variable",
@@ -67,8 +57,8 @@
         "file": "projects/ngverse/src/stories/button.stories.ts",
         "deprecated": false,
         "deprecationMessage": "",
-        "type": "Meta<ButtonComponent>",
-        "defaultValue": "{\n  title: 'Example/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  },\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args\n  args: { onClick: fn() },\n}"
+        "type": "Meta<ButtonStory>",
+        "defaultValue": "{\n  title: 'Example/Button',\n  component: ButtonStory,\n  tags: ['autodocs'],\n  argTypes: {\n    label: {\n      control: 'text',\n    },\n    variant: {\n      control: {\n        type: 'select',\n        options: ['fill', 'outline', 'link', 'none'],\n      },\n    },\n    size: {\n      control: {\n        type: 'select',\n        options: ['sm', 'md', 'lg', 'none'],\n      },\n    },\n    disabled: {\n      control: 'boolean',\n    },\n    loading: {\n      control: 'boolean',\n    },\n  },\n}"
       },
       {
         "name": "meta",
@@ -98,7 +88,7 @@
         "deprecated": false,
         "deprecationMessage": "",
         "type": "Preview",
-        "defaultValue": "{\n  parameters: {\n    controls: {\n      matchers: {\n       color: /(background|color)$/i,\n       date: /Date$/i,\n      },\n    },\n  },\n}"
+        "defaultValue": "{\n  parameters: {\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n  },\n}"
       },
       {
         "name": "Primary",
@@ -108,27 +98,7 @@
         "deprecated": false,
         "deprecationMessage": "",
         "type": "Story",
-        "defaultValue": "{\n  args: {\n    primary: true,\n    label: 'Button',\n  },\n}"
-      },
-      {
-        "name": "Secondary",
-        "ctype": "miscellaneous",
-        "subtype": "variable",
-        "file": "projects/ngverse/src/stories/button.stories.ts",
-        "deprecated": false,
-        "deprecationMessage": "",
-        "type": "Story",
         "defaultValue": "{\n  args: {\n    label: 'Button',\n  },\n}"
-      },
-      {
-        "name": "Small",
-        "ctype": "miscellaneous",
-        "subtype": "variable",
-        "file": "projects/ngverse/src/stories/button.stories.ts",
-        "deprecated": false,
-        "deprecationMessage": "",
-        "type": "Story",
-        "defaultValue": "{\n  args: {\n    size: 'small',\n    label: 'Button',\n  },\n}"
       }
     ],
     "functions": [],
@@ -137,7 +107,7 @@
         "name": "Story",
         "ctype": "miscellaneous",
         "subtype": "typealias",
-        "rawtype": "StoryObj<ButtonComponent>",
+        "rawtype": "StoryObj<ButtonStory>",
         "file": "projects/ngverse/src/stories/button.stories.ts",
         "deprecated": false,
         "deprecationMessage": "",
@@ -169,58 +139,6 @@
     ],
     "enumerations": [],
     "groupedVariables": {
-      "projects/ngverse/src/stories/button.stories.ts": [
-        {
-          "name": "Large",
-          "ctype": "miscellaneous",
-          "subtype": "variable",
-          "file": "projects/ngverse/src/stories/button.stories.ts",
-          "deprecated": false,
-          "deprecationMessage": "",
-          "type": "Story",
-          "defaultValue": "{\n  args: {\n    size: 'large',\n    label: 'Button',\n  },\n}"
-        },
-        {
-          "name": "meta",
-          "ctype": "miscellaneous",
-          "subtype": "variable",
-          "file": "projects/ngverse/src/stories/button.stories.ts",
-          "deprecated": false,
-          "deprecationMessage": "",
-          "type": "Meta<ButtonComponent>",
-          "defaultValue": "{\n  title: 'Example/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  },\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args\n  args: { onClick: fn() },\n}"
-        },
-        {
-          "name": "Primary",
-          "ctype": "miscellaneous",
-          "subtype": "variable",
-          "file": "projects/ngverse/src/stories/button.stories.ts",
-          "deprecated": false,
-          "deprecationMessage": "",
-          "type": "Story",
-          "defaultValue": "{\n  args: {\n    primary: true,\n    label: 'Button',\n  },\n}"
-        },
-        {
-          "name": "Secondary",
-          "ctype": "miscellaneous",
-          "subtype": "variable",
-          "file": "projects/ngverse/src/stories/button.stories.ts",
-          "deprecated": false,
-          "deprecationMessage": "",
-          "type": "Story",
-          "defaultValue": "{\n  args: {\n    label: 'Button',\n  },\n}"
-        },
-        {
-          "name": "Small",
-          "ctype": "miscellaneous",
-          "subtype": "variable",
-          "file": "projects/ngverse/src/stories/button.stories.ts",
-          "deprecated": false,
-          "deprecationMessage": "",
-          "type": "Story",
-          "defaultValue": "{\n  args: {\n    size: 'small',\n    label: 'Button',\n  },\n}"
-        }
-      ],
       "projects/ngverse/src/stories/header.stories.ts": [
         {
           "name": "LoggedIn",
@@ -285,6 +203,28 @@
           "defaultValue": "{\n  title: 'Example/Page',\n  component: PageComponent,\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout\n    layout: 'fullscreen',\n  },\n}"
         }
       ],
+      "projects/ngverse/src/stories/button.stories.ts": [
+        {
+          "name": "meta",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "projects/ngverse/src/stories/button.stories.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "Meta<ButtonStory>",
+          "defaultValue": "{\n  title: 'Example/Button',\n  component: ButtonStory,\n  tags: ['autodocs'],\n  argTypes: {\n    label: {\n      control: 'text',\n    },\n    variant: {\n      control: {\n        type: 'select',\n        options: ['fill', 'outline', 'link', 'none'],\n      },\n    },\n    size: {\n      control: {\n        type: 'select',\n        options: ['sm', 'md', 'lg', 'none'],\n      },\n    },\n    disabled: {\n      control: 'boolean',\n    },\n    loading: {\n      control: 'boolean',\n    },\n  },\n}"
+        },
+        {
+          "name": "Primary",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "projects/ngverse/src/stories/button.stories.ts",
+          "deprecated": false,
+          "deprecationMessage": "",
+          "type": "Story",
+          "defaultValue": "{\n  args: {\n    label: 'Button',\n  },\n}"
+        }
+      ],
       "projects/ngverse/.storybook/preview.ts": [
         {
           "name": "preview",
@@ -294,7 +234,7 @@
           "deprecated": false,
           "deprecationMessage": "",
           "type": "Preview",
-          "defaultValue": "{\n  parameters: {\n    controls: {\n      matchers: {\n       color: /(background|color)$/i,\n       date: /Date$/i,\n      },\n    },\n  },\n}"
+          "defaultValue": "{\n  parameters: {\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n  },\n}"
         }
       ]
     },
@@ -306,7 +246,7 @@
           "name": "Story",
           "ctype": "miscellaneous",
           "subtype": "typealias",
-          "rawtype": "StoryObj<ButtonComponent>",
+          "rawtype": "StoryObj<ButtonStory>",
           "file": "projects/ngverse/src/stories/button.stories.ts",
           "deprecated": false,
           "deprecationMessage": "",
@@ -362,16 +302,6 @@
         "type": "variable",
         "linktype": "miscellaneous",
         "linksubtype": "variable",
-        "name": "Large",
-        "coveragePercent": 0,
-        "coverageCount": "0/1",
-        "status": "low"
-      },
-      {
-        "filePath": "projects/ngverse/src/stories/button.stories.ts",
-        "type": "variable",
-        "linktype": "miscellaneous",
-        "linksubtype": "variable",
         "name": "meta",
         "coveragePercent": 0,
         "coverageCount": "0/1",
@@ -383,26 +313,6 @@
         "linktype": "miscellaneous",
         "linksubtype": "variable",
         "name": "Primary",
-        "coveragePercent": 0,
-        "coverageCount": "0/1",
-        "status": "low"
-      },
-      {
-        "filePath": "projects/ngverse/src/stories/button.stories.ts",
-        "type": "variable",
-        "linktype": "miscellaneous",
-        "linksubtype": "variable",
-        "name": "Secondary",
-        "coveragePercent": 0,
-        "coverageCount": "0/1",
-        "status": "low"
-      },
-      {
-        "filePath": "projects/ngverse/src/stories/button.stories.ts",
-        "type": "variable",
-        "linktype": "miscellaneous",
-        "linksubtype": "variable",
-        "name": "Small",
         "coveragePercent": 0,
         "coverageCount": "0/1",
         "status": "low"
