@@ -1,20 +1,16 @@
 import {
-  booleanAttribute,
   ChangeDetectionStrategy,
   Component,
   computed,
   input,
 } from '@angular/core';
-import { ButtonLoaderComponent } from './button-loader.component';
 
 export type BUTTON_COLOR_TYPES =
   | 'primary'
   | 'secondary'
   | 'danger'
   | 'success'
-  | 'none';
-
-export type BUTTON_VARIANT_TYPES = 'fill' | 'outline' | 'link' | 'none';
+  | 'warning';
 
 export type BUTTON_SIZE_TYPES = 'sm' | 'md' | 'lg' | 'none';
 
@@ -23,33 +19,23 @@ export type BUTTON_SIZE_TYPES = 'sm' | 'md' | 'lg' | 'none';
   selector: 'button[appButton]',
   templateUrl: './button.component.html',
   styleUrl: './button.component.css',
-  imports: [ButtonLoaderComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     '[class]': 'classNames()',
     '[class.btn-loading]': 'loading()',
     '[disabled]': 'disabled()',
-    '[class.icon]': 'icon()',
   },
 })
 export class ButtonComponent {
   color = input<BUTTON_COLOR_TYPES>('primary');
 
-  variant = input<BUTTON_VARIANT_TYPES>('fill');
-
   disabled = input<boolean>();
 
-  size = input<BUTTON_SIZE_TYPES>('md');
-
-  icon = input(undefined, { transform: booleanAttribute });
+  size = input<BUTTON_SIZE_TYPES>();
 
   loading = input<boolean>();
 
   classNames = computed(() => {
-    return [
-      `btn-${this.variant()}`,
-      `btn-${this.color()}`,
-      `btn-${this.size()}`,
-    ];
+    return [`btn-${this.size()}`, `btn-${this.color()}`];
   });
 }

@@ -8,11 +8,10 @@ import { Component, input } from '@angular/core';
   imports: [CommonModule, ButtonComponent],
   template: ` <button
     appButton
-    [variant]="variant()"
     [size]="size()"
+    [color]="color()"
     [disabled]="disabled()"
     [loading]="loading()"
-    [icon]="icon()"
   >
     {{ label() }}
   </button>`,

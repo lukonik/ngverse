@@ -49,13 +49,6 @@ describe('ButtonComponent', () => {
     expect(buttonRootElement.hasAttribute('disabled')).toBeTrue();
   });
 
-  it('should add outline class on variant type change', async () => {
-    rootComponent.variant.set('outline');
-    await fixture.whenStable();
-    expect(
-      buttonRootElement.classList.contains(getClassName('outline'))
-    ).toBeTrue();
-  });
   it('should add proper color type', async () => {
     rootComponent.color.set('secondary');
     await fixture.whenStable();
@@ -92,7 +85,6 @@ describe('ButtonComponent', () => {
   template: `<button
     appButton
     [color]="color()"
-    [variant]="variant()"
     [disabled]="disabled()"
     [type]="type()"
     [loading]="loading()"
@@ -104,7 +96,6 @@ describe('ButtonComponent', () => {
 })
 class ButtonTestComponent {
   disabled = signal<boolean>(false);
-  variant = signal<string | undefined>('fill');
   color = signal<string | undefined>('primary');
   type = signal<string>('button');
   loading = signal(false);

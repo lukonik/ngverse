@@ -1,151 +1,143 @@
+@import 'tailwindcss';
+
 :host {
   /** General styles **/
 
   background: transparent;
+  border-width: 1px;
+  border-style: solid;
   font-size: 1rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
+  --spinner-color: var(--color-white);
 
-  --button-color: var(--color-background);
-  --button-on-color: var(--color-foreground);
   border-radius: 6px;
-  border: var(--border);
   position: relative;
   cursor: pointer;
   font-weight: 600;
 
-  &.icon {
-    border-radius: 100%;
+  &.btn-sm {
+    height: 32px;
+    padding-left: 14px;
+    padding-right: 14px;
   }
 
-  /** General ends here **/
-  /** Variant styles **/
-
-  &.btn-fill {
-    background-color: var(--button-color);
-    color: var(--button-on-color);
-    --spinner-color: var(--button-on-color);
+  &.btn-md {
+    height: 38px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  &.btn-lg {
+    height: 48px;
+    padding-left: 18px;
+    padding-right: 18px;
   }
 
-  &.btn-outline {
-    border: 1px solid var(--button-color);
-    color: var(--button-color);
-    --spinner-color: var(--button-color);
-  }
-
-  &.btn-link {
-    color: var(--button-color);
-    --spinner-color: var(--button-color);
-    border: 0;
-  }
-
-  /** Variant ends here ** /
-
-/** Color styles **/
   &.btn-primary {
-    --button-color: var(--color-primary);
-    --button-on-color: var(--color-primary-foreground);
+    background: var(--color-neutral-900);
+    color: var(--color-white);
+    &:hover {
+      background-color: var(--color-neutral-700);
+    }
+    &:active {
+      background-color: var(--color-neutral-800);
+    }
+    &:disabled {
+      background-color: var(--color-neutral-500);
+      color: var(--color-neutral-300);
+    }
   }
 
   &.btn-secondary {
-    --button-color: var(--color-secondary);
-    --button-on-color: var(--color-secondary-foreground);
+    color: var(--color-neutral-900);
+    border-color: var(--color-neutral-900);
+
+    &:hover {
+      background-color: var(--color-neutral-100);
+    }
+    &:active {
+      background-color: var(--color-neutral-200);
+    }
+    &:disabled {
+      border-color: var(--color-neutral-300);
+      color: var(--color-neutral-300);
+    }
+    --spinner-color: var(--color-neutral-900);
   }
 
   &.btn-danger {
-    --button-color: var(--color-danger);
-    --button-on-color: var(--color-danger-foreground);
-  }
+    background: var(--color-red-600);
+    color: var(--color-white);
 
-  &.btn-warning {
-    --button-color: var(--color-warning);
-    --button-on-color: var(--color-warning-foreground);
+    &:hover {
+      background-color: var(--color-red-700);
+    }
+    &:active {
+      background-color: var(--color-red-800);
+    }
+    &:disabled {
+      background-color: var(--color-red-300);
+      color: var(--color-red-100);
+    }
   }
 
   &.btn-success {
-    --button-color: var(--color-success);
-    --button-on-color: var(--color-success-foreground);
-  }
-  /** Color ends here **/
+    background: var(--color-green-600);
+    color: var(--color-white);
 
-  /** State styles **/
-
-  &:focus {
-    outline: none;
-  }
-
-  &:focus-visible {
-    outline: 1px solid var(--color-ring);
-  }
-
-  &:hover:not(:disabled) {
-    &.btn-fill {
-      background-color: var(--button-color);
-      color: var(--button-on-color);
-      --spinner-color: var(--button-on-color);
+    &:hover {
+      background-color: var(--color-green-700);
     }
-    &.btn-outline,
-    &.btn-link {
-      background-color: var(--color-accent);
-      color: var(--color-accent-foreground);
+    &:active {
+      background-color: var(--color-green-800);
+    }
+    &:disabled {
+      background-color: var(--color-green-300);
+      color: var(--color-green-100);
     }
   }
-  &:active {
-    opacity: 0.7;
-  }
 
-  &:disabled {
-    &:not(.btn-link) {
-      background-color: var(--color-disabled);
+  &.btn-warning {
+    background: var(--color-amber-600);
+    color: var(--color-white);
+
+    &:hover {
+      background-color: var(--color-amber-700);
     }
-    color: var(--color-disabled-foreground);
-    cursor: default;
+    &:active {
+      background-color: var(--color-amber-800);
+    }
+    &:disabled {
+      background-color: var(--color-amber-100);
+      color: var(--color-amber-200);
+    }
   }
-
   &.btn-loading {
     pointer-events: none;
     color: transparent;
   }
 
-  /** State ends here **/
-
-  /** Size styles **/
-
-  &:not(.icon) {
-    &.btn-sm {
-      height: 32px;
-      padding-left: 14px;
-      padding-right: 14px;
-    }
-
-    &.btn-md {
-      height: 38px;
-      padding-left: 16px;
-      padding-right: 16px;
-    }
-    &.btn-lg {
-      height: 48px;
-      padding-left: 18px;
-      padding-right: 18px;
-    }
-  }
-  &.icon {
-    &.btn-sm {
-      height: 32px;
-      width: 32px;
-    }
-
-    &.btn-md {
-      height: 38px;
-      width: 38px;
-    }
-    &.btn-lg {
-      height: 48px;
-      width: 48px;
-    }
+  .button-loader {
+    @apply pointer-events-none absolute top-0 right-0 bottom-0 left-0 flex h-full w-full items-center justify-center;
   }
 
-  /** Size ends here **/
+  .spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid var(--spinner-color, white);
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    animation: rotation 1s linear infinite;
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

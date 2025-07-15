@@ -58,7 +58,7 @@
         "deprecated": false,
         "deprecationMessage": "",
         "type": "Meta<ButtonStory>",
-        "defaultValue": "{\n  title: 'Example/Button',\n  component: ButtonStory,\n  tags: ['autodocs'],\n  argTypes: {\n    label: {\n      control: 'text',\n    },\n    variant: {\n      control: {\n        type: 'select',\n        options: ['fill', 'outline', 'link', 'none'],\n      },\n    },\n    size: {\n      control: {\n        type: 'select',\n        options: ['sm', 'md', 'lg', 'none'],\n      },\n    },\n    disabled: {\n      control: 'boolean',\n    },\n    loading: {\n      control: 'boolean',\n    },\n  },\n}"
+        "defaultValue": "{\n  title: 'Example/Button',\n  component: ButtonStory,\n  tags: ['autodocs'],\n  argTypes: {\n    label: {\n      control: 'text',\n    },\n    variant: {\n      control: {\n        type: 'select',\n      },\n      options: ['primary', 'secondary', 'danger', 'success', 'warning'],\n      defaultValue: {\n        summary: 'primary',\n      },\n    },\n    size: {\n      control: {\n        type: 'select',\n      },\n      options: ['sm', 'md', 'lg', 'none'],\n    },\n    disabled: {\n      control: 'boolean',\n    },\n    loading: {\n      control: 'boolean',\n    },\n  },\n}"
       },
       {
         "name": "meta",
@@ -212,7 +212,7 @@
           "deprecated": false,
           "deprecationMessage": "",
           "type": "Meta<ButtonStory>",
-          "defaultValue": "{\n  title: 'Example/Button',\n  component: ButtonStory,\n  tags: ['autodocs'],\n  argTypes: {\n    label: {\n      control: 'text',\n    },\n    variant: {\n      control: {\n        type: 'select',\n        options: ['fill', 'outline', 'link', 'none'],\n      },\n    },\n    size: {\n      control: {\n        type: 'select',\n        options: ['sm', 'md', 'lg', 'none'],\n      },\n    },\n    disabled: {\n      control: 'boolean',\n    },\n    loading: {\n      control: 'boolean',\n    },\n  },\n}"
+          "defaultValue": "{\n  title: 'Example/Button',\n  component: ButtonStory,\n  tags: ['autodocs'],\n  argTypes: {\n    label: {\n      control: 'text',\n    },\n    variant: {\n      control: {\n        type: 'select',\n      },\n      options: ['primary', 'secondary', 'danger', 'success', 'warning'],\n      defaultValue: {\n        summary: 'primary',\n      },\n    },\n    size: {\n      control: {\n        type: 'select',\n      },\n      options: ['sm', 'md', 'lg', 'none'],\n    },\n    disabled: {\n      control: 'boolean',\n    },\n    loading: {\n      control: 'boolean',\n    },\n  },\n}"
         },
         {
           "name": "Primary",

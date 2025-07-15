@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 
-import { ButtonStory } from './button.component';
+import { ButtonStory } from './button-story';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta: Meta<ButtonStory> = {
@@ -11,17 +11,23 @@ const meta: Meta<ButtonStory> = {
     label: {
       control: 'text',
     },
-    variant: {
+    color: {
       control: {
         type: 'select',
       },
-      options: ['fill', 'outline', 'link', 'none'],
+      options: ['primary', 'secondary', 'danger', 'success', 'warning'],
+      defaultValue: {
+        summary: 'primary',
+      },
     },
     size: {
       control: {
         type: 'select',
       },
       options: ['sm', 'md', 'lg', 'none'],
+      defaultValue: {
+        summary: 'md',
+      },
     },
     disabled: {
       control: 'boolean',

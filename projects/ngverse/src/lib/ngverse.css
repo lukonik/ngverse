@@ -1,3 +1,7 @@
+@import 'tailwindcss';
+@plugin "@tailwindcss/typography";
+@import '@angular/cdk/overlay-prebuilt.css';
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme static {
