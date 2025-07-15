@@ -3,6 +3,14 @@ const tseslint = require('typescript-eslint');
 const rootConfig = require('../../eslint.config.js');
 
 module.exports = tseslint.config(
+  {
+    ignores: [
+      './.storybook/**',
+      '**/.storybook/**',
+      './src/stories/**',
+      '**/src/stories/**',
+    ],
+  },
   ...rootConfig,
   {
     files: ['**/*.ts'],

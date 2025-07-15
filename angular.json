@@ -164,6 +164,26 @@
             ],
             "eslintConfig": "projects/ngverse/eslint.config.js"
           }
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "configDir": "projects/ngverse/.storybook",
+            "browserTarget": "ngverse:build",
+            "compodoc": true,
+            "compodocArgs": ["-e", "json", "-d", "projects/ngverse"],
+            "port": 6006
+          }
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "configDir": "projects/ngverse/.storybook",
+            "browserTarget": "ngverse:build",
+            "compodoc": true,
+            "compodocArgs": ["-e", "json", "-d", "projects/ngverse"],
+            "outputDir": "dist/storybook/ngverse"
+          }
         }
       }
     }
