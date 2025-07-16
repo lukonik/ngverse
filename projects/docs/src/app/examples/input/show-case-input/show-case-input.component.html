@@ -15,9 +15,9 @@
     name="password"
   />
   <div class="age-container">
-    <app-checkbox labelAlign="start" name="age" [(ngModel)]="age"
-      >Age</app-checkbox
+    <app-checkbox labelAlign="start" name="disabled" [(ngModel)]="disabled"
+      >Disabled</app-checkbox
     >
-    <input appInput placeholder="Age" type="number" [disabled]="!age()" />
+    <input appInput placeholder="Age" type="number" [disabled]="disabled()" />
   </div>
 </form>

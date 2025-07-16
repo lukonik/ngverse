@@ -39,7 +39,6 @@ export class InputPageComponent {
   ];
 
   apiInfo: ApiInfo = {
-    stylesInGlobal: true,
     ariaDescription:
       'The Input directive uses the native <input> element as its host, making all accessibility features readily available.',
     entities: [

@@ -1,35 +1,31 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 
-import { IconButtonStory } from './icon-button-story';
+import { InputDirective } from '@/ui/input/input.directive';
+import { InputStory } from './input-story';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
-const meta: Meta<IconButtonStory> = {
-  title: 'Example/Icon Button',
-  component: IconButtonStory,
+const meta: Meta<InputStory> = {
+  title: 'Example/Input',
+  component: InputDirective,
   tags: ['autodocs'],
   argTypes: {
-    color: {
-      control: {
-        type: 'select',
-      },
-      options: ['primary', 'secondary', 'danger', 'success', 'warning'],
-      defaultValue: {
-        summary: 'primary',
-      },
-    },
     disabled: {
       control: 'boolean',
     },
-    loading: {
+    readonly: {
       control: 'boolean',
     },
   },
 };
 
 export default meta;
-type Story = StoryObj<IconButtonStory>;
+type Story = StoryObj<InputDirective>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {},
+  render: (args) => ({
+    props: args,
+    template: `<input appInput [disabled]="disabled" [readonly]="readonly" id="input" />`,
+  }),
 };

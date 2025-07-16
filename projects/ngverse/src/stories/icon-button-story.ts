@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'storybook-button',
+  selector: 'storybook-icon-button',
   standalone: true,
   imports: [CommonModule, IconButtonComponent, FontIconComponent],
   template: ` <button
