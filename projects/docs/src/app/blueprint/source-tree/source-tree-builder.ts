@@ -74,21 +74,21 @@ export class SourceTreeBuilder {
       this.component(name, rootPath, 'ts'),
       this.component(name, rootPath, 'html'),
       this.component(name, rootPath, 'css'),
-      this.component(name, rootPath, 'spec.ts'),
+      // this.component(name, rootPath, 'spec.ts'),
     ];
   }
 
   service(name: string, rootPath: string) {
     return [
       this.file(`${name}.service`, rootPath, 'ts'),
-      this.file(`${name}.service`, rootPath, 'spec.ts'),
+      // this.file(`${name}.service`, rootPath, 'spec.ts'),
     ];
   }
 
   fullInlineComponent(name: string, rootPath: string): SourceTreeFile[] {
     return [
       this.component(name, rootPath, 'ts'),
-      this.component(name, rootPath, 'spec.ts'),
+      // this.component(name, rootPath, 'spec.ts'),
     ];
   }
 
@@ -96,7 +96,7 @@ export class SourceTreeBuilder {
     return [
       this.component(name, rootPath, 'ts'),
       this.component(name, rootPath, 'css'),
-      this.component(name, rootPath, 'spec.ts'),
+      // this.component(name, rootPath, 'spec.ts'),
     ];
   }
 

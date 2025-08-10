@@ -1,28 +1,24 @@
 <h3 role="heading">
   <button
-    class="peer flex w-full cursor-pointer items-center focus-visible:outline-1 focus-visible:outline-offset-4 focus-visible:outline-ring disabled:text-disabled-foreground aria-expanded:font-medium"
-    (click)="toggle()"
-    [disabled]="disabled"
-    [attr.aria-expanded]="expanded"
-    [id]="accordionTriggerId"
-    [attr.aria-controls]="accordionBodyId"
+    class="peer flex w-full cursor-pointer items-center data-open:font-medium"
+    ngpAccordionTrigger
+    ngpButton
   >
-    {{ label() }}
     <ng-content select="app-accordion-header"></ng-content>
-    <app-font-icon
-      [class.rotate-180]="expanded"
+    <!--Expand icon-->
+    <svg
+      [class.rotate-180]="ngpAccordionItem.open()"
       class="ml-auto transition-transform"
-      >keyboard_arrow_down</app-font-icon
+      xmlns="http://www.w3.org/2000/svg"
+      height="24px"
+      viewBox="0 -960 960 960"
+      width="24px"
+      fill="#1f1f1f"
     >
+      <path d="M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z" />
+    </svg>
   </button>
 </h3>
-@if (expanded) {
-  <div
-    role="region"
-    [id]="accordionBodyId"
-    [attr.aria-labelledby]="accordionTriggerId"
-    class="mt-3 px-1.5"
-  >
-    <ng-content select="app-accordion-body"></ng-content>
-  </div>
-}
+<div ngpAccordionContent class="overflow-hidden">
+  <ng-content select="app-accordion-content"></ng-content>
+</div>

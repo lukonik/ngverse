@@ -11,7 +11,7 @@ export function ui(options: Schema) {
 
     // Copy element files from the library to the application
     elementDir.visit((filePath) => {
-      if (!options.includeTests && filePath.endsWith('.spec.ts')) {
+      if (filePath.endsWith('.spec.ts')) {
         return;
       }
       let content = host.read(filePath)?.toString('utf-8');

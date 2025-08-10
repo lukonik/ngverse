@@ -1,4 +1,5 @@
-import { AccordionBodyComponent } from '@/ui/accordion/accordion-body.component';
+import { AccordionContentComponent } from '@/ui/accordion/accordion-content.component';
+import { AccordionHeaderComponent } from '@/ui/accordion/accordion-item-header.component';
 import { AccordionItemComponent } from '@/ui/accordion/accordion-item.component';
 import { AccordionComponent } from '@/ui/accordion/accordion.component';
 import { ButtonComponent } from '@/ui/button/button.component';
@@ -29,11 +30,12 @@ import { HomePageCardComponent } from './home-page-card/home-page-card.component
     HomePageCardComponent,
     OtpInputComponent,
     AccordionComponent,
-    AccordionBodyComponent,
+    AccordionContentComponent,
     AccordionItemComponent,
     TabComponent,
     TabGroupComponent,
     SkeletonComponent,
+    AccordionHeaderComponent,
   ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css',

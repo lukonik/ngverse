@@ -1,25 +1,30 @@
-import { FontIconComponent } from '@/ui/font-icon/font-icon.component';
-import { _IdGenerator } from '@angular/cdk/a11y';
-import { CdkAccordionItem } from '@angular/cdk/accordion';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import {
-  ChangeDetectionStrategy,
-  Component,
-  inject,
-  input,
-} from '@angular/core';
-
+  NgpAccordionContent,
+  NgpAccordionItem,
+  NgpAccordionTrigger,
+} from 'ng-primitives/accordion';
+import { NgpButton } from 'ng-primitives/button';
 @Component({
   selector: 'app-accordion-item',
-  imports: [FontIconComponent],
+  imports: [NgpAccordionTrigger, NgpAccordionContent, NgpButton],
   templateUrl: './accordion-item.component.html',
   styleUrl: './accordion-item.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    class: 'block mb-3 pb-3 border-b border-divider',
+    class:
+      'block mb-3 pb-3 border-b border-b border-gray-300 data-disabled:opacity-50',
   },
+  hostDirectives: [
+    {
+      directive: NgpAccordionItem,
+      inputs: [
+        'ngpAccordionItemValue:value',
+        'ngpAccordionItemDisabled:disabled',
+      ],
+    },
+  ],
 })
-export class AccordionItemComponent extends CdkAccordionItem {
-  label = input<string>();
-  accordionBodyId = inject(_IdGenerator).getId('accordion-item-body-');
-  accordionTriggerId = inject(_IdGenerator).getId('accordion-item-trigger-');
+export class AccordionItemComponent {
+  ngpAccordionItem = inject(NgpAccordionItem);
 }

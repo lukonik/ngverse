@@ -36,18 +36,22 @@
         <app-otp-input></app-otp-input>
       </doc-home-page-card>
       <doc-home-page-card label="Accordion" link="/doc/ui/accordion">
-        <app-accordion [multi]="true" class="w-full">
-          <app-accordion-item [label]="'Do dogs see in color?'">
-            <app-accordion-body
+        <app-accordion class="w-full">
+          <app-accordion-item>
+            <app-accordion-header> Do dogs see in color? </app-accordion-header>
+            <app-accordion-content
               >Yes, but not like humans. Dogs see a limited range of colors,
               mostly shades of blue and yellow.
-            </app-accordion-body>
+            </app-accordion-content>
           </app-accordion-item>
-          <app-accordion-item [label]="'Can parrots really talk?'">
-            <app-accordion-body
+          <app-accordion-item>
+            <app-accordion-header>
+              Can parrots really talk?
+            </app-accordion-header>
+            <app-accordion-content
               >Parrots can mimic human speech and sounds, especially when
               trained and exposed to repeated words.
-            </app-accordion-body>
+            </app-accordion-content>
           </app-accordion-item>
         </app-accordion>
       </doc-home-page-card>

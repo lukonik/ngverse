@@ -47,6 +47,11 @@
                   class="px-6 py-4 font-medium whitespace-nowrap text-gray-900 dark:text-white"
                 >
                   {{ apiInput.name }}
+                  @if (apiInput.alias) {
+                    <span class="text-xs text-gray-500 italic"
+                      >({{ apiInput.alias }})</span
+                    >
+                  }
                 </th>
                 <td class="px-6 py-4">{{ apiInput.type }}</td>
                 <td class="px-6 py-4">{{ apiInput.default }}</td>
@@ -124,7 +129,7 @@
     }
     @if (apiInput.methods?.length) {
       <p class="mb-2 text-sm">Methods</p>
-      <app-accordion [multi]="true">
+      <app-accordion>
         @for (method of apiInput.methods; track $index) {
           <app-accordion-item>
             <app-accordion-header>
@@ -134,7 +139,7 @@
                 >({{ method.description }})</span
               >
             </app-accordion-header>
-            <app-accordion-body>
+            <app-accordion-content>
               <p>
                 Returns: {{ method.returnType }}
                 @if (method.returnDescription) {
@@ -182,7 +187,7 @@
                   }
                 </ul>
               }
-            </app-accordion-body>
+            </app-accordion-content>
           </app-accordion-item>
         }
       </app-accordion>

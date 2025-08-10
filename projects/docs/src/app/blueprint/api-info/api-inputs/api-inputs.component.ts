@@ -1,5 +1,5 @@
-import { AccordionBodyComponent } from '@/ui/accordion/accordion-body.component';
-import { AccordionHeaderComponent } from '@/ui/accordion/accordion-header.component';
+import { AccordionContentComponent } from '@/ui/accordion/accordion-content.component';
+import { AccordionHeaderComponent } from '@/ui/accordion/accordion-item-header.component';
 import { AccordionItemComponent } from '@/ui/accordion/accordion-item.component';
 import { AccordionComponent } from '@/ui/accordion/accordion.component';
 import { CardComponent } from '@/ui/card/card.component';
@@ -16,6 +16,7 @@ export interface ApiInputType {
   type: string;
   description: string;
   default?: string;
+  alias?: string;
 }
 
 interface ApiMethodParam {
@@ -77,7 +78,7 @@ export interface ApiEntity {
     NgClass,
     AccordionComponent,
     AccordionItemComponent,
-    AccordionBodyComponent,
+    AccordionContentComponent,
     AccordionHeaderComponent,
     CardComponent,
   ],

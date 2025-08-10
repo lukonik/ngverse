@@ -1,8 +1,14 @@
 <div class="show-case">
-  <app-accordion [multi]="true">
+  <app-accordion [type]="'single'" [collapsible]="true">
     @for (item of items; track $index) {
-      <app-accordion-item [label]="item.title" [expanded]="$index === 0">
-        <app-accordion-body>{{ item.description }}</app-accordion-body>
+      <app-accordion-item [disabled]="$index === 1">
+        <app-accordion-header>
+          {{ item.title }}
+          @if ($index === 1) {
+            (disabled)
+          }
+        </app-accordion-header>
+        <app-accordion-content>{{ item.description }}</app-accordion-content>
       </app-accordion-item>
     }
   </app-accordion>
