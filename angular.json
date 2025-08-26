@@ -119,6 +119,12 @@
             ],
             "eslintConfig": "projects/docs/eslint.config.js"
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "buildTarget": "docs:build:production"
+          }
         }
       }
     },
