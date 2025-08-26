@@ -15,7 +15,7 @@ NgVerse is an Angular workspace containing two main projects:
 
 ### Documentation Site (`projects/docs/`)
 
-- **Angular SSR application**: Documentation and showcase site at ngverse.dev
+- **Angular SSR application**: Documentation and showcase site at https://lukonik.github.io/ngverse/
 - **Component examples**: Live examples for each UI component in `projects/docs/src/app/examples/`
 - **Documentation pages**: Component documentation in `projects/docs/src/app/features/`
 

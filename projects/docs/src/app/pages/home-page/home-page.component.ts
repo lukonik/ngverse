@@ -54,7 +54,7 @@ export class HomePageComponent {
       },
       {
         property: 'og:image',
-        content: 'https://ui.ngverse.dev/logo.png',
+        content: 'https://lukonik.github.io/ngverse/logo.png',
       },
       { property: 'og:image:alt', content: 'NgVerse logo' },
       { property: 'og:url', content: this.document.location.href },
