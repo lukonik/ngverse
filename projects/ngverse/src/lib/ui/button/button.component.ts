@@ -7,11 +7,18 @@ import {
 } from '@angular/core';
 import { ButtonLoaderComponent } from './button-loader.component';
 
-type COLOR_TYPES = 'primary' | 'secondary' | 'danger' | 'success' | 'none';
+type VARIANT_TYPES =
+  | 'default'
+  | 'secondary'
+  | 'destructive'
+  | 'outline'
+  | 'ghost'
+  | 'link'
+  | 'icon'
+  | 'with-icon'
+  | 'loading';
 
-type VARIANT_TYPES = 'fill' | 'outline' | 'link' | 'none';
-
-type SIZE_TYPES = 'sm' | 'md' | 'lg' | 'none';
+type SIZE_TYPES = 'sm' | 'md' | 'lg' | 'xl' | 'none';
 
 @Component({
   // eslint-disable-next-line @angular-eslint/component-selector
@@ -28,9 +35,7 @@ type SIZE_TYPES = 'sm' | 'md' | 'lg' | 'none';
   },
 })
 export class ButtonComponent {
-  color = input<COLOR_TYPES>('primary');
-
-  variant = input<VARIANT_TYPES>('fill');
+  variant = input<VARIANT_TYPES>('default');
 
   disabled = input<boolean>();
 
@@ -41,10 +46,6 @@ export class ButtonComponent {
   loading = input<boolean>();
 
   classNames = computed(() => {
-    return [
-      `btn-${this.variant()}`,
-      `btn-${this.color()}`,
-      `btn-${this.size()}`,
-    ];
+    return [`btn-${this.variant()}`, `btn-${this.size()}`];
   });
 }

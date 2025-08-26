@@ -53,40 +53,35 @@ export class ButtonPageComponent {
           'appButton is used with native button element, so all native input attributes can be used',
         inputs: [
           {
-            name: 'color',
-            type: 'primary | secondary | danger | success | none',
-            description: "Defines the button's color type",
-            default: 'primary',
+            name: 'variant',
+            type: 'default | secondary | destructive | outline | ghost | link | icon | with-icon | loading',
+            description: 'Defines the button variant style and behavior',
+            default: 'default',
           },
           {
             name: 'size',
-            type: 'sm | md | lg | none',
-            description: 'changes the size of the button',
+            type: 'sm | md | lg | xl | none',
+            description: 'Changes the size of the button',
             default: 'md',
-          },
-          {
-            name: 'variant',
-            type: 'fill | outline | link | none',
-            description: 'changes the variant of the button',
-            default: 'fill',
           },
           {
             name: 'icon',
             type: 'boolean',
-            description: 'converts to icon button',
+            description:
+              'Converts to icon button (circular shape for icon-only buttons)',
             default: 'false',
           },
           {
             name: 'disabled',
             type: 'boolean',
-            description: 'disables the button',
+            description: 'Disables the button',
             default: 'false',
           },
           {
             name: 'loading',
             type: 'boolean',
             description:
-              'adds spinner on the button. The button will not emit any event while loading is true',
+              'Adds spinner on the button. The button will not emit any event while loading is true',
             default: 'false',
           },
         ],

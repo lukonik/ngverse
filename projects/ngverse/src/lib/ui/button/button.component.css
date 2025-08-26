@@ -1,112 +1,91 @@
+@reference 'tailwindcss';
+
 :host {
   /** General styles **/
-
-  background: transparent;
-  font-size: 1rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-
-  --button-color: var(--color-background);
-  --button-on-color: var(--color-foreground);
-  border-radius: 6px;
-  border: var(--border);
-  position: relative;
-  cursor: pointer;
-  font-weight: 600;
+  @apply inline-flex items-center justify-center gap-1.5;
+  @apply bg-transparent text-base font-semibold;
+  @apply rounded-md border border-solid;
+  @apply relative cursor-pointer;
+  @apply transition-colors duration-200;
 
   &.icon {
-    border-radius: 100%;
+    @apply rounded-full;
   }
 
   /** General ends here **/
+
   /** Variant styles **/
 
-  &.btn-fill {
-    background-color: var(--button-color);
-    color: var(--button-on-color);
-    --spinner-color: var(--button-on-color);
-  }
-
-  &.btn-outline {
-    border: 1px solid var(--button-color);
-    color: var(--button-color);
-    --spinner-color: var(--button-color);
-  }
-
-  &.btn-link {
-    color: var(--button-color);
-    --spinner-color: var(--button-color);
-    border: 0;
-  }
-
-  /** Variant ends here ** /
-
-/** Color styles **/
-  &.btn-primary {
-    --button-color: var(--color-primary);
-    --button-on-color: var(--color-primary-foreground);
+  &.btn-default,
+  &.btn-with-icon,
+  &.btn-loading {
+    @apply border-slate-900 bg-slate-900 text-slate-50;
+    @apply hover:border-slate-800 hover:bg-slate-800;
+    @apply focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2;
+    --spinner-color: theme('colors.slate.50');
   }
 
   &.btn-secondary {
-    --button-color: var(--color-secondary);
-    --button-on-color: var(--color-secondary-foreground);
+    @apply border-slate-200 bg-slate-100 text-slate-900;
+    @apply hover:border-slate-300 hover:bg-slate-200;
+    @apply focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2;
+    --spinner-color: theme('colors.slate.900');
   }
 
-  &.btn-danger {
-    --button-color: var(--color-danger);
-    --button-on-color: var(--color-danger-foreground);
+  &.btn-destructive {
+    @apply border-red-500 bg-red-500 text-white;
+    @apply hover:border-red-600 hover:bg-red-600;
+    @apply focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2;
+    --spinner-color: theme('colors.white');
   }
 
-  &.btn-warning {
-    --button-color: var(--color-warning);
-    --button-on-color: var(--color-warning-foreground);
+  &.btn-outline {
+    @apply border-slate-200 bg-transparent text-slate-900;
+    @apply hover:bg-slate-100 hover:text-slate-900;
+    @apply focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2;
+    --spinner-color: theme('colors.slate.900');
   }
 
-  &.btn-success {
-    --button-color: var(--color-success);
-    --button-on-color: var(--color-success-foreground);
+  &.btn-ghost {
+    @apply border-transparent bg-transparent text-slate-900;
+    @apply hover:bg-slate-100 hover:text-slate-900;
+    @apply focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2;
+    --spinner-color: theme('colors.slate.900');
   }
-  /** Color ends here **/
+
+  &.btn-link {
+    @apply border-transparent bg-transparent text-slate-900;
+    @apply underline-offset-4 hover:underline;
+    @apply focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2;
+    --spinner-color: theme('colors.slate.900');
+  }
+
+  &.btn-icon {
+    @apply border-transparent bg-transparent text-slate-500;
+    @apply hover:bg-slate-100 hover:text-slate-900;
+    @apply focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2;
+    --spinner-color: theme('colors.slate.500');
+  }
+
+  /** Variant ends here **/
 
   /** State styles **/
 
   &:focus {
-    outline: none;
+    @apply outline-none;
   }
 
-  &:focus-visible {
-    outline: 1px solid var(--color-ring);
-  }
-
-  &:hover:not(:disabled) {
-    &.btn-fill {
-      background-color: var(--button-color);
-      color: var(--button-on-color);
-      --spinner-color: var(--button-on-color);
-    }
-    &.btn-outline,
-    &.btn-link {
-      background-color: var(--color-accent);
-      color: var(--color-accent-foreground);
-    }
-  }
-  &:active {
-    opacity: 0.7;
+  &:active:not(:disabled) {
+    @apply opacity-70;
   }
 
   &:disabled {
-    &:not(.btn-link) {
-      background-color: var(--color-disabled);
-    }
-    color: var(--color-disabled-foreground);
-    cursor: default;
+    @apply cursor-not-allowed opacity-50;
+    @apply pointer-events-none;
   }
 
   &.btn-loading {
-    pointer-events: none;
-    color: transparent;
+    @apply pointer-events-none text-transparent;
   }
 
   /** State ends here **/
@@ -115,35 +94,37 @@
 
   &:not(.icon) {
     &.btn-sm {
-      height: 32px;
-      padding-left: 14px;
-      padding-right: 14px;
+      @apply h-8 px-3 text-sm;
     }
 
     &.btn-md {
-      height: 38px;
-      padding-left: 16px;
-      padding-right: 16px;
+      @apply h-9 px-4 text-sm;
     }
+
     &.btn-lg {
-      height: 48px;
-      padding-left: 18px;
-      padding-right: 18px;
+      @apply h-10 px-8;
+    }
+
+    &.btn-xl {
+      @apply h-12 px-10 text-lg;
     }
   }
+
   &.icon {
     &.btn-sm {
-      height: 32px;
-      width: 32px;
+      @apply h-8 w-8;
     }
 
     &.btn-md {
-      height: 38px;
-      width: 38px;
+      @apply h-9 w-9;
     }
+
     &.btn-lg {
-      height: 48px;
-      width: 48px;
+      @apply h-10 w-10;
+    }
+
+    &.btn-xl {
+      @apply h-12 w-12;
     }
   }
 
