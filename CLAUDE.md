@@ -125,3 +125,7 @@ The project includes MCP (Model Context Protocol) configuration in `mcp.json`:
 
 - **Angular CLI MCP Server**: Provides Angular-specific tooling and context via `@angular/cli mcp`
 - Enables enhanced Angular development capabilities through MCP integration
+
+## Commit Standards
+
+- Follow Conventional Commit standard for commit messages

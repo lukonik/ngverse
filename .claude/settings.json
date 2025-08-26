@@ -1,4 +1,5 @@
 {
+  "includeCoAuthoredBy": false,
   "hooks": {
     "PostToolUse": [
       {
