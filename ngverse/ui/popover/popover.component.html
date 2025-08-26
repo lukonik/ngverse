@@ -1,0 +1,6 @@
+<ng-content></ng-content>
+<div class="popover" #popover [hidden]="!isOpen()" [class.styled]="styled()">
+  @if (isOpen()) {
+    <ng-container [ngTemplateOutlet]="content()"></ng-container>
+  }
+</div>

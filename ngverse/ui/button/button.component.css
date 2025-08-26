@@ -1,0 +1,132 @@
+@reference 'tailwindcss';
+
+:host {
+  /** General styles **/
+  @apply inline-flex items-center justify-center gap-1.5;
+  @apply bg-transparent text-base font-semibold;
+  @apply rounded-md border border-solid;
+  @apply relative cursor-pointer;
+  @apply transition-colors duration-200;
+
+  &.icon {
+    @apply rounded-full;
+  }
+
+  /** General ends here **/
+
+  /** Variant styles **/
+
+  &.btn-default,
+  &.btn-with-icon,
+  &.btn-loading {
+    @apply border-slate-900 bg-slate-900 text-slate-50;
+    @apply hover:border-slate-800 hover:bg-slate-800;
+    @apply focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2;
+    --spinner-color: theme('colors.slate.50');
+  }
+
+  &.btn-secondary {
+    @apply border-slate-200 bg-slate-100 text-slate-900;
+    @apply hover:border-slate-300 hover:bg-slate-200;
+    @apply focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2;
+    --spinner-color: theme('colors.slate.900');
+  }
+
+  &.btn-destructive {
+    @apply border-red-500 bg-red-500 text-white;
+    @apply hover:border-red-600 hover:bg-red-600;
+    @apply focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2;
+    --spinner-color: theme('colors.white');
+  }
+
+  &.btn-outline {
+    @apply border-slate-200 bg-transparent text-slate-900;
+    @apply hover:bg-slate-100 hover:text-slate-900;
+    @apply focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2;
+    --spinner-color: theme('colors.slate.900');
+  }
+
+  &.btn-ghost {
+    @apply border-transparent bg-transparent text-slate-900;
+    @apply hover:bg-slate-100 hover:text-slate-900;
+    @apply focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2;
+    --spinner-color: theme('colors.slate.900');
+  }
+
+  &.btn-link {
+    @apply border-transparent bg-transparent text-slate-900;
+    @apply underline-offset-4 hover:underline;
+    @apply focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2;
+    --spinner-color: theme('colors.slate.900');
+  }
+
+  &.btn-icon {
+    @apply border-transparent bg-transparent text-slate-500;
+    @apply hover:bg-slate-100 hover:text-slate-900;
+    @apply focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2;
+    --spinner-color: theme('colors.slate.500');
+  }
+
+  /** Variant ends here **/
+
+  /** State styles **/
+
+  &:focus {
+    @apply outline-none;
+  }
+
+  &:active:not(:disabled) {
+    @apply opacity-70;
+  }
+
+  &:disabled {
+    @apply cursor-not-allowed opacity-50;
+    @apply pointer-events-none;
+  }
+
+  &.btn-loading {
+    @apply pointer-events-none text-transparent;
+  }
+
+  /** State ends here **/
+
+  /** Size styles **/
+
+  &:not(.icon) {
+    &.btn-sm {
+      @apply h-8 px-3 text-sm;
+    }
+
+    &.btn-md {
+      @apply h-9 px-4 text-sm;
+    }
+
+    &.btn-lg {
+      @apply h-10 px-8;
+    }
+
+    &.btn-xl {
+      @apply h-12 px-10 text-lg;
+    }
+  }
+
+  &.icon {
+    &.btn-sm {
+      @apply h-8 w-8;
+    }
+
+    &.btn-md {
+      @apply h-9 w-9;
+    }
+
+    &.btn-lg {
+      @apply h-10 w-10;
+    }
+
+    &.btn-xl {
+      @apply h-12 w-12;
+    }
+  }
+
+  /** Size ends here **/
+}

@@ -1,23 +1,26 @@
-<p class="mb-2">Single select</p>
+<p class="mb-2">Sselect</p>
 <app-select
   [formControl]="formControlSingle"
   placeholder="Countries"
   class="w-[250px]"
+  [showClear]="true"
 >
   @for (option of countries; track $index) {
     <app-option [value]="option.code">{{ option.name }}</app-option>
   }
 </app-select>
 
-<p class="mt-4 mb-2">Multiple select</p>
+<p class="mt-4 mb-2">Custom label</p>
 <app-select
   [formControl]="formControlMulti"
   placeholder="Countries"
   class="w-[250px]"
-  [multiple]="true"
 >
+  <ng-template appSelectLabel let-option>
+    <p>The value is: {{ option.content }}</p>
+  </ng-template>
   @for (option of countries; track $index) {
-    <app-option [value]="option.code">{{ option.name }}</app-option>
+    <app-option [value]="option.code"> {{ option.name }} </app-option>
   }
 </app-select>
 

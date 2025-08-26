@@ -1,6 +1,7 @@
 import { OptionGroupLabelComponent } from '@/ui/select/option-group-label.component';
 import { OptionGroupComponent } from '@/ui/select/option-group.component';
 import { OptionComponent } from '@/ui/select/option.component';
+import { SelectLabelDirective } from '@/ui/select/select-label.directive';
 import { SelectComponent } from '@/ui/select/select.component';
 import { Component } from '@angular/core';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -53,6 +54,12 @@ const directories = [
   },
 ];
 
+const customOptions = [
+  { label: 'Danger', value: 'red' },
+  { label: 'Warning', value: 'orange' },
+  { label: 'OK', value: 'blue' },
+];
+
 @Component({
   selector: 'doc-show-case-select',
   imports: [
@@ -61,6 +68,7 @@ const directories = [
     OptionComponent,
     OptionGroupComponent,
     OptionGroupLabelComponent,
+    SelectLabelDirective,
   ],
   templateUrl: './show-case-select.component.html',
   styleUrl: './show-case-select.component.css',
@@ -68,9 +76,12 @@ const directories = [
 export class ShowCaseSelectComponent {
   countries = countries;
   directories = directories;
+  customOptions = customOptions;
   formControlSingle = new FormControl(null, Validators.required);
 
-  formControlMulti = new FormControl(['US', 'CA'], Validators.required);
+  formControlMulti = new FormControl(null, Validators.required);
 
   dirFormControl = new FormControl(null);
+
+  customLabelControl = new FormControl(null);
 }

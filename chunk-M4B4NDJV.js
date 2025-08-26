@@ -1,0 +1,2 @@
+import{Ca as c,Kb as m,Ob as p,Pb as s,gc as n,tb as i,yb as a}from"./chunk-L4LO2SGZ.js";function d(e,o){e&1&&(p(0,"code"),n(1,"ngverse"),s())}function f(e,o){e&1&&n(0,` ngverse
+`)}var r=class e{code=c(!1);static \u0275fac=function(t){return new(t||e)};static \u0275cmp=i({type:e,selectors:[["doc-project-name"]],inputs:{code:[1,"code"]},decls:2,vars:1,template:function(t,l){t&1&&a(0,d,2,0,"code")(1,f,1,0),t&2&&m(l.code()?0:1)},styles:["[_nghost-%COMP%]{display:inline}"]})};export{r as a};

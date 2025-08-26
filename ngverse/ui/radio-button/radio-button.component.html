@@ -1,0 +1,19 @@
+<div class="radio-button" [class.disabled]="radioButtonDisabled()">
+  <div class="native-radio-button-container">
+    <input
+      [disabled]="radioButtonDisabled()"
+      (change)="toggle()"
+      class="native-radio-button"
+      [id]="id()"
+      type="radio"
+      [name]="name()"
+      [checked]="selected()"
+    />
+    <app-font-icon>{{
+      selected() ? 'radio_button_checked' : 'radio_button_unchecked'
+    }}</app-font-icon>
+  </div>
+  <label class="radio-button-label" [for]="id()">
+    <ng-content></ng-content>
+  </label>
+</div>

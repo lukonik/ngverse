@@ -1,0 +1,11 @@
+<button
+  appButton
+  icon
+  variant="link"
+  color="secondary"
+  (click)="toggleDarkMode()"
+  size="sm"
+  aria-label="Dark Mode"
+>
+  <app-font-icon>{{ isEnabled() ? 'dark_mode' : 'light_mode' }}</app-font-icon>
+</button>

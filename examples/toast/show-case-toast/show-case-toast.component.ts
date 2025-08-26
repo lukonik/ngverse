@@ -1,6 +1,6 @@
 import { ButtonComponent } from '@/ui/button/button.component';
 import { FormFieldComponent } from '@/ui/form-field/form-field.component';
-import { LabelComponent } from '@/ui/form-field/label/label.component';
+import { LabelComponent } from '@/ui/form-field/label.component';
 import { OptionComponent } from '@/ui/select/option.component';
 import { SelectComponent } from '@/ui/select/select.component';
 import {
@@ -49,7 +49,6 @@ export class ShowCaseToastComponent {
       position: this.position(),
       type: this.type(),
       message: 'Current time is: ' + new Date().toLocaleTimeString(),
-      closeDelay: 500000,
     });
   }
 }
