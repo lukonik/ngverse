@@ -1,10 +1,10 @@
 {
-  "git": {
-    "deploymentEnabled": {
-      "main": false
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "destination": "https://lukonik.github.io/ngverse/:path*",
+      "permanent": true
     }
-  },
-  "github": {
-    "autoJobCancelation": false
-  }
+  ]
 }
