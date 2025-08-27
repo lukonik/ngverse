@@ -5,24 +5,55 @@ import {
 } from '../../blueprint/api-info/api-info.component';
 import { BlueprintPageComponent } from '../../blueprint/blueprint-page/blueprint-page.component';
 import { CommandInstallationComponent } from '../../blueprint/command-installation/command-installation.component';
-import { ShowCaseComponent } from '../../blueprint/show-case/show-case.component';
+import { ExampleItemComponent } from '../../blueprint/examples/example-item/example-item.component';
+import { ExamplesComponent } from '../../blueprint/examples/examples.component';
+import { ImplementationComponent } from '../../blueprint/implementation/implementation.component';
+import { PreviewComponent } from '../../blueprint/preview/preview.component';
 import {
   SourceTreeBuilder,
   SourceTreeFolder,
 } from '../../blueprint/source-tree/source-tree-builder';
 import { SourceTreeComponent } from '../../blueprint/source-tree/source-tree.component';
-import { ShowCaseButtonComponent } from '../../examples/button/show-case-button/show-case-button.component';
+import { ExampleButtonDefaultComponent } from '../../examples/button/example-button-default.component';
+import { ExampleButtonDestructiveComponent } from '../../examples/button/example-button-destructive.component';
+import { ExampleButtonGhostComponent } from '../../examples/button/example-button-ghost.component';
+import { ExampleButtonIconComponent } from '../../examples/button/example-button-icon.component';
+import { ExampleButtonLinkComponent } from '../../examples/button/example-button-link.component';
+import { ExampleButtonLoadingComponent } from '../../examples/button/example-button-loading.component';
+import { ExampleButtonOutlineComponent } from '../../examples/button/example-button-outline.component';
+import { ExampleButtonSecondaryComponent } from '../../examples/button/example-button-secondary.component';
+import { ExampleButtonSizeLgComponent } from '../../examples/button/example-button-size-lg.component';
+import { ExampleButtonSizeMdComponent } from '../../examples/button/example-button-size-md.component';
+import { ExampleButtonSizeSmComponent } from '../../examples/button/example-button-size-sm.component';
+import { ExampleButtonSizeXlComponent } from '../../examples/button/example-button-size-xl.component';
+import { ExampleButtonWithIconComponent } from '../../examples/button/example-button-with-icon.component';
+import { PreviewButtonComponent } from '../../examples/button/preview-button.component';
 const ROOT = 'button';
 @Component({
   selector: 'doc-button-page',
   imports: [
     BlueprintPageComponent,
-    ShowCaseComponent,
-    ShowCaseComponent,
     ApiInfoComponent,
     SourceTreeComponent,
     CommandInstallationComponent,
-    ShowCaseButtonComponent,
+    ExamplesComponent,
+    ExampleItemComponent,
+    ExampleButtonDefaultComponent,
+    ExampleButtonSecondaryComponent,
+    ExampleButtonDestructiveComponent,
+    ExampleButtonOutlineComponent,
+    ExampleButtonGhostComponent,
+    ExampleButtonLinkComponent,
+    ExampleButtonIconComponent,
+    ExampleButtonWithIconComponent,
+    ExampleButtonLoadingComponent,
+    ExampleButtonSizeSmComponent,
+    ExampleButtonSizeMdComponent,
+    ExampleButtonSizeLgComponent,
+    ExampleButtonSizeXlComponent,
+    PreviewComponent,
+    PreviewButtonComponent,
+    ImplementationComponent,
   ],
   templateUrl: './button-page.component.html',
   styleUrl: './button-page.component.css',

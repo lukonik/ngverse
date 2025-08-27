@@ -1,6 +1,266 @@
 @reference "tailwindcss";
 
 .home {
-  @apply dark:!bg-black dark:!bg-none;
-  background-size: cover;
+  @apply min-h-screen overflow-hidden;
+}
+
+/* Hero Section */
+.hero-section {
+  @apply relative flex min-h-screen items-center justify-center;
+  /* background: linear-gradient(135deg, #ffffff 0%, #f8fafc 30%, #f1f5f9 100%); */
+}
+
+.hero-gradient {
+  @apply absolute inset-0;
+  /* background: radial-gradient(
+      circle at 50% 30%,
+      rgba(51, 65, 85, 0.05) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(99, 102, 241, 0.08) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 20% 70%,
+      rgba(168, 85, 247, 0.06) 0%,
+      transparent 50%
+    ); */
+}
+
+.hero-grid {
+  @apply absolute inset-0 opacity-30;
+  background-image: linear-gradient(
+      rgba(51, 65, 85, 0.08) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(51, 65, 85, 0.08) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
+
+.hero-content {
+  @apply flex flex-col items-center justify-center px-6 py-20 text-center;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-badge {
+  @apply relative mb-8 rounded-full border border-slate-200 bg-white/80 px-4 py-2 shadow-sm backdrop-blur-sm;
+  animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.badge-glow {
+  @apply absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 blur-sm;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.hero-badge span {
+  @apply relative z-10 text-sm font-medium text-slate-700;
+}
+
+.hero-logo-section {
+  @apply mb-6 flex flex-col items-center justify-center text-slate-800;
+  animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.hero-logo {
+  @apply mb-4 h-24 w-24 drop-shadow-lg md:h-32 md:w-32 lg:h-40 lg:w-40;
+  animation: logoFloat 3s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.hero-title {
+  @apply text-6xl leading-none font-bold md:text-8xl lg:text-9xl;
+}
+
+.title-gradient {
+  @apply bg-gradient-to-br from-slate-900 via-slate-700 to-slate-600 bg-clip-text text-transparent;
+  text-shadow: 0 0 40px rgba(51, 65, 85, 0.1);
+}
+
+.hero-subtitle {
+  @apply mb-10 text-lg font-medium text-slate-600 md:text-xl;
+  animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.hero-actions {
+  animation: fadeInUp 1s ease-out 0.8s both;
+}
+
+.cta-button {
+  @apply relative px-8 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105;
+  box-shadow: 0 10px 25px rgba(51, 65, 85, 0.2);
+}
+
+.button-glow {
+  @apply absolute inset-0 rounded-md bg-gradient-to-r from-slate-800 to-slate-900 opacity-0 transition-opacity duration-300;
+  filter: blur(8px);
+}
+
+.cta-button:hover .button-glow {
+  @apply opacity-15;
+}
+
+/* Showcase Section */
+.showcase-section {
+  @apply relative px-6 py-20;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.showcase-header {
+  @apply mb-16 flex flex-col items-center;
+}
+
+.section-title {
+  @apply mb-4 text-4xl font-bold md:text-5xl;
+  background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.title-line {
+  @apply h-1 w-24 rounded-full bg-gradient-to-r from-slate-300 to-slate-500;
+}
+
+.components-grid {
+  @apply mx-auto grid max-w-7xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3;
+}
+
+.component-preview {
+  @apply flex flex-wrap items-center justify-center gap-2 p-2;
+}
+
+/* Skeleton Demo Layout */
+.skeleton-demo {
+  @apply flex w-full items-center gap-3;
+}
+
+.skeleton-avatar {
+  @apply h-12 w-12 flex-shrink-0 rounded-full;
+}
+
+.skeleton-lines {
+  @apply flex-1 space-y-2;
+}
+
+.skeleton-line-1 {
+  @apply h-4 w-3/4 rounded;
+}
+
+.skeleton-line-2 {
+  @apply h-4 w-1/2 rounded;
+}
+
+/* More Components Card */
+.more-card {
+  @apply relative;
+}
+
+.more-link {
+  @apply relative block h-[200px] rounded-lg border border-slate-200 bg-white/80 backdrop-blur-sm transition-all duration-300 hover:border-slate-300 hover:bg-white hover:shadow-lg;
+}
+
+.more-content {
+  @apply flex h-full flex-col items-center justify-center text-slate-600 transition-colors duration-300;
+}
+
+.more-card:hover .more-content {
+  @apply text-slate-900;
+}
+
+.more-icon {
+  @apply mb-2 text-6xl font-light transition-transform duration-300;
+}
+
+.more-card:hover .more-icon {
+  @apply scale-110;
+}
+
+.more-glow {
+  @apply absolute inset-0 rounded-lg bg-gradient-to-br from-slate-100/50 to-slate-200/50 opacity-0 transition-opacity duration-300;
+  filter: blur(8px);
+}
+
+.more-link:hover .more-glow {
+  @apply opacity-100;
+}
+
+/* Light mode overrides */
+.home {
+  @apply bg-white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-title {
+    @apply text-4xl md:text-6xl;
+  }
+
+  .hero-subtitle {
+    @apply text-base md:text-lg;
+  }
+
+  .components-grid {
+    @apply grid-cols-1 gap-4;
+  }
+}
+
+/* Animation delays for staggered effect */
+.components-grid > :nth-child(1) {
+  animation-delay: 0.1s;
+}
+.components-grid > :nth-child(2) {
+  animation-delay: 0.2s;
+}
+.components-grid > :nth-child(3) {
+  animation-delay: 0.3s;
+}
+.components-grid > :nth-child(4) {
+  animation-delay: 0.4s;
+}
+.components-grid > :nth-child(5) {
+  animation-delay: 0.5s;
+}
+.components-grid > :nth-child(6) {
+  animation-delay: 0.6s;
+}
+.components-grid > :nth-child(7) {
+  animation-delay: 0.7s;
+}
+.components-grid > :nth-child(8) {
+  animation-delay: 0.8s;
+}
+.components-grid > :nth-child(9) {
+  animation-delay: 0.9s;
 }

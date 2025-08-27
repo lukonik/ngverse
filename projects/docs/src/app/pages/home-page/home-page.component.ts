@@ -2,8 +2,8 @@ import { AccordionBodyComponent } from '@/ui/accordion/accordion-body.component'
 import { AccordionItemComponent } from '@/ui/accordion/accordion-item.component';
 import { AccordionComponent } from '@/ui/accordion/accordion.component';
 import { ButtonComponent } from '@/ui/button/button.component';
-import { CardComponent } from '@/ui/card/card.component';
 import { CheckboxComponent } from '@/ui/checkbox/checkbox.component';
+import { IconComponent } from '@/ui/icon/icon.component';
 import { InputDirective } from '@/ui/input/input.directive';
 import { OtpInputComponent } from '@/ui/otp-input/otp-input.component';
 import { SkeletonComponent } from '@/ui/skeleton/skeleton.component';
@@ -21,11 +21,10 @@ import { HomePageCardComponent } from './home-page-card/home-page-card.component
   imports: [
     RouterLink,
     ButtonComponent,
-    CardComponent,
-    ButtonComponent,
     InputDirective,
     CheckboxComponent,
     SwitchComponent,
+    IconComponent,
     HomePageCardComponent,
     OtpInputComponent,
     AccordionComponent,

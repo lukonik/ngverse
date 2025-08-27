@@ -1,11 +1,19 @@
-<app-card class="block h-[200px] overflow-x-auto">
-  <a [routerLink]="link()"
-    ><h4 class="flex items-center gap-1 text-2xl">
-      {{ label() }}
-      <app-font-icon size="20" class="text-gray-600">open_in_new</app-font-icon>
-    </h4></a
-  >
-  <div class="flex gap-1 py-4">
-    <ng-content></ng-content>
+<div class="component-card">
+  <div class="card-glow"></div>
+  <div class="card-content">
+    <div class="card-header">
+      <a [routerLink]="link()" class="card-title-link">
+        <h4 class="card-title">
+          {{ label() }}
+          <app-font-icon size="18" class="card-icon"
+            >arrow_outward</app-font-icon
+          >
+        </h4>
+      </a>
+    </div>
+    <div class="card-body">
+      <ng-content></ng-content>
+    </div>
   </div>
-</app-card>
+  <div class="card-border"></div>
+</div>

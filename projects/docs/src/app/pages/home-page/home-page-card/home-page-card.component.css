@@ -1,0 +1,107 @@
+@reference "tailwindcss";
+
+.component-card {
+  @apply relative h-[200px] overflow-hidden rounded-xl;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(248, 250, 252, 0.95) 100%
+  );
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(203, 213, 225, 0.3);
+  transition: all 0.3s ease;
+  animation: cardSlideUp 0.6s ease-out both;
+  box-shadow: 0 4px 15px rgba(51, 65, 85, 0.08);
+}
+
+@keyframes cardSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.component-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(148, 163, 184, 0.4);
+  box-shadow: 0 20px 40px rgba(51, 65, 85, 0.15);
+}
+
+.card-glow {
+  @apply absolute inset-0 rounded-xl opacity-0 transition-opacity duration-300;
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.08) 0%,
+    rgba(168, 85, 247, 0.06) 100%
+  );
+  filter: blur(8px);
+}
+
+.component-card:hover .card-glow {
+  @apply opacity-100;
+}
+
+.card-content {
+  @apply relative z-10 flex h-full flex-col p-5;
+}
+
+.card-header {
+  @apply mb-4;
+}
+
+.card-title-link {
+  @apply block transition-colors duration-300;
+}
+
+.card-title {
+  @apply flex items-center justify-between text-xl font-semibold text-slate-700 transition-colors duration-300;
+}
+
+.component-card:hover .card-title {
+  @apply text-slate-900;
+}
+
+.card-icon {
+  @apply text-slate-500 transition-all duration-300;
+}
+
+.component-card:hover .card-icon {
+  @apply translate-x-1 -translate-y-1 text-slate-700;
+}
+
+.card-body {
+  @apply flex flex-1 items-center justify-center overflow-hidden;
+}
+
+.card-border {
+  @apply absolute inset-0 rounded-xl;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    rgba(148, 163, 184, 0.15) 50%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.component-card:hover .card-border {
+  opacity: 1;
+}
+
+/* Content area styling */
+.card-body :deep(*) {
+  @apply transition-all duration-300;
+}
+
+.component-card:hover .card-body :deep(button) {
+  @apply scale-105;
+}
+
+.component-card:hover .card-body :deep(input) {
+  @apply focus:ring-2 focus:ring-slate-400;
+}

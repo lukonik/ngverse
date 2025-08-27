@@ -3,14 +3,32 @@
     'An accordion is a vertically stacked set of interactive headings that each contain a title and expandable content.'
   "
   [label]="'Accordion'"
+  key="accordion"
 >
-  <doc-source-tree [sourceTree]="sourceTree" name="accordion"></doc-source-tree>
-  <doc-show-case name="accordion">
-    <doc-show-case-accordion></doc-show-case-accordion>
-  </doc-show-case>
+  <doc-preview>
+    <doc-preview-accordion></doc-preview-accordion>
+  </doc-preview>
   <doc-command-installation
     type="component"
     name="accordion"
   ></doc-command-installation>
+  <doc-source-tree [sourceTree]="sourceTree" name="accordion"></doc-source-tree>
   <doc-api-info [apiInfo]="apiInfo"> </doc-api-info>
+  <doc-examples>
+    <doc-example-item name="default">
+      <doc-example-accordion-default></doc-example-accordion-default>
+    </doc-example-item>
+    <doc-example-item name="multi">
+      <doc-example-accordion-multi></doc-example-accordion-multi>
+    </doc-example-item>
+    <doc-example-item name="custom-header">
+      <doc-example-accordion-custom-header></doc-example-accordion-custom-header>
+    </doc-example-item>
+    <doc-example-item name="disabled">
+      <doc-example-accordion-disabled></doc-example-accordion-disabled>
+    </doc-example-item>
+    <doc-example-item name="expanded">
+      <doc-example-accordion-expanded></doc-example-accordion-expanded>
+    </doc-example-item>
+  </doc-examples>
 </doc-blueprint-page>
