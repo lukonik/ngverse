@@ -7,11 +7,16 @@
       <p class="m-0 text-lg font-light">{{ subTitle() }}</p>
     }
   </div>
+  <ng-content select="doc-preview"></ng-content>
 
-  <ng-content select="doc-show-case"></ng-content>
   <ng-content select="doc-prerequisites"></ng-content>
   <ng-content select="doc-command-installation"></ng-content>
+
   <ng-content select="doc-source-tree"></ng-content>
 
+  <ng-content select="doc-show-case"></ng-content>
+  <ng-content select="doc-examples"></ng-content>
+
   <ng-content select="doc-api-info"></ng-content>
+  <ng-content select="doc-implementation"></ng-content>
 </div>

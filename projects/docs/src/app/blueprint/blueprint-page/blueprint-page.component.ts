@@ -13,6 +13,7 @@ export class BlueprintPageComponent {
   title = inject(Title);
   meta = inject(Meta);
   document = inject(DOCUMENT);
+  key = input<string>();
 
   constructor() {
     effect(() => {

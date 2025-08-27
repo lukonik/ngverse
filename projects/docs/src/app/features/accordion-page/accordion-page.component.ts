@@ -9,12 +9,22 @@ import {
 } from '../../blueprint/api-info/api-inputs/api-inputs.component';
 import { BlueprintPageComponent } from '../../blueprint/blueprint-page/blueprint-page.component';
 import { CommandInstallationComponent } from '../../blueprint/command-installation/command-installation.component';
+import { ExampleItemComponent } from '../../blueprint/examples/example-item/example-item.component';
+import { ExamplesComponent } from '../../blueprint/examples/examples.component';
+import { ImplementationComponent } from '../../blueprint/implementation/implementation.component';
+import { PreviewComponent } from '../../blueprint/preview/preview.component';
 import { ShowCaseComponent } from '../../blueprint/show-case/show-case.component';
 import {
   SourceTreeBuilder,
   SourceTreeFolder,
 } from '../../blueprint/source-tree/source-tree-builder';
 import { SourceTreeComponent } from '../../blueprint/source-tree/source-tree.component';
+import { ExampleAccordionCustomHeaderComponent } from '../../examples/accordion/example-accordion-custom-header.component';
+import { ExampleAccordionDefaultComponent } from '../../examples/accordion/example-accordion-default.component';
+import { ExampleAccordionDisabledComponent } from '../../examples/accordion/example-accordion-disabled.component';
+import { ExampleAccordionExpandedComponent } from '../../examples/accordion/example-accordion-expanded.component';
+import { ExampleAccordionMultiComponent } from '../../examples/accordion/example-accordion-multi.component';
+import { PreviewAccordionComponent } from '../../examples/accordion/preview-accordion.component';
 import { ShowCaseAccordionComponent } from '../../examples/accordion/show-case-accordion/show-case-accordion.component';
 
 const ROOT = 'accordion';
@@ -24,11 +34,20 @@ const ROOT = 'accordion';
   imports: [
     BlueprintPageComponent,
     ShowCaseComponent,
-    ShowCaseComponent,
     ApiInfoComponent,
     SourceTreeComponent,
     ShowCaseAccordionComponent,
     CommandInstallationComponent,
+    PreviewComponent,
+    PreviewAccordionComponent,
+    ExamplesComponent,
+    ExampleItemComponent,
+    ExampleAccordionDefaultComponent,
+    ExampleAccordionMultiComponent,
+    ExampleAccordionCustomHeaderComponent,
+    ExampleAccordionDisabledComponent,
+    ExampleAccordionExpandedComponent,
+    ImplementationComponent,
   ],
   templateUrl: './accordion-page.component.html',
   styleUrl: './accordion-page.component.css',

@@ -28,7 +28,7 @@ import { TabComponent } from './tab.component';
       cursor: pointer;
       border-bottom: 2px solid transparent;
       &.selected {
-        border-bottom-color: var(--color-primary);
+        border-bottom-color: var(--color-slate-900);
       }
     }
   `,
