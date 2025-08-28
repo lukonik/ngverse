@@ -1,0 +1,13 @@
+@reference "tailwindcss";
+
+:host {
+  @apply flex cursor-pointer justify-center border-b-2 border-transparent px-4 py-3;
+}
+
+:host.is-active {
+  @apply ring-1 ring-blue-500 outline-none;
+}
+
+:host.is-selected {
+  @apply border-slate-900;
+}

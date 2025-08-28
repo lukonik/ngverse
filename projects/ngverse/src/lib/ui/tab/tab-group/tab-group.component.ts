@@ -22,8 +22,8 @@ import {
   signal,
   viewChildren,
 } from '@angular/core';
-import { TabGroupHeaderComponent } from './tab-group-header.component';
-import { TabComponent } from './tab.component';
+import { TabHeaderComponent } from '../tab-header/tab-header.component';
+import { TabPanelComponent } from '../tab-panel/tab-panel.component';
 
 const TAB_CHANGE_ANIMATION = transition('* => *', [
   animation(
@@ -39,18 +39,17 @@ const TAB_CHANGE_ANIMATION = transition('* => *', [
 
 @Component({
   selector: 'app-tab-group',
-  imports: [NgTemplateOutlet, TabGroupHeaderComponent],
+  imports: [NgTemplateOutlet, TabHeaderComponent],
   templateUrl: './tab-group.component.html',
-  styleUrl: './tab-group.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [trigger('tabChange', [TAB_CHANGE_ANIMATION])],
 })
 export class TabGroupComponent {
-  tabs = contentChildren(TabComponent);
+  tabs = contentChildren(TabPanelComponent);
   selectedIndex = model(0);
   bodyGap = input(true);
 
-  tabHeaders = viewChildren(TabGroupHeaderComponent);
+  tabHeaders = viewChildren(TabHeaderComponent);
 
   direction = inject(Directionality);
 

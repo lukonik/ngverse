@@ -9,23 +9,22 @@ import {
   viewChild,
   ViewContainerRef,
 } from '@angular/core';
-import { TabBodyDirective } from './tab-body.directive';
-import { TabHeaderDirective } from './tab-header.directive';
+import { TabContentDirective } from '../directives/tab-content.directive';
+import { TabLabelDirective } from '../directives/tab-label.directive';
 
 @Component({
-  selector: 'app-tab',
+  selector: 'app-tab-panel',
   imports: [],
-  templateUrl: './tab.component.html',
-  styleUrl: './tab.component.css',
+  templateUrl: './tab-panel.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TabComponent {
+export class TabPanelComponent {
   label = input<string>();
   templateRef = viewChild(TemplateRef);
   vf = inject(ViewContainerRef);
-  headerTemplate = contentChild(TabHeaderDirective);
+  headerTemplate = contentChild(TabLabelDirective);
 
-  bodyTemplate = contentChild(TabBodyDirective);
+  bodyTemplate = contentChild(TabContentDirective);
 
   gap = input(true);
 

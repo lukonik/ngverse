@@ -23,26 +23,9 @@ NgVerse is an Angular workspace containing two main projects:
 
 ### Building and Testing
 
-```bash
-# Start docs development server
-npm start
+- when you want to verify the changes run Quality checks
 
-# Build library only
-npm run build:ngverse
-
-# Build docs only
-npm run build:docs
-
-# Run tests for library
-npm test
-
-# Run linting
-npm lint
-
-# Format code
-npm run format:write
-npm run format:check
-```
+````
 
 ### Quality Checks
 
@@ -55,7 +38,7 @@ npm run check:docs
 
 # Watch schema tests
 npm run schema:test-watch
-```
+````
 
 ## Component Architecture
 
@@ -86,6 +69,11 @@ Each component follows this structure:
 - Standalone components and modern APIs
 - Performance optimization strategies
 - Template and component best practices
+
+### Tailwind CSS Guidelines
+
+- **CSS Files**: Always add `@reference "tailwindcss"` at the top of CSS files when using Tailwind classes with `@apply` directives
+- **IDE Support**: This provides better intellisense and autocomplete for Tailwind classes
 
 ### Angular Schematics Configuration
 

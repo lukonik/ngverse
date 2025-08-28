@@ -7,29 +7,29 @@ import {
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { provideNoopAnimations } from '@angular/platform-browser/animations';
-import { TabBodyDirective } from './tab-body.directive';
+import { TabContentDirective } from '../directives/tab-content.directive';
 import { TabGroupComponent } from './tab-group.component';
-import { TabHeaderDirective } from './tab-header.directive';
-import { TabComponent } from './tab.component';
+import { TabLabelDirective } from '../directives/tab-label.directive';
+import { TabPanelComponent } from '../tab-panel/tab-panel.component';
 
 @Component({
   imports: [
     TabGroupComponent,
-    TabComponent,
-    TabHeaderDirective,
-    TabBodyDirective,
+    TabPanelComponent,
+    TabLabelDirective,
+    TabContentDirective,
   ],
   template: ` <app-tab-group>
-    <app-tab label="Default"> This is default tab </app-tab>
-    <app-tab>
-      <ng-template appTabHeader>
+    <app-tab-panel label="Default"> This is default tab </app-tab-panel>
+    <app-tab-panel>
+      <ng-template appTabLabel>
         <div class="custom-label">Custom Label</div>
       </ng-template>
       This is Custom Label Tab
-    </app-tab>
-    <app-tab label="Lazy Load Body">
-      <ng-template appTabBody>Lazy tab</ng-template>
-    </app-tab>
+    </app-tab-panel>
+    <app-tab-panel label="Lazy Load Body">
+      <ng-template appTabContent>Lazy tab</ng-template>
+    </app-tab-panel>
   </app-tab-group>`,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -50,7 +50,7 @@ describe('TabGroupComponent', () => {
 
     fixture = TestBed.createComponent(TabGroupTestComponent);
     fixture.detectChanges();
-    tabHeaders = fixture.debugElement.queryAll(By.css('app-tab-group-header'));
+    tabHeaders = fixture.debugElement.queryAll(By.css('app-tab-header'));
   });
 
   it('should render custom label', () => {
@@ -61,7 +61,7 @@ describe('TabGroupComponent', () => {
 
   it('should render default label and a body', () => {
     const firstTabHeader = tabHeaders[0];
-    const firstTabBody = fixture.debugElement.query(By.css('.tab-body'));
+    const firstTabBody = fixture.debugElement.query(By.css('.tab-content'));
     expect(firstTabHeader.nativeElement.textContent).toContain('Default');
     expect(firstTabBody.nativeElement.textContent).toContain(
       'This is default tab'
@@ -73,7 +73,7 @@ describe('TabGroupComponent', () => {
     secondTabHeader.nativeElement.click();
     fixture.detectChanges();
 
-    const activeTabBody = fixture.debugElement.query(By.css('.tab-body'));
+    const activeTabBody = fixture.debugElement.query(By.css('.tab-content'));
     expect(activeTabBody.nativeElement.textContent.trim()).toContain(
       'This is Custom Label Tab'
     );
@@ -85,7 +85,7 @@ describe('TabGroupComponent', () => {
     lazyTab.nativeElement.click();
     fixture.detectChanges();
 
-    const activeTabBody = fixture.debugElement.query(By.css('.tab-body'));
+    const activeTabBody = fixture.debugElement.query(By.css('.tab-content'));
     expect(activeTabBody.nativeElement.textContent).toContain('Lazy tab');
   });
 });

@@ -8,42 +8,25 @@ import {
   input,
   signal,
 } from '@angular/core';
-import { TabComponent } from './tab.component';
+import { TabPanelComponent } from '../tab-panel/tab-panel.component';
 
 @Component({
-  selector: 'app-tab-group-header',
+  selector: 'app-tab-header',
   imports: [NgTemplateOutlet],
-  template: `@if (tab().headerTemplate(); as headerTemplate) {
-      <ng-container
-        [ngTemplateOutlet]="headerTemplate.templateRef"
-      ></ng-container>
-    } @else {
-      {{ tab().label() }}
-    } `,
-  styles: `
-    :host {
-      padding: 12px 16px;
-      display: flex;
-      justify-content: center;
-      cursor: pointer;
-      border-bottom: 2px solid transparent;
-      &.selected {
-        border-bottom-color: var(--color-slate-900);
-      }
-    }
-  `,
+  templateUrl: './tab-header.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  styleUrl: './tab-header.component.css',
   host: {
     '[class.is-active]': 'enabledTabIndex()',
-    '[class.selected]': 'isSelected()',
+    '[class.is-selected]': 'isSelected()',
   },
 })
-export class TabGroupHeaderComponent implements Highlightable {
+export class TabHeaderComponent implements Highlightable {
   disabled?: boolean | undefined;
 
   activate = signal(false);
 
-  tab = input.required<TabComponent>();
+  tab = input.required<TabPanelComponent>();
   element = inject<ElementRef<HTMLElement>>(ElementRef<HTMLElement>)
     .nativeElement;
   enabledTabIndex = signal(false);

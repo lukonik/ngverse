@@ -36,19 +36,24 @@ export class TabPageComponent {
         selector: 'app-tab-group',
       },
       {
-        name: 'TabComponent',
+        name: 'TabPanelComponent',
         type: 'component',
-        selector: 'app-tab',
+        selector: 'app-tab-panel',
       },
       {
-        name: 'TabBodyDirective',
-        type: 'directive',
-        selector: '[appTabBody]',
+        name: 'TabHeaderComponent',
+        type: 'component',
+        selector: 'app-tab-header',
       },
       {
-        name: 'TabHeaderDirective',
+        name: 'TabContentDirective',
         type: 'directive',
-        selector: '[appTabHeader]',
+        selector: '[appTabContent]',
+      },
+      {
+        name: 'TabLabelDirective',
+        type: 'directive',
+        selector: '[appTabLabel]',
       },
     ],
   };
@@ -57,11 +62,23 @@ export class TabPageComponent {
     {
       name: ROOT,
       files: [
-        ...this.sourceTreeBuilder.fullComponent(ROOT, ROOT),
-        ...this.sourceTreeBuilder.fullInlineComponent('tab-group-header', ROOT),
-        ...this.sourceTreeBuilder.fullComponent('tab-group', ROOT),
-        ...this.sourceTreeBuilder.directive('tab-body', ROOT),
-        ...this.sourceTreeBuilder.directive('tab-header', ROOT),
+        ...this.sourceTreeBuilder.fullComponent(
+          'tab-panel',
+          `${ROOT}/tab-panel`
+        ),
+        ...this.sourceTreeBuilder.fullComponent(
+          'tab-header',
+          `${ROOT}/tab-header`
+        ),
+        ...this.sourceTreeBuilder.fullComponent(
+          'tab-group',
+          `${ROOT}/tab-group`
+        ),
+        ...this.sourceTreeBuilder.directive(
+          'tab-content',
+          `${ROOT}/directives`
+        ),
+        ...this.sourceTreeBuilder.directive('tab-label', `${ROOT}/directives`),
       ],
       hideName: true,
     },

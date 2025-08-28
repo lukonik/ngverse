@@ -1,7 +1,7 @@
-import { TabBodyDirective } from '@/ui/tab/tab-body.directive';
-import { TabGroupComponent } from '@/ui/tab/tab-group.component';
-import { TabHeaderDirective } from '@/ui/tab/tab-header.directive';
-import { TabComponent } from '@/ui/tab/tab.component';
+import { TabContentDirective } from '@/ui/tab/directives/tab-content.directive';
+import { TabLabelDirective } from '@/ui/tab/directives/tab-label.directive';
+import { TabGroupComponent } from '@/ui/tab/tab-group/tab-group.component';
+import { TabPanelComponent } from '@/ui/tab/tab-panel/tab-panel.component';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { LazyTabComponent } from '../lazy-tab/lazy-tab.component';
 
@@ -9,9 +9,9 @@ import { LazyTabComponent } from '../lazy-tab/lazy-tab.component';
   selector: 'doc-show-case-tab',
   imports: [
     TabGroupComponent,
-    TabComponent,
-    TabBodyDirective,
-    TabHeaderDirective,
+    TabPanelComponent,
+    TabContentDirective,
+    TabLabelDirective,
     LazyTabComponent,
   ],
   templateUrl: './show-case-tab.component.html',

@@ -1,8 +1,8 @@
 import { Directive, inject, TemplateRef } from '@angular/core';
 
 @Directive({
-  selector: 'ng-template[appTabHeader]',
+  selector: 'ng-template[appTabLabel]',
 })
-export class TabHeaderDirective {
+export class TabLabelDirective {
   templateRef = inject(TemplateRef<unknown>);
 }

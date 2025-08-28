@@ -1,17 +1,17 @@
 <h5 class="my-0 mb-3 text-lg font-medium">Showcase</h5>
 <app-card class="block" [gap]="false">
   <app-tab-group [selectedIndex]="0" (tabChanged)="tabChanged($event)">
-    <app-tab label="PREVIEW">
+    <app-tab-panel label="PREVIEW">
       <ng-content></ng-content>
-    </app-tab>
+    </app-tab-panel>
     @for (item of tabs; track $index) {
-      <app-tab [label]="item | uppercase" [gap]="false">
+      <app-tab-panel [label]="item | uppercase" [gap]="false">
         <doc-source-code
           [outline]="false"
           [code]="code()"
           [language]="language()"
         ></doc-source-code>
-      </app-tab>
+      </app-tab-panel>
     }
   </app-tab-group>
 </app-card>

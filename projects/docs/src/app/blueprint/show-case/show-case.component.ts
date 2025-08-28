@@ -1,8 +1,8 @@
+import { CardComponent } from '@/ui/card/card.component';
+import { TabGroupComponent } from '@/ui/tab/tab-group/tab-group.component';
+import { TabPanelComponent } from '@/ui/tab/tab-panel/tab-panel.component';
 import { UpperCasePipe } from '@angular/common';
 import { Component, inject, input, signal } from '@angular/core';
-import { CardComponent } from '@/ui/card/card.component';
-import { TabGroupComponent } from '@/ui/tab/tab-group.component';
-import { TabComponent } from '@/ui/tab/tab.component';
 import { FileService } from '../../services/file.service';
 import { SourceCodeComponent } from '../source-code/source-code.component';
 
@@ -11,7 +11,7 @@ import { SourceCodeComponent } from '../source-code/source-code.component';
   imports: [
     SourceCodeComponent,
     TabGroupComponent,
-    TabComponent,
+    TabPanelComponent,
     UpperCasePipe,
     CardComponent,
   ],
