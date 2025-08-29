@@ -1,6 +1,6 @@
 import { CardComponent } from '@/ui/card/card.component';
 import { TabGroupComponent } from '@/ui/tab/tab-group.component';
-import { TabComponent } from '@/ui/tab/tab.component';
+import { TabPanelComponent } from '@/ui/tab/tab-panel/tab-panel.component';
 import { UpperCasePipe } from '@angular/common';
 import {
   ChangeDetectionStrategy,
@@ -20,7 +20,7 @@ import { ExamplesComponent } from '../examples.component';
   imports: [
     CardComponent,
     TabGroupComponent,
-    TabComponent,
+    TabPanelComponent,
     UpperCasePipe,
     SourceCodeComponent,
   ],

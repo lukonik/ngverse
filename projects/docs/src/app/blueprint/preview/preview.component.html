@@ -1,18 +1,18 @@
 <app-card class="block" [gap]="false">
   <app-tab-group [selectedIndex]="0" (tabChanged)="tabChanged($event)">
-    <app-tab label="PREVIEW">
-      <div class="flex h-[300px] items-center justify-center">
+    <app-tab-panel label="PREVIEW">
+      <div class="flex h-[300px] items-center justify-center p-10">
         <ng-content></ng-content>
       </div>
-    </app-tab>
+    </app-tab-panel>
     @for (item of tabs; track $index) {
-      <app-tab [label]="item | uppercase" [gap]="false">
+      <app-tab-panel [label]="item | uppercase" [gap]="false">
         <doc-source-code
           [outline]="false"
           [code]="code()"
           [language]="'ts'"
         ></doc-source-code>
-      </app-tab>
+      </app-tab-panel>
     }
   </app-tab-group>
 </app-card>

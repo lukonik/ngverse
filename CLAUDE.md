@@ -23,30 +23,15 @@ NgVerse is an Angular workspace containing two main projects:
 
 ### Building and Testing
 
-```bash
-# Start docs development server
-npm start
-
-# Build library only
-npm run build:ngverse
-
-# Build docs only
-npm run build:docs
-
-# Run tests for library
-npm test
-
-# Run linting
-npm lint
-
-# Format code
-npm run format:write
-npm run format:check
-```
+````
 
 ### Quality Checks
 
 ```bash
+
+# Test ngVerse
+npm run test:offline
+
 # Full library check (lint + format + test + build)
 npm run check:ngverse
 
@@ -55,7 +40,7 @@ npm run check:docs
 
 # Watch schema tests
 npm run schema:test-watch
-```
+````
 
 ## Component Architecture
 
@@ -86,6 +71,19 @@ Each component follows this structure:
 - Standalone components and modern APIs
 - Performance optimization strategies
 - Template and component best practices
+
+### Tailwind CSS Guidelines
+
+- **CSS Files**: Always add `@reference "tailwindcss"` at the top of CSS files when using Tailwind classes with `@apply` directives
+- **IDE Support**: This provides better intellisense and autocomplete for Tailwind classes
+
+### Component Documentation Guidelines
+
+When creating Preview and Examples for NgVerse components:
+
+- **Preview**: Create a preview showing the default behavior of the component
+- **Examples**: Create common usage examples for the component
+- **Reference**: Use `@projects/docs/src/app/features/button-page/` as a reference for structure and implementation
 
 ### Angular Schematics Configuration
 
@@ -125,6 +123,72 @@ The project includes MCP (Model Context Protocol) configuration in `mcp.json`:
 
 - **Angular CLI MCP Server**: Provides Angular-specific tooling and context via `@angular/cli mcp`
 - Enables enhanced Angular development capabilities through MCP integration
+
+## Creating New NgVerse Components
+
+When asked to create a new NgVerse component, follow this complete workflow:
+
+### 1. Git Workflow
+
+- **Checkout latest main branch**: Ensure you're working from the most recent codebase
+- **Create feature branch**: Name branch after the component (e.g., `feature/dropdown-component`)
+
+### 2. Component Development
+
+- **Create component in NgVerse**: Implement in `projects/ngverse/src/lib/ui/[component-name]/`
+- **Sub-components**: Create sub-components if necessary for complex components
+- **Follow patterns**: Use existing components as reference for structure and conventions
+- **Reference implementation**: Use `@projects/ngverse/src/lib/ui/button/` as structural reference
+
+### 3. Documentation Development
+
+- **Create docs page**: Add component page in `projects/docs/src/app/features/[component]-page/`
+- **Preview component**: Create preview showing default behavior
+- **Examples**: Create multiple usage examples demonstrating component variants
+- **API documentation**: Add comprehensive `apiInfo` with inputs, outputs, descriptions
+- **Source tree**: Configure `sourceTree` showing component file structure
+- **Reference documentation**: Use `@projects/docs/src/app/features/button-page/` as documentation page reference
+- **Reference examples**: Use `@projects/docs/src/app/examples/button/` as examples structure reference
+
+### 4. Testing
+
+- **Unit tests**: Add comprehensive unit tests for NgVerse component (`.spec.ts`)
+- **No docs tests**: Skip testing docs project components (examples, previews, pages)
+- **Test coverage**: Ensure all component functionality is tested
+
+### 5. Quality Assurance
+
+- **Run quality checks**: Execute `npm run check:ngverse` and `npm run check:docs`
+- **Run tests**: Execute `npm run test:offline` to ensure all tests pass
+- **Fix issues**: Address any linting, formatting, or test failures
+
+### 6. Git Completion
+
+- **Commit changes**: Use conventional commit messages describing the component addition
+- **Push branch**: Push feature branch to remote repository
+- **Create PR**: Open pull request with comprehensive description of the new component
+
+### Example Workflow Commands
+
+```bash
+# 1. Checkout and create branch
+git checkout main
+git pull origin main
+git checkout -b feature/dropdown-component
+
+# 2-4. Development work (component, docs, tests)
+
+# 5. Quality checks
+npm run check:ngverse
+npm run check:docs
+npm run test:offline
+
+# 6. Git completion
+git add .
+git commit -m "feat: add dropdown component with examples and documentation"
+git push origin feature/dropdown-component
+# Create PR via GitHub UI or gh CLI
+```
 
 ## Commit Standards
 

@@ -1,24 +1,36 @@
 <div
-  class="tab-group-header"
+  class="relative flex border-b border-gray-200 focus:outline-none focus-visible:[&_app-tab-header.is-active]:ring-1 focus-visible:[&_app-tab-header.is-active]:ring-blue-500"
   #tabGroupHeader
+  role="tablist"
+  aria-orientation="horizontal"
   (keydown)="onKeydown($event)"
   tabindex="0"
   (focus)="onTabGroupFocus()"
 >
   @for (tab of tabs(); track $index) {
-    <app-tab-group-header
+    <app-tab-header
       [tab]="tab"
       [isSelected]="$index === selectedIndex()"
+      [tabIndex]="$index"
+      [isActive]="keyManager.activeItemIndex === $index"
+      [isDisabled]="tab.disabled()"
       #tabHeader
       (click)="selectTab($index)"
-    ></app-tab-group-header>
+    ></app-tab-header>
   }
 </div>
 <!--we need explicitely set ng-content, in order ssr work properly see (https://github.com/angular/angular/issues/50543)-->
 <ng-content></ng-content>
-<div [@tabChange]="selectedIndex()" class="tab-body">
+<div
+  [@tabChange]="selectedIndex()"
+  class="tab-content"
+  data-testid="tab-content"
+  role="tabpanel"
+  [attr.id]="'tabpanel-' + selectedIndex()"
+  [attr.aria-labelledby]="'tab-' + selectedIndex()"
+>
   @if (selectedTab(); as selectedTab) {
-    <div [class.body-gap]="selectedTab.gap()">
+    <div [class.p-5]="selectedTab.gap()">
       @if (selectedTab.bodyTemplate(); as bodyTemplate) {
         <ng-container
           [ngTemplateOutlet]="bodyTemplate.templateRef"

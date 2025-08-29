@@ -214,6 +214,7 @@ export class PopoverComponent implements OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this.dispose();
     this.globalSub?.unsubscribe();
   }
 }

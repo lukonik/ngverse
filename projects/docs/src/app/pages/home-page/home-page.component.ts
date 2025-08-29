@@ -9,7 +9,7 @@ import { OtpInputComponent } from '@/ui/otp-input/otp-input.component';
 import { SkeletonComponent } from '@/ui/skeleton/skeleton.component';
 import { SwitchComponent } from '@/ui/switch/switch.component';
 import { TabGroupComponent } from '@/ui/tab/tab-group.component';
-import { TabComponent } from '@/ui/tab/tab.component';
+import { TabPanelComponent } from '@/ui/tab/tab-panel/tab-panel.component';
 import { DOCUMENT } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
@@ -30,7 +30,7 @@ import { HomePageCardComponent } from './home-page-card/home-page-card.component
     AccordionComponent,
     AccordionBodyComponent,
     AccordionItemComponent,
-    TabComponent,
+    TabPanelComponent,
     TabGroupComponent,
     SkeletonComponent,
   ],

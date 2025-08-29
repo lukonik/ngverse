@@ -1,0 +1,5 @@
+@if (tab().headerTemplate(); as headerTemplate) {
+  <ng-container [ngTemplateOutlet]="headerTemplate.templateRef"></ng-container>
+} @else {
+  {{ tab().label() }}
+}

@@ -19,12 +19,15 @@ import {
   input,
   model,
   output,
-  signal,
   viewChildren,
 } from '@angular/core';
-import { TabGroupHeaderComponent } from './tab-group-header.component';
-import { TabComponent } from './tab.component';
+import { TabHeaderComponent } from './tab-header/tab-header.component';
+import { TabPanelComponent } from './tab-panel/tab-panel.component';
 
+/**
+ * Animation configuration for tab content transitions.
+ * Creates a fade-in effect when switching between tab panels.
+ */
 const TAB_CHANGE_ANIMATION = transition('* => *', [
   animation(
     animate(
@@ -37,28 +40,63 @@ const TAB_CHANGE_ANIMATION = transition('* => *', [
   ),
 ]);
 
+/**
+ * A tab group component that displays a collection of tab panels with keyboard navigation and accessibility support.
+ *
+ * @example
+ * ```html
+ * <app-tab-group>
+ *   <app-tab-panel label="First Tab">Content 1</app-tab-panel>
+ *   <app-tab-panel label="Second Tab">Content 2</app-tab-panel>
+ * </app-tab-group>
+ * ```
+ *
+ * Features:
+ * - Keyboard navigation with arrow keys and Enter
+ * - Full accessibility with ARIA attributes
+ * - Smooth content transitions
+ * - Lazy loading support for tab content
+ * - RTL/LTR direction support
+ */
 @Component({
   selector: 'app-tab-group',
-  imports: [NgTemplateOutlet, TabGroupHeaderComponent],
+  imports: [NgTemplateOutlet, TabHeaderComponent],
   templateUrl: './tab-group.component.html',
-  styleUrl: './tab-group.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [trigger('tabChange', [TAB_CHANGE_ANIMATION])],
 })
 export class TabGroupComponent {
-  tabs = contentChildren(TabComponent);
+  /** Collection of tab panel components projected into this tab group */
+  tabs = contentChildren(TabPanelComponent);
+
+  /** The currently selected tab index, two-way bindable */
   selectedIndex = model(0);
+
+  /** Whether to add padding to the tab content area */
   bodyGap = input(true);
 
-  tabHeaders = viewChildren(TabGroupHeaderComponent);
+  /** Collection of tab header components for keyboard navigation */
+  tabHeaders = viewChildren(TabHeaderComponent);
 
+  /** Service for determining text direction (RTL/LTR) */
   direction = inject(Directionality);
 
+  /**
+   * Manages keyboard navigation between tab headers.
+   * Handles arrow key navigation and focus management according to ARIA best practices.
+   */
   keyManager = new ActiveDescendantKeyManager(
     this.tabHeaders,
     inject(Injector)
   ).withHorizontalOrientation(this.direction.value);
 
+  /**
+   * Handles keyboard navigation events for the tab group.
+   * Responds to Enter key to select the currently focused tab and delegates
+   * other navigation keys to the key manager.
+   *
+   * @param event - The keyboard event to process
+   */
   onKeydown(event: KeyboardEvent) {
     if (event.key === 'Enter' && this.keyManager.activeItemIndex !== null) {
       this.selectTab(this.keyManager.activeItemIndex);
@@ -66,24 +104,33 @@ export class TabGroupComponent {
     this.keyManager.onKeydown(event);
   }
 
+  /** Event emitted when the selected tab changes, containing the new tab index */
   tabChanged = output<number>();
 
+  /** Computed property that returns the currently selected tab panel component */
   selectedTab = computed(() =>
     this.tabs().find((_, index) => index === this.selectedIndex())
   );
 
-  tabInkWidth = signal(0);
-  tabInkLeft = signal(0);
-
+  /**
+   * Handles focus events on the tab group container.
+   * Ensures the first tab receives focus when the tab group is focused for the first time.
+   */
   onTabGroupFocus() {
     if (!this.keyManager.activeItem) {
       this.keyManager.setFirstItemActive();
     }
   }
 
-  selectTab($event: number) {
-    this.keyManager.setActiveItem($event);
-    this.selectedIndex.set($event);
-    this.tabChanged.emit($event);
+  /**
+   * Programmatically selects a tab by index.
+   * Updates the key manager's active item, sets the selected index, and emits the change event.
+   *
+   * @param index - The zero-based index of the tab to select
+   */
+  selectTab(index: number) {
+    this.keyManager.setActiveItem(index);
+    this.selectedIndex.set(index);
+    this.tabChanged.emit(index);
   }
 }

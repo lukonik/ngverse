@@ -1,10 +1,34 @@
 <doc-blueprint-page
   label="Tab"
   subTitle="Tabs are a set of layered sections of content, known as tab panels, that display one panel of content at a time."
+  key="tab"
 >
-  <doc-show-case name="tab">
-    <doc-show-case-tab></doc-show-case-tab>
-  </doc-show-case>
-  <doc-source-tree name="tab"></doc-source-tree>
+  <doc-preview>
+    <doc-preview-tab class="w-full"></doc-preview-tab>
+  </doc-preview>
+
+  <doc-source-tree [sourceTree]="sourceTree" name="tab"></doc-source-tree>
   <doc-api-info [apiInfo]="apiInfo"></doc-api-info>
+
+  <doc-examples>
+    <doc-example-item name="basic">
+      <doc-example-tab-basic class="w-full"></doc-example-tab-basic>
+    </doc-example-item>
+
+    <doc-example-item name="custom-labels" label="Custom Labels">
+      <doc-example-tab-custom-labels
+        class="w-full"
+      ></doc-example-tab-custom-labels>
+    </doc-example-item>
+
+    <doc-example-item name="lazy-content" label="Lazy Content">
+      <doc-example-tab-lazy-content
+        class="w-full"
+      ></doc-example-tab-lazy-content>
+    </doc-example-item>
+
+    <doc-example-item name="disabled">
+      <doc-example-tab-disabled class="w-full"></doc-example-tab-disabled>
+    </doc-example-item>
+  </doc-examples>
 </doc-blueprint-page>
