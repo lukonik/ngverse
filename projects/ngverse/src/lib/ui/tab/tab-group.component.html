@@ -1,6 +1,8 @@
 <div
   class="relative flex border-b border-gray-200 focus:outline-none focus-visible:[&_app-tab-header.is-active]:ring-1 focus-visible:[&_app-tab-header.is-active]:ring-blue-500"
   #tabGroupHeader
+  role="tablist"
+  aria-orientation="horizontal"
   (keydown)="onKeydown($event)"
   tabindex="0"
   (focus)="onTabGroupFocus()"
@@ -9,6 +11,9 @@
     <app-tab-header
       [tab]="tab"
       [isSelected]="$index === selectedIndex()"
+      [tabIndex]="$index"
+      [isActive]="keyManager.activeItemIndex === $index"
+      [isDisabled]="tab.disabled()"
       #tabHeader
       (click)="selectTab($index)"
     ></app-tab-header>
@@ -20,6 +25,9 @@
   [@tabChange]="selectedIndex()"
   class="tab-content"
   data-testid="tab-content"
+  role="tabpanel"
+  [attr.id]="'tabpanel-' + selectedIndex()"
+  [attr.aria-labelledby]="'tab-' + selectedIndex()"
 >
   @if (selectedTab(); as selectedTab) {
     <div [class.p-5]="selectedTab.gap()">

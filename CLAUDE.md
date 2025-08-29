@@ -23,13 +23,15 @@ NgVerse is an Angular workspace containing two main projects:
 
 ### Building and Testing
 
-- when you want to verify the changes run Quality checks
-
 ````
 
 ### Quality Checks
 
 ```bash
+
+# Test ngVerse
+npm run test:offline
+
 # Full library check (lint + format + test + build)
 npm run check:ngverse
 
@@ -74,6 +76,14 @@ Each component follows this structure:
 
 - **CSS Files**: Always add `@reference "tailwindcss"` at the top of CSS files when using Tailwind classes with `@apply` directives
 - **IDE Support**: This provides better intellisense and autocomplete for Tailwind classes
+
+### Component Documentation Guidelines
+
+When creating Preview and Examples for NgVerse components:
+
+- **Preview**: Create a preview showing the default behavior of the component
+- **Examples**: Create common usage examples for the component
+- **Reference**: Use `@projects/docs/src/app/features/button-page/` as a reference for structure and implementation
 
 ### Angular Schematics Configuration
 

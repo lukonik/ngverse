@@ -11,3 +11,7 @@
 :host.is-selected {
   @apply border-slate-900;
 }
+
+:host([aria-disabled='true']) {
+  @apply pointer-events-none cursor-not-allowed opacity-50;
+}

@@ -57,6 +57,16 @@ export class SourceTreeBuilder {
     };
   }
 
+  componentFiles(name: string, rootPath: string, excludes: string[]) {
+    const allFiles = [
+      this.component(name, rootPath, 'ts'),
+      this.component(name, rootPath, 'html'),
+      this.component(name, rootPath, 'css'),
+      this.component(name, rootPath, 'spec.ts'),
+    ];
+    return allFiles.filter((file) => !excludes.includes(file.language));
+  }
+
   component(
     name: string,
     rootPath: string,
