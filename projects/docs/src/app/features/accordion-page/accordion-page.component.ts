@@ -25,7 +25,6 @@ import { ExampleAccordionDisabledComponent } from '../../examples/accordion/exam
 import { ExampleAccordionExpandedComponent } from '../../examples/accordion/example-accordion-expanded.component';
 import { ExampleAccordionMultiComponent } from '../../examples/accordion/example-accordion-multi.component';
 import { PreviewAccordionComponent } from '../../examples/accordion/preview-accordion.component';
-import { ShowCaseAccordionComponent } from '../../examples/accordion/show-case-accordion/show-case-accordion.component';
 
 const ROOT = 'accordion';
 
@@ -36,7 +35,6 @@ const ROOT = 'accordion';
     ShowCaseComponent,
     ApiInfoComponent,
     SourceTreeComponent,
-    ShowCaseAccordionComponent,
     CommandInstallationComponent,
     PreviewComponent,
     PreviewAccordionComponent,

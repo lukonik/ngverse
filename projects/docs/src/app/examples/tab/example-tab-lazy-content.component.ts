@@ -2,7 +2,7 @@ import { TabContentDirective } from '@/ui/tab/directives/tab-content.directive';
 import { TabGroupComponent } from '@/ui/tab/tab-group.component';
 import { TabPanelComponent } from '@/ui/tab/tab-panel/tab-panel.component';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { LazyTabComponent } from '../lazy-tab/lazy-tab.component';
+import { LazyTabComponent } from './lazy-tab/lazy-tab.component';
 
 @Component({
   selector: 'doc-example-tab-lazy-content',

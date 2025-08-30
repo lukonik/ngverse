@@ -12,11 +12,11 @@ import {
   SourceTreeFolder,
 } from '../../blueprint/source-tree/source-tree-builder';
 import { SourceTreeComponent } from '../../blueprint/source-tree/source-tree.component';
-import { ExampleTabBasicComponent } from '../../examples/tab/example-tab-basic/example-tab-basic.component';
-import { ExampleTabCustomLabelsComponent } from '../../examples/tab/example-tab-custom-labels/example-tab-custom-labels.component';
-import { ExampleTabDisabledComponent } from '../../examples/tab/example-tab-disabled/example-tab-disabled.component';
-import { ExampleTabLazyContentComponent } from '../../examples/tab/example-tab-lazy-content/example-tab-lazy-content.component';
-import { PreviewTabComponent } from '../../examples/tab/preview-tab/preview-tab.component';
+import { ExampleTabBasicComponent } from '../../examples/tab/example-tab-basic.component';
+import { ExampleTabCustomLabelsComponent } from '../../examples/tab/example-tab-custom-labels.component';
+import { ExampleTabDisabledComponent } from '../../examples/tab/example-tab-disabled.component';
+import { ExampleTabLazyContentComponent } from '../../examples/tab/example-tab-lazy-content.component';
+import { PreviewTabComponent } from '../../examples/tab/preview-tab.component';
 const ROOT = 'tab';
 @Component({
   selector: 'doc-tab-page',
