@@ -135,9 +135,9 @@ describe('TabNavBarComponent', () => {
           component.keyManager,
           'activeItem',
           'get'
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
         ).and.returnValue({
           tabValue: () => 'test-tab',
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } as any);
 
         component.onKeydown(mockKeyboardEvent);
@@ -241,8 +241,7 @@ describe('TabNavBarComponent', () => {
         ] as any[];
 
         // Mock the tabItems signal to return our mock items
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        spyOn(component.tabItems as any, 'call').and.returnValue(mockTabItems);
+        spyOn(component, 'tabItems').and.returnValue(mockTabItems);
         spyOn(component.keyManager, 'setActiveItem');
         spyOn(component.tabChanged, 'emit');
 
@@ -260,8 +259,7 @@ describe('TabNavBarComponent', () => {
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
         ] as any[];
 
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        spyOn(component.tabItems as any, 'call').and.returnValue(mockTabItems);
+        spyOn(component, 'tabItems').and.returnValue(mockTabItems);
         spyOn(component.keyManager, 'setActiveItem');
         spyOn(component.tabChanged, 'emit');
 

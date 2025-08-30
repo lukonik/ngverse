@@ -36,7 +36,7 @@ import { TabNavBarItemComponent } from './tab-nav-bar-item/tab-nav-bar-item.comp
   imports: [],
   template: `
     <div
-      class="relative flex border-b border-gray-200 focus:outline-none focus-visible:[&_app-tab-nav-bar-item.is-active]:ring-1 focus-visible:[&_app-tab-nav-bar-item.is-active]:ring-blue-500"
+      class="relative flex border-b border-gray-200 focus:outline-none focus-visible:[&_app-tab-nav-bar-item.is-active]:ring-1 focus-visible:[&_app-tab-nav-bar-item.is-active]:ring-slate-900"
       #tabNavBarHeader
       role="tablist"
       aria-orientation="horizontal"

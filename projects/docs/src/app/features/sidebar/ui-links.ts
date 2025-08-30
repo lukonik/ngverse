@@ -65,7 +65,10 @@ export const UI_LINKS: SidebarGroup = {
       name: 'Tab',
       url: 'tab',
     },
-
+    {
+      name: 'Tab Nav Bar',
+      url: 'tab-nav-bar',
+    },
     {
       name: 'Button',
       url: 'button',

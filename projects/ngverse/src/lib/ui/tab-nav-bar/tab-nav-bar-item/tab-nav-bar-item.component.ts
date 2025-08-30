@@ -4,6 +4,7 @@ import {
   Component,
   computed,
   inject,
+  Input,
   input,
 } from '@angular/core';
 import { TabNavBarComponent } from '../tab-nav-bar.component';
@@ -30,10 +31,10 @@ import { TabNavBarComponent } from '../tab-nav-bar.component';
   template: `
     <button
       type="button"
-      class="relative px-4 py-2 text-sm font-medium text-gray-500 transition-colors duration-200 hover:text-gray-700 focus:text-blue-600 focus:outline-none"
-      [class.text-blue-600]="isSelected()"
+      class="relative px-4 py-2 text-sm font-medium text-gray-500 transition-colors duration-200 hover:text-gray-700 focus:text-slate-900 focus:outline-none"
+      [class.text-slate-900]="isSelected()"
       [class.border-b-2]="isSelected()"
-      [class.border-blue-600]="isSelected()"
+      [class.border-slate-900]="isSelected()"
       [class.is-active]="isActive"
       [attr.id]="'tab-nav-' + tabValue()"
       [attr.aria-selected]="isSelected()"
@@ -56,9 +57,9 @@ export class TabNavBarItemComponent implements Highlightable {
   /** The unique value for this tab nav bar item */
   tabValue = input.required<string>();
 
-  /** Whether this tab nav bar item is disabled - input signal */
-  // eslint-disable-next-line @angular-eslint/no-input-rename
-  protected _disabledInput = input<boolean>(false, { alias: 'disabled' });
+  /** Whether this tab nav bar item is disabled  */
+  @Input()
+  disabled: boolean | undefined;
 
   /** Reference to the parent tab nav bar component */
   private tabNavBar = inject(TabNavBarComponent);
@@ -70,14 +71,6 @@ export class TabNavBarItemComponent implements Highlightable {
   isSelected = computed(
     () => this.tabNavBar.selectedTabValue() === this.tabValue()
   );
-
-  /** Computed property that determines if this tab nav bar item is disabled */
-  isDisabled = computed(() => this._disabledInput());
-
-  /** Whether this tab nav bar item is disabled (for Highlightable interface) */
-  get disabled(): boolean | undefined {
-    return this._disabledInput();
-  }
 
   /**
    * Handles click events on the tab nav bar item.
@@ -103,15 +96,5 @@ export class TabNavBarItemComponent implements Highlightable {
    */
   setInactiveStyles(): void {
     this.isActive = false;
-  }
-
-  /**
-   * Gets the disabled state of this tab nav bar item.
-   * Used by the CDK KeyManager to determine if this item can be focused.
-   *
-   * @returns Whether this tab nav bar item is disabled
-   */
-  getDisabled(): boolean | undefined {
-    return this.disabled;
   }
 }

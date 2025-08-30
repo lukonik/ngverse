@@ -1,5 +1,5 @@
-import { TabNavBarComponent } from '@/ui/tab-nav-bar/tab-nav-bar.component';
 import { TabNavBarItemComponent } from '@/ui/tab-nav-bar/tab-nav-bar-item/tab-nav-bar-item.component';
+import { TabNavBarComponent } from '@/ui/tab-nav-bar/tab-nav-bar.component';
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 
 @Component({
