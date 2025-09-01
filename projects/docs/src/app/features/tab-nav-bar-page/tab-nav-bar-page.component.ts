@@ -4,6 +4,7 @@ import {
   ApiInfoComponent,
 } from '../../blueprint/api-info/api-info.component';
 import { BlueprintPageComponent } from '../../blueprint/blueprint-page/blueprint-page.component';
+import { CommandInstallationComponent } from '../../blueprint/command-installation/command-installation.component';
 import { ExampleItemComponent } from '../../blueprint/examples/example-item/example-item.component';
 import { ExamplesComponent } from '../../blueprint/examples/examples.component';
 import { PreviewComponent } from '../../blueprint/preview/preview.component';
@@ -12,10 +13,10 @@ import {
   SourceTreeFolder,
 } from '../../blueprint/source-tree/source-tree-builder';
 import { SourceTreeComponent } from '../../blueprint/source-tree/source-tree.component';
-import { ExampleTabNavBarBasicComponent } from '../../examples/tab-nav-bar/example-tab-nav-bar-basic/example-tab-nav-bar-basic.component';
-import { ExampleTabNavBarDisabledComponent } from '../../examples/tab-nav-bar/example-tab-nav-bar-disabled/example-tab-nav-bar-disabled.component';
-import { ExampleTabNavBarIconsComponent } from '../../examples/tab-nav-bar/example-tab-nav-bar-icons/example-tab-nav-bar-icons.component';
-import { PreviewTabNavBarComponent } from '../../examples/tab-nav-bar/preview-tab-nav-bar/preview-tab-nav-bar.component';
+import { ExampleTabNavBarBasicComponent } from '../../examples/tab-nav-bar/example-tab-nav-bar-basic.component';
+import { ExampleTabNavBarDisabledComponent } from '../../examples/tab-nav-bar/example-tab-nav-bar-disabled.component';
+import { ExampleTabNavBarIconsComponent } from '../../examples/tab-nav-bar/example-tab-nav-bar-icons.component';
+import { PreviewTabNavBarComponent } from '../../examples/tab-nav-bar/preview-tab-nav-bar.component';
 
 const ROOT = 'tab-nav-bar';
 
@@ -23,6 +24,7 @@ const ROOT = 'tab-nav-bar';
   selector: 'doc-tab-nav-bar-page',
   imports: [
     BlueprintPageComponent,
+    CommandInstallationComponent,
     PreviewComponent,
     PreviewTabNavBarComponent,
     ExamplesComponent,

@@ -1,0 +1,16 @@
+<button
+  type="button"
+  class="relative px-4 py-2 text-sm font-medium text-gray-500 transition-colors duration-200 hover:text-gray-700 focus:text-slate-900 focus:outline-none"
+  [class.text-slate-900]="isSelected()"
+  [class.border-b-2]="isSelected()"
+  [class.border-slate-900]="isSelected()"
+  [class.is-active]="isActive"
+  [attr.id]="'tab-nav-' + tabValue()"
+  [attr.aria-selected]="isSelected()"
+  [attr.aria-disabled]="disabled"
+  [tabindex]="isSelected() ? 0 : -1"
+  role="tab"
+  (click)="onClick()"
+>
+  <ng-content></ng-content>
+</button>

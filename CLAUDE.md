@@ -90,7 +90,10 @@ When creating Preview and Examples for NgVerse components:
 - **Reference**: Use `@projects/docs/src/app/features/button-page/` as a reference for structure and
   implementation
 - **Component Structure**: For documentation examples only, use inline components (create only .ts component file with inline HTML and CSS). For main NgVerse library components, use external template and CSS files
-- **Component Location**: do not create component in sub-folders. flatten it in root examples folder, for example: if the disabled-button example component will in examples/button folder, not in examples/button/disabled-button folder
+- **Component Location**: NEVER create components in sub-folders within examples directories. Always flatten all example and preview components directly in the root examples folder. For example:
+  - ✅ Correct: `examples/button/example-button-disabled.component.ts`
+  - ❌ Wrong: `examples/button/disabled-button/example-button-disabled.component.ts`
+  - This applies to ALL component examples and previews - no nested folder structure allowed
 
 ### Angular Schematics Configuration
 

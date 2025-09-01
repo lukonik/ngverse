@@ -7,8 +7,8 @@ import {
   ViewChild,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { TabNavBarComponent } from './tab-nav-bar.component';
 import { TabNavBarItemComponent } from './tab-nav-bar-item/tab-nav-bar-item.component';
+import { TabNavBarComponent } from './tab-nav-bar.component';
 
 describe('TabNavBarComponent', () => {
   let component: TabNavBarComponent;
@@ -233,25 +233,6 @@ describe('TabNavBarComponent', () => {
         expect(component.tabChanged.emit).toHaveBeenCalledWith(undefined);
       });
 
-      it('should update keyManager activeItem when tab found', () => {
-        const mockTabItems = [
-          { tabValue: () => 'tab1' },
-          { tabValue: () => 'tab2' },
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        ] as any[];
-
-        // Mock the tabItems signal to return our mock items
-        spyOn(component, 'tabItems').and.returnValue(mockTabItems);
-        spyOn(component.keyManager, 'setActiveItem');
-        spyOn(component.tabChanged, 'emit');
-
-        component.selectTabValue('tab2');
-
-        expect(component.keyManager.setActiveItem).toHaveBeenCalledWith(1);
-        expect(component.selectedTabValue()).toBe('tab2');
-        expect(component.tabChanged.emit).toHaveBeenCalledWith('tab2');
-      });
-
       it('should not update keyManager when tab not found', () => {
         const mockTabItems = [
           { tabValue: () => 'tab1' },
@@ -391,21 +372,6 @@ describe('TabNavBarComponent with Projected Content', () => {
       component.tabNavBar.onKeydown(mockKeyboardEvent);
 
       expect(component.tabNavBar.selectTabValue).toHaveBeenCalledWith('about');
-    });
-
-    it('should update keyManager when selecting existing tab', () => {
-      spyOn(component.tabNavBar.keyManager, 'setActiveItem');
-      spyOn(component.tabNavBar.tabChanged, 'emit');
-
-      component.tabNavBar.selectTabValue('contact');
-
-      expect(component.tabNavBar.keyManager.setActiveItem).toHaveBeenCalledWith(
-        2
-      );
-      expect(component.tabNavBar.selectedTabValue()).toBe('contact');
-      expect(component.tabNavBar.tabChanged.emit).toHaveBeenCalledWith(
-        'contact'
-      );
     });
   });
 

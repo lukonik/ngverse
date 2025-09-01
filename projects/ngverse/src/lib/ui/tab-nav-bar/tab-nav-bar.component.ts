@@ -5,11 +5,11 @@ import {
   Component,
   computed,
   contentChildren,
+  forwardRef,
   inject,
   Injector,
   model,
   output,
-  viewChildren,
 } from '@angular/core';
 import { TabNavBarItemComponent } from './tab-nav-bar-item/tab-nav-bar-item.component';
 
@@ -34,30 +34,19 @@ import { TabNavBarItemComponent } from './tab-nav-bar-item/tab-nav-bar-item.comp
 @Component({
   selector: 'app-tab-nav-bar',
   imports: [],
-  template: `
-    <div
-      class="relative flex border-b border-gray-200 focus:outline-none focus-visible:[&_app-tab-nav-bar-item.is-active]:ring-1 focus-visible:[&_app-tab-nav-bar-item.is-active]:ring-slate-900"
-      #tabNavBarHeader
-      role="tablist"
-      aria-orientation="horizontal"
-      (keydown)="onKeydown($event)"
-      tabindex="0"
-      (focus)="onTabNavBarFocus()"
-    >
-      <ng-content></ng-content>
-    </div>
-  `,
+  templateUrl: './tab-nav-bar.component.html',
+  styleUrl: './tab-nav-bar.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TabNavBarComponent {
   /** Collection of tab nav bar item components projected into this component */
-  tabItems = contentChildren(TabNavBarItemComponent);
+  tabItems = contentChildren(forwardRef(() => TabNavBarItemComponent));
 
   /** The currently selected tab value, two-way bindable */
   selectedTabValue = model<string | undefined>(undefined);
 
   /** Collection of tab nav bar item components for keyboard navigation */
-  tabNavBarItems = viewChildren(TabNavBarItemComponent);
+  tabNavBarItems = contentChildren(forwardRef(() => TabNavBarItemComponent));
 
   /** Service for determining text direction (RTL/LTR) */
   direction = inject(Directionality);
@@ -67,8 +56,7 @@ export class TabNavBarComponent {
    * Handles arrow key navigation and focus management according to ARIA best practices.
    */
   keyManager = new ActiveDescendantKeyManager(
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    this.tabNavBarItems as any,
+    this.tabNavBarItems,
     inject(Injector)
   ).withHorizontalOrientation(this.direction.value);
 
@@ -89,8 +77,7 @@ export class TabNavBarComponent {
    */
   onKeydown(event: KeyboardEvent) {
     if (event.key === 'Enter' && this.keyManager.activeItemIndex !== null) {
-      const activeItem = this.keyManager
-        .activeItem as unknown as TabNavBarItemComponent;
+      const activeItem = this.keyManager.activeItem as TabNavBarItemComponent;
       if (activeItem) {
         this.selectTabValue(activeItem.tabValue());
       }

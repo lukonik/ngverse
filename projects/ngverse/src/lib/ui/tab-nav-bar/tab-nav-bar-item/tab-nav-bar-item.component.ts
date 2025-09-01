@@ -3,6 +3,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   computed,
+  forwardRef,
   inject,
   Input,
   input,
@@ -28,24 +29,7 @@ import { TabNavBarComponent } from '../tab-nav-bar.component';
 @Component({
   selector: 'app-tab-nav-bar-item',
   imports: [],
-  template: `
-    <button
-      type="button"
-      class="relative px-4 py-2 text-sm font-medium text-gray-500 transition-colors duration-200 hover:text-gray-700 focus:text-slate-900 focus:outline-none"
-      [class.text-slate-900]="isSelected()"
-      [class.border-b-2]="isSelected()"
-      [class.border-slate-900]="isSelected()"
-      [class.is-active]="isActive"
-      [attr.id]="'tab-nav-' + tabValue()"
-      [attr.aria-selected]="isSelected()"
-      [attr.aria-disabled]="disabled"
-      [tabindex]="isSelected() ? 0 : -1"
-      role="tab"
-      (click)="onClick()"
-    >
-      <ng-content></ng-content>
-    </button>
-  `,
+  templateUrl: './tab-nav-bar-item.component.html',
   styleUrl: './tab-nav-bar-item.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
@@ -62,7 +46,7 @@ export class TabNavBarItemComponent implements Highlightable {
   disabled: boolean | undefined;
 
   /** Reference to the parent tab nav bar component */
-  private tabNavBar = inject(TabNavBarComponent);
+  private tabNavBar = inject(forwardRef(() => TabNavBarComponent));
 
   /** Whether this tab nav bar item currently has keyboard focus */
   isActive = false;
