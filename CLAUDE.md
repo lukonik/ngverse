@@ -49,14 +49,16 @@ npm run schema:test-watch
 Each component follows this structure:
 
 - Main component file (e.g., `button.component.ts`)
+- External template file (e.g., `button.component.html`) - **Do not use inline templates**
+- External CSS file (e.g., `button.component.css`) with custom properties for theming
 - Optional sub-components for complex components
-- CSS styling with custom properties for theming
 - Comprehensive test coverage (`.spec.ts` files)
 - Uses Angular's OnPush change detection strategy
 
 ### Key Architectural Decisions
 
 - **Standalone components**: All components use Angular standalone architecture
+- **External templates**: Always use `templateUrl` and `styleUrl` instead of inline templates for better maintainability, IDE support, and syntax highlighting
 - **CSS custom properties**: Theming via CSS variables
 - **Service-based overlays**: Dialog, drawer, toast use Angular services for programmatic control
 - **Directive-based utilities**: Outside click, context menu, etc. implemented as directives
@@ -76,6 +78,8 @@ Each component follows this structure:
 
 - **CSS Files**: Always add `@reference "tailwindcss"` at the top of CSS files when using Tailwind classes with `@apply` directives
 - **IDE Support**: This provides better intellisense and autocomplete for Tailwind classes
+- **Primary Color**: Use `slate-900` as the primary color for component styling instead of `blue-600`
+- **Color Consistency**: Apply slate-900 for active states, selected states, focus states, and primary interactive elements
 
 ### Component Documentation Guidelines
 
@@ -83,7 +87,13 @@ When creating Preview and Examples for NgVerse components:
 
 - **Preview**: Create a preview showing the default behavior of the component
 - **Examples**: Create common usage examples for the component
-- **Reference**: Use `@projects/docs/src/app/features/button-page/` as a reference for structure and implementation
+- **Reference**: Use `@projects/docs/src/app/features/button-page/` as a reference for structure and
+  implementation
+- **Component Structure**: For documentation examples only, use inline components (create only .ts component file with inline HTML and CSS). For main NgVerse library components, use external template and CSS files
+- **Component Location**: NEVER create components in sub-folders within examples directories. Always flatten all example and preview components directly in the root examples folder. For example:
+  - ✅ Correct: `examples/button/example-button-disabled.component.ts`
+  - ❌ Wrong: `examples/button/disabled-button/example-button-disabled.component.ts`
+  - This applies to ALL component examples and previews - no nested folder structure allowed
 
 ### Angular Schematics Configuration
 
@@ -136,6 +146,11 @@ When asked to create a new NgVerse component, follow this complete workflow:
 ### 2. Component Development
 
 - **Create component in NgVerse**: Implement in `projects/ngverse/src/lib/ui/[component-name]/`
+- **File Structure**: Create separate files for each component:
+  - `[component-name].component.ts` - Main component class
+  - `[component-name].component.html` - External template file (never use inline templates)
+  - `[component-name].component.css` - External stylesheet with custom properties
+  - `[component-name].component.spec.ts` - Unit tests
 - **Sub-components**: Create sub-components if necessary for complex components
 - **Follow patterns**: Use existing components as reference for structure and conventions
 - **Reference implementation**: Use `@projects/ngverse/src/lib/ui/button/` as structural reference
@@ -147,6 +162,7 @@ When asked to create a new NgVerse component, follow this complete workflow:
 - **Examples**: Create multiple usage examples demonstrating component variants
 - **API documentation**: Add comprehensive `apiInfo` with inputs, outputs, descriptions
 - **Source tree**: Configure `sourceTree` showing component file structure
+- **Add to sidebar navigation**: Update the sidebar navigation to include a link to the new component page
 - **Reference documentation**: Use `@projects/docs/src/app/features/button-page/` as documentation page reference
 - **Reference examples**: Use `@projects/docs/src/app/examples/button/` as examples structure reference
 

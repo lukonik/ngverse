@@ -172,6 +172,13 @@ export const UI_ROUTES: Route = {
         ),
     },
     {
+      path: 'tab-nav-bar',
+      loadComponent: () =>
+        import('./features/tab-nav-bar-page/tab-nav-bar-page.component').then(
+          (d) => d.TabNavBarPageComponent
+        ),
+    },
+    {
       path: 'textarea',
       loadComponent: () =>
         import('./features/textarea-page/textarea-page.component').then(
