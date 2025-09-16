@@ -1,0 +1,33 @@
+@reference 'tailwindcss';
+
+:host {
+  @apply flex;
+}
+
+:host button {
+  @apply inline-flex min-w-20 items-center justify-center rounded-md border border-transparent bg-white px-4 py-2 text-sm font-medium whitespace-nowrap text-slate-600 transition-colors duration-200;
+}
+
+:host button:hover {
+  @apply bg-slate-200 text-slate-900;
+}
+
+:host button.selected {
+  @apply bg-slate-900 text-slate-50 shadow-sm;
+}
+
+:host button.selected:hover {
+  @apply bg-slate-900 text-slate-50;
+}
+
+:host button:disabled {
+  @apply cursor-not-allowed bg-slate-100 text-slate-400;
+}
+
+:host button:disabled:hover {
+  @apply bg-slate-100 text-slate-400;
+}
+
+:host button:focus-visible {
+  @apply ring-2 ring-slate-900 ring-offset-2 ring-offset-white outline-none;
+}

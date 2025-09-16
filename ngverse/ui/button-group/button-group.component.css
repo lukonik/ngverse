@@ -1,0 +1,13 @@
+@reference 'tailwindcss';
+
+:host {
+  @apply inline-flex w-fit flex-wrap gap-px rounded-lg bg-slate-100 p-1;
+}
+
+:host(:focus-within) {
+  @apply ring-2 ring-slate-900 ring-offset-2 ring-offset-white;
+}
+
+:host(.app-button-group-disabled) {
+  @apply cursor-not-allowed opacity-70;
+}
