@@ -1,0 +1,10 @@
+<button
+  type="button"
+  (click)="onSelect()"
+  [attr.aria-pressed]="selected()"
+  [class.selected]="selected()"
+  [disabled]="isDisabled()"
+  [attr.aria-disabled]="isDisabled()"
+>
+  <ng-content></ng-content>
+</button>

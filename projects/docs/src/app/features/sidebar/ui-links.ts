@@ -74,6 +74,10 @@ export const UI_LINKS: SidebarGroup = {
       url: 'button',
     },
     {
+      name: 'Button Group',
+      url: 'button-group',
+    },
+    {
       name: 'Dialog',
       url: 'dialog',
     },

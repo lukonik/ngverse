@@ -109,6 +109,13 @@ export const UI_ROUTES: Route = {
         ),
     },
     {
+      path: 'button-group',
+      loadComponent: () =>
+        import('./features/button-group-page/button-group-page.component').then(
+          (b) => b.ButtonGroupPageComponent
+        ),
+    },
+    {
       path: 'outside-click',
       loadComponent: () =>
         import(
