@@ -1,24 +1,68 @@
-<div>
-  @switch (viewType()) {
-    @case ('day') {
-      <app-day-view
-        [day]="day()"
-        (daySelected)="daySelected($event)"
-        (changeView)="changeViewType($event)"
-      ></app-day-view>
-    }
-    @case ('month') {
-      <app-month-view
-        [month]="month()"
-        (monthSelected)="monthSelected($event)"
-        (changeView)="changeViewType($event)"
-      ></app-month-view>
-    }
-    @case ('year') {
-      <app-year-view
-        [year]="year()"
-        (yearSelected)="yearSelected($event)"
-      ></app-year-view>
-    }
+<div class="dp-calendar">
+  <div class="dp-calendar__header">
+    <button
+      type="button"
+      class="dp-calendar__nav"
+      (click)="previous()"
+      aria-label="Previous"
+      [disabled]="!canGoPrevious()"
+    >
+      <span aria-hidden="true">&lt;</span>
+    </button>
+    <div class="dp-calendar__period">
+      <button
+        type="button"
+        class="dp-calendar__period-button"
+        (click)="showMonthView()"
+        aria-label="Change month"
+      >
+        {{ monthLabel() }}
+      </button>
+      <button
+        type="button"
+        class="dp-calendar__period-button"
+        (click)="showYearView()"
+        aria-label="Change year"
+      >
+        {{ yearLabel() }}
+      </button>
+    </div>
+    <button
+      type="button"
+      class="dp-calendar__nav"
+      (click)="next()"
+      aria-label="Next"
+      [disabled]="!canGoNext()"
+    >
+      <span aria-hidden="true">&gt;</span>
+    </button>
+  </div>
+
+  @if (viewType() === 'day') {
+    <app-day-view
+      [activeDate]="activeDate()"
+      [selectedDate]="selectedDate()"
+      [selectedRange]="selectedRange()"
+      [selectionMode]="selectionMode()"
+      [minDate]="minDate()"
+      [maxDate]="maxDate()"
+      [startOfWeek]="startOfWeek()"
+      (dateSelected)="handleDaySelected($event)"
+    ></app-day-view>
+  } @else if (viewType() === 'month') {
+    <app-month-view
+      [activeDate]="activeDate()"
+      [minDate]="minDate()"
+      [maxDate]="maxDate()"
+      (monthSelected)="handleMonthSelected($event)"
+    ></app-month-view>
+  } @else {
+    <app-year-view
+      [activeDate]="activeDate()"
+      [years]="yearOptions()"
+      [minDate]="minDate()"
+      [maxDate]="maxDate()"
+      (yearSelected)="handleYearSelected($event)"
+    ></app-year-view>
   }
 </div>

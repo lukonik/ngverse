@@ -1,0 +1,40 @@
+<doc-blueprint-page
+  [subTitle]="
+    'Inline calendar for picking single dates or date ranges with custom adapters.'
+  "
+  [label]="'Datepicker'"
+  key="datepicker"
+>
+  <doc-preview>
+    <doc-preview-datepicker class="block max-w-sm"></doc-preview-datepicker>
+  </doc-preview>
+  <doc-command-installation type="component" name="datepicker">
+  </doc-command-installation>
+  <doc-source-tree
+    [sourceTree]="sourceTree"
+    name="datepicker"
+  ></doc-source-tree>
+  <doc-api-info [apiInfo]="apiInfo"> </doc-api-info>
+  <doc-examples>
+    <doc-example-item name="single">
+      <doc-example-datepicker-single
+        class="block max-w-sm"
+      ></doc-example-datepicker-single>
+    </doc-example-item>
+    <doc-example-item name="range">
+      <doc-example-datepicker-range
+        class="block max-w-sm"
+      ></doc-example-datepicker-range>
+    </doc-example-item>
+    <doc-example-item name="min-max">
+      <doc-example-datepicker-min-max
+        class="block max-w-sm"
+      ></doc-example-datepicker-min-max>
+    </doc-example-item>
+    <doc-example-item name="disabled">
+      <doc-example-datepicker-disabled
+        class="block max-w-sm"
+      ></doc-example-datepicker-disabled>
+    </doc-example-item>
+  </doc-examples>
+</doc-blueprint-page>

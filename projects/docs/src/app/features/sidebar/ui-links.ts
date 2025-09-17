@@ -139,5 +139,9 @@ export const UI_LINKS: SidebarGroup = {
       name: 'Icon',
       url: 'icon',
     },
+    {
+      name: 'Datepicker',
+      url: 'datepicker',
+    },
   ].sort((a, b) => a.name.localeCompare(b.name)),
 };

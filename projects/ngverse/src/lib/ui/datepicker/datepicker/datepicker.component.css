@@ -1,0 +1,17 @@
+@reference "tailwindcss";
+
+:host {
+  display: block;
+}
+.dp-datepicker {
+  @apply inline-flex flex-col gap-3;
+}
+
+.dp-datepicker.disabled {
+  @apply opacity-60;
+}
+
+.dp-datepicker__selection {
+  @apply text-sm font-medium;
+  color: var(--color-muted-foreground);
+}

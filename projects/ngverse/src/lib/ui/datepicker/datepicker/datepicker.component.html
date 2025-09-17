@@ -1,1 +1,12 @@
-<app-calendar></app-calendar>
+<div class="dp-datepicker" [class.disabled]="disabled()">
+  <div class="dp-datepicker__selection test">{{ selectionLabel() }}</div>
+  <app-calendar
+    [selectionMode]="selectionMode()"
+    [selectedDate]="selectedDate()"
+    [selectedRange]="selectedRange()"
+    [minDate]="minDate()"
+    [maxDate]="maxDate()"
+    [startOfWeek]="startOfWeek()"
+    (dateSelected)="handleDateSelected($event)"
+  ></app-calendar>
+</div>

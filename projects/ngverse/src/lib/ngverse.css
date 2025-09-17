@@ -1,6 +1,6 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
-@theme static {
+@theme {
   --color-background: white;
   --color-foreground: #030712;
   --color-primary: #2563eb;
@@ -26,6 +26,12 @@
 
   --color-disabled: #f9fafb;
   --color-disabled-foreground: #9ca3af;
+
+  --color-card: white;
+  --color-card-foreground: #0f172a;
+
+  --color-muted: #f1f5f9;
+  --color-muted-foreground: #475569;
 
   --color-surface: #f9fafb;
 
@@ -71,6 +77,12 @@
 
   --color-disabled: #6b7280;
   --color-disabled-foreground: #9ca3af;
+
+  --color-card: #111827;
+  --color-card-foreground: #f8fafc;
+
+  --color-muted: #1f2937;
+  --color-muted-foreground: #94a3b8;
 
   --color-surface: #1f2937;
 

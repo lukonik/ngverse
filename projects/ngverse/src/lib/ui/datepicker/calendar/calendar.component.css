@@ -1,0 +1,42 @@
+@reference "tailwindcss";
+
+:host {
+  display: block;
+}
+
+.dp-calendar {
+  @apply w-full rounded-lg border p-4;
+  border-color: var(--color-border);
+  background-color: var(--color-card);
+}
+
+.dp-calendar__header {
+  @apply mb-4 flex items-center justify-between gap-2;
+}
+
+.dp-calendar__nav {
+  @apply inline-flex h-9 w-9 items-center justify-center rounded-full text-lg transition hover:bg-slate-900/10;
+  color: var(--color-muted-foreground);
+}
+
+.dp-calendar__nav:hover {
+  color: var(--color-foreground);
+}
+
+.dp-calendar__nav:disabled {
+  @apply cursor-not-allowed hover:bg-transparent;
+  color: color-mix(in srgb, var(--color-muted-foreground) 50%, transparent);
+}
+
+.dp-calendar__nav:disabled:hover {
+  color: color-mix(in srgb, var(--color-muted-foreground) 50%, transparent);
+}
+
+.dp-calendar__period {
+  @apply flex items-center gap-1;
+}
+
+.dp-calendar__period-button {
+  @apply rounded-md px-2 py-1 text-sm font-medium transition hover:bg-slate-900/10;
+  color: var(--color-foreground);
+}

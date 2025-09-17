@@ -1,3 +1,14 @@
-<div>
-  <button (click)="changeView.emit('year')">Year</button>
+<div class="dp-month-view">
+  @for (month of months(); track month.index) {
+    <button
+      type="button"
+      class="dp-month"
+      (click)="onSelect(month)"
+      [class.active]="month.index === activeMonth()"
+      [class.disabled]="month.disabled"
+      [disabled]="month.disabled"
+    >
+      {{ month.label }}
+    </button>
+  }
 </div>

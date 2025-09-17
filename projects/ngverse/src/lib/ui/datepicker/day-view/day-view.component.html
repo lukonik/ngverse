@@ -1,28 +1,33 @@
-<div>
-  <button (click)="changeView.emit('month')">Month</button>
-  <button (click)="changeView.emit('year')">Year</button>
-</div>
-<table role="grid">
+<table class="dp-day-view" role="grid">
   <thead>
     <tr>
-      @for (day of weeks; track $index) {
-        <th scope="col">{{ day }}</th>
+      @for (weekLabel of weekLabels(); track $index) {
+        <th scope="col">{{ weekLabel }}</th>
       }
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>{{ day() }}</td>
-    </tr>
-    @for (weekDay of weekDays(); track $index) {
+    @for (week of weeks(); track trackByWeek($index, week)) {
       <tr>
-        @for (_day of weekDay; track $index) {
+        @for (day of week; track trackByDay($index, day)) {
           <td
-            [style.color]="day() === _day.value ? 'red' : null"
-            [class.prev]="!_day.isInMonth"
+            [class.outside]="!day.inCurrentMonth"
+            [class.today]="day.isToday"
+            [class.range]="isInRange(day)"
+            [class.range-start]="isRangeStart(day)"
+            [class.range-end]="isRangeEnd(day)"
+            [class.disabled]="isDisabled(day)"
           >
-            <button (click)="daySelected.emit(_day.value)">
-              {{ _day.display }}
+            <button
+              type="button"
+              class="dp-day"
+              appCell
+              [date]="dateLabel(day)"
+              (click)="onSelectDay(day)"
+              [class.selected]="isSelected(day)"
+              [disabled]="isDisabled(day)"
+            >
+              {{ day.display }}
             </button>
           </td>
         }

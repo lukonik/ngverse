@@ -10,6 +10,7 @@ import { KeyState } from '../state/key.state';
 
 @Directive({
   selector: '[appCell]',
+  standalone: true,
   host: {
     '(keydown)': 'onKeydown($event)',
     '(blur)': 'onBlur()',
@@ -18,12 +19,12 @@ import { KeyState } from '../state/key.state';
     '[attr.data-date]': 'date()',
   },
 })
-export class CellDirective<T> implements OnDestroy {
+export class CellDirective implements OnDestroy {
   tabIndex = signal<0 | -1>(-1);
   keyState = inject(KeyState);
   private el = inject<ElementRef<HTMLElement>>(ElementRef).nativeElement;
 
-  date = input.required<T | string>();
+  date = input.required<string>();
 
   constructor() {
     this.keyState.add(this);

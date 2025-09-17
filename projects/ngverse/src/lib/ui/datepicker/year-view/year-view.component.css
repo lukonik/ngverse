@@ -1,0 +1,29 @@
+@reference "tailwindcss";
+
+:host {
+  display: block;
+}
+
+.dp-year-view {
+  @apply grid grid-cols-3 gap-2;
+}
+
+.dp-year {
+  @apply h-10 rounded-md text-sm font-medium transition;
+  background-color: var(--color-muted);
+  color: var(--color-muted-foreground);
+}
+
+.dp-year.active {
+  @apply bg-slate-900 text-white;
+}
+
+.dp-year:not(:disabled):hover {
+  @apply bg-slate-900/10;
+  color: var(--color-foreground);
+}
+
+.dp-year.disabled,
+.dp-year:disabled {
+  @apply cursor-not-allowed opacity-60;
+}

@@ -1,0 +1,66 @@
+@reference "tailwindcss";
+
+:host {
+  display: block;
+}
+
+.dp-day-view {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.dp-day-view th {
+  @apply pb-2 text-center font-medium;
+  color: var(--color-muted-foreground);
+}
+
+.dp-day-view td {
+  @apply p-1 text-center;
+}
+
+.dp-day-view td.outside {
+  color: color-mix(in srgb, var(--color-muted-foreground) 70%, transparent);
+}
+
+.dp-day-view td.disabled .dp-day {
+  @apply cursor-not-allowed;
+  color: color-mix(in srgb, var(--color-muted-foreground) 60%, transparent);
+}
+
+.dp-day-view td.today .dp-day {
+  @apply border border-slate-900/60;
+}
+
+.dp-day-view td.range {
+  @apply bg-slate-900/5;
+}
+
+.dp-day-view td.range-start .dp-day,
+.dp-day-view td.range-end .dp-day {
+  @apply bg-slate-900 text-white;
+}
+
+.dp-day-view td.range-start {
+  @apply rounded-l-full bg-slate-900/10;
+}
+
+.dp-day-view td.range-end {
+  @apply rounded-r-full bg-slate-900/10;
+}
+
+.dp-day {
+  @apply flex h-9 w-9 items-center justify-center rounded-full transition;
+}
+
+.dp-day.selected {
+  @apply bg-slate-900 text-white;
+}
+
+.dp-day:not(:disabled):hover {
+  @apply bg-slate-900/10;
+}
+
+.dp-day:disabled {
+  @apply bg-transparent;
+}

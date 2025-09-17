@@ -1,1 +1,14 @@
-<p>year-view works!</p>
+<div class="dp-year-view">
+  @for (year of yearItems(); track year.value) {
+    <button
+      type="button"
+      class="dp-year"
+      (click)="onSelect(year)"
+      [class.active]="year.value === activeYear()"
+      [class.disabled]="year.disabled"
+      [disabled]="year.disabled"
+    >
+      {{ year.value }}
+    </button>
+  }
+</div>
