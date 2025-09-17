@@ -79,7 +79,6 @@
     "autoprefixer": "^10.4.20",
     "directory-tree": "^3.5.2",
     "eslint": "^9.16.0",
-    "husky": "^9.1.7",
     "jasmine": "^5.5.0",
     "jasmine-core": "~5.4.0",
     "karma": "~6.4.0",
