@@ -1,7 +1,7 @@
 <app-card class="block" [gap]="false">
   <app-tab-group [selectedIndex]="0" (tabChanged)="tabChanged($event)">
     <app-tab-panel label="PREVIEW">
-      <div class="flex h-[300px] items-center justify-center p-10">
+      <div class="flex min-h-[300px] items-center justify-center p-10">
         <ng-content></ng-content>
       </div>
     </app-tab-panel>

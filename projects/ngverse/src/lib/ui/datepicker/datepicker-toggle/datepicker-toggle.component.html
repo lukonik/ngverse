@@ -1,0 +1,44 @@
+<button
+  type="button"
+  class="dp-toggle"
+  [class.dp-toggle--open]="isOpen()"
+  [class.dp-toggle--disabled]="disabled()"
+  [class.w-full]="stretch()"
+  appPopoverOrigin
+  #origin="appPopoverOrigin"
+  (click)="toggle()"
+  [attr.aria-expanded]="isOpen()"
+  aria-haspopup="dialog"
+  [disabled]="disabled()"
+>
+  <span
+    class="dp-toggle__label"
+    [class.dp-toggle__label--placeholder]="isPlaceholder()"
+  >
+    {{ displayLabel() }}
+  </span>
+  <app-font-icon class="dp-toggle__icon" size="20">
+    calendar_today
+  </app-font-icon>
+</button>
+<app-popover
+  [outsideClose]="true"
+  [restoreFocus]="true"
+  [blockScroll]="true"
+  [styled]="true"
+  [stretchToOrigin]="stretch()"
+  [origin]="origin"
+  [offsetY]="8"
+  [(isOpen)]="isOpen"
+  (closed)="handlePopoverClosed()"
+>
+  <ng-template>
+    <app-datepicker
+      [selectionMode]="selectionMode()"
+      [minDate]="minDate()"
+      [maxDate]="maxDate()"
+      [startOfWeek]="startOfWeek()"
+      [formControl]="dateControl"
+    ></app-datepicker>
+  </ng-template>
+</app-popover>

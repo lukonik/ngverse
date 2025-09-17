@@ -1,6 +1,6 @@
 <doc-blueprint-page
   [subTitle]="
-    'Inline calendar for picking single dates or date ranges with custom adapters.'
+    'Toggle-friendly overlay or inline calendar for picking single dates or date ranges with custom adapters.'
   "
   [label]="'Datepicker'"
   key="datepicker"
@@ -16,22 +16,32 @@
   ></doc-source-tree>
   <doc-api-info [apiInfo]="apiInfo"> </doc-api-info>
   <doc-examples>
-    <doc-example-item name="single">
+    <doc-example-item name="overlay-single">
+      <doc-example-datepicker-toggle-single
+        class="block max-w-sm"
+      ></doc-example-datepicker-toggle-single>
+    </doc-example-item>
+    <doc-example-item name="overlay-range">
+      <doc-example-datepicker-toggle-range
+        class="block max-w-sm"
+      ></doc-example-datepicker-toggle-range>
+    </doc-example-item>
+    <doc-example-item name="inline-single">
       <doc-example-datepicker-single
         class="block max-w-sm"
       ></doc-example-datepicker-single>
     </doc-example-item>
-    <doc-example-item name="range">
+    <doc-example-item name="inline-range">
       <doc-example-datepicker-range
         class="block max-w-sm"
       ></doc-example-datepicker-range>
     </doc-example-item>
-    <doc-example-item name="min-max">
+    <doc-example-item name="inline-min-max">
       <doc-example-datepicker-min-max
         class="block max-w-sm"
       ></doc-example-datepicker-min-max>
     </doc-example-item>
-    <doc-example-item name="disabled">
+    <doc-example-item name="inline-disabled">
       <doc-example-datepicker-disabled
         class="block max-w-sm"
       ></doc-example-datepicker-disabled>

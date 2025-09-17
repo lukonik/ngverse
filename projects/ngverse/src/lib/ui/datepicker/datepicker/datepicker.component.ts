@@ -2,7 +2,6 @@ import { NgClass } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
-  computed,
   effect,
   input,
   signal,
@@ -46,26 +45,6 @@ export class DatepickerComponent<T> implements ControlValueAccessor {
 
   private _onChange: ((value: DpDateRange<T> | T | null) => void) | null = null;
   private _onTouched: (() => void) | null = null;
-
-  protected readonly selectionLabel = computed(() => {
-    if (this.selectionMode() === 'single') {
-      const value = this._selectedDate();
-      return value
-        ? this._dateAdapter.format(value, 'MMM D, YYYY')
-        : 'No date selected';
-    }
-    const range = this._selectedRange();
-    if (!range.start && !range.end) {
-      return 'No range selected';
-    }
-    const start = range.start
-      ? this._dateAdapter.format(range.start, 'MMM D, YYYY')
-      : 'Start';
-    const end = range.end
-      ? this._dateAdapter.format(range.end, 'MMM D, YYYY')
-      : 'End';
-    return `${start} - ${end}`;
-  });
 
   constructor() {
     effect(() => {

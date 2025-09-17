@@ -1,0 +1,52 @@
+@reference "tailwindcss";
+
+:host {
+  display: inline-block;
+  width: auto;
+}
+
+.dp-toggle {
+  @apply flex h-10 items-center justify-between gap-2 rounded-md border px-3 text-left text-sm font-medium transition;
+  border-color: var(--color-border);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+.dp-toggle:not(.dp-toggle--disabled) {
+  @apply cursor-pointer;
+}
+
+.dp-toggle:focus-visible {
+  @apply outline outline-2 outline-offset-2;
+  outline-color: var(--color-ring);
+}
+
+.dp-toggle:not(.dp-toggle--disabled):hover {
+  border-color: color-mix(
+    in srgb,
+    var(--color-border) 60%,
+    var(--color-foreground)
+  );
+}
+
+.dp-toggle--disabled {
+  background-color: var(--color-disabled);
+  color: var(--color-disabled-foreground);
+}
+
+.dp-toggle__label {
+  @apply flex-1 truncate;
+}
+
+.dp-toggle__label--placeholder {
+  color: color-mix(in srgb, var(--color-muted-foreground) 65%, transparent);
+}
+
+.dp-toggle__icon {
+  color: var(--color-muted-foreground);
+  @apply transition;
+}
+
+.dp-toggle--open .dp-toggle__icon {
+  color: var(--color-foreground);
+}

@@ -6,8 +6,8 @@ import {
   ViewChild,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { TabHeaderComponent } from './tab-header.component';
 import { TabLabelDirective } from '../directives/tab-label.directive';
+import { TabHeaderComponent } from './tab-header.component';
 
 // Mock TabPanelComponent for testing
 class MockTabPanelComponent {
@@ -36,7 +36,6 @@ describe('TabHeaderComponent', () => {
     component = fixture.componentInstance;
     mockTabPanel = new MockTabPanelComponent();
 
-    // Set required inputs
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     fixture.componentRef.setInput('tab', mockTabPanel as any);
     fixture.componentRef.setInput('tabIndex', 0);

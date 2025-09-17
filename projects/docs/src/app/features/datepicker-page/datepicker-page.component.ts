@@ -1,4 +1,3 @@
-import { DatepickerComponent } from '@/ui/datepicker/datepicker/datepicker.component';
 import { provideDpDayjsDateAdapter } from '@/ui/datepicker/dayjs/dayjs-date.adapter.token';
 import { Component, inject } from '@angular/core';
 import {
@@ -19,6 +18,8 @@ import { ExampleDatepickerDisabledComponent } from '../../examples/datepicker/ex
 import { ExampleDatepickerMinMaxComponent } from '../../examples/datepicker/example-datepicker-min-max.component';
 import { ExampleDatepickerRangeComponent } from '../../examples/datepicker/example-datepicker-range.component';
 import { ExampleDatepickerSingleComponent } from '../../examples/datepicker/example-datepicker-single.component';
+import { ExampleDatepickerToggleRangeComponent } from '../../examples/datepicker/example-datepicker-toggle-range.component';
+import { ExampleDatepickerToggleSingleComponent } from '../../examples/datepicker/example-datepicker-toggle-single.component';
 import { PreviewDatepickerComponent } from '../../examples/datepicker/preview-datepicker.component';
 
 const ROOT = 'datepicker';
@@ -38,7 +39,8 @@ const ROOT = 'datepicker';
     ExampleDatepickerRangeComponent,
     ExampleDatepickerMinMaxComponent,
     ExampleDatepickerDisabledComponent,
-    DatepickerComponent,
+    ExampleDatepickerToggleSingleComponent,
+    ExampleDatepickerToggleRangeComponent,
   ],
   templateUrl: './datepicker-page.component.html',
   styleUrl: './datepicker-page.component.css',
@@ -65,6 +67,10 @@ export class DatepickerPageComponent {
           'year-view',
           `${ROOT}/year-view`
         ),
+        ...this.sourceTreeBuilder.fullComponent(
+          'datepicker-toggle',
+          `${ROOT}/datepicker-toggle`
+        ),
       ],
       hideName: true,
     },
@@ -89,7 +95,7 @@ export class DatepickerPageComponent {
 
   readonly apiInfo: ApiInfo = {
     ariaDescription:
-      'A standalone calendar input that supports keyboard navigation, date ranges, and custom adapters.',
+      'A suite of calendar inputs that support keyboard navigation, date ranges, popover overlays, and custom adapters.',
     entities: [
       {
         name: 'DatepickerComponent',
@@ -126,6 +132,65 @@ export class DatepickerPageComponent {
             default: '0',
             description:
               'Configures which weekday is rendered in the first column (0 = Sunday).',
+          },
+        ],
+      },
+      {
+        name: 'DatepickerToggleComponent',
+        type: 'component',
+        selector: 'app-datepicker-toggle',
+        formBindable: true,
+        description:
+          'Overlay-based trigger that opens the datepicker popover anchored to the toggle button.',
+        inputs: [
+          {
+            name: 'selectionMode',
+            type: "'single' | 'range'",
+            default: "'single'",
+            description:
+              'Determines whether the overlay collects a single date or a full range.',
+          },
+          {
+            name: 'minDate',
+            type: 'T | null',
+            default: 'null',
+            description:
+              'Lower bound for selectable values passed to the embedded datepicker.',
+          },
+          {
+            name: 'maxDate',
+            type: 'T | null',
+            default: 'null',
+            description:
+              'Upper bound for selectable values passed to the embedded datepicker.',
+          },
+          {
+            name: 'startOfWeek',
+            type: 'DpWeekStart',
+            default: '0',
+            description:
+              'Controls which weekday appears first inside the overlay calendar.',
+          },
+          {
+            name: 'placeholder',
+            type: 'string | null',
+            default: 'Based on selection mode',
+            description:
+              'Overrides the default prompt shown on the toggle button before a selection is made.',
+          },
+          {
+            name: 'displayFormat',
+            type: 'string',
+            default: "'MMM D, YYYY'",
+            description:
+              'Date formatting token used for the button caption once a value is selected.',
+          },
+          {
+            name: 'stretch',
+            type: 'boolean',
+            default: 'true',
+            description:
+              'When true, the toggle button expands to the full width of its container.',
           },
         ],
       },

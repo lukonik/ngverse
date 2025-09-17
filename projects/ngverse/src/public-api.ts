@@ -16,6 +16,7 @@ export * from './lib/ui/button-group/button-group-item.component';
 export * from './lib/ui/datepicker/adapter/date.adapter';
 export * from './lib/ui/datepicker/adapter/date.token';
 export * from './lib/ui/datepicker/datepicker/datepicker.component';
+export * from './lib/ui/datepicker/datepicker-toggle/datepicker-toggle.component';
 export * from './lib/ui/datepicker/dayjs/dayjs-date.adapter';
 export * from './lib/ui/datepicker/dayjs/dayjs-date.adapter.token';
 export * from './lib/ui/datepicker/types/date-range';
