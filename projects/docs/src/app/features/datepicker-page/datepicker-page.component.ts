@@ -20,6 +20,8 @@ import { ExampleDatepickerRangeComponent } from '../../examples/datepicker/examp
 import { ExampleDatepickerSingleComponent } from '../../examples/datepicker/example-datepicker-single.component';
 import { ExampleDatepickerToggleRangeComponent } from '../../examples/datepicker/example-datepicker-toggle-range.component';
 import { ExampleDatepickerToggleSingleComponent } from '../../examples/datepicker/example-datepicker-toggle-single.component';
+import { ExampleDatepickerInputSingleComponent } from '../../examples/datepicker/example-datepicker-input-single.component';
+import { ExampleDatepickerInputRangeComponent } from '../../examples/datepicker/example-datepicker-input-range.component';
 import { PreviewDatepickerComponent } from '../../examples/datepicker/preview-datepicker.component';
 
 const ROOT = 'datepicker';
@@ -41,6 +43,8 @@ const ROOT = 'datepicker';
     ExampleDatepickerDisabledComponent,
     ExampleDatepickerToggleSingleComponent,
     ExampleDatepickerToggleRangeComponent,
+    ExampleDatepickerInputSingleComponent,
+    ExampleDatepickerInputRangeComponent,
   ],
   templateUrl: './datepicker-page.component.html',
   styleUrl: './datepicker-page.component.css',
@@ -70,6 +74,10 @@ export class DatepickerPageComponent {
         ...this.sourceTreeBuilder.fullComponent(
           'datepicker-toggle',
           `${ROOT}/datepicker-toggle`
+        ),
+        ...this.sourceTreeBuilder.fullComponent(
+          'datepicker-input',
+          `${ROOT}/datepicker-input`
         ),
       ],
       hideName: true,
@@ -191,6 +199,65 @@ export class DatepickerPageComponent {
             default: 'true',
             description:
               'When true, the toggle button expands to the full width of its container.',
+          },
+        ],
+      },
+      {
+        name: 'DatepickerInputComponent',
+        type: 'component',
+        selector: 'app-datepicker-input',
+        formBindable: true,
+        description:
+          'Read-only form field that opens the datepicker in a popover and mirrors the formatted value inside the input.',
+        inputs: [
+          {
+            name: 'selectionMode',
+            type: "'single' | 'range'",
+            default: "'single'",
+            description:
+              'Switches between single-value entry and range entry for the overlay calendar.',
+          },
+          {
+            name: 'minDate',
+            type: 'T | null',
+            default: 'null',
+            description:
+              'Optional lower bound forwarded to the embedded datepicker.',
+          },
+          {
+            name: 'maxDate',
+            type: 'T | null',
+            default: 'null',
+            description:
+              'Optional upper bound forwarded to the embedded datepicker.',
+          },
+          {
+            name: 'startOfWeek',
+            type: 'DpWeekStart',
+            default: '0',
+            description:
+              'Configures the first weekday column displayed by the overlay calendar.',
+          },
+          {
+            name: 'placeholder',
+            type: 'string | null',
+            default: 'Based on selection mode',
+            description:
+              'Sets the placeholder text rendered inside the read-only input.',
+          },
+          {
+            name: 'displayFormat',
+            type: 'string',
+            default: "'MMM D, YYYY'",
+            description:
+              'Controls how the selected value is formatted inside the input.',
+          },
+          {
+            name: 'stretch',
+            type: 'boolean',
+            default: 'true',
+            description:
+              'When true the component expands to fill the available horizontal space.',
           },
         ],
       },

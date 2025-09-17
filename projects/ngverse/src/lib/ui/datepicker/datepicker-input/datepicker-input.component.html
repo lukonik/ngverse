@@ -1,0 +1,42 @@
+<div
+  class="dp-input"
+  [class.dp-input--disabled]="disabled()"
+>
+  <input
+    appInput
+    type="text"
+    class="dp-input__field"
+    readonly
+    appPopoverOrigin
+    #origin="appPopoverOrigin"
+    [value]="displayValue()"
+    [attr.placeholder]="hasValue() ? '' : placeholderText()"
+    [attr.aria-haspopup]="'dialog'"
+    [attr.aria-expanded]="isOpen()"
+    [disabled]="disabled()"
+    (click)="open()"
+    (keydown)="handleInputKeydown($event)"
+  />
+  <app-font-icon class="dp-input__icon" size="20">calendar_today</app-font-icon>
+</div>
+<app-popover
+  [outsideClose]="true"
+  [restoreFocus]="true"
+  [blockScroll]="true"
+  [styled]="true"
+  [stretchToOrigin]="stretch()"
+  [origin]="origin"
+  [offsetY]="8"
+  [(isOpen)]="isOpen"
+  (closed)="handlePopoverClosed()"
+>
+  <ng-template>
+    <app-datepicker
+      [selectionMode]="selectionMode()"
+      [minDate]="minDate()"
+      [maxDate]="maxDate()"
+      [startOfWeek]="startOfWeek()"
+      [formControl]="dateControl"
+    ></app-datepicker>
+  </ng-template>
+</app-popover>

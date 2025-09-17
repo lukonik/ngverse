@@ -1,0 +1,26 @@
+@reference "tailwindcss";
+
+:host {
+  display: inline-block;
+  width: 100%;
+}
+
+.dp-input {
+  @apply relative;
+}
+
+.dp-input__field {
+  @apply pr-10;
+}
+
+.dp-input__icon {
+  @apply pointer-events-none absolute inset-y-0 right-2 flex items-center text-muted-foreground;
+}
+
+.dp-input--disabled .dp-input__icon {
+  color: var(--color-disabled-foreground);
+}
+
+.dp-input__field[disabled] {
+  cursor: not-allowed;
+}
