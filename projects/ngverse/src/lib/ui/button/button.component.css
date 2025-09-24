@@ -1,7 +1,6 @@
-@reference 'tailwindcss';
+/* @reference 'tailwindcss';
 
 :host {
-  /** General styles **/
   @apply inline-flex items-center justify-center gap-1.5;
   @apply bg-transparent text-base font-semibold;
   @apply rounded-md border border-solid;
@@ -11,10 +10,6 @@
   &.icon {
     @apply rounded-full;
   }
-
-  /** General ends here **/
-
-  /** Variant styles **/
 
   &.btn-default,
   &.btn-with-icon,
@@ -67,10 +62,6 @@
     --spinner-color: theme('colors.slate.500');
   }
 
-  /** Variant ends here **/
-
-  /** State styles **/
-
   &:focus {
     @apply outline-none;
   }
@@ -87,10 +78,6 @@
   &.btn-loading {
     @apply pointer-events-none text-transparent;
   }
-
-  /** State ends here **/
-
-  /** Size styles **/
 
   &:not(.icon) {
     &.btn-sm {
@@ -127,6 +114,4 @@
       @apply h-12 w-12;
     }
   }
-
-  /** Size ends here **/
-}
+} */

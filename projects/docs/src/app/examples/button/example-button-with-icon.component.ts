@@ -7,7 +7,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   imports: [ButtonComponent, FontIconComponent],
   template: `
     <div>
-      <button appButton variant="with-icon">
+      <button appButton>
         <app-font-icon>add</app-font-icon>
         Create New
       </button>
