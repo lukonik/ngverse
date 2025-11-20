@@ -23,7 +23,7 @@ describe('FormFieldComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [FormFieldTestComponent],
-      providers: [provideNoopAnimations(),  FormFieldErrorRegistry],
+      providers: [provideNoopAnimations(), FormFieldErrorRegistry],
     }).compileComponents();
 
     fixture = TestBed.createComponent(FormFieldTestComponent);

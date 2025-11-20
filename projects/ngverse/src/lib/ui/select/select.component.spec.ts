@@ -41,7 +41,7 @@ describe('SelectComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [TestComponent],
-      providers: [provideNoopAnimations(),],
+      providers: [provideNoopAnimations()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TestComponent);

@@ -25,7 +25,7 @@ describe('DialogCloseDirective', () => {
 
     TestBed.configureTestingModule({
       imports: [TestCloseComponent],
-      providers: [{ provide: DialogRef, useValue: mockDialogRef }, ],
+      providers: [{ provide: DialogRef, useValue: mockDialogRef }],
     });
 
     fixture = TestBed.createComponent(TestCloseComponent);

@@ -18,7 +18,7 @@ describe('DialogService', () => {
     };
 
     TestBed.configureTestingModule({
-      providers: [DialogService, { provide: Dialog, useValue: dialogSpy },],
+      providers: [DialogService, { provide: Dialog, useValue: dialogSpy }],
     });
 
     service = TestBed.inject(DialogService);

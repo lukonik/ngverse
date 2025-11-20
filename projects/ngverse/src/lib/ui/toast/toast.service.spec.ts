@@ -18,7 +18,7 @@ describe('ToastService', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [ToastTestComponent],
-      providers: [provideNoopAnimations(),],
+      providers: [provideNoopAnimations()],
     }).compileComponents();
     service = TestBed.inject(ToastService);
 

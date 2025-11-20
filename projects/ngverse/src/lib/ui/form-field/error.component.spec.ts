@@ -11,7 +11,7 @@ describe('ErrorComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [ErrorTestComponent],
-      providers: [provideNoopAnimations(),],
+      providers: [provideNoopAnimations()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ErrorTestComponent);

@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
 import { PLATFORM_ID } from '@angular/core';
-import { vi } from "vitest";
+import { vi } from 'vitest';
 import {
   LOCAL_STORAGE_TOKEN,
   LocalStorageService,

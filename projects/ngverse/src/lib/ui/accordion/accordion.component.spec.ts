@@ -12,7 +12,7 @@ describe('AccordionComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      providers: [provideNoopAnimations(),],
+      providers: [provideNoopAnimations()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(AccordionTestComponent);

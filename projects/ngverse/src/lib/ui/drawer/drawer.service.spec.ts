@@ -24,7 +24,7 @@ describe('DrawerService', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      providers: [provideNoopAnimations(), ],
+      providers: [provideNoopAnimations()],
     }).compileComponents();
     service = TestBed.inject(DrawerService);
     fixture = TestBed.createComponent(DrawerRootTestComponent);

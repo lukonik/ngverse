@@ -6,7 +6,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { vi } from "vitest";
+import { vi } from 'vitest';
 import { TabNavBarItemComponent } from './tab-nav-bar-item/tab-nav-bar-item.component';
 import { TabNavBarComponent } from './tab-nav-bar.component';
 
