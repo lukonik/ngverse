@@ -1,7 +1,6 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  provideExperimentalZonelessChangeDetection,
   signal,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
@@ -20,7 +19,7 @@ describe('AccordionItemComponent', () => {
     await TestBed.configureTestingModule({
       providers: [
         provideNoopAnimations(),
-        provideExperimentalZonelessChangeDetection(),
+        ,
       ],
     }).compileComponents();
 

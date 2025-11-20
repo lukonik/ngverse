@@ -1,13 +1,13 @@
 import {
-  ChangeDetectionStrategy,
-  Component,
-  provideExperimentalZonelessChangeDetection,
-  signal,
-  ViewChild,
+    ChangeDetectionStrategy,
+    Component,
+
+    signal,
+    ViewChild,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { TabHeaderComponent } from './tab-header.component';
 import { TabLabelDirective } from '../directives/tab-label.directive';
+import { TabHeaderComponent } from './tab-header.component';
 
 // Mock TabPanelComponent for testing
 class MockTabPanelComponent {
@@ -29,7 +29,7 @@ describe('TabHeaderComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [TabHeaderComponent],
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TabHeaderComponent);
@@ -274,7 +274,7 @@ describe('TabHeaderComponent with Custom Label Template', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [TabHeaderComponent, TabLabelDirective],
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TestHostComponent);

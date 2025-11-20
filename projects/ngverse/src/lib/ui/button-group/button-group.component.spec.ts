@@ -1,14 +1,13 @@
 import {
-  ChangeDetectionStrategy,
-  Component,
-  DebugElement,
-  provideExperimentalZonelessChangeDetection,
+    ChangeDetectionStrategy,
+    Component,
+    DebugElement,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { ButtonGroupComponent } from './button-group.component';
+import { By } from '@angular/platform-browser';
 import { ButtonGroupItemComponent } from './button-group-item.component';
+import { ButtonGroupComponent } from './button-group.component';
 
 describe('ButtonGroupComponent', () => {
   let fixture: ComponentFixture<ButtonGroupHarnessComponent>;
@@ -23,7 +22,7 @@ describe('ButtonGroupComponent', () => {
         ButtonGroupItemComponent,
         ReactiveFormsModule,
       ],
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ButtonGroupHarnessComponent);

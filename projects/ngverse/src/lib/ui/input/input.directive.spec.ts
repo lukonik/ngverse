@@ -1,9 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  provideExperimentalZonelessChangeDetection,
+    ChangeDetectionStrategy,
+    Component,
 } from '@angular/core';
 import { InputDirective } from './input.directive';
 
@@ -13,7 +12,7 @@ describe('InputComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [InputDirective],
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [],
     }).compileComponents();
 
     fixture = TestBed.createComponent(InputTestComponent);

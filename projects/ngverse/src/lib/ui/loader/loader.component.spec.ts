@@ -1,10 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  provideExperimentalZonelessChangeDetection,
-  signal,
+    ChangeDetectionStrategy,
+    Component,
+
+    signal,
 } from '@angular/core';
 import { LoaderComponent } from './loader.component';
 
@@ -18,7 +18,7 @@ describe('LoaderComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [LoaderTestComponent],
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [],
     }).compileComponents();
 
     fixture = TestBed.createComponent(LoaderTestComponent);

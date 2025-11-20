@@ -1,10 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  provideExperimentalZonelessChangeDetection,
-  signal,
+    ChangeDetectionStrategy,
+    Component,
+
+    signal,
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
@@ -23,7 +23,7 @@ describe('OptionComponent', () => {
       imports: [OptionTestComponent],
       providers: [
         provideNoopAnimations(),
-        provideExperimentalZonelessChangeDetection(),
+        ,
       ],
     }).compileComponents();
 

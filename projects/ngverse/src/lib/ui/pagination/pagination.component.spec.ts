@@ -1,8 +1,8 @@
 import {
-  ChangeDetectionStrategy,
-  Component,
-  provideExperimentalZonelessChangeDetection,
-  signal,
+    ChangeDetectionStrategy,
+    Component,
+
+    signal,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
@@ -36,7 +36,7 @@ describe('PaginationComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [TestPaginationComponent],
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TestPaginationComponent);

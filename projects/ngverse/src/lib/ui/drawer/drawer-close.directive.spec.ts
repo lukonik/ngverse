@@ -1,9 +1,9 @@
 import { DOCUMENT } from '@angular/common';
 import {
-  ChangeDetectionStrategy,
-  Component,
-  provideExperimentalZonelessChangeDetection,
-  signal,
+    ChangeDetectionStrategy,
+    Component,
+
+    signal,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideNoopAnimations } from '@angular/platform-browser/animations';
@@ -28,7 +28,7 @@ describe('DrawerCloseDirective', () => {
       imports: [DrawerCloseDirective, DrawerCloseTestComponent],
       providers: [
         provideNoopAnimations(),
-        provideExperimentalZonelessChangeDetection(),
+        ,
       ],
     }).compileComponents();
     document = TestBed.inject(DOCUMENT);

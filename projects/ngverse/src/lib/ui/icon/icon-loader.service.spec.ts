@@ -1,12 +1,11 @@
 import { provideHttpClient } from '@angular/common/http';
 import {
-  HttpTestingController,
-  provideHttpClientTesting,
+    HttpTestingController,
+    provideHttpClientTesting,
 } from '@angular/common/http/testing';
 import {
-  ChangeDetectionStrategy,
-  Component,
-  provideExperimentalZonelessChangeDetection,
+    ChangeDetectionStrategy,
+    Component,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { firstValueFrom } from 'rxjs';
@@ -46,7 +45,7 @@ describe('IconLoaderService', () => {
         provideHttpClientTesting(),
         IconLoaderService,
         IconRegistry,
-        provideExperimentalZonelessChangeDetection(),
+        ,
       ],
     }).compileComponents();
 

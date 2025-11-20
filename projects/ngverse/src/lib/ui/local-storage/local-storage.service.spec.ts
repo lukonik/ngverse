@@ -1,12 +1,11 @@
 import { TestBed } from '@angular/core/testing';
 
 import {
-  PLATFORM_ID,
-  provideExperimentalZonelessChangeDetection,
+    PLATFORM_ID,
 } from '@angular/core';
 import {
-  LOCAL_STORAGE_TOKEN,
-  LocalStorageService,
+    LOCAL_STORAGE_TOKEN,
+    LocalStorageService,
 } from './local-storage.service';
 
 describe('LocalStorageService', () => {
@@ -15,7 +14,7 @@ describe('LocalStorageService', () => {
   describe('InBrowser', () => {
     beforeEach(() => {
       TestBed.configureTestingModule({
-        providers: [provideExperimentalZonelessChangeDetection()],
+        providers: [],
       });
       service = TestBed.inject(LocalStorageService);
       localStorage.clear();
@@ -67,7 +66,7 @@ describe('LocalStorageService', () => {
     beforeEach(() => {
       TestBed.configureTestingModule({
         providers: [
-          provideExperimentalZonelessChangeDetection(),
+          ,
           { provide: PLATFORM_ID, useValue: 'server' },
           { provide: LOCAL_STORAGE_TOKEN, useValue: spyStorageMock },
         ],

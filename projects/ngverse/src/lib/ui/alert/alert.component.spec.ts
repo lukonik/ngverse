@@ -1,10 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  provideExperimentalZonelessChangeDetection,
-  signal,
+    ChangeDetectionStrategy,
+    Component,
+
+    signal,
 } from '@angular/core';
 import { AlertBodyComponent } from './alert-body.component';
 import { AlertHeaderComponent } from './alert-header.component';
@@ -19,7 +19,7 @@ describe('AlertComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [AlertTestComponent],
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [],
     }).compileComponents();
 
     fixture = TestBed.createComponent(AlertTestComponent);

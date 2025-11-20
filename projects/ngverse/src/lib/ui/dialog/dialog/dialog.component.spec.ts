@@ -1,8 +1,7 @@
 import { DIALOG_DATA, DialogRef } from '@angular/cdk/dialog';
 import {
-  ChangeDetectionStrategy,
-  Component,
-  provideExperimentalZonelessChangeDetection,
+    ChangeDetectionStrategy,
+    Component,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
@@ -28,7 +27,7 @@ describe('DialogComponent', () => {
       imports: [DialogComponent],
       providers: [
         provideNoopAnimations(),
-        provideExperimentalZonelessChangeDetection(),
+        ,
         {
           provide: DialogRef,
           useValue: dialogRefMock,

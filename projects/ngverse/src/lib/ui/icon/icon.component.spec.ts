@@ -2,13 +2,12 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { provideHttpClient } from '@angular/common/http';
 import {
-  HttpTestingController,
-  provideHttpClientTesting,
+    HttpTestingController,
+    provideHttpClientTesting,
 } from '@angular/common/http/testing';
 import {
-  ChangeDetectionStrategy,
-  Component,
-  provideExperimentalZonelessChangeDetection,
+    ChangeDetectionStrategy,
+    Component,
 } from '@angular/core';
 import { IconLoaderService } from './icon-loader.service';
 import { IconComponent } from './icon.component';
@@ -29,7 +28,7 @@ describe('IconComponent', () => {
         provideHttpClientTesting(),
         IconLoaderService,
         IconRegistry,
-        provideExperimentalZonelessChangeDetection(),
+        ,
       ],
     }).compileComponents();
 

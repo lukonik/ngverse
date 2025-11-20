@@ -1,6 +1,5 @@
 import { Dialog } from '@angular/cdk/dialog';
 import { ComponentType } from '@angular/cdk/portal';
-import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { AlertDialogComponent } from './alert-dialog/alert-dialog.component';
@@ -19,7 +18,7 @@ describe('DialogService', () => {
       providers: [
         DialogService,
         { provide: Dialog, useValue: dialogSpy },
-        provideExperimentalZonelessChangeDetection(),
+        ,
       ],
     });
 

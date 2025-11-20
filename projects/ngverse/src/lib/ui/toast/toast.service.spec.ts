@@ -1,9 +1,8 @@
 import { DOCUMENT } from '@angular/common';
 import {
-  ChangeDetectionStrategy,
-  Component,
-  DebugElement,
-  provideExperimentalZonelessChangeDetection,
+    ChangeDetectionStrategy,
+    Component,
+    DebugElement,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
@@ -21,7 +20,7 @@ describe('ToastService', () => {
       imports: [ToastTestComponent],
       providers: [
         provideNoopAnimations(),
-        provideExperimentalZonelessChangeDetection(),
+        ,
       ],
     }).compileComponents();
     service = TestBed.inject(ToastService);

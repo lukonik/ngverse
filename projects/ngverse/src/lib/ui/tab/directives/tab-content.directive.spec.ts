@@ -1,9 +1,9 @@
 import {
-  ChangeDetectionStrategy,
-  Component,
-  provideExperimentalZonelessChangeDetection,
-  TemplateRef,
-  ViewChild,
+    ChangeDetectionStrategy,
+    Component,
+
+    TemplateRef,
+    ViewChild,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TabContentDirective } from './tab-content.directive';
@@ -15,7 +15,7 @@ describe('TabContentDirective', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [TabContentDirective],
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TestHostComponent);
@@ -116,7 +116,7 @@ describe('TabContentDirective Integration', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [TabContentDirective],
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [],
     }).compileComponents();
 
     fixture = TestBed.createComponent(IntegrationTestComponent);

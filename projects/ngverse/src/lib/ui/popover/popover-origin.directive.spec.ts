@@ -1,4 +1,3 @@
-import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { PopoverComponent } from './popover.component';
@@ -12,7 +11,7 @@ describe('PopoverOriginDirective', () => {
       imports: [PopoverComponent],
       providers: [
         provideAnimations(),
-        provideExperimentalZonelessChangeDetection(),
+        ,
       ],
     }).compileComponents();
 

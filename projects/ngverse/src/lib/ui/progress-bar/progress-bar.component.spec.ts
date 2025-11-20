@@ -1,8 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import {
-  ComponentRef,
-  provideExperimentalZonelessChangeDetection,
+    ComponentRef,
 } from '@angular/core';
 import { ProgressBarComponent } from './progress-bar.component';
 
@@ -14,7 +13,7 @@ describe('ProgressBarComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [ProgressBarComponent],
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ProgressBarComponent);

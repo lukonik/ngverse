@@ -1,10 +1,10 @@
 import { Directionality } from '@angular/cdk/bidi';
 import {
-  ChangeDetectionStrategy,
-  Component,
-  provideExperimentalZonelessChangeDetection,
-  signal,
-  ViewChild,
+    ChangeDetectionStrategy,
+    Component,
+
+    signal,
+    ViewChild,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TabNavBarComponent } from '../tab-nav-bar.component';
@@ -25,7 +25,7 @@ describe('TabNavBarItemComponent', () => {
     await TestBed.configureTestingModule({
       imports: [TabNavBarItemComponent, TabNavBarComponent],
       providers: [
-        provideExperimentalZonelessChangeDetection(),
+        ,
         {
           provide: Directionality,
           useValue: { value: 'ltr', change: () => ({}) },
@@ -313,7 +313,7 @@ describe('TabNavBarItemComponent Integration', () => {
     await TestBed.configureTestingModule({
       imports: [TabNavBarComponent, TabNavBarItemComponent],
       providers: [
-        provideExperimentalZonelessChangeDetection(),
+        ,
         {
           provide: Directionality,
           useValue: { value: 'ltr', change: () => ({}) },

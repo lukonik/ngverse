@@ -1,9 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  provideExperimentalZonelessChangeDetection,
+    ChangeDetectionStrategy,
+    Component,
 } from '@angular/core';
 import { provideNoopAnimations } from '@angular/platform-browser/animations';
 import { DrawerRef } from './drawer-ref';
@@ -22,7 +21,7 @@ describe('DrawerComponent', () => {
           provide: DrawerRef,
           useValue: {},
         },
-        provideExperimentalZonelessChangeDetection(),
+        ,
       ],
     }).compileComponents();
 

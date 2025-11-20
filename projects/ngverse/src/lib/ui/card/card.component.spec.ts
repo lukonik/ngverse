@@ -1,11 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  DebugElement,
-  provideExperimentalZonelessChangeDetection,
-  signal,
+    ChangeDetectionStrategy,
+    Component,
+    DebugElement,
+
+    signal,
 } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { CardComponent } from './card.component';
@@ -17,7 +17,7 @@ describe('CardComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [CardTestComponent],
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [],
     }).compileComponents();
 
     fixture = TestBed.createComponent(CardTestComponent);

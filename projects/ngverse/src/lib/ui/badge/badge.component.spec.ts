@@ -1,9 +1,9 @@
 import {
-  ChangeDetectionStrategy,
-  Component,
-  DebugElement,
-  provideExperimentalZonelessChangeDetection,
-  signal,
+    ChangeDetectionStrategy,
+    Component,
+    DebugElement,
+
+    signal,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
@@ -15,7 +15,7 @@ describe('BadgeComponent', () => {
   beforeEach(async () => {
     TestBed.configureTestingModule({
       imports: [BadgeTestComponent],
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [],
     });
     fixture = TestBed.createComponent(BadgeTestComponent);
     await fixture.whenStable();

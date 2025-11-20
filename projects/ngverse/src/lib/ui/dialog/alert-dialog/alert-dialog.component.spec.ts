@@ -1,7 +1,6 @@
 import {
-  ChangeDetectionStrategy,
-  Component,
-  provideExperimentalZonelessChangeDetection,
+    ChangeDetectionStrategy,
+    Component,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -14,7 +13,7 @@ describe('AlertDialogComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [AlertDialogTestComponent, BrowserAnimationsModule],
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [],
     }).compileComponents();
     fixture = TestBed.createComponent(AlertDialogTestComponent);
 

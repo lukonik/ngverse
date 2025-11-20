@@ -1,12 +1,11 @@
 import { TestBed } from '@angular/core/testing';
 
 import {
-  PLATFORM_ID,
-  provideExperimentalZonelessChangeDetection,
+    PLATFORM_ID,
 } from '@angular/core';
 import {
-  SESSION_STORAGE_TOKEN,
-  SessionStorageService,
+    SESSION_STORAGE_TOKEN,
+    SessionStorageService,
 } from './session-storage.service';
 
 describe('SessionStorageService', () => {
@@ -15,7 +14,7 @@ describe('SessionStorageService', () => {
   describe('InBrowser', () => {
     beforeEach(() => {
       TestBed.configureTestingModule({
-        providers: [provideExperimentalZonelessChangeDetection()],
+        providers: [],
       });
       service = TestBed.inject(SessionStorageService);
     });
@@ -66,7 +65,7 @@ describe('SessionStorageService', () => {
     beforeEach(() => {
       TestBed.configureTestingModule({
         providers: [
-          provideExperimentalZonelessChangeDetection(),
+          ,
           { provide: PLATFORM_ID, useValue: 'server' },
           { provide: SESSION_STORAGE_TOKEN, useValue: spyStorageMock },
         ],

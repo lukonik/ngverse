@@ -1,10 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  provideExperimentalZonelessChangeDetection,
-  signal,
+    ChangeDetectionStrategy,
+    Component,
+
+    signal,
 } from '@angular/core';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RadioButtonComponent } from './radio-button.component';
@@ -18,7 +18,7 @@ describe('RadioGroupComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [RadioGroupTestComponent],
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [],
     }).compileComponents();
 
     fixture = TestBed.createComponent(RadioGroupTestComponent);

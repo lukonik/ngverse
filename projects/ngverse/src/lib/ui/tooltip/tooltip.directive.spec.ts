@@ -1,13 +1,13 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  provideExperimentalZonelessChangeDetection,
-  signal,
-  TemplateRef,
-  viewChild,
+    ChangeDetectionStrategy,
+    Component,
+    computed,
+
+    signal,
+    TemplateRef,
+    viewChild,
 } from '@angular/core';
 import { TOOLTIP_EVENT, TooltipDirective } from './tooltip.directive';
 
@@ -18,7 +18,7 @@ describe('TooltipContainerComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [TooltipTestComponent],
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TooltipTestComponent);

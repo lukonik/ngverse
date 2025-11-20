@@ -1,9 +1,8 @@
 import { DOCUMENT } from '@angular/common';
 import {
-  ChangeDetectionStrategy,
-  Component,
-  inject,
-  provideExperimentalZonelessChangeDetection,
+    ChangeDetectionStrategy,
+    Component,
+    inject,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideNoopAnimations } from '@angular/platform-browser/animations';
@@ -31,7 +30,7 @@ describe('DrawerService', () => {
     await TestBed.configureTestingModule({
       providers: [
         provideNoopAnimations(),
-        provideExperimentalZonelessChangeDetection(),
+        ,
       ],
     }).compileComponents();
     service = TestBed.inject(DrawerService);

@@ -1,11 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  DebugElement,
-  provideExperimentalZonelessChangeDetection,
-  signal,
+    ChangeDetectionStrategy,
+    Component,
+    DebugElement,
+
+    signal,
 } from '@angular/core';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { By } from '@angular/platform-browser';
@@ -23,7 +23,7 @@ describe('SwitchComponent', () => {
   beforeEach(async () => {
     TestBed.configureTestingModule({
       imports: [SwitchComponent],
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [],
     });
     fixture = TestBed.createComponent(SwitchTestComponent);
     await fixture.whenStable();

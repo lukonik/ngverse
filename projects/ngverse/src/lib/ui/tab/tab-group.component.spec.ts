@@ -1,19 +1,19 @@
+import { ActiveDescendantKeyManager } from '@angular/cdk/a11y';
+import { Directionality } from '@angular/cdk/bidi';
 import {
-  ChangeDetectionStrategy,
-  Component,
-  provideExperimentalZonelessChangeDetection,
-  ViewChild,
+    ChangeDetectionStrategy,
+    Component,
+
+    ViewChild,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { ActiveDescendantKeyManager } from '@angular/cdk/a11y';
-import { Directionality } from '@angular/cdk/bidi';
 
+import { TabContentDirective } from './directives/tab-content.directive';
+import { TabLabelDirective } from './directives/tab-label.directive';
 import { TabGroupComponent } from './tab-group.component';
 import { TabPanelComponent } from './tab-panel/tab-panel.component';
-import { TabLabelDirective } from './directives/tab-label.directive';
-import { TabContentDirective } from './directives/tab-content.directive';
 
 describe('TabGroupComponent', () => {
   let component: TabGroupComponent;
@@ -23,7 +23,7 @@ describe('TabGroupComponent', () => {
     await TestBed.configureTestingModule({
       imports: [TabGroupComponent, NoopAnimationsModule],
       providers: [
-        provideExperimentalZonelessChangeDetection(),
+        ,
         { provide: Directionality, useValue: { value: 'ltr' } },
       ],
     }).compileComponents();
@@ -228,7 +228,7 @@ describe('TabGroupComponent with Content', () => {
         NoopAnimationsModule,
       ],
       providers: [
-        provideExperimentalZonelessChangeDetection(),
+        ,
         { provide: Directionality, useValue: { value: 'ltr' } },
       ],
     }).compileComponents();
@@ -419,7 +419,7 @@ describe('TabGroupComponent with Custom Templates', () => {
         NoopAnimationsModule,
       ],
       providers: [
-        provideExperimentalZonelessChangeDetection(),
+        ,
         { provide: Directionality, useValue: { value: 'ltr' } },
       ],
     }).compileComponents();

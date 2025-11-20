@@ -3,12 +3,12 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { DOCUMENT } from '@angular/common';
 import {
-  ChangeDetectionStrategy,
-  Component,
-  model,
-  provideExperimentalZonelessChangeDetection,
-  signal,
-  viewChild,
+    ChangeDetectionStrategy,
+    Component,
+    model,
+
+    signal,
+    viewChild,
 } from '@angular/core';
 import { provideNoopAnimations } from '@angular/platform-browser/animations';
 import { PopoverOriginDirective } from './popover-origin.directive';
@@ -29,7 +29,7 @@ describe('PopoverComponent', () => {
       imports: [PopoverTestComponent, PopoverComponent],
       providers: [
         provideNoopAnimations(),
-        provideExperimentalZonelessChangeDetection(),
+        ,
       ],
     }).compileComponents();
     fixture = TestBed.createComponent(PopoverTestComponent);

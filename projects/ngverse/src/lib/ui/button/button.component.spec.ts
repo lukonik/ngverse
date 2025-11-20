@@ -1,12 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import {
-  ChangeDetectionStrategy,
-  Component,
-  DebugElement,
-  input,
-  provideExperimentalZonelessChangeDetection,
-  signal,
+    ChangeDetectionStrategy,
+    Component,
+    DebugElement,
+    input,
+
+    signal,
 } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { ButtonComponent } from './button.component';
@@ -22,7 +22,7 @@ describe('ButtonComponent', () => {
   beforeEach(async () => {
     TestBed.configureTestingModule({
       imports: [ButtonComponent],
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [],
     });
     fixture = TestBed.createComponent(ButtonTestComponent);
     await fixture.whenStable();
