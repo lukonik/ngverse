@@ -18,7 +18,6 @@ describe('DrawerComponent', () => {
           provide: DrawerRef,
           useValue: {},
         },
-        ,
       ],
     }).compileComponents();
 

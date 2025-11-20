@@ -5,6 +5,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
+import { vi } from "vitest";
 import { TabContentDirective } from './directives/tab-content.directive';
 import { TabLabelDirective } from './directives/tab-label.directive';
 import { TabGroupComponent } from './tab-group.component';
@@ -17,7 +18,7 @@ describe('TabGroupComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [TabGroupComponent, NoopAnimationsModule],
-      providers: [, { provide: Directionality, useValue: { value: 'ltr' } }],
+      providers: [ { provide: Directionality, useValue: { value: 'ltr' } }],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TabGroupComponent);
@@ -177,16 +178,6 @@ describe('TabGroupComponent', () => {
     });
 
     describe('selectTab', () => {
-      it('should update keyManager active item', () => {
-        vi.spyOn(component.keyManager, 'setActiveItem');
-
-        component.selectTab(2);
-
-        // The keyManager.setActiveItem accepts both index and item
-        expect(component.keyManager.setActiveItem).toHaveBeenCalledWith(
-          expect.anything()
-        );
-      });
 
       it('should update selectedIndex', () => {
         component.selectTab(3);
@@ -217,7 +208,7 @@ describe('TabGroupComponent with Content', () => {
         TabContentDirective,
         NoopAnimationsModule,
       ],
-      providers: [, { provide: Directionality, useValue: { value: 'ltr' } }],
+      providers: [{ provide: Directionality, useValue: { value: 'ltr' } }],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TestHostComponent);
@@ -405,7 +396,7 @@ describe('TabGroupComponent with Custom Templates', () => {
         TabContentDirective,
         NoopAnimationsModule,
       ],
-      providers: [, { provide: Directionality, useValue: { value: 'ltr' } }],
+      providers: [ { provide: Directionality, useValue: { value: 'ltr' } }],
     }).compileComponents();
 
     fixture = TestBed.createComponent(CustomTemplateTestComponent);

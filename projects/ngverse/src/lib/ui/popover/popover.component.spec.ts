@@ -3,11 +3,11 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { DOCUMENT } from '@angular/common';
 import {
-  ChangeDetectionStrategy,
-  Component,
-  model,
-  signal,
-  viewChild,
+    ChangeDetectionStrategy,
+    Component,
+    model,
+    signal,
+    viewChild,
 } from '@angular/core';
 import { provideNoopAnimations } from '@angular/platform-browser/animations';
 import { PopoverOriginDirective } from './popover-origin.directive';
@@ -26,7 +26,7 @@ describe('PopoverComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [PopoverTestComponent, PopoverComponent],
-      providers: [provideNoopAnimations(), ,],
+      providers: [provideNoopAnimations(),],
     }).compileComponents();
     fixture = TestBed.createComponent(PopoverTestComponent);
     component = fixture.componentInstance;

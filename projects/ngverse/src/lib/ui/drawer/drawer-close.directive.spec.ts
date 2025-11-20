@@ -21,7 +21,7 @@ describe('DrawerCloseDirective', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [DrawerCloseDirective, DrawerCloseTestComponent],
-      providers: [provideNoopAnimations(), ,],
+      providers: [provideNoopAnimations(),],
     }).compileComponents();
     document = TestBed.inject(DOCUMENT);
     service = TestBed.inject(DrawerService);

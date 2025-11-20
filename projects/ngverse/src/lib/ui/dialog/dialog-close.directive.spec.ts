@@ -1,8 +1,8 @@
-import type { MockedObject } from 'vitest';
 import { DialogRef } from '@angular/cdk/dialog';
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { vi, type MockedObject } from 'vitest';
 import { DialogCloseDirective } from './dialog-close.directive';
 
 @Component({
@@ -25,7 +25,7 @@ describe('DialogCloseDirective', () => {
 
     TestBed.configureTestingModule({
       imports: [TestCloseComponent],
-      providers: [{ provide: DialogRef, useValue: mockDialogRef }, ,],
+      providers: [{ provide: DialogRef, useValue: mockDialogRef }, ],
     });
 
     fixture = TestBed.createComponent(TestCloseComponent);

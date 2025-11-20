@@ -13,7 +13,7 @@ describe('OtpInputComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [OtpTestComponent],
-      providers: [provideNoopAnimations(), ,],
+      providers: [provideNoopAnimations(), ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(OtpTestComponent);

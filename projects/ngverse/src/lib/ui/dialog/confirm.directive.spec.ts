@@ -7,6 +7,7 @@ import {
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { of } from 'rxjs';
+import { vi } from "vitest";
 import { ConfirmDirective } from './confirm.directive';
 import { DialogService } from './dialog.service';
 
@@ -56,7 +57,7 @@ describe('ConfirmDirective', () => {
   beforeEach(async () => {
     TestBed.configureTestingModule({
       imports: [TestHostComponent],
-      providers: [{ provide: DialogService, useClass: MockDialogService }, ,],
+      providers: [{ provide: DialogService, useClass: MockDialogService }, ],
     });
 
     fixture = TestBed.createComponent(TestHostComponent);

@@ -23,7 +23,7 @@ describe('CheckboxComponent', () => {
   beforeEach(async () => {
     TestBed.configureTestingModule({
       imports: [CheckboxComponent],
-      providers: [provideNoopAnimations(), ,],
+      providers: [provideNoopAnimations(), ],
     });
     fixture = TestBed.createComponent(CheckboxTestComponent);
     debugElement = fixture.debugElement;

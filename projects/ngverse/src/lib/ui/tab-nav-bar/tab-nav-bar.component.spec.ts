@@ -6,6 +6,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { vi } from "vitest";
 import { TabNavBarItemComponent } from './tab-nav-bar-item/tab-nav-bar-item.component';
 import { TabNavBarComponent } from './tab-nav-bar.component';
 
@@ -17,7 +18,6 @@ describe('TabNavBarComponent', () => {
     await TestBed.configureTestingModule({
       imports: [TabNavBarComponent],
       providers: [
-        ,
         {
           provide: Directionality,
           useValue: { value: 'ltr', change: () => ({}) },
@@ -298,7 +298,6 @@ describe('TabNavBarComponent with Projected Content', () => {
     await TestBed.configureTestingModule({
       imports: [TabNavBarComponent, TabNavBarItemComponent],
       providers: [
-        ,
         {
           provide: Directionality,
           useValue: { value: 'ltr', change: () => ({}) },

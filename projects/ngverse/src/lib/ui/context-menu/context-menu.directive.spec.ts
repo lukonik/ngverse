@@ -11,7 +11,7 @@ describe('ContextMenuItemDirective', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      providers: [, provideNoopAnimations()],
+      providers: [ provideNoopAnimations()],
       imports: [ContextMenuTestComponent],
     }).compileComponents();
     fixture = TestBed.createComponent(ContextMenuTestComponent);

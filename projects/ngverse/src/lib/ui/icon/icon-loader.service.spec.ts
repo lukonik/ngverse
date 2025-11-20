@@ -42,7 +42,6 @@ describe('IconLoaderService', () => {
         provideHttpClientTesting(),
         IconLoaderService,
         IconRegistry,
-        ,
       ],
     }).compileComponents();
 

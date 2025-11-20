@@ -1,8 +1,8 @@
-import type { MockedObject } from 'vitest';
 import { Dialog } from '@angular/cdk/dialog';
 import { ComponentType } from '@angular/cdk/portal';
 import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
+import { vi, type MockedObject } from 'vitest';
 import { AlertDialogComponent } from './alert-dialog/alert-dialog.component';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { DialogService } from './dialog.service';
@@ -18,7 +18,7 @@ describe('DialogService', () => {
     };
 
     TestBed.configureTestingModule({
-      providers: [DialogService, { provide: Dialog, useValue: dialogSpy }, ,],
+      providers: [DialogService, { provide: Dialog, useValue: dialogSpy },],
     });
 
     service = TestBed.inject(DialogService);

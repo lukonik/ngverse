@@ -1,6 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
 import { PLATFORM_ID } from '@angular/core';
+import { vi } from "vitest";
 import {
   LOCAL_STORAGE_TOKEN,
   LocalStorageService,
@@ -64,7 +65,6 @@ describe('LocalStorageService', () => {
     beforeEach(() => {
       TestBed.configureTestingModule({
         providers: [
-          ,
           { provide: PLATFORM_ID, useValue: 'server' },
           { provide: LOCAL_STORAGE_TOKEN, useValue: spyStorageMock },
         ],

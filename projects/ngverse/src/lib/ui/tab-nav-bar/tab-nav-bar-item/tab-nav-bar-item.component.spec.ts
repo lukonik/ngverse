@@ -1,4 +1,3 @@
-import type { Mock } from 'vitest';
 import { Directionality } from '@angular/cdk/bidi';
 import {
   ChangeDetectionStrategy,
@@ -7,6 +6,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { vi, type Mock } from 'vitest';
 import { TabNavBarComponent } from '../tab-nav-bar.component';
 import { TabNavBarItemComponent } from './tab-nav-bar-item.component';
 
@@ -23,7 +23,6 @@ describe('TabNavBarItemComponent', () => {
     await TestBed.configureTestingModule({
       imports: [TabNavBarItemComponent, TabNavBarComponent],
       providers: [
-        ,
         {
           provide: Directionality,
           useValue: { value: 'ltr', change: () => ({}) },
@@ -311,7 +310,6 @@ describe('TabNavBarItemComponent Integration', () => {
     await TestBed.configureTestingModule({
       imports: [TabNavBarComponent, TabNavBarItemComponent],
       providers: [
-        ,
         {
           provide: Directionality,
           useValue: { value: 'ltr', change: () => ({}) },

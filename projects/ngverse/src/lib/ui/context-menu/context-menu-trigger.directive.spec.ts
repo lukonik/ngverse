@@ -10,7 +10,7 @@ describe('ContextMenuTriggerDirective', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      providers: [, provideNoopAnimations()],
+      providers: [ provideNoopAnimations()],
       imports: [ContextMenuTriggerTestComponent],
     }).compileComponents();
     fixture = TestBed.createComponent(ContextMenuTriggerTestComponent);

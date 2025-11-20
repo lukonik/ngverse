@@ -1,9 +1,9 @@
-import type { Mock } from 'vitest';
 import { DIALOG_DATA, DialogRef } from '@angular/cdk/dialog';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { provideNoopAnimations } from '@angular/platform-browser/animations';
+import type { Mock } from 'vitest';
 import { DialogCloseDirective } from '../dialog-close.directive';
 import { DialogComponent } from './dialog.component';
 
@@ -25,7 +25,6 @@ describe('DialogComponent', () => {
       imports: [DialogComponent],
       providers: [
         provideNoopAnimations(),
-        ,
         {
           provide: DialogRef,
           useValue: dialogRefMock,

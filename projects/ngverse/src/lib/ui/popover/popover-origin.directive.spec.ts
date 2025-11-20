@@ -9,7 +9,7 @@ describe('PopoverOriginDirective', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [PopoverComponent],
-      providers: [provideAnimations(), ,],
+      providers: [provideAnimations(),],
     }).compileComponents();
 
     fixture = TestBed.createComponent(PopoverComponent);
