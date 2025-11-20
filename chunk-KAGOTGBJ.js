@@ -1,0 +1,2 @@
+import{Ac as s,Gb as m,Hb as p,dc as n,jb as c,xb as i,yb as a}from"./chunk-EWJS3UHC.js";function l(e,t){e&1&&(m(0,"code"),n(1,"ngverse"),p())}function f(e,t){e&1&&n(0,` ngverse
+`)}var d=class e{code=s(!1);static \u0275fac=function(o){return new(o||e)};static \u0275cmp=c({type:e,selectors:[["doc-project-name"]],inputs:{code:[1,"code"]},decls:2,vars:1,template:function(o,r){o&1&&i(0,l,2,0,"code")(1,f,1,0),o&2&&a(r.code()?0:1)},styles:["[_nghost-%COMP%]{display:inline}"]})};export{d as a};

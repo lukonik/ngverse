@@ -1,9 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
-import {
-  PLATFORM_ID,
-  provideExperimentalZonelessChangeDetection,
-} from '@angular/core';
+import { PLATFORM_ID } from '@angular/core';
+import { vi } from 'vitest';
 import {
   LOCAL_STORAGE_TOKEN,
   LocalStorageService,
@@ -15,7 +13,7 @@ describe('LocalStorageService', () => {
   describe('InBrowser', () => {
     beforeEach(() => {
       TestBed.configureTestingModule({
-        providers: [provideExperimentalZonelessChangeDetection()],
+        providers: [],
       });
       service = TestBed.inject(LocalStorageService);
       localStorage.clear();
@@ -67,7 +65,6 @@ describe('LocalStorageService', () => {
     beforeEach(() => {
       TestBed.configureTestingModule({
         providers: [
-          provideExperimentalZonelessChangeDetection(),
           { provide: PLATFORM_ID, useValue: 'server' },
           { provide: LOCAL_STORAGE_TOKEN, useValue: spyStorageMock },
         ],
@@ -81,27 +78,27 @@ describe('LocalStorageService', () => {
       expect(service.enabled).toBe(false);
     });
     it('should call set item', () => {
-      spyOn(spyStorageMock, 'setItem');
+      vi.spyOn(spyStorageMock, 'setItem');
       service.setItem('test', 'test');
       expect(spyStorageMock.setItem).toHaveBeenCalled();
     });
     it('should call get item', () => {
-      spyOn(spyStorageMock, 'getItem');
+      vi.spyOn(spyStorageMock, 'getItem');
       service.getItem('test');
       expect(spyStorageMock.getItem).toHaveBeenCalled();
     });
     it('should call remove item', () => {
-      spyOn(spyStorageMock, 'removeItem');
+      vi.spyOn(spyStorageMock, 'removeItem');
       service.removeItem('test');
       expect(spyStorageMock.removeItem).toHaveBeenCalled();
     });
     it('should call clear', () => {
-      spyOn(spyStorageMock, 'clear');
+      vi.spyOn(spyStorageMock, 'clear');
       service.clear();
       expect(spyStorageMock.clear).toHaveBeenCalled();
     });
     it('should call key', () => {
-      spyOn(spyStorageMock, 'key');
+      vi.spyOn(spyStorageMock, 'key');
       service.key(0);
       expect(spyStorageMock.key).toHaveBeenCalled();
     });

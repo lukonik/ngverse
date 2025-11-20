@@ -3,7 +3,6 @@ import {
   Component,
   ComponentRef,
   input,
-  provideExperimentalZonelessChangeDetection,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
@@ -18,7 +17,7 @@ describe('RadioButtonComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [RadioButtonTestComponent],
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [],
     }).compileComponents();
 
     fixture = TestBed.createComponent(RadioButtonTestComponent);
@@ -42,7 +41,7 @@ describe('RadioButtonComponent', () => {
     ) as HTMLInputElement;
     input.dispatchEvent(new Event('change'));
     await fixture.whenStable();
-    expect(input.checked).toBeTrue();
+    expect(input.checked).toBe(true);
   });
   it('disable should disable radio-button', async () => {
     const input = fixture.nativeElement.querySelector(
@@ -50,10 +49,10 @@ describe('RadioButtonComponent', () => {
     ) as HTMLInputElement;
     componentRef.setInput('disabled', true);
     await fixture.whenStable();
-    expect(input.disabled).toBeTrue();
+    expect(input.disabled).toBe(true);
     input.dispatchEvent(new Event('click'));
     await fixture.whenStable();
-    expect(input.checked).toBeFalse();
+    expect(input.checked).toBe(false);
   });
 
   it("name should be the same as RadioButtonState's name", async () => {
@@ -72,7 +71,7 @@ describe('RadioButtonComponent', () => {
     const input = fixture.nativeElement.querySelector(
       'input'
     ) as HTMLInputElement;
-    expect(input.disabled).toBeTrue();
+    expect(input.disabled).toBe(true);
   });
   it('radio-button should be selected on same value as Form control value', async () => {
     fixture.componentRef.setInput('value', 1);
@@ -82,7 +81,7 @@ describe('RadioButtonComponent', () => {
     const input = fixture.nativeElement.querySelector(
       'input'
     ) as HTMLInputElement;
-    expect(input.checked).toBeTrue();
+    expect(input.checked).toBe(true);
   });
   it('compare with should select radio-button properly', async () => {
     const dummyCompareWith = (a: number) => {

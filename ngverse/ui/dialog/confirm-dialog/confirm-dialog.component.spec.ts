@@ -1,8 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  provideExperimentalZonelessChangeDetection,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogService } from '../dialog.service';
@@ -14,7 +10,7 @@ describe('ConfirmDialogComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [ConfirmDialogTestComponent, BrowserAnimationsModule],
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [],
     }).compileComponents();
     fixture = TestBed.createComponent(ConfirmDialogTestComponent);
 
@@ -86,7 +82,7 @@ describe('ConfirmDialogComponent', () => {
     const yesButton = document.querySelector('button') as HTMLElement;
 
     dialogRef.closed.subscribe((value) => {
-      expect(value).toBeTrue();
+      expect(value).toBe(true);
     });
 
     yesButton.dispatchEvent(new Event('click'));
@@ -96,7 +92,7 @@ describe('ConfirmDialogComponent', () => {
     const yesButton = document.querySelectorAll('button')[1] as HTMLElement;
 
     dialogRef.closed.subscribe((value) => {
-      expect(value).toBeFalse();
+      expect(value).toBe(false);
     });
 
     yesButton.dispatchEvent(new Event('click'));

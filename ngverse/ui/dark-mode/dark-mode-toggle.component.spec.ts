@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 import { DarkModeToggleComponent } from './dark-mode-toggle.component';
 
 describe('DarkModeToggleComponent', () => {
@@ -10,7 +9,7 @@ describe('DarkModeToggleComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [DarkModeToggleComponent],
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [],
     }).compileComponents();
 
     fixture = TestBed.createComponent(DarkModeToggleComponent);

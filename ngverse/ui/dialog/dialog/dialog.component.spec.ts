@@ -1,12 +1,9 @@
 import { DIALOG_DATA, DialogRef } from '@angular/cdk/dialog';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  provideExperimentalZonelessChangeDetection,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { provideNoopAnimations } from '@angular/platform-browser/animations';
+import type { Mock } from 'vitest';
 import { DialogCloseDirective } from '../dialog-close.directive';
 import { DialogComponent } from './dialog.component';
 
@@ -14,21 +11,20 @@ describe('DialogComponent', () => {
   let component: DialogComponent;
   let fixture: ComponentFixture<DialogComponent>;
   let dialogRefMock: {
-    close: jasmine.Spy<jasmine.Func>;
-    afterClosed: jasmine.Spy<jasmine.Func>;
+    close: Mock;
+    afterClosed: Mock;
   };
 
   beforeEach(async () => {
     dialogRefMock = {
-      close: jasmine.createSpy('close'),
-      afterClosed: jasmine.createSpy('afterClosed'),
+      close: vi.fn(),
+      afterClosed: vi.fn(),
     };
 
     await TestBed.configureTestingModule({
       imports: [DialogComponent],
       providers: [
         provideNoopAnimations(),
-        provideExperimentalZonelessChangeDetection(),
         {
           provide: DialogRef,
           useValue: dialogRefMock,

@@ -1,15 +1,14 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  provideExperimentalZonelessChangeDetection,
   TemplateRef,
   ViewChild,
   ViewContainerRef,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { TabPanelComponent } from './tab-panel.component';
-import { TabLabelDirective } from '../directives/tab-label.directive';
 import { TabContentDirective } from '../directives/tab-content.directive';
+import { TabLabelDirective } from '../directives/tab-label.directive';
+import { TabPanelComponent } from './tab-panel.component';
 
 describe('TabPanelComponent', () => {
   let component: TabPanelComponent;
@@ -18,7 +17,7 @@ describe('TabPanelComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [TabPanelComponent],
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TabPanelComponent);
@@ -165,7 +164,7 @@ describe('TabPanelComponent with Content Projection', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [TabPanelComponent, TabLabelDirective, TabContentDirective],
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TestHostComponent);
@@ -292,7 +291,7 @@ describe('TabPanelComponent Integration', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [TabPanelComponent, TabLabelDirective, TabContentDirective],
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [],
     }).compileComponents();
 
     fixture = TestBed.createComponent(IntegrationTestComponent);

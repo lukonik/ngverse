@@ -2,13 +2,12 @@ import {
   ChangeDetectionStrategy,
   Component,
   DebugElement,
-  provideExperimentalZonelessChangeDetection,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { ButtonGroupComponent } from './button-group.component';
+import { By } from '@angular/platform-browser';
 import { ButtonGroupItemComponent } from './button-group-item.component';
+import { ButtonGroupComponent } from './button-group.component';
 
 describe('ButtonGroupComponent', () => {
   let fixture: ComponentFixture<ButtonGroupHarnessComponent>;
@@ -23,7 +22,7 @@ describe('ButtonGroupComponent', () => {
         ButtonGroupItemComponent,
         ReactiveFormsModule,
       ],
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ButtonGroupHarnessComponent);
@@ -89,7 +88,7 @@ describe('ButtonGroupComponent', () => {
     fixture.detectChanges();
 
     expect(hostComponent.sizeControl.value).toBe('medium');
-    expect(disabledButton.nativeElement.disabled).toBeTrue();
+    expect(disabledButton.nativeElement.disabled).toBe(true);
   });
 
   it('should disable all items when form control is disabled', () => {
@@ -101,7 +100,7 @@ describe('ButtonGroupComponent', () => {
       .nativeElement as HTMLElement;
 
     buttons.forEach((button) => {
-      expect(button.nativeElement.disabled).toBeTrue();
+      expect(button.nativeElement.disabled).toBe(true);
     });
     expect(hostElement.classList).toContain('app-button-group-disabled');
   });

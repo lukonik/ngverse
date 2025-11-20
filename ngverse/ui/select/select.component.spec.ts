@@ -1,9 +1,5 @@
 import { OverlayContainer } from '@angular/cdk/overlay';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  provideExperimentalZonelessChangeDetection,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { provideNoopAnimations } from '@angular/platform-browser/animations';
@@ -45,10 +41,7 @@ describe('SelectComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [TestComponent],
-      providers: [
-        provideNoopAnimations(),
-        provideExperimentalZonelessChangeDetection(),
-      ],
+      providers: [provideNoopAnimations()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TestComponent);
@@ -109,9 +102,11 @@ describe('SelectComponent', () => {
       await openSelect();
       await closeSelect();
       expect(component.formControl.touched).toBe(true);
-      expect(fixture.nativeElement.querySelector('app-select')).toHaveClass(
-        'ng-touched'
-      );
+      expect(
+        fixture.nativeElement
+          .querySelector('app-select')
+          .classList.contains('ng-touched')
+      ).toBe(true);
     });
 
     it('should make control dirty when an option is selected', async () => {
@@ -121,7 +116,7 @@ describe('SelectComponent', () => {
       expect(component.formControl.dirty).toBe(true);
       expect(component.formControl.pristine).toBe(false);
       const selectElement = fixture.nativeElement.querySelector('app-select');
-      expect(selectElement).toHaveClass('ng-dirty');
+      expect(selectElement.classList.contains('ng-dirty')).toBe(true);
     });
 
     it('required validation', () => {
@@ -130,10 +125,10 @@ describe('SelectComponent', () => {
       component.formControl.setValue(null);
       fixture.detectChanges();
       const selectElement = fixture.nativeElement.querySelector('app-select');
-      expect(selectElement).toHaveClass('ng-invalid');
+      expect(selectElement.classList.contains('ng-invalid')).toBe(true);
       component.formControl.setValue('US');
       fixture.detectChanges();
-      expect(selectElement).toHaveClass('ng-valid');
+      expect(selectElement.classList.contains('ng-valid')).toBe(true);
     });
   });
 });

@@ -4,7 +4,6 @@ import {
   ChangeDetectionStrategy,
   Component,
   DebugElement,
-  provideExperimentalZonelessChangeDetection,
   signal,
 } from '@angular/core';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -23,7 +22,7 @@ describe('SwitchComponent', () => {
   beforeEach(async () => {
     TestBed.configureTestingModule({
       imports: [SwitchComponent],
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [],
     });
     fixture = TestBed.createComponent(SwitchTestComponent);
     await fixture.whenStable();
@@ -49,7 +48,7 @@ describe('SwitchComponent', () => {
   });
   it('should be true on change', () => {
     switchNativeElement.dispatchEvent(new Event('click'));
-    expect(rootComponent.formControl.value).toBeTrue();
+    expect(rootComponent.formControl.value).toBe(true);
   });
   it('should add checked class on value change', async () => {
     rootComponent.formControl.setValue(true);
@@ -60,12 +59,12 @@ describe('SwitchComponent', () => {
     rootComponent.formControl.setValidators(Validators.required);
     rootComponent.formControl.setValue(null);
     await fixture.whenStable();
-    expect(switchElement).toHaveClass('ng-invalid');
+    expect(switchElement.classList.contains('ng-invalid')).toBe(true);
   });
   it('switch should be invalid with required true', async () => {
     rootComponent.required.set(true);
     await fixture.whenStable();
-    expect(switchElement).toHaveClass('ng-invalid');
+    expect(switchElement.classList.contains('ng-invalid')).toBe(true);
   });
 
   it("ng-content should be 'Test switch'", async () => {

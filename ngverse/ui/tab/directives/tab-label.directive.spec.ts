@@ -1,7 +1,6 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  provideExperimentalZonelessChangeDetection,
   TemplateRef,
   ViewChild,
 } from '@angular/core';
@@ -15,7 +14,7 @@ describe('TabLabelDirective', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [TabLabelDirective],
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TestHostComponent);
@@ -126,7 +125,7 @@ describe('TabLabelDirective Integration', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [TabLabelDirective],
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [],
     }).compileComponents();
 
     fixture = TestBed.createComponent(IntegrationTestComponent);

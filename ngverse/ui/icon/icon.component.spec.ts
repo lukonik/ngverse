@@ -5,11 +5,7 @@ import {
   HttpTestingController,
   provideHttpClientTesting,
 } from '@angular/common/http/testing';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  provideExperimentalZonelessChangeDetection,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { IconLoaderService } from './icon-loader.service';
 import { IconComponent } from './icon.component';
 import { IconRegistry } from './icon.registry';
@@ -29,7 +25,6 @@ describe('IconComponent', () => {
         provideHttpClientTesting(),
         IconLoaderService,
         IconRegistry,
-        provideExperimentalZonelessChangeDetection(),
       ],
     }).compileComponents();
 

@@ -1,11 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {
-  ChangeDetectionStrategy,
-  Component,
-  provideExperimentalZonelessChangeDetection,
-  signal,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { provideNoopAnimations } from '@angular/platform-browser/animations';
 import { ErrorComponent } from './error.component';
@@ -28,11 +23,7 @@ describe('FormFieldComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [FormFieldTestComponent],
-      providers: [
-        provideNoopAnimations(),
-        provideExperimentalZonelessChangeDetection(),
-        FormFieldErrorRegistry,
-      ],
+      providers: [provideNoopAnimations(), FormFieldErrorRegistry],
     }).compileComponents();
 
     fixture = TestBed.createComponent(FormFieldTestComponent);
@@ -63,7 +54,7 @@ describe('FormFieldComponent', () => {
     formControl.setValidators(Validators.required);
     formControl.setValue(null);
     await fixture.whenStable();
-    expect(formControl.invalid).toBeTrue();
+    expect(formControl.invalid).toBe(true);
     expectErrorContentIsEmpty();
   });
   it("should not display anything if it's touched but valid", async () => {
