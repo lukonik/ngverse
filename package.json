@@ -78,6 +78,7 @@
     "@types/express": "^4.17.17",
     "@types/jasmine": "~5.1.0",
     "@types/lodash": "^4.17.16",
+    "@vitest/browser-playwright": "^4.0.12",
     "angular-cli-ghpages": "^2.0.3",
     "angular-eslint": "20.6.0",
     "autoprefixer": "^10.4.20",
