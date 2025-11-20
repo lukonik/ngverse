@@ -4,7 +4,6 @@ import {
   AfterViewInit,
   ChangeDetectionStrategy,
   Component,
-
   TemplateRef,
   viewChild,
 } from '@angular/core';

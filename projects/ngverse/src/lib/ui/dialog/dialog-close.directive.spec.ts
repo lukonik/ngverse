@@ -1,10 +1,6 @@
+import type { MockedObject } from 'vitest';
 import { DialogRef } from '@angular/cdk/dialog';
-import {
-    ChangeDetectionStrategy,
-    Component,
-
-    signal,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DialogCloseDirective } from './dialog-close.directive';
@@ -20,17 +16,16 @@ class TestCloseComponent {
 
 describe('DialogCloseDirective', () => {
   let fixture: ComponentFixture<TestCloseComponent>;
-  let mockDialogRef: jasmine.SpyObj<DialogRef>;
+  let mockDialogRef: MockedObject<DialogRef>;
 
   beforeEach(async () => {
-    mockDialogRef = jasmine.createSpyObj('DialogRef', ['close']);
+    mockDialogRef = {
+      close: vi.fn(),
+    };
 
     TestBed.configureTestingModule({
       imports: [TestCloseComponent],
-      providers: [
-        { provide: DialogRef, useValue: mockDialogRef },
-        ,
-      ],
+      providers: [{ provide: DialogRef, useValue: mockDialogRef }, ,],
     });
 
     fixture = TestBed.createComponent(TestCloseComponent);

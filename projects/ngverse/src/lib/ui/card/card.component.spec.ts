@@ -1,11 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import {
-    ChangeDetectionStrategy,
-    Component,
-    DebugElement,
-
-    signal,
+  ChangeDetectionStrategy,
+  Component,
+  DebugElement,
+  signal,
 } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { CardComponent } from './card.component';

@@ -1,11 +1,9 @@
 import { TestBed } from '@angular/core/testing';
 
+import { PLATFORM_ID } from '@angular/core';
 import {
-    PLATFORM_ID,
-} from '@angular/core';
-import {
-    LOCAL_STORAGE_TOKEN,
-    LocalStorageService,
+  LOCAL_STORAGE_TOKEN,
+  LocalStorageService,
 } from './local-storage.service';
 
 describe('LocalStorageService', () => {
@@ -80,27 +78,27 @@ describe('LocalStorageService', () => {
       expect(service.enabled).toBe(false);
     });
     it('should call set item', () => {
-      spyOn(spyStorageMock, 'setItem');
+      vi.spyOn(spyStorageMock, 'setItem');
       service.setItem('test', 'test');
       expect(spyStorageMock.setItem).toHaveBeenCalled();
     });
     it('should call get item', () => {
-      spyOn(spyStorageMock, 'getItem');
+      vi.spyOn(spyStorageMock, 'getItem');
       service.getItem('test');
       expect(spyStorageMock.getItem).toHaveBeenCalled();
     });
     it('should call remove item', () => {
-      spyOn(spyStorageMock, 'removeItem');
+      vi.spyOn(spyStorageMock, 'removeItem');
       service.removeItem('test');
       expect(spyStorageMock.removeItem).toHaveBeenCalled();
     });
     it('should call clear', () => {
-      spyOn(spyStorageMock, 'clear');
+      vi.spyOn(spyStorageMock, 'clear');
       service.clear();
       expect(spyStorageMock.clear).toHaveBeenCalled();
     });
     it('should call key', () => {
-      spyOn(spyStorageMock, 'key');
+      vi.spyOn(spyStorageMock, 'key');
       service.key(0);
       expect(spyStorageMock.key).toHaveBeenCalled();
     });

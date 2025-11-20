@@ -1,9 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {
-    ChangeDetectionStrategy,
-    Component,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { provideNoopAnimations } from '@angular/platform-browser/animations';
 import { DrawerRef } from './drawer-ref';
 import { DrawerComponent } from './drawer.component';

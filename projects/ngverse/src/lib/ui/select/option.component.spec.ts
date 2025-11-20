@@ -1,11 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {
-    ChangeDetectionStrategy,
-    Component,
-
-    signal,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
 import { provideNoopAnimations } from '@angular/platform-browser/animations';
@@ -21,10 +16,7 @@ describe('OptionComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [OptionTestComponent],
-      providers: [
-        provideNoopAnimations(),
-        ,
-      ],
+      providers: [provideNoopAnimations(), ,],
     }).compileComponents();
 
     fixture = TestBed.createComponent(OptionTestComponent);

@@ -1,8 +1,8 @@
 import {
-    ChangeDetectionStrategy,
-    Component,
-    EventEmitter,
-    Output,
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Output,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
@@ -11,7 +11,7 @@ import { ConfirmDirective } from './confirm.directive';
 import { DialogService } from './dialog.service';
 
 class MockDialogService {
-  confirm = jasmine.createSpy().and.returnValue({
+  confirm = vi.fn().mockReturnValue({
     closed: of(true),
   });
 }
@@ -35,8 +35,10 @@ class TestHostComponent {
     yesLabel: 'Delete',
     noLabel: 'Cancel',
   };
-  @Output() approved = new EventEmitter<void>();
-  @Output() rejected = new EventEmitter<void>();
+  @Output()
+  approved = new EventEmitter<void>();
+  @Output()
+  rejected = new EventEmitter<void>();
 
   onApproved() {
     this.approved.emit();
@@ -54,10 +56,7 @@ describe('ConfirmDirective', () => {
   beforeEach(async () => {
     TestBed.configureTestingModule({
       imports: [TestHostComponent],
-      providers: [
-        { provide: DialogService, useClass: MockDialogService },
-        ,
-      ],
+      providers: [{ provide: DialogService, useClass: MockDialogService }, ,],
     });
 
     fixture = TestBed.createComponent(TestHostComponent);
@@ -70,7 +69,7 @@ describe('ConfirmDirective', () => {
 
   it('should call the open method when the button is clicked', async () => {
     const button = fixture.debugElement.query(By.css('button'));
-    spyOn(fixture.componentInstance, 'onApproved');
+    vi.spyOn(fixture.componentInstance, 'onApproved');
 
     button.triggerEventHandler('click', null);
     await fixture.whenStable();
@@ -81,12 +80,12 @@ describe('ConfirmDirective', () => {
   });
 
   it('should emit approved event when the dialog result is true', async () => {
-    dialogService.confirm.and.returnValue({
+    dialogService.confirm.mockReturnValue({
       closed: of(true),
     });
 
     const button = fixture.debugElement.query(By.css('button'));
-    const approvedSpy = spyOn(fixture.componentInstance, 'onApproved');
+    const approvedSpy = vi.spyOn(fixture.componentInstance, 'onApproved');
 
     button.triggerEventHandler('click', null);
 
@@ -96,12 +95,12 @@ describe('ConfirmDirective', () => {
   });
 
   it('should emit rejected event when the dialog result is false', async () => {
-    dialogService.confirm.and.returnValue({
+    dialogService.confirm.mockReturnValue({
       closed: of(false),
     });
 
     const button = fixture.debugElement.query(By.css('button'));
-    const rejectedSpy = spyOn(fixture.componentInstance, 'onRejected');
+    const rejectedSpy = vi.spyOn(fixture.componentInstance, 'onRejected');
 
     button.triggerEventHandler('click', null);
 

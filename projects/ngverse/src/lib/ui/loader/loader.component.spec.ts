@@ -1,11 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {
-    ChangeDetectionStrategy,
-    Component,
-
-    signal,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { LoaderComponent } from './loader.component';
 
 describe('LoaderComponent', () => {

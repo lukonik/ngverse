@@ -1,10 +1,9 @@
 import { Directionality } from '@angular/cdk/bidi';
 import {
-    ChangeDetectionStrategy,
-    Component,
-
-    signal,
-    ViewChild,
+  ChangeDetectionStrategy,
+  Component,
+  signal,
+  ViewChild,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TabNavBarItemComponent } from './tab-nav-bar-item/tab-nav-bar-item.component';
@@ -122,20 +121,16 @@ describe('TabNavBarComponent', () => {
         const mockKeyboardEvent = new KeyboardEvent('keydown', {
           key: 'Enter',
         });
-        spyOn(component.keyManager, 'onKeydown');
-        spyOn(component, 'selectTabValue');
+        vi.spyOn(component.keyManager, 'onKeydown');
+        vi.spyOn(component, 'selectTabValue');
 
         // Mock activeItemIndex
-        spyOnProperty(
+        vi.spyOn(
           component.keyManager,
           'activeItemIndex',
           'get'
-        ).and.returnValue(0);
-        spyOnProperty(
-          component.keyManager,
-          'activeItem',
-          'get'
-        ).and.returnValue({
+        ).mockReturnValue(0);
+        vi.spyOn(component.keyManager, 'activeItem', 'get').mockReturnValue({
           tabValue: () => 'test-tab',
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } as any);
@@ -152,14 +147,14 @@ describe('TabNavBarComponent', () => {
         const mockKeyboardEvent = new KeyboardEvent('keydown', {
           key: 'Enter',
         });
-        spyOn(component.keyManager, 'onKeydown');
-        spyOn(component, 'selectTabValue');
+        vi.spyOn(component.keyManager, 'onKeydown');
+        vi.spyOn(component, 'selectTabValue');
 
-        spyOnProperty(
+        vi.spyOn(
           component.keyManager,
           'activeItemIndex',
           'get'
-        ).and.returnValue(null);
+        ).mockReturnValue(null);
 
         component.onKeydown(mockKeyboardEvent);
 
@@ -173,7 +168,7 @@ describe('TabNavBarComponent', () => {
         const mockKeyboardEvent = new KeyboardEvent('keydown', {
           key: 'ArrowRight',
         });
-        spyOn(component.keyManager, 'onKeydown');
+        vi.spyOn(component.keyManager, 'onKeydown');
 
         component.onKeydown(mockKeyboardEvent);
 
@@ -185,12 +180,10 @@ describe('TabNavBarComponent', () => {
 
     describe('onTabNavBarFocus', () => {
       it('should set first item active when no active item', () => {
-        spyOnProperty(
-          component.keyManager,
-          'activeItem',
-          'get'
-        ).and.returnValue(null);
-        spyOn(component.keyManager, 'setFirstItemActive');
+        vi.spyOn(component.keyManager, 'activeItem', 'get').mockReturnValue(
+          null
+        );
+        vi.spyOn(component.keyManager, 'setFirstItemActive');
 
         component.onTabNavBarFocus();
 
@@ -198,13 +191,13 @@ describe('TabNavBarComponent', () => {
       });
 
       it('should not set first item active when activeItem exists', () => {
-        spyOnProperty(
+        vi.spyOn(
           component.keyManager,
           'activeItem',
           'get'
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        ).and.returnValue({} as any);
-        spyOn(component.keyManager, 'setFirstItemActive');
+        ).mockReturnValue({} as any);
+        vi.spyOn(component.keyManager, 'setFirstItemActive');
 
         component.onTabNavBarFocus();
 
@@ -216,7 +209,7 @@ describe('TabNavBarComponent', () => {
   describe('Public Methods', () => {
     describe('selectTabValue', () => {
       it('should update selectedTabValue and emit event', () => {
-        spyOn(component.tabChanged, 'emit');
+        vi.spyOn(component.tabChanged, 'emit');
 
         component.selectTabValue('test-tab');
 
@@ -225,7 +218,7 @@ describe('TabNavBarComponent', () => {
       });
 
       it('should handle undefined tabValue', () => {
-        spyOn(component.tabChanged, 'emit');
+        vi.spyOn(component.tabChanged, 'emit');
 
         component.selectTabValue(undefined);
 
@@ -240,9 +233,9 @@ describe('TabNavBarComponent', () => {
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
         ] as any[];
 
-        spyOn(component, 'tabItems').and.returnValue(mockTabItems);
-        spyOn(component.keyManager, 'setActiveItem');
-        spyOn(component.tabChanged, 'emit');
+        vi.spyOn(component, 'tabItems').mockReturnValue(mockTabItems);
+        vi.spyOn(component.keyManager, 'setActiveItem');
+        vi.spyOn(component.tabChanged, 'emit');
 
         component.selectTabValue('nonexistent-tab');
 
@@ -279,8 +272,8 @@ describe('TabNavBarComponent', () => {
       const container = fixture.nativeElement.querySelector('[role="tablist"]');
       expect(container).toBeTruthy();
 
-      spyOn(component, 'onTabNavBarFocus');
-      spyOn(component, 'onKeydown');
+      vi.spyOn(component, 'onTabNavBarFocus');
+      vi.spyOn(component, 'onKeydown');
 
       container.focus();
       container.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter' }));
@@ -355,19 +348,19 @@ describe('TabNavBarComponent with Projected Content', () => {
       const mockKeyboardEvent = new KeyboardEvent('keydown', { key: 'Enter' });
 
       // Set up mock activeItem
-      spyOnProperty(
+      vi.spyOn(
         component.tabNavBar.keyManager,
         'activeItemIndex',
         'get'
-      ).and.returnValue(1);
-      spyOnProperty(
+      ).mockReturnValue(1);
+      vi.spyOn(
         component.tabNavBar.keyManager,
         'activeItem',
         'get'
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      ).and.returnValue(component.tabNavBar.tabItems()[1] as any);
+      ).mockReturnValue(component.tabNavBar.tabItems()[1] as any);
 
-      spyOn(component.tabNavBar, 'selectTabValue').and.callThrough();
+      vi.spyOn(component.tabNavBar, 'selectTabValue');
 
       component.tabNavBar.onKeydown(mockKeyboardEvent);
 
@@ -394,7 +387,7 @@ describe('TabNavBarComponent with Projected Content', () => {
 
   describe('Event Emission', () => {
     it('should emit tabChanged when tab selection changes', () => {
-      spyOn(component.tabNavBar.tabChanged, 'emit');
+      vi.spyOn(component.tabNavBar.tabChanged, 'emit');
 
       component.tabNavBar.selectTabValue('home');
 
@@ -402,7 +395,7 @@ describe('TabNavBarComponent with Projected Content', () => {
     });
 
     it('should emit tabChanged with undefined', () => {
-      spyOn(component.tabNavBar.tabChanged, 'emit');
+      vi.spyOn(component.tabNavBar.tabChanged, 'emit');
 
       component.tabNavBar.selectTabValue(undefined);
 

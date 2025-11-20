@@ -1,11 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {
-    ChangeDetectionStrategy,
-    Component,
-
-    signal,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RadioButtonComponent } from './radio-button.component';
 import { RadioGroupComponent } from './radio-group.component';
@@ -43,7 +38,7 @@ describe('RadioGroupComponent', () => {
       'input[type="radio"]'
     ) as HTMLInputElement[];
     radioButtons.forEach((radioButton) => {
-      expect(radioButton.disabled).toBeTrue();
+      expect(radioButton.disabled).toBe(true);
     });
   });
   it("should select the radio button when it's value is selected", async () => {
@@ -53,13 +48,13 @@ describe('RadioGroupComponent', () => {
     const radioButton = fixture.nativeElement.querySelector(
       'input[type="radio"]'
     ) as HTMLInputElement;
-    expect(radioButton.checked).toBeTrue();
+    expect(radioButton.checked).toBe(true);
   });
   it("should add vertical class when it's vertical", async () => {
     component.vertical.set(true);
     await fixture.whenStable();
     const radioGroup = fixture.nativeElement.querySelector('.radio-group');
-    expect(radioGroup.classList.contains('vertical')).toBeTrue();
+    expect(radioGroup.classList.contains('vertical')).toBe(true);
   });
   it("should generate the name for the radio group when it's not provided", () => {
     expect(radioGroup.name()).toContain('radio-group-');
@@ -78,7 +73,7 @@ describe('RadioGroupComponent', () => {
     ) as HTMLInputElement[];
     radioButtons[1].dispatchEvent(new Event('change'));
     await fixture.whenStable();
-    expect(component.formControl.touched).toBeTrue();
+    expect(component.formControl.touched).toBe(true);
   });
 });
 
@@ -113,7 +108,14 @@ class RadioGroupTestComponent {
   ];
   formControl = new FormControl<unknown>(null, Validators.required);
 
-  compare(o1: { price: number }, o2: { price: number }) {
+  compare(
+    o1: {
+      price: number;
+    },
+    o2: {
+      price: number;
+    }
+  ) {
     return o1?.price === o2.price;
   }
 }

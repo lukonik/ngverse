@@ -1,9 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {
-    ChangeDetectionStrategy,
-    Component,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { InputDirective } from './input.directive';
 
 describe('InputComponent', () => {

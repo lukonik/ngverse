@@ -1,9 +1,8 @@
 import {
-    ChangeDetectionStrategy,
-    Component,
-
-    signal,
-    ViewChild,
+  ChangeDetectionStrategy,
+  Component,
+  signal,
+  ViewChild,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TabLabelDirective } from '../directives/tab-label.directive';
@@ -169,7 +168,7 @@ describe('TabHeaderComponent', () => {
       });
 
       it('should focus the element', () => {
-        spyOn(component.element, 'focus');
+        vi.spyOn(component.element, 'focus');
         component.setActiveStyles();
         expect(component.element.focus).toHaveBeenCalled();
       });
@@ -217,7 +216,7 @@ describe('TabHeaderComponent', () => {
     });
 
     it('should be able to call focus on the element', () => {
-      spyOn(component.element, 'focus');
+      vi.spyOn(component.element, 'focus');
       component.element.focus();
       expect(component.element.focus).toHaveBeenCalled();
     });

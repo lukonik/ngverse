@@ -1,11 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {
-    ChangeDetectionStrategy,
-    Component,
-
-    signal,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { AlertBodyComponent } from './alert-body.component';
 import { AlertHeaderComponent } from './alert-header.component';
 import { AlertComponent } from './alert.component';
@@ -36,7 +31,7 @@ describe('AlertComponent', () => {
   it('should change class based on type', async () => {
     component.type.set('success');
     await fixture.whenStable();
-    expect(alertRootElement.classList.contains('success')).toBeTrue();
+    expect(alertRootElement.classList.contains('success')).toBe(true);
   });
   it('should render header', () => {
     const header = nativeElement.querySelector(
@@ -52,7 +47,7 @@ describe('AlertComponent', () => {
   it('should add variant class', async () => {
     component.variant.set('outline');
     await fixture.whenStable();
-    expect(alertRootElement.classList.contains('outline')).toBeTrue();
+    expect(alertRootElement.classList.contains('outline')).toBe(true);
   });
 });
 

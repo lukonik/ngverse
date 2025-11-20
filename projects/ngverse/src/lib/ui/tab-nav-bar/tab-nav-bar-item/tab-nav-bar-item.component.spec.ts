@@ -1,10 +1,10 @@
+import type { Mock } from 'vitest';
 import { Directionality } from '@angular/cdk/bidi';
 import {
-    ChangeDetectionStrategy,
-    Component,
-
-    signal,
-    ViewChild,
+  ChangeDetectionStrategy,
+  Component,
+  signal,
+  ViewChild,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TabNavBarComponent } from '../tab-nav-bar.component';
@@ -16,10 +16,8 @@ describe('TabNavBarItemComponent', () => {
 
   beforeEach(async () => {
     const mockTabNavBar = {
-      selectedTabValue: jasmine
-        .createSpy('selectedTabValue')
-        .and.returnValue(undefined),
-      selectTabValue: jasmine.createSpy('selectTabValue'),
+      selectedTabValue: vi.fn().mockReturnValue(undefined),
+      selectTabValue: vi.fn(),
     };
 
     await TestBed.configureTestingModule({
@@ -176,7 +174,7 @@ describe('TabNavBarItemComponent', () => {
       beforeEach(() => {
         // Reset the spy before each test
         const parentComponent = component['tabNavBar'];
-        (parentComponent.selectTabValue as jasmine.Spy).calls.reset();
+        (parentComponent.selectTabValue as Mock).mockClear();
       });
 
       it('should handle click when not disabled', () => {
@@ -190,7 +188,7 @@ describe('TabNavBarItemComponent', () => {
       it('should not call selectTabValue when disabled', () => {
         fixture.componentRef.setInput('disabled', true);
         const parentComponent = component['tabNavBar'];
-        (parentComponent.selectTabValue as jasmine.Spy).calls.reset();
+        (parentComponent.selectTabValue as Mock).mockClear();
 
         component.onClick();
 
@@ -276,7 +274,7 @@ describe('TabNavBarItemComponent', () => {
 
     it('should handle click events', () => {
       const button = fixture.nativeElement.querySelector('button');
-      spyOn(component, 'onClick');
+      vi.spyOn(component, 'onClick');
 
       button.click();
 

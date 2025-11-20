@@ -1,10 +1,9 @@
 import {
-    ChangeDetectionStrategy,
-    Component,
-
-    TemplateRef,
-    ViewChild,
-    ViewContainerRef,
+  ChangeDetectionStrategy,
+  Component,
+  TemplateRef,
+  ViewChild,
+  ViewContainerRef,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TabContentDirective } from '../directives/tab-content.directive';

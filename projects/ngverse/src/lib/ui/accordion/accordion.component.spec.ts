@@ -1,9 +1,4 @@
-import {
-    ChangeDetectionStrategy,
-    Component,
-
-    signal,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { provideNoopAnimations } from '@angular/platform-browser/animations';
@@ -17,10 +12,7 @@ describe('AccordionComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      providers: [
-        provideNoopAnimations(),
-        ,
-      ],
+      providers: [provideNoopAnimations(), ,],
     }).compileComponents();
 
     fixture = TestBed.createComponent(AccordionTestComponent);
@@ -41,8 +33,8 @@ describe('AccordionComponent', () => {
     const firstAccordion = accordionItems[0].componentInstance;
     const secondAccordion = accordionItems[1].componentInstance;
     firstAccordion.toggle();
-    expect(firstAccordion.expanded).toBeTrue();
-    expect(secondAccordion.expanded).toBeFalse();
+    expect(firstAccordion.expanded).toBe(true);
+    expect(secondAccordion.expanded).toBe(false);
   });
   it('open accordion should not close another on multi=true', async () => {
     fixture.componentInstance.multi.set(true);
@@ -54,8 +46,8 @@ describe('AccordionComponent', () => {
     firstAccordion.toggle();
     await fixture.whenStable();
     secondAccordion.toggle();
-    expect(firstAccordion.expanded).toBeTrue();
-    expect(secondAccordion.expanded).toBeTrue();
+    expect(firstAccordion.expanded).toBe(true);
+    expect(secondAccordion.expanded).toBe(true);
   });
 });
 @Component({

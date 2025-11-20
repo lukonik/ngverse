@@ -1,10 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import {
-    ChangeDetectionStrategy,
-    Component,
-
-    signal,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideNoopAnimations } from '@angular/platform-browser/animations';
 import { DrawerCloseDirective } from './drawer-close.directive';
@@ -26,10 +21,7 @@ describe('DrawerCloseDirective', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [DrawerCloseDirective, DrawerCloseTestComponent],
-      providers: [
-        provideNoopAnimations(),
-        ,
-      ],
+      providers: [provideNoopAnimations(), ,],
     }).compileComponents();
     document = TestBed.inject(DOCUMENT);
     service = TestBed.inject(DrawerService);

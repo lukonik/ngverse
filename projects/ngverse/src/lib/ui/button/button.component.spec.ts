@@ -1,12 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import {
-    ChangeDetectionStrategy,
-    Component,
-    DebugElement,
-    input,
-
-    signal,
+  ChangeDetectionStrategy,
+  Component,
+  DebugElement,
+  input,
+  signal,
 } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { ButtonComponent } from './button.component';
@@ -46,22 +45,22 @@ describe('ButtonComponent', () => {
   it('should add disable attribute on disable', async () => {
     rootComponent.disabled.set(true);
     await fixture.whenStable();
-    expect(buttonRootElement.hasAttribute('disabled')).toBeTrue();
+    expect(buttonRootElement.hasAttribute('disabled')).toBe(true);
   });
 
   it('should add outline class on variant type change', async () => {
     rootComponent.variant.set('outline');
     await fixture.whenStable();
-    expect(
-      buttonRootElement.classList.contains(getClassName('outline'))
-    ).toBeTrue();
+    expect(buttonRootElement.classList.contains(getClassName('outline'))).toBe(
+      true
+    );
   });
   it('should add proper variant type', async () => {
     rootComponent.variant.set('secondary');
     await fixture.whenStable();
     expect(
       buttonRootElement.classList.contains(getClassName('secondary'))
-    ).toBeTrue();
+    ).toBe(true);
   });
   it('should add proper button type', async () => {
     rootComponent.type.set('submit');
@@ -74,7 +73,7 @@ describe('ButtonComponent', () => {
     const hasButtonLoader =
       buttonRootElement.querySelector('.button-loader') !== null;
 
-    expect(hasButtonLoader).toBeTrue();
+    expect(hasButtonLoader).toBe(true);
   });
 
   it('should display text in button', () => {
@@ -83,7 +82,7 @@ describe('ButtonComponent', () => {
   it('should change the size class', async () => {
     fixture.componentRef.setInput('size', 'lg');
     await fixture.whenStable();
-    expect(buttonRootElement.classList.contains(getClassName('lg'))).toBeTrue();
+    expect(buttonRootElement.classList.contains(getClassName('lg'))).toBe(true);
   });
 });
 

@@ -3,12 +3,11 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { DOCUMENT } from '@angular/common';
 import {
-    ChangeDetectionStrategy,
-    Component,
-    model,
-
-    signal,
-    viewChild,
+  ChangeDetectionStrategy,
+  Component,
+  model,
+  signal,
+  viewChild,
 } from '@angular/core';
 import { provideNoopAnimations } from '@angular/platform-browser/animations';
 import { PopoverOriginDirective } from './popover-origin.directive';
@@ -27,10 +26,7 @@ describe('PopoverComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [PopoverTestComponent, PopoverComponent],
-      providers: [
-        provideNoopAnimations(),
-        ,
-      ],
+      providers: [provideNoopAnimations(), ,],
     }).compileComponents();
     fixture = TestBed.createComponent(PopoverTestComponent);
     component = fixture.componentInstance;
@@ -68,7 +64,7 @@ describe('PopoverComponent', () => {
     //Click subscribtion has asyncscheduler so we have to wait for next tick
     await new Promise<void>((resolve) => setTimeout(resolve, 1));
     await fixture.whenStable();
-    expect(component.isOpen()).toBeFalse();
+    expect(component.isOpen()).toBe(false);
   });
   it('should close popover on outside click if outsideClose is true', async () => {
     component.isOpen.set(true);
@@ -113,7 +109,7 @@ describe('PopoverComponent', () => {
     const overlayPopover = getOverlayContainerEl().querySelector(
       '.popover'
     ) as HTMLElement;
-    expect(overlayPopover).toHaveClass('styled');
+    expect(overlayPopover.classList.contains('styled')).toBe(true);
   });
   it('should add backdrop when hasBackdrop=true', async () => {
     component.isOpen.set(true);
@@ -125,7 +121,7 @@ describe('PopoverComponent', () => {
     expect(overlayBackdrop).toBeTruthy();
   });
   it("should emit 'close' event", async () => {
-    const spy = jasmine.createSpy('closedSpty');
+    const spy = vi.fn();
     component.isOpen.set(true);
     await fixture.whenStable();
     component.popover().closed.subscribe(spy);
@@ -134,7 +130,7 @@ describe('PopoverComponent', () => {
     expect(spy).toHaveBeenCalled();
   });
   it("should emit 'opened' event", async () => {
-    const spy = jasmine.createSpy('openedSpy');
+    const spy = vi.fn();
     component.popover().opened.subscribe(spy);
     component.isOpen.set(true);
     await fixture.whenStable();

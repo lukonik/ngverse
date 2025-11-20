@@ -1,7 +1,7 @@
 import {
-    ChangeDetectionStrategy,
-    Component,
-    DebugElement,
+  ChangeDetectionStrategy,
+  Component,
+  DebugElement,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
@@ -88,7 +88,7 @@ describe('ButtonGroupComponent', () => {
     fixture.detectChanges();
 
     expect(hostComponent.sizeControl.value).toBe('medium');
-    expect(disabledButton.nativeElement.disabled).toBeTrue();
+    expect(disabledButton.nativeElement.disabled).toBe(true);
   });
 
   it('should disable all items when form control is disabled', () => {
@@ -100,7 +100,7 @@ describe('ButtonGroupComponent', () => {
       .nativeElement as HTMLElement;
 
     buttons.forEach((button) => {
-      expect(button.nativeElement.disabled).toBeTrue();
+      expect(button.nativeElement.disabled).toBe(true);
     });
     expect(hostElement.classList).toContain('app-button-group-disabled');
   });

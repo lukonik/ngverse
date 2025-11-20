@@ -1,10 +1,5 @@
 import { CdkMenuItem } from '@angular/cdk/menu';
-import {
-    ChangeDetectionStrategy,
-    Component,
-
-    signal,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { provideNoopAnimations } from '@angular/platform-browser/animations';
@@ -16,10 +11,7 @@ describe('ContextMenuItemDirective', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      providers: [
-        ,
-        provideNoopAnimations(),
-      ],
+      providers: [, provideNoopAnimations()],
       imports: [ContextMenuItemTestComponent],
     }).compileComponents();
     fixture = TestBed.createComponent(ContextMenuItemTestComponent);
@@ -39,10 +31,10 @@ describe('ContextMenuItemDirective', () => {
     const contextMenuItem = fixture.debugElement.query(
       By.directive(ContextMenuItemDirective)
     );
-    expect(contextMenuItem.injector.get(CdkMenuItem).disabled).toBeFalse();
+    expect(contextMenuItem.injector.get(CdkMenuItem).disabled).toBe(false);
     fixture.componentInstance.disabled.set(true);
     fixture.detectChanges();
-    expect(contextMenuItem.injector.get(CdkMenuItem).disabled).toBeTrue();
+    expect(contextMenuItem.injector.get(CdkMenuItem).disabled).toBe(true);
   });
 });
 

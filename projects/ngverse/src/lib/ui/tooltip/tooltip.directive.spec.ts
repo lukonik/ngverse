@@ -1,13 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import {
-    ChangeDetectionStrategy,
-    Component,
-    computed,
-
-    signal,
-    TemplateRef,
-    viewChild,
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  signal,
+  TemplateRef,
+  viewChild,
 } from '@angular/core';
 import { TOOLTIP_EVENT, TooltipDirective } from './tooltip.directive';
 

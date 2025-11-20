@@ -1,11 +1,6 @@
 import { ActiveDescendantKeyManager } from '@angular/cdk/a11y';
 import { Directionality } from '@angular/cdk/bidi';
-import {
-    ChangeDetectionStrategy,
-    Component,
-
-    ViewChild,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, ViewChild } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,10 +17,7 @@ describe('TabGroupComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [TabGroupComponent, NoopAnimationsModule],
-      providers: [
-        ,
-        { provide: Directionality, useValue: { value: 'ltr' } },
-      ],
+      providers: [, { provide: Directionality, useValue: { value: 'ltr' } }],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TabGroupComponent);
@@ -120,12 +112,12 @@ describe('TabGroupComponent', () => {
   describe('Event Handlers', () => {
     describe('onKeydown', () => {
       it('should handle Enter key', () => {
-        spyOn(component, 'selectTab');
-        spyOnProperty(
+        vi.spyOn(component, 'selectTab');
+        vi.spyOn(
           component.keyManager,
           'activeItemIndex',
           'get'
-        ).and.returnValue(1);
+        ).mockReturnValue(1);
 
         const event = new KeyboardEvent('keydown', { key: 'Enter' });
         component.onKeydown(event);
@@ -134,12 +126,12 @@ describe('TabGroupComponent', () => {
       });
 
       it('should not handle Enter key when no active item', () => {
-        spyOn(component, 'selectTab');
-        spyOnProperty(
+        vi.spyOn(component, 'selectTab');
+        vi.spyOn(
           component.keyManager,
           'activeItemIndex',
           'get'
-        ).and.returnValue(null);
+        ).mockReturnValue(null);
 
         const event = new KeyboardEvent('keydown', { key: 'Enter' });
         component.onKeydown(event);
@@ -148,7 +140,7 @@ describe('TabGroupComponent', () => {
       });
 
       it('should delegate to keyManager', () => {
-        spyOn(component.keyManager, 'onKeydown');
+        vi.spyOn(component.keyManager, 'onKeydown');
         const event = new KeyboardEvent('keydown', { key: 'ArrowRight' });
 
         component.onKeydown(event);
@@ -159,12 +151,10 @@ describe('TabGroupComponent', () => {
 
     describe('onTabGroupFocus', () => {
       it('should set first item active when no active item', () => {
-        spyOn(component.keyManager, 'setFirstItemActive');
-        spyOnProperty(
-          component.keyManager,
-          'activeItem',
-          'get'
-        ).and.returnValue(null);
+        vi.spyOn(component.keyManager, 'setFirstItemActive');
+        vi.spyOn(component.keyManager, 'activeItem', 'get').mockReturnValue(
+          null
+        );
 
         component.onTabGroupFocus();
 
@@ -172,13 +162,13 @@ describe('TabGroupComponent', () => {
       });
 
       it('should not set first item active when active item exists', () => {
-        spyOn(component.keyManager, 'setFirstItemActive');
-        spyOnProperty(
+        vi.spyOn(component.keyManager, 'setFirstItemActive');
+        vi.spyOn(
           component.keyManager,
           'activeItem',
           'get'
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        ).and.returnValue({} as any);
+        ).mockReturnValue({} as any);
 
         component.onTabGroupFocus();
 
@@ -188,13 +178,13 @@ describe('TabGroupComponent', () => {
 
     describe('selectTab', () => {
       it('should update keyManager active item', () => {
-        spyOn(component.keyManager, 'setActiveItem');
+        vi.spyOn(component.keyManager, 'setActiveItem');
 
         component.selectTab(2);
 
         // The keyManager.setActiveItem accepts both index and item
         expect(component.keyManager.setActiveItem).toHaveBeenCalledWith(
-          jasmine.anything()
+          expect.anything()
         );
       });
 
@@ -204,7 +194,7 @@ describe('TabGroupComponent', () => {
       });
 
       it('should emit tabChanged event', () => {
-        spyOn(component.tabChanged, 'emit');
+        vi.spyOn(component.tabChanged, 'emit');
 
         component.selectTab(1);
 
@@ -227,10 +217,7 @@ describe('TabGroupComponent with Content', () => {
         TabContentDirective,
         NoopAnimationsModule,
       ],
-      providers: [
-        ,
-        { provide: Directionality, useValue: { value: 'ltr' } },
-      ],
+      providers: [, { provide: Directionality, useValue: { value: 'ltr' } }],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TestHostComponent);
@@ -303,7 +290,7 @@ describe('TabGroupComponent with Content', () => {
 
   describe('Tab Header Interaction', () => {
     it('should select tab when header is clicked', () => {
-      spyOn(component.tabGroup, 'selectTab');
+      vi.spyOn(component.tabGroup, 'selectTab');
       const secondTabHeader = fixture.debugElement.queryAll(
         By.css('app-tab-header')
       )[1];
@@ -330,7 +317,7 @@ describe('TabGroupComponent with Content', () => {
 
   describe('Keyboard Navigation', () => {
     it('should handle keyboard events on tab list', () => {
-      spyOn(component.tabGroup, 'onKeydown');
+      vi.spyOn(component.tabGroup, 'onKeydown');
       const tabList = fixture.debugElement.query(By.css('[role="tablist"]'));
 
       tabList.nativeElement.dispatchEvent(
@@ -341,7 +328,7 @@ describe('TabGroupComponent with Content', () => {
     });
 
     it('should handle focus events on tab list', () => {
-      spyOn(component.tabGroup, 'onTabGroupFocus');
+      vi.spyOn(component.tabGroup, 'onTabGroupFocus');
       const tabList = fixture.debugElement.query(By.css('[role="tablist"]'));
 
       tabList.nativeElement.dispatchEvent(new Event('focus'));
@@ -418,10 +405,7 @@ describe('TabGroupComponent with Custom Templates', () => {
         TabContentDirective,
         NoopAnimationsModule,
       ],
-      providers: [
-        ,
-        { provide: Directionality, useValue: { value: 'ltr' } },
-      ],
+      providers: [, { provide: Directionality, useValue: { value: 'ltr' } }],
     }).compileComponents();
 
     fixture = TestBed.createComponent(CustomTemplateTestComponent);
@@ -455,7 +439,7 @@ describe('TabGroupComponent with Custom Templates', () => {
 
   describe('Event Emissions', () => {
     it('should emit tabChanged event', () => {
-      spyOn(component, 'onTabChanged');
+      vi.spyOn(component, 'onTabChanged');
 
       component.tabGroup.selectTab(1);
 

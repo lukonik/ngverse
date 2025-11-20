@@ -1,3 +1,4 @@
+import type { MockedObject } from 'vitest';
 import { Dialog } from '@angular/cdk/dialog';
 import { ComponentType } from '@angular/cdk/portal';
 import { TestBed } from '@angular/core/testing';
@@ -9,21 +10,19 @@ import { DialogComponent } from './dialog/dialog.component';
 
 describe('DialogService', () => {
   let service: DialogService;
-  let mockDialog: jasmine.SpyObj<Dialog>;
+  let mockDialog: MockedObject<Dialog>;
 
   beforeEach(() => {
-    const dialogSpy = jasmine.createSpyObj('Dialog', ['open']);
+    const dialogSpy = {
+      open: vi.fn(),
+    };
 
     TestBed.configureTestingModule({
-      providers: [
-        DialogService,
-        { provide: Dialog, useValue: dialogSpy },
-        ,
-      ],
+      providers: [DialogService, { provide: Dialog, useValue: dialogSpy }, ,],
     });
 
     service = TestBed.inject(DialogService);
-    mockDialog = TestBed.inject(Dialog) as jasmine.SpyObj<Dialog>;
+    mockDialog = TestBed.inject(Dialog) as MockedObject<Dialog>;
   });
 
   it('should be created', () => {
@@ -33,10 +32,10 @@ describe('DialogService', () => {
   describe('#dialog', () => {
     it('should open a dialog with the provided component and options', () => {
       const mockDialogRef = {
-        close: jasmine.createSpy(),
+        close: vi.fn(),
         closed: of(undefined),
       };
-      mockDialog.open.and.returnValue(mockDialogRef as never);
+      mockDialog.open.mockReturnValue(mockDialogRef as never);
 
       const component = {} as ComponentType<unknown>;
       const options = { title: 'Test Title', showClose: true };
@@ -52,10 +51,10 @@ describe('DialogService', () => {
 
     it('should default showClose to true when not provided', () => {
       const mockDialogRef = {
-        close: jasmine.createSpy(),
+        close: vi.fn(),
         closed: of(undefined),
       };
-      mockDialog.open.and.returnValue(mockDialogRef as never);
+      mockDialog.open.mockReturnValue(mockDialogRef as never);
 
       const component = {} as ComponentType<unknown>;
       const options = { title: 'Test Title' };
@@ -70,8 +69,8 @@ describe('DialogService', () => {
 
   describe('#confirm', () => {
     it('should open a confirm dialog with the provided options', () => {
-      const mockDialogRef = { close: jasmine.createSpy(), closed: of(true) };
-      mockDialog.open.and.returnValue(mockDialogRef as never);
+      const mockDialogRef = { close: vi.fn(), closed: of(true) };
+      mockDialog.open.mockReturnValue(mockDialogRef as never);
 
       const options = {
         title: 'Confirm Title',
@@ -96,8 +95,8 @@ describe('DialogService', () => {
     });
 
     it('should use default yesLabel and noLabel when not provided', () => {
-      const mockDialogRef = { close: jasmine.createSpy(), closed: of(false) };
-      mockDialog.open.and.returnValue(mockDialogRef as never);
+      const mockDialogRef = { close: vi.fn(), closed: of(false) };
+      mockDialog.open.mockReturnValue(mockDialogRef as never);
 
       const options = {
         title: 'Default Labels',
@@ -121,10 +120,10 @@ describe('DialogService', () => {
   describe('#alert', () => {
     it('should open an alert dialog with the provided options', () => {
       const mockDialogRef = {
-        close: jasmine.createSpy(),
+        close: vi.fn(),
         closed: of(undefined),
       };
-      mockDialog.open.and.returnValue(mockDialogRef as never);
+      mockDialog.open.mockReturnValue(mockDialogRef as never);
 
       const options = {
         title: 'Alert Title',
@@ -149,10 +148,10 @@ describe('DialogService', () => {
 
     it('should use default buttonLabel when not provided', () => {
       const mockDialogRef = {
-        close: jasmine.createSpy(),
+        close: vi.fn(),
         closed: of(undefined),
       };
-      mockDialog.open.and.returnValue(mockDialogRef as never);
+      mockDialog.open.mockReturnValue(mockDialogRef as never);
 
       const options = {
         title: 'Default Button Label',

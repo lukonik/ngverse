@@ -1,8 +1,6 @@
+import type { Mock } from 'vitest';
 import { DIALOG_DATA, DialogRef } from '@angular/cdk/dialog';
-import {
-    ChangeDetectionStrategy,
-    Component,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { provideNoopAnimations } from '@angular/platform-browser/animations';
@@ -13,14 +11,14 @@ describe('DialogComponent', () => {
   let component: DialogComponent;
   let fixture: ComponentFixture<DialogComponent>;
   let dialogRefMock: {
-    close: jasmine.Spy<jasmine.Func>;
-    afterClosed: jasmine.Spy<jasmine.Func>;
+    close: Mock;
+    afterClosed: Mock;
   };
 
   beforeEach(async () => {
     dialogRefMock = {
-      close: jasmine.createSpy('close'),
-      afterClosed: jasmine.createSpy('afterClosed'),
+      close: vi.fn(),
+      afterClosed: vi.fn(),
     };
 
     await TestBed.configureTestingModule({
