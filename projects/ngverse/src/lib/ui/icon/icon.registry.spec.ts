@@ -1,4 +1,3 @@
-import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { IconRegistry } from './icon.registry';
 
@@ -7,7 +6,7 @@ describe('IconRegistry', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [],
     });
     service = TestBed.inject(IconRegistry);
   });

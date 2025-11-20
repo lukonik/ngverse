@@ -2,11 +2,11 @@ import { Directionality } from '@angular/cdk/bidi';
 import {
   ChangeDetectionStrategy,
   Component,
-  provideExperimentalZonelessChangeDetection,
   signal,
   ViewChild,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { vi, type Mock } from 'vitest';
 import { TabNavBarComponent } from '../tab-nav-bar.component';
 import { TabNavBarItemComponent } from './tab-nav-bar-item.component';
 
@@ -16,16 +16,13 @@ describe('TabNavBarItemComponent', () => {
 
   beforeEach(async () => {
     const mockTabNavBar = {
-      selectedTabValue: jasmine
-        .createSpy('selectedTabValue')
-        .and.returnValue(undefined),
-      selectTabValue: jasmine.createSpy('selectTabValue'),
+      selectedTabValue: vi.fn().mockReturnValue(undefined),
+      selectTabValue: vi.fn(),
     };
 
     await TestBed.configureTestingModule({
       imports: [TabNavBarItemComponent, TabNavBarComponent],
       providers: [
-        provideExperimentalZonelessChangeDetection(),
         {
           provide: Directionality,
           useValue: { value: 'ltr', change: () => ({}) },
@@ -176,7 +173,7 @@ describe('TabNavBarItemComponent', () => {
       beforeEach(() => {
         // Reset the spy before each test
         const parentComponent = component['tabNavBar'];
-        (parentComponent.selectTabValue as jasmine.Spy).calls.reset();
+        (parentComponent.selectTabValue as Mock).mockClear();
       });
 
       it('should handle click when not disabled', () => {
@@ -190,7 +187,7 @@ describe('TabNavBarItemComponent', () => {
       it('should not call selectTabValue when disabled', () => {
         fixture.componentRef.setInput('disabled', true);
         const parentComponent = component['tabNavBar'];
-        (parentComponent.selectTabValue as jasmine.Spy).calls.reset();
+        (parentComponent.selectTabValue as Mock).mockClear();
 
         component.onClick();
 
@@ -276,7 +273,7 @@ describe('TabNavBarItemComponent', () => {
 
     it('should handle click events', () => {
       const button = fixture.nativeElement.querySelector('button');
-      spyOn(component, 'onClick');
+      vi.spyOn(component, 'onClick');
 
       button.click();
 
@@ -313,7 +310,6 @@ describe('TabNavBarItemComponent Integration', () => {
     await TestBed.configureTestingModule({
       imports: [TabNavBarComponent, TabNavBarItemComponent],
       providers: [
-        provideExperimentalZonelessChangeDetection(),
         {
           provide: Directionality,
           useValue: { value: 'ltr', change: () => ({}) },

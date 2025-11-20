@@ -1,10 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {
-  ChangeDetectionStrategy,
-  Component,
-  provideExperimentalZonelessChangeDetection,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { provideNoopAnimations } from '@angular/platform-browser/animations';
 import { ErrorComponent } from './error.component';
 
@@ -15,10 +11,7 @@ describe('ErrorComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [ErrorTestComponent],
-      providers: [
-        provideNoopAnimations(),
-        provideExperimentalZonelessChangeDetection(),
-      ],
+      providers: [provideNoopAnimations()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ErrorTestComponent);

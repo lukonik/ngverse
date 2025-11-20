@@ -1,10 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {
-  ChangeDetectionStrategy,
-  Component,
-  provideExperimentalZonelessChangeDetection,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TextareaDirective } from './textarea.directive';
 
 describe('TextareaComponent', () => {
@@ -14,7 +10,7 @@ describe('TextareaComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [TextareaDirective],
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TextareaTestComponent);

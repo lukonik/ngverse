@@ -1,9 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  provideExperimentalZonelessChangeDetection,
-  signal,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideNoopAnimations } from '@angular/platform-browser/animations';
 import { AccordionBodyComponent } from './accordion-body.component';
@@ -18,10 +13,7 @@ describe('AccordionItemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      providers: [
-        provideNoopAnimations(),
-        provideExperimentalZonelessChangeDetection(),
-      ],
+      providers: [provideNoopAnimations()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(AccordionItemTestComponent);
@@ -73,7 +65,7 @@ describe('AccordionItemComponent', () => {
   it('should disable the header button on disabled', async () => {
     component.disabled.set(true);
     await fixture.whenStable();
-    expect(accordionHeader().hasAttribute('disabled')).toBeTrue();
+    expect(accordionHeader().hasAttribute('disabled')).toBe(true);
   });
 
   it('should expand accordion with expanded=true', async () => {

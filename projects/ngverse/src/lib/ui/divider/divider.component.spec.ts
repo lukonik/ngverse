@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 import { DividerComponent } from './divider.component';
 
 describe('DividerComponent', () => {
@@ -10,7 +9,7 @@ describe('DividerComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [DividerComponent],
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [],
     }).compileComponents();
 
     fixture = TestBed.createComponent(DividerComponent);

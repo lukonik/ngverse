@@ -4,7 +4,6 @@ import {
   AfterViewInit,
   ChangeDetectionStrategy,
   Component,
-  provideExperimentalZonelessChangeDetection,
   TemplateRef,
   viewChild,
 } from '@angular/core';
@@ -17,7 +16,7 @@ describe('TooltipContainerComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [TooltipContainerComponent, TooltipContainerTestComponent],
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TooltipContainerComponent);

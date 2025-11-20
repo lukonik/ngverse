@@ -3,7 +3,6 @@ import {
   ChangeDetectionStrategy,
   Component,
   DebugElement,
-  provideExperimentalZonelessChangeDetection,
 } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
@@ -19,10 +18,7 @@ describe('ToastService', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [ToastTestComponent],
-      providers: [
-        provideNoopAnimations(),
-        provideExperimentalZonelessChangeDetection(),
-      ],
+      providers: [provideNoopAnimations()],
     }).compileComponents();
     service = TestBed.inject(ToastService);
 

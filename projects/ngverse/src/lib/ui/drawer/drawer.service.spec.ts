@@ -1,10 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  inject,
-  provideExperimentalZonelessChangeDetection,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideNoopAnimations } from '@angular/platform-browser/animations';
 import { DRAWER_DATA } from './drawer-ref';
@@ -29,10 +24,7 @@ describe('DrawerService', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      providers: [
-        provideNoopAnimations(),
-        provideExperimentalZonelessChangeDetection(),
-      ],
+      providers: [provideNoopAnimations()],
     }).compileComponents();
     service = TestBed.inject(DrawerService);
     fixture = TestBed.createComponent(DrawerRootTestComponent);
@@ -81,7 +73,7 @@ describe('DrawerService', () => {
     const ref = service.open(DrawerTestComponent);
     await fixture.whenStable();
     ref.closed.subscribe(() => {
-      expect(true).toBeTrue();
+      expect(true).toBe(true);
     });
     ref.close();
     await fixture.whenStable();

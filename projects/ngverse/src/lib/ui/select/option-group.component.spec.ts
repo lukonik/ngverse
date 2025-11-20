@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 import { OptionGroupComponent } from './option-group.component';
 
 describe('OptionGroupComponent', () => {
@@ -10,7 +9,7 @@ describe('OptionGroupComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [OptionGroupComponent],
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [],
     }).compileComponents();
 
     fixture = TestBed.createComponent(OptionGroupComponent);

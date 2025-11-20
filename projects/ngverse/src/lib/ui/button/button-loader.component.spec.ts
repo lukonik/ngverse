@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 import { ButtonLoaderComponent } from './button-loader.component';
 
 describe('ButtonComponent', () => {
@@ -9,7 +8,7 @@ describe('ButtonComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [ButtonLoaderComponent],
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [],
     });
     fixture = TestBed.createComponent(ButtonLoaderComponent);
   });

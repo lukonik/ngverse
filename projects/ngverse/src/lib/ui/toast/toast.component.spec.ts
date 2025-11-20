@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastComponent } from './toast.component';
 
@@ -10,7 +9,7 @@ describe('ToastComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [],
       imports: [ToastComponent, BrowserAnimationsModule],
     }).compileComponents();
 
@@ -29,7 +28,7 @@ describe('ToastComponent', () => {
   it('should apply action as class', async () => {
     component.type.set('success');
     await fixture.whenStable();
-    expect(fixture.nativeElement.classList.contains('success')).toBeTrue();
+    expect(fixture.nativeElement.classList.contains('success')).toBe(true);
   });
   it("should show close icon when 'showCloseIcon' is true", async () => {
     component.showCloseIcon.set(true);
@@ -52,7 +51,7 @@ describe('ToastComponent', () => {
   });
   it("click close icon should emit 'close' event", async () => {
     await fixture.whenStable();
-    const spy = spyOn(component, 'exit');
+    const spy = vi.spyOn(component, 'exit');
     fixture.nativeElement.querySelector('.toast-close-icon').click();
     expect(spy).toHaveBeenCalled();
   });

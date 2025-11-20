@@ -1,8 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  provideExperimentalZonelessChangeDetection,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { provideNoopAnimations } from '@angular/platform-browser/animations';
@@ -17,10 +13,7 @@ describe('OtpInputComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [OtpTestComponent],
-      providers: [
-        provideNoopAnimations(),
-        provideExperimentalZonelessChangeDetection(),
-      ],
+      providers: [provideNoopAnimations()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(OtpTestComponent);
@@ -28,7 +21,7 @@ describe('OtpInputComponent', () => {
     fixture.detectChanges();
     childComponent = fixture.debugElement.query(By.directive(OtpInputComponent))
       .componentInstance as OtpInputComponent;
-    spyOn(childComponent.filled, 'emit');
+    vi.spyOn(childComponent.filled, 'emit');
     inputs = fixture.nativeElement.querySelectorAll('.code-input');
   });
 

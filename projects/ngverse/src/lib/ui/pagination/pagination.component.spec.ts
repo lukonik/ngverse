@@ -1,9 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  provideExperimentalZonelessChangeDetection,
-  signal,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { PaginationComponent } from './pagination.component';
@@ -36,7 +31,7 @@ describe('PaginationComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [TestPaginationComponent],
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TestPaginationComponent);
@@ -69,14 +64,14 @@ describe('PaginationComponent', () => {
     const prevButton = fixture.debugElement.query(
       By.css('li:first-child button')
     );
-    expect(prevButton.nativeElement.disabled).toBeTrue();
+    expect(prevButton.nativeElement.disabled).toBe(true);
   });
 
   it('should enable next button when not on last page', () => {
     const nextButton = fixture.debugElement.query(
       By.css('li:last-child button')
     );
-    expect(nextButton.nativeElement.disabled).toBeFalse();
+    expect(nextButton.nativeElement.disabled).toBe(false);
   });
 
   it('should change pages when a page number is clicked', () => {

@@ -4,7 +4,6 @@ import {
   ChangeDetectionStrategy,
   Component,
   DebugElement,
-  provideExperimentalZonelessChangeDetection,
   signal,
 } from '@angular/core';
 import { By } from '@angular/platform-browser';
@@ -17,7 +16,7 @@ describe('CardComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [CardTestComponent],
-      providers: [provideExperimentalZonelessChangeDetection()],
+      providers: [],
     }).compileComponents();
 
     fixture = TestBed.createComponent(CardTestComponent);

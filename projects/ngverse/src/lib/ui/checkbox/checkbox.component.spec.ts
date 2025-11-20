@@ -4,7 +4,6 @@ import {
   ChangeDetectionStrategy,
   Component,
   DebugElement,
-  provideExperimentalZonelessChangeDetection,
   signal,
 } from '@angular/core';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -24,10 +23,7 @@ describe('CheckboxComponent', () => {
   beforeEach(async () => {
     TestBed.configureTestingModule({
       imports: [CheckboxComponent],
-      providers: [
-        provideNoopAnimations(),
-        provideExperimentalZonelessChangeDetection(),
-      ],
+      providers: [provideNoopAnimations()],
     });
     fixture = TestBed.createComponent(CheckboxTestComponent);
     debugElement = fixture.debugElement;
@@ -53,19 +49,19 @@ describe('CheckboxComponent', () => {
   it('should be true on change', async () => {
     checkboxNativeElement.dispatchEvent(new Event('change'));
     await fixture.whenStable();
-    expect(rootComponent.formControl.value).toBeTrue();
+    expect(rootComponent.formControl.value).toBe(true);
   });
 
   it('checkbox should be invalid with formControl required', async () => {
     rootComponent.formControl.setValidators(Validators.required);
     rootComponent.formControl.setValue(null);
     await fixture.whenStable();
-    expect(checkboxElement).toHaveClass('ng-invalid');
+    expect(checkboxElement.classList.contains('ng-invalid')).toBe(true);
   });
   it('checkbox should be invalid with required true', async () => {
     rootComponent.required.set(true);
     await fixture.whenStable();
-    expect(checkboxElement).toHaveClass('ng-invalid');
+    expect(checkboxElement.classList.contains('ng-invalid')).toBe(true);
   });
 
   it('id input should change the id of the input element', async () => {
