@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/ngverse/src/lib/ui/dialog/confirm-dialog/confirm-dialog.component.css"],
+  "sourcesContent": [".confirm {\n  background: var(--color-background);\n  border-radius: 6px;\n  border: var(--border);\n  box-shadow: var(--color-shadow);\n  min-width: 300px;\n  padding: 16px;\n}\n\n.confirm-title {\n  font-size: 18px;\n  font-weight: 500;\n}\n\n.confirm-actions {\n  display: flex;\n  margin-top: 10px;\n  justify-content: end;\n  align-items: center;\n  gap: 6px;\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,cAAA,IAAA;AACA,iBAAA;AACA,UAAA,IAAA;AACA,cAAA,IAAA;AACA,aAAA;AACA,WAAA;AACF;AAEA,CAAA;AACE,aAAA;AACA,eAAA;AACF;AAEA,CAAA;AACE,WAAA;AACA,cAAA;AACA,mBAAA;AACA,eAAA;AACA,OAAA;AACF;",
+  "names": []
+}

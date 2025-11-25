@@ -1,1 +1,0 @@
-import{Rb as o,Sb as a,jb as n}from"./chunk-EWJS3UHC.js";var s=["*"],c=class t{static \u0275fac=function(e){return new(e||t)};static \u0275cmp=n({type:t,selectors:[["app-label"]],ngContentSelectors:s,decls:1,vars:0,template:function(e,l){e&1&&(o(),a(0))},encapsulation:2,changeDetection:0})};export{c as a};

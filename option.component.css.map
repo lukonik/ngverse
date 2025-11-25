@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/ngverse/src/lib/ui/select/option.component.css"],
+  "sourcesContent": [":host {\n  display: flex;\n  width: 100%;\n  align-items: center;\n  justify-content: space-between;\n  padding: 6px;\n  cursor: pointer;\n  background: transparent;\n  border: 0px;\n  font-size: 1rem;\n\n  &.in-group {\n    padding-left: 24px;\n  }\n\n  &.is-active,\n  &:hover:not([disabled]),\n  &.selected {\n    background: var(--color-accent);\n    color: var(--color-accent-foreground);\n  }\n  &:focus-visible {\n    outline: 1px solid var(--color-ring);\n  }\n\n  &[disabled] {\n    color: var(--color-disabled-foreground);\n  }\n}\n"],
+  "mappings": ";AAAA;AACE,WAAA;AACA,SAAA;AACA,eAAA;AACA,mBAAA;AACA,WAAA;AACA,UAAA;AACA,cAAA;AACA,UAAA;AACA,aAAA;AAmBF;AA5BA,KAWE,CAAA;AACE,gBAAA;AACF;AAbF,KAeE,CAAA;AAfF;AAAA;AAkBI,cAAA,IAAA;AACA,SAAA,IAAA;AACF;AApBF,KAqBE;AACE,WAAA,IAAA,MAAA,IAAA;AACF;AAvBF,KAyBE,CAAA;AACE,SAAA,IAAA;AACF;",
+  "names": []
+}

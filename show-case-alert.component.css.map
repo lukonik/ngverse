@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/docs/src/app/examples/alert/show-case-alert/show-case-alert.component.css"],
+  "sourcesContent": [".show-case {\n  display: flex;\n  gap: 8px;\n  flex-direction: column;\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,WAAA;AACA,OAAA;AACA,kBAAA;AACF;",
+  "names": []
+}

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/ngverse/src/lib/ui/drawer/drawer.component.css"],
+  "sourcesContent": [":host {\n  display: block;\n  height: 100vh;\n  width: auto;\n  background: var(--color-background);\n  color: var(--color-foreground);\n  padding: 16px;\n  overflow: auto;\n}\n\n.drawer-title {\n  margin: 0;\n  padding: 0;\n  font-size: 1rem;\n}\n\n.close-button {\n  margin-left: auto;\n  background: transparent;\n  border: 0;\n  cursor: pointer;\n}\n\n.drawer-header {\n  font-weight: bold;\n  margin-bottom: 10px;\n  display: flex;\n  align-items: center;\n}\n"],
+  "mappings": ";AAAA;AACE,WAAA;AACA,UAAA;AACA,SAAA;AACA,cAAA,IAAA;AACA,SAAA,IAAA;AACA,WAAA;AACA,YAAA;AACF;AAEA,CAAA;AACE,UAAA;AACA,WAAA;AACA,aAAA;AACF;AAEA,CAAA;AACE,eAAA;AACA,cAAA;AACA,UAAA;AACA,UAAA;AACF;AAEA,CAAA;AACE,eAAA;AACA,iBAAA;AACA,WAAA;AACA,eAAA;AACF;",
+  "names": []
+}

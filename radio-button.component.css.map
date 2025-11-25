@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/ngverse/src/lib/ui/radio-button/radio-button.component.css"],
+  "sourcesContent": [".native-radio-button-container {\n  position: relative;\n}\n.native-radio-button {\n  position: absolute;\n  opacity: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  top: 0;\n  z-index: 1;\n}\n\n.radio-button {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  &.disabled {\n    color: var(--color-disabled-foreground);\n  }\n}\n\n.radio-button-icon {\n  cursor: pointer;\n  display: flex;\n  &.checked {\n    color: var(--color-primary);\n  }\n}\n\n.native-radio-button:focus-visible + .radio-button-icon {\n  outline: 1px solid var(--color-ring);\n  border-radius: 50%;\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,YAAA;AACF;AACA,CAAA;AACE,YAAA;AACA,WAAA;AACA,QAAA;AACA,SAAA;AACA,UAAA;AACA,OAAA;AACA,WAAA;AACF;AAEA,CAAA;AACE,WAAA;AACA,eAAA;AACA,OAAA;AAIF;AAPA,CAAA,YAIE,CAAA;AACE,SAAA,IAAA;AACF;AAGF,CAAA;AACE,UAAA;AACA,WAAA;AAIF;AANA,CAAA,iBAGE,CAAA;AACE,SAAA,IAAA;AACF;AAGF,CA3BA,mBA2BA,eAAA,EAAA,CARA;AASE,WAAA,IAAA,MAAA,IAAA;AACA,iBAAA;AACF;",
+  "names": []
+}

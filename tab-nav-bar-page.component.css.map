@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/docs/src/app/features/tab-nav-bar-page/tab-nav-bar-page.component.css"],
+  "sourcesContent": ["@reference \"tailwindcss\";\n"],
+  "mappings": ";AAAA;AAAA;EAAA;AAAA,uBAAA,MAAA,MAAA,MAAA;AAAA,sBAAA,MAAA,MAAA,MAAA;AACA;AAAA;",
+  "names": []
+}

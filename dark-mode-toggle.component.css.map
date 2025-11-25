@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/ngverse/src/lib/ui/dark-mode/dark-mode-toggle.component.css"],
+  "sourcesContent": [".dark-mode-icon {\n  width: 18px;\n  height: 18px;\n  display: inline-block;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,SAAA;AACA,UAAA;AACA,WAAA;AACA,WAAA;AACA,eAAA;AACA,mBAAA;AACF;",
+  "names": []
+}

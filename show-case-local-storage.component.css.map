@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/docs/src/app/examples/local-storage/show-case-local-storage/show-case-local-storage.component.css"],
+  "sourcesContent": [".buttons {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  margin-bottom: 12px;\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,WAAA;AACA,eAAA;AACA,OAAA;AACA,iBAAA;AACF;",
+  "names": []
+}

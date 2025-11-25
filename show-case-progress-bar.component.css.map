@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/docs/src/app/examples/progress-bar/show-case-progress-bar/show-case-progress-bar.component.css"],
+  "sourcesContent": [".show-case {\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,WAAA;AACA,kBAAA;AACA,OAAA;AACF;",
+  "names": []
+}

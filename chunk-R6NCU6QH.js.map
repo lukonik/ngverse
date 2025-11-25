@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/docs/src/app/blueprint/api-info/api-description/api-description.component.ts", "projects/docs/src/app/blueprint/api-info/api-description/api-description.component.html"],
+  "sourcesContent": ["import { Component } from '@angular/core';\n\n@Component({\n  selector: 'doc-api-description',\n  imports: [],\n  templateUrl: './api-description.component.html',\n  styleUrl: './api-description.component.css',\n})\nexport class ApiDescriptionComponent {}\n", "<div class=\"prose-md prose mb-8 w-full max-w-max\">\n  <ng-content></ng-content>\n</div>\n"],
+  "mappings": ";;;;;;;;;;;;;AAQM,IAAO,0BAAP,MAAO,yBAAuB;;qCAAvB,0BAAuB;EAAA;yEAAvB,0BAAuB,WAAA,CAAA,CAAA,qBAAA,CAAA,GAAA,oBAAA,KAAA,OAAA,GAAA,MAAA,GAAA,QAAA,CAAA,CAAA,GAAA,YAAA,SAAA,QAAA,UAAA,WAAA,CAAA,GAAA,UAAA,SAAA,iCAAA,IAAA,KAAA;AAAA,QAAA,KAAA,GAAA;;ACRpC,MAAA,4BAAA,GAAA,OAAA,CAAA;AACE,MAAA,uBAAA,CAAA;AACF,MAAA,0BAAA;;;;;sEDMa,yBAAuB,CAAA;UANnC;uBACW,uBAAqB,SACtB,CAAA,GAAE,UAAA,4FAAA,CAAA;;;;6EAIA,yBAAuB,EAAA,WAAA,2BAAA,UAAA,yFAAA,YAAA,EAAA,CAAA;AAAA,GAAA;",
+  "names": []
+}

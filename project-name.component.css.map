@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/docs/src/app/core/project-name/project-name.component.css"],
+  "sourcesContent": [":host {\n  display: inline;\n}\n"],
+  "mappings": ";AAAA;AACE,WAAA;AACF;",
+  "names": []
+}

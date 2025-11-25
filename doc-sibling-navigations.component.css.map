@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/docs/src/app/features/doc-sibling-navigations/doc-sibling-navigations.component.css"],
+  "sourcesContent": ["@reference \"tailwindcss\";\n\n.sibling-navigation {\n  @apply flex h-12 flex-1 items-center justify-center gap-2 rounded-md border border-solid px-5 text-sm;\n\n  @variant lg {\n    @apply h-20 flex-1 px-10 text-base lg:w-[300px];\n\n    &:first-child {\n      @apply justify-start;\n    }\n    &:last-child {\n      @apply justify-end;\n    }\n  }\n}\n"],
+  "mappings": ";AAAA;AAAA;EAAA;AAAA,uBAAA,MAAA,MAAA,MAAA;AAAA,sBAAA,MAAA,MAAA,MAAA;AAAA,eAAA;AAAA,eAAA;AAAA,4BAAA,KAAA,KAAA,EAAA;AAAA,iBAAA;AAAA,8BAAA,KAAA,IAAA,EAAA;AAAA,iBAAA;AAgBA;AAAA;AAhBA,CAAA;AAAA,WAAA;AAAA,UAAA,KAAA,IAAA,WAAA,EAAA;AAAA,QAAA;AAAA,eAAA;AAAA,mBAAA;AAAA,OAAA,KAAA,IAAA,WAAA,EAAA;AAAA,iBAAA,IAAA;AAAA,gBAAA,IAAA;AAAA,gBAAA;AAAA,qBAAA;AAAA,gBAAA;AAAA,kBAAA,KAAA,IAAA,WAAA,EAAA;AAAA,aAAA,IAAA;AAAA,eAAA,IAAA,YAAA,EAAA,IAAA;AAgBA;AAhBA,QAAA,SAAA;AAAA,EAAA,CAAA;AAAA,YAAA,KAAA,IAAA,WAAA,EAAA;AAAA,UAAA;AAAA,oBAAA,KAAA,IAAA,WAAA,EAAA;AAAA,eAAA,IAAA;AAAA,iBAAA,IAAA,YAAA,EAAA,IAAA;;AAAA,UAAA,SAAA;AAAA,IAAA,CAAA;AAAA,aAAA;;AAgBA;AAhBA,EAAA,CAAA,kBAAA;AAAA,qBAAA;AAgBA;AAhBA,EAAA,CAAA,kBAAA;AAAA,qBAAA;AAgBA;AAAA;AAhBA,UAAA,kBAAA,EAAA,MAAA,EAAA,GAgBA,EAhBA,QAAA,EAAA,KAgBA,EAhBA,aAAA,EAAA,KAgBA;",
+  "names": []
+}

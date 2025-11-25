@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/ngverse/src/lib/ui/radio-button/radio-group.component.css"],
+  "sourcesContent": [".radio-group {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n\n  &.vertical {\n    flex-direction: column;\n    align-items: flex-start;\n  }\n}\n\n:host.ng-invalid.ng-touched {\n  color: var(--color-danger-color);\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,WAAA;AACA,eAAA;AACA,OAAA;AAMF;AATA,CAAA,WAKE,CAAA;AACE,kBAAA;AACA,eAAA;AACF;AAGF,KAAA,CAAA,UAAA,CAAA;AACE,SAAA,IAAA;AACF;",
+  "names": []
+}

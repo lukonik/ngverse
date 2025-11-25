@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/docs/src/app/examples/dark-mode/show-case-dark-mode/show-case-dark-mode.component.css"],
+  "sourcesContent": [".dark-mode-info {\n  margin-top: 12px;\n}\n\n.dark-mode-status {\n  font-weight: bold;\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,cAAA;AACF;AAEA,CAAA;AACE,eAAA;AACF;",
+  "names": []
+}

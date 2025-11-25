@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["button-loader.component.ts"],
+  "sourcesContent": ["\n    .button-loader {\n      position: absolute;\n      left: 0;\n      right: 0;\n      bottom: 0;\n      top: 0;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      pointer-events: none;\n    }\n\n    .spinner {\n      width: 20px;\n      height: 20px;\n      border: 3px solid var(--spinner-color);\n      border-bottom-color: transparent;\n      border-radius: 50%;\n      animation: rotation 1s linear infinite;\n    }\n\n    @keyframes rotation {\n      0% {\n        transform: rotate(0deg);\n      }\n      100% {\n        transform: rotate(360deg);\n      }\n    }\n  "],
+  "mappings": ";AACI,CAAA;AACE,YAAA;AACA,QAAA;AACA,SAAA;AACA,UAAA;AACA,OAAA;AACA,WAAA;AACA,mBAAA;AACA,eAAA;AACA,kBAAA;AACF;AAEA,CAAA;AACE,SAAA;AACA,UAAA;AACA,UAAA,IAAA,MAAA,IAAA;AACA,uBAAA;AACA,iBAAA;AACA,aAAA,SAAA,GAAA,OAAA;AACF;AAEA,WAHE;AAIA;AACE,eAAA,OAAA;AACF;AACA;AACE,eAAA,OAAA;AACF;AACF;",
+  "names": []
+}

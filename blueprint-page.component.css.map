@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/docs/src/app/blueprint/blueprint-page/blueprint-page.component.css"],
+  "sourcesContent": [".blueprint-page {\n  display: flex;\n  flex-direction: column;\n  gap: 40px;\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,WAAA;AACA,kBAAA;AACA,OAAA;AACF;",
+  "names": []
+}

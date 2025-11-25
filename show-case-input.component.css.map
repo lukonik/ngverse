@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/docs/src/app/examples/input/show-case-input/show-case-input.component.css"],
+  "sourcesContent": [".show-case {\n  display: flex;\n  flex-direction: column;\n  width: 250px;\n  margin: 0 auto;\n  gap: 20px;\n\n  > * {\n    width: 100%;\n  }\n}\n\n.age-container {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,WAAA;AACA,kBAAA;AACA,SAAA;AACA,UAAA,EAAA;AACA,OAAA;AAKF;AAVA,CAAA,UAOE,EAAA;AACE,SAAA;AACF;AAGF,CAAA;AACE,WAAA;AACA,eAAA;AACA,OAAA;AACF;",
+  "names": []
+}

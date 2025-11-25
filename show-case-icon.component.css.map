@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/docs/src/app/examples/icon/show-case-icon/show-case-icon.component.css"],
+  "sourcesContent": [".show-case {\n  display: flex;\n  gap: 8px;\n  flex-direction: column;\n\n  .header {\n    display: flex;\n    align-items: center;\n    gap: 10px;\n  }\n\n  .body {\n    display: flex;\n    flex-wrap: wrap;\n    gap: 10px;\n  }\n}\n\n.bird {\n}\n\n.cat {\n}\n\n.heart {\n}\n.paw {\n}\n\n.squirrel {\n}\n\n.volleyball {\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,WAAA;AACA,OAAA;AACA,kBAAA;AAaF;AAhBA,CAAA,UAKE,CAAA;AACE,WAAA;AACA,eAAA;AACA,OAAA;AACF;AATF,CAAA,UAWE,CAAA;AACE,WAAA;AACA,aAAA;AACA,OAAA;AACF;AAGF,CAAA;AACA;AAEA,CAAA;AACA;AAEA,CAAA;AACA;AACA,CAAA;AACA;AAEA,CAAA;AACA;AAEA,CAAA;AACA;",
+  "names": []
+}

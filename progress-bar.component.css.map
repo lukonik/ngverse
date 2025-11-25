@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/ngverse/src/lib/ui/progress-bar/progress-bar.component.css"],
+  "sourcesContent": [".inc {\n  animation: indeterminateIncrease 2s infinite;\n}\n.dec {\n  animation: indeterminateDecrease 2s 0.5s infinite;\n}\n\n@keyframes indeterminateIncrease {\n  from {\n    left: -5%;\n    width: 5%;\n  }\n  to {\n    left: 130%;\n    width: 100%;\n  }\n}\n@keyframes indeterminateDecrease {\n  from {\n    left: -80%;\n    width: 80%;\n  }\n  to {\n    left: 110%;\n    width: 10%;\n  }\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,aAAA,sBAAA,GAAA;AACF;AACA,CAAA;AACE,aAAA,sBAAA,GAAA,KAAA;AACF;AAEA,WANE;AAOA;AACE,UAAA;AACA,WAAA;AACF;AACA;AACE,UAAA;AACA,WAAA;AACF;AACF;AACA,WAbE;AAcA;AACE,UAAA;AACA,WAAA;AACF;AACA;AACE,UAAA;AACA,WAAA;AACF;AACF;",
+  "names": []
+}

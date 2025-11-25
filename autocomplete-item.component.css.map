@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/ngverse/src/lib/ui/autocomplete/autocomplete-item/autocomplete-item.component.css"],
+  "sourcesContent": [".autocomplete-item {\n  display: block;\n  width: 100%;\n  text-align: left;\n  padding: var(--option-padding);\n  cursor: var(--option-cursor);\n\n  &:hover:not(.listbox-item-active, .option-disabled) {\n    background: var(--option-hover-bg-color);\n  }\n\n  &.listbox-item-active {\n    background: var(--color-primary-color);\n    color: white;\n  }\n\n  &.option-disabled {\n    color: var(--option-disabled-color);\n  }\n\n  &.selected,\n  &.is-active {\n    background: var(--color-accent);\n    color: var(--color-accent-foreground);\n  }\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,WAAA;AACA,SAAA;AACA,cAAA;AACA,WAAA,IAAA;AACA,UAAA,IAAA;AAoBF;AAzBA,CAAA,iBAOE,MAAA,KAAA,CAAA,qBAAA,CAAA;AACE,cAAA,IAAA;AACF;AATF,CAAA,iBAWE,CAJA;AAKE,cAAA,IAAA;AACA,SAAA;AACF;AAdF,CAAA,iBAgBE,CATA;AAUE,SAAA,IAAA;AACF;AAlBF,CAAA,iBAoBE,CAAA;AApBF,CAAA;AAsBI,cAAA,IAAA;AACA,SAAA,IAAA;AACF;",
+  "names": []
+}

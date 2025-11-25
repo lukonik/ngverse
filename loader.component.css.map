@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/ngverse/src/lib/ui/loader/loader.component.css"],
+  "sourcesContent": [":host {\n  display: none;\n\n  &.overlay {\n    align-items: center;\n    justify-content: center;\n    position: absolute;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    top: 0;\n    background: rgba(var(--overlay), var(--loader-overlay-opacity));\n    z-index: 99999;\n  }\n  display: flex;\n}\n\n.loader {\n  border: 5px solid var(--color-primary);\n  border-bottom-color: transparent;\n  border-radius: 50%;\n  display: inline-block;\n  animation: rotation 1s linear infinite;\n}\n\n@keyframes rotation {\n  0% {\n    transform: rotate(0deg);\n  }\n  100% {\n    transform: rotate(360deg);\n  }\n}\n"],
+  "mappings": ";AAAA;AACE,WAAA;AAaA,WAAA;AACF;AAfA,KAGE,CAAA;AACE,eAAA;AACA,mBAAA;AACA,YAAA;AACA,QAAA;AACA,SAAA;AACA,UAAA;AACA,OAAA;AACA,cAAA,KAAA,IAAA,UAAA,EAAA,IAAA;AACA,WAAA;AACF;AAIF,CAAA;AACE,UAAA,IAAA,MAAA,IAAA;AACA,uBAAA;AACA,iBAAA;AACA,WAAA;AACA,aAAA,SAAA,GAAA,OAAA;AACF;AAEA,WAHE;AAIA;AACE,eAAA,OAAA;AACF;AACA;AACE,eAAA,OAAA;AACF;AACF;",
+  "names": []
+}

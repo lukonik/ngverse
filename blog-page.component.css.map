@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/docs/src/app/blog/blog-page/blog-page.component.css"],
+  "sourcesContent": [".prose {\n  max-width: 100%;\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,aAAA;AACF;",
+  "names": []
+}

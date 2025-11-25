@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/docs/src/app/features/sidebar/sidebar.component.css"],
+  "sourcesContent": ["@reference \"tailwindcss\";\n\na {\n  text-decoration: none;\n}\n\n.selected {\n  @apply bg-slate-100;\n}\n\n.sidebar {\n  border-right: 1px solid var(--color-border);\n  background: var(--color-background);\n  height: 100vh;\n  padding-bottom: 60px;\n  @variant lg {\n    height: calc(100vh - 56px);\n    @apply sticky top-[56px];\n  }\n}\n\n.in-progress {\n  @apply pointer-events-none text-gray-400;\n}\n\n.sidebar-link {\n  &:hover,\n  &.selected {\n    /* @apply font-medium; */\n    background: var(--color-accent);\n    color: var(--color-accent-foreground);\n  }\n}\n"],
+  "mappings": ";AAAA;AAAA;EAAA;AAAA,uBAAA,MAAA,MAAA,MAAA;AAAA,sBAAA,MAAA,MAAA,MAAA;AAAA,uBAAA,MAAA,MAAA,MAAA;AAAA,sBAAA,MAAA,MAAA,MAAA;AAiCA;AAAA;AAjCA;AAAA,mBAAA;AAiCA;AAjCA,CAAA;AAAA,oBAAA,IAAA;AAiCA;AAjCA,CAAA;AAAA,gBAAA,IAAA,MAAA,IAAA;AAAA,cAAA,IAAA;AAAA,UAAA;AAAA,kBAAA;AAiCA;AAjCA,QAAA,SAAA;AAAA,EAAA,CAAA;AAAA,YAAA,KAAA,MAAA,EAAA;AAAA,cAAA;AAAA,SAAA;;AAiCA;AAjCA,CAAA;AAAA,kBAAA;AAAA,SAAA,IAAA;AAiCA;AAjCA,CAAA,YAAA;AAAA,CAAA,aAAA;AAAA,cAAA,IAAA;AAAA,SAAA,IAAA;AAiCA;",
+  "names": []
+}

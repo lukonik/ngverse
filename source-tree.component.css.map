@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/docs/src/app/blueprint/source-tree/source-tree.component.css"],
+  "sourcesContent": ["@reference \"tailwindcss\";\n\n.file-label {\n  @apply cursor-pointer border-0 border-b border-solid border-gray-200 p-3;\n}\n"],
+  "mappings": ";AAAA;AAAA;EAAA;AAAA,uBAAA,MAAA,MAAA,MAAA;AAAA,sBAAA,MAAA,MAAA,MAAA;AAAA,sBAAA,MAAA,MAAA,MAAA;AAAA,eAAA;AAKA;AAAA;AALA,CAAA;AAAA,UAAA;AAAA,gBAAA,IAAA;AAAA,gBAAA;AAAA,uBAAA,IAAA;AAAA,uBAAA;AAAA,qBAAA;AAAA,gBAAA;AAAA,gBAAA,IAAA;AAAA,WAAA,KAAA,IAAA,WAAA,EAAA;AAKA;AALA,UAAA,kBAAA,EAAA,MAAA,EAAA,GAKA,EALA,QAAA,EAAA,KAKA,EALA,aAAA,EAAA,KAKA;",
+  "names": []
+}

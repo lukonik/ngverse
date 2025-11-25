@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/ngverse/src/lib/ui/autocomplete/autocomplete.component.css"],
+  "sourcesContent": [":host {\n  display: inline-block;\n}\n\n.input-field {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  gap: 10px;\n  background: transparent;\n  border: var(--border);\n  border-radius: 6px;\n  padding: 4px 10px;\n  width: 200px;\n\n  &:disabled {\n    cursor: not-allowed;\n    background: var(--color-disabled-color);\n  }\n}\n\n.select-label {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n\n.select-options {\n  max-height: 200px;\n  min-width: 200px;\n  overflow: auto;\n  &:focus {\n    outline: none;\n  }\n}\n"],
+  "mappings": ";AAAA;AACE,WAAA;AACF;AAEA,CAAA;AACE,WAAA;AACA,mBAAA;AACA,eAAA;AACA,OAAA;AACA,cAAA;AACA,UAAA,IAAA;AACA,iBAAA;AACA,WAAA,IAAA;AACA,SAAA;AAMF;AAfA,CAAA,WAWE;AACE,UAAA;AACA,cAAA,IAAA;AACF;AAGF,CAAA;AACE,eAAA;AACA,YAAA;AACA,iBAAA;AACF;AAEA,CAAA;AACE,cAAA;AACA,aAAA;AACA,YAAA;AAIF;AAPA,CAAA,cAIE;AACE,WAAA;AACF;",
+  "names": []
+}

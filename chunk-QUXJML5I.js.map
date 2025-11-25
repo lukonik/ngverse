@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/ngverse/src/lib/ui/input/input.directive.ts"],
+  "sourcesContent": ["import { Directive } from '@angular/core';\n\n@Directive({\n  selector: 'input[appInput]',\n  host: {\n    class:\n      'h-9 focus-visible:outline-ring focus-visible:outline border border-border rounded-md py-1.5 px-2.5 bg-background [.ng-invalid.ng-touched]:border-danger disabled:bg-disabled disabled:text-disabled-foreground read-only:bg-disabled read-only:text-disabled-foreground',\n  },\n})\nexport class InputDirective {}\n"],
+  "mappings": ";;;;;;;AASM,IAAO,iBAAP,MAAO,gBAAc;;qCAAd,iBAAc;EAAA;yEAAd,iBAAc,WAAA,CAAA,CAAA,SAAA,YAAA,EAAA,CAAA,GAAA,WAAA,CAAA,GAAA,OAAA,8BAAA,yBAAA,UAAA,iBAAA,cAAA,UAAA,UAAA,iBAAA,0CAAA,wBAAA,qCAAA,yBAAA,oCAAA,EAAA,CAAA;;;sEAAd,gBAAc,CAAA;UAP1B;WAAU;MACT,UAAU;MACV,MAAM;QACJ,OACE;;KAEL;;;",
+  "names": []
+}

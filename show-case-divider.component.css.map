@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/docs/src/app/examples/divider/show-case-divider/show-case-divider.component.css"],
+  "sourcesContent": [".vertical {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  grid-gap: 16px;\n\n  li {\n    display: flex;\n  }\n\n  .divider {\n    margin-left: 16px;\n  }\n}\n\np {\n  margin: 12px 0;\n}\n\n.section-divider {\n  margin: 32px 0;\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,WAAA;AACA,yBAAA,OAAA,CAAA,EAAA;AACA,YAAA;AASF;AAZA,CAAA,SAKE;AACE,WAAA;AACF;AAPF,CAAA,SASE,CAAA;AACE,eAAA;AACF;AAGF;AACE,UAAA,KAAA;AACF;AAEA,CAAA;AACE,UAAA,KAAA;AACF;",
+  "names": []
+}

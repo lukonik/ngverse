@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/docs/src/app/examples/dialog/dialog-test/dialog-test.component.css"],
+  "sourcesContent": [".dialog-test {\n  padding: 12px;\n  margin-top: 14px;\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,WAAA;AACA,cAAA;AACF;",
+  "names": []
+}

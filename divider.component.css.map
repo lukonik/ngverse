@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["divider.component.ts"],
+  "sourcesContent": ["\n    :host {\n      display: block;\n      background-color: var(--color-divider);\n      height: 1px;\n      width: 100%;\n\n      &.vertical {\n        height: 100%;\n        width: 1px;\n      }\n    }\n  "],
+  "mappings": ";AACI;AACE,WAAA;AACA,oBAAA,IAAA;AACA,UAAA;AACA,SAAA;AAMF;AAVA,KAME,CAAA;AACE,UAAA;AACA,SAAA;AACF;",
+  "names": []
+}

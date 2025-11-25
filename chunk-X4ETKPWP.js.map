@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/ngverse/src/lib/ui/form-field/label.component.ts"],
+  "sourcesContent": ["import { ChangeDetectionStrategy, Component } from '@angular/core';\n\n@Component({\n  selector: 'app-label',\n  template: '<ng-content></ng-content>',\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class LabelComponent {}\n"],
+  "mappings": ";;;;;;;;;;;;AAOM,IAAO,iBAAP,MAAO,gBAAc;;qCAAd,iBAAc;EAAA;yEAAd,iBAAc,WAAA,CAAA,CAAA,WAAA,CAAA,GAAA,oBAAA,KAAA,OAAA,GAAA,MAAA,GAAA,UAAA,SAAA,wBAAA,IAAA,KAAA;AAAA,QAAA,KAAA,GAAA;;AAHd,MAAA,uBAAA,CAAA;;;;;sEAGA,gBAAc,CAAA;UAL1B;WAAU;MACT,UAAU;MACV,UAAU;MACV,iBAAiB,wBAAwB;KAC1C;;;;6EACY,gBAAc,EAAA,WAAA,kBAAA,UAAA,6DAAA,YAAA,EAAA,CAAA;AAAA,GAAA;",
+  "names": []
+}

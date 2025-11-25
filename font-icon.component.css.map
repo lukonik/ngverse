@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["font-icon.component.ts"],
+  "sourcesContent": ["\n    :host {\n      display: flex;\n    }\n  "],
+  "mappings": ";AACI;AACE,WAAA;AACF;",
+  "names": []
+}

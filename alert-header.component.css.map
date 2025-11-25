@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["alert-header.component.ts"],
+  "sourcesContent": ["\n    :host {\n      font-weight: 500;\n      display: block;\n    }\n  "],
+  "mappings": ";AACI;AACE,eAAA;AACA,WAAA;AACF;",
+  "names": []
+}

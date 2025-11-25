@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/ngverse/src/lib/ui/tab-nav-bar/tab-nav-bar-item/tab-nav-bar-item.component.css"],
+  "sourcesContent": [":host([aria-disabled='true']) {\n  pointer-events: none;\n  cursor: not-allowed;\n  opacity: 0.5;\n}\n\n:host(.is-active) button {\n  background-color: rgb(249, 250, 251);\n}\n"],
+  "mappings": ";AAAA,MAAA,CAAA,aAAA,CAAA;AACE,kBAAA;AACA,UAAA;AACA,WAAA;AACF;AAEA,MAAA,CAAA,WAAA;AACE,oBAAA,IAAA,GAAA,EAAA,GAAA,EAAA;AACF;",
+  "names": []
+}

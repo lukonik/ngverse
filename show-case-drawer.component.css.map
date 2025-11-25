@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["show-case-drawer.component.ts"],
+  "sourcesContent": ["\n    .footer {\n      display: flex;\n      justify-content: space-between;\n      margin-top: 12px;\n    }\n\n    form {\n      display: flex;\n      flex-direction: column;\n      row-gap: 12px;\n    }\n  "],
+  "mappings": ";AACI,CAAA;AACE,WAAA;AACA,mBAAA;AACA,cAAA;AACF;AAEA;AACE,WAAA;AACA,kBAAA;AACA,WAAA;AACF;",
+  "names": []
+}

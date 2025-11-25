@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/docs/src/app/blueprint/show-case/show-case.component.css"],
+  "sourcesContent": ["@reference \"tailwindcss\";\n\n.active-tab {\n  @apply border-b-2 border-solid;\n  border-color: var(--color-primary);\n}\n"],
+  "mappings": ";AAAA;AAAA;EAAA;AAAA,uBAAA,MAAA,MAAA,MAAA;AAAA,sBAAA,MAAA,MAAA,MAAA;AAMA;AAAA;AANA,CAAA;AAAA,uBAAA,IAAA;AAAA,uBAAA;AAAA,qBAAA;AAAA,gBAAA;AAAA,gBAAA,IAAA;AAMA;AANA,UAAA,kBAAA,EAAA,MAAA,EAAA,GAMA,EANA,QAAA,EAAA,KAMA,EANA,aAAA,EAAA,KAMA;",
+  "names": []
+}

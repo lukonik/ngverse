@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/docs/src/app/examples/badge/show-case-badge/show-case-badge.component.css"],
+  "sourcesContent": [".show-case {\n  display: flex;\n  flex-direction: column;\n  gap: 12px;\n  justify-content: start;\n  align-items: start;\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,WAAA;AACA,kBAAA;AACA,OAAA;AACA,mBAAA;AACA,eAAA;AACF;",
+  "names": []
+}

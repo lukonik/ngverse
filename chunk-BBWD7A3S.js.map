@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/docs/src/app/core/project-name/project-name.component.ts", "projects/docs/src/app/core/project-name/project-name.component.html"],
+  "sourcesContent": ["import { Component, input } from '@angular/core';\n\n@Component({\n  selector: 'doc-project-name',\n  imports: [],\n  templateUrl: './project-name.component.html',\n  styleUrl: './project-name.component.css',\n})\nexport class ProjectNameComponent {\n  code = input(false);\n}\n", "@if (code()) {\n  <code>ngverse</code>\n} @else {\n  ngverse\n}\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;ACCE,IAAA,4BAAA,GAAA,MAAA;AAAM,IAAA,iBAAA,GAAA,SAAA;AAAO,IAAA,0BAAA;;;;;AAEb,IAAA,iBAAA,GAAA,YAAA;;;ADKI,IAAO,uBAAP,MAAO,sBAAoB;EAC/B,OAAO,MAAM,OAAK,GAAA,YAAA,CAAA,EAAA,WAAA,OAAA,CAAA,IAAA,CAAA,CAAA;;qCADP,uBAAoB;EAAA;yEAApB,uBAAoB,WAAA,CAAA,CAAA,kBAAA,CAAA,GAAA,QAAA,EAAA,MAAA,CAAA,GAAA,MAAA,EAAA,GAAA,OAAA,GAAA,MAAA,GAAA,UAAA,SAAA,8BAAA,IAAA,KAAA;AAAA,QAAA,KAAA,GAAA;ACRjC,MAAA,8BAAA,GAAA,6CAAA,GAAA,GAAA,MAAA,EAAc,GAAA,6CAAA,GAAA,CAAA;;;AAAd,MAAA,wBAAA,IAAA,KAAA,IAAA,IAAA,CAAA;;;;;sEDQa,sBAAoB,CAAA;UANhC;uBACW,oBAAkB,SACnB,CAAA,GAAE,UAAA,qEAAA,QAAA,CAAA,oKAAA,EAAA,CAAA;;;;6EAIA,sBAAoB,EAAA,WAAA,wBAAA,UAAA,qEAAA,YAAA,EAAA,CAAA;AAAA,GAAA;",
+  "names": []
+}

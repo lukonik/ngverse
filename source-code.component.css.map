@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/docs/src/app/blueprint/source-code/source-code.component.css"],
+  "sourcesContent": ["@reference \"tailwindcss\";\n\n:host {\n  position: relative;\n  display: block;\n}\n.copy-button {\n  right: 10px;\n  top: 10px;\n  position: absolute;\n  z-index: 1;\n  cursor: pointer;\n  @layer lg {\n    @apply block;\n  }\n}\n\n.source-code {\n  background: transparent !important;\n}\n"],
+  "mappings": ";AAAA;AAAA;EAAA;AAAA,uBAAA,MAAA,MAAA,MAAA;AAAA,sBAAA,MAAA,MAAA,MAAA;AAoBA;AAAA;AApBA;AAAA,YAAA;AAAA,WAAA;AAoBA;AApBA,CAAA;AAAA,SAAA;AAAA,OAAA;AAAA,YAAA;AAAA,WAAA;AAAA,UAAA;AAoBA;AApBA;EAAA,CAAA;AAAA,aAAA;;AAoBA;AApBA,CAAA;AAAA,cAAA;AAoBA;",
+  "names": []
+}

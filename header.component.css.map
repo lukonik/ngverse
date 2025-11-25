@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/docs/src/app/features/header/header.component.css"],
+  "sourcesContent": ["header {\n  height: 56px;\n  width: 100%;\n  border-bottom: 1px solid var(--color-border);\n  background: var(--color-background);\n}\n"],
+  "mappings": ";AAAA;AACE,UAAA;AACA,SAAA;AACA,iBAAA,IAAA,MAAA,IAAA;AACA,cAAA,IAAA;AACF;",
+  "names": []
+}

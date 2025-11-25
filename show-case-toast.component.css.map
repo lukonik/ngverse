@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/docs/src/app/examples/toast/show-case-toast/show-case-toast.component.css"],
+  "sourcesContent": [".option {\n  width: 250px;\n}\n\n.configuration {\n  flex-direction: column;\n  flex-wrap: wrap;\n  gap: 8px;\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,SAAA;AACF;AAEA,CAAA;AACE,kBAAA;AACA,aAAA;AACA,OAAA;AACF;",
+  "names": []
+}

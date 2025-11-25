@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/ngverse/src/lib/ui/skeleton/skeleton.component.ts"],
+  "sourcesContent": ["import { ChangeDetectionStrategy, Component } from '@angular/core';\n\n@Component({\n  selector: 'app-skeleton',\n  template: ``,\n  host: {\n    class: 'animate-pulse block bg-mute',\n  },\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class SkeletonComponent {}\n"],
+  "mappings": ";;;;;;;;;AAUM,IAAO,oBAAP,MAAO,mBAAiB;;qCAAjB,oBAAiB;EAAA;yEAAjB,oBAAiB,WAAA,CAAA,CAAA,cAAA,CAAA,GAAA,WAAA,CAAA,GAAA,iBAAA,SAAA,SAAA,GAAA,OAAA,GAAA,MAAA,GAAA,UAAA,SAAA,2BAAA,IAAA,KAAA;EAAA,GAAA,eAAA,GAAA,iBAAA,EAAA,CAAA;;;sEAAjB,mBAAiB,CAAA;UAR7B;WAAU;MACT,UAAU;MACV,UAAU;MACV,MAAM;QACJ,OAAO;;MAET,iBAAiB,wBAAwB;KAC1C;;;;6EACY,mBAAiB,EAAA,WAAA,qBAAA,UAAA,8DAAA,YAAA,GAAA,CAAA;AAAA,GAAA;",
+  "names": []
+}

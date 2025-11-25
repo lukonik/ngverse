@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/ngverse/src/lib/ui/popover/popover.component.css"],
+  "sourcesContent": [".styled {\n  box-shadow: var(--color-shadow);\n  background-color: var(--color-background);\n  border-radius: 6px;\n  border: 1px solid var(--color-border);\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,cAAA,IAAA;AACA,oBAAA,IAAA;AACA,iBAAA;AACA,UAAA,IAAA,MAAA,IAAA;AACF;",
+  "names": []
+}

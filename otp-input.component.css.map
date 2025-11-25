@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/ngverse/src/lib/ui/otp-input/otp-input.component.css"],
+  "sourcesContent": [".listbox-item-active {\n  outline: 1px solid var(--color-ring);\n}\n\n.code-container {\n  display: flex;\n  gap: 6px;\n  height: 40px;\n}\n\n.code-input {\n  width: 40px;\n  text-align: center;\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,WAAA,IAAA,MAAA,IAAA;AACF;AAEA,CAAA;AACE,WAAA;AACA,OAAA;AACA,UAAA;AACF;AAEA,CAAA;AACE,SAAA;AACA,cAAA;AACF;",
+  "names": []
+}

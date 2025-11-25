@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/ngverse/src/lib/ui/badge/badge.component.css"],
+  "sourcesContent": ["@reference \"tailwindcss\";\n\n.badge {\n  @apply absolute bottom-full left-full -my-2 flex h-5 w-5 items-center justify-center rounded-full bg-red-600 text-xs font-medium text-white;\n}\n"],
+  "mappings": ";AAAA;AAAA;EAAA;AAAA,qBAAA,MAAA,MAAA,MAAA;AAAA,uBAAA,MAAA,MAAA,MAAA;AAAA,sBAAA,MAAA,MAAA,MAAA;AAAA,mBAAA;AAAA,eAAA;AAAA,eAAA;AAAA,4BAAA,KAAA,EAAA,EAAA;AAAA,0BAAA;AAKA;AAAA;AALA,CAAA;AAAA,YAAA;AAAA,UAAA;AAAA,QAAA;AAAA,gBAAA,KAAA,IAAA,WAAA,EAAA;AAAA,WAAA;AAAA,UAAA,KAAA,IAAA,WAAA,EAAA;AAAA,SAAA,KAAA,IAAA,WAAA,EAAA;AAAA,eAAA;AAAA,mBAAA;AAAA,iBAAA,KAAA,SAAA,EAAA;AAAA,oBAAA,IAAA;AAAA,aAAA,IAAA;AAAA,eAAA,IAAA,YAAA,EAAA,IAAA;AAAA,oBAAA,IAAA;AAAA,eAAA,IAAA;AAAA,SAAA,IAAA;AAKA;AALA,UAAA,iBAAA,EAAA,MAAA,EAAA,GAKA,EALA,QAAA,EAAA,KAKA;",
+  "names": []
+}

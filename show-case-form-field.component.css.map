@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/docs/src/app/examples/form-field/show-case-form-field/show-case-form-field.component.css"],
+  "sourcesContent": [".show-case {\n  margin: 0 auto;\n  width: 250px;\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,UAAA,EAAA;AACA,SAAA;AACF;",
+  "names": []
+}
