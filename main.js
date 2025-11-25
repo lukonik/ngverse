@@ -1,21 +1,21 @@
 import {
   DarkModeToggleComponent
-} from "./chunk-BNA7NIUS.js";
+} from "./chunk-X224GN3I.js";
 import {
   SidebarComponent
-} from "./chunk-BY5RIOVB.js";
+} from "./chunk-OO5ZKUWS.js";
 import {
   IconComponent,
   IconRegistry
-} from "./chunk-HJKTOEOA.js";
+} from "./chunk-QKJ63TWP.js";
 import {
   ButtonComponent
-} from "./chunk-3AYE667Y.js";
+} from "./chunk-ESRFV6V7.js";
 import "./chunk-FCEZILEW.js";
 import {
   ProjectNameComponent
 } from "./chunk-BBWD7A3S.js";
-import "./chunk-FK22TT2X.js";
+import "./chunk-HIR2OVX3.js";
 import {
   NavigationEnd,
   Router,
@@ -27,14 +27,14 @@ import {
 import {
   ComponentPortal,
   Overlay
-} from "./chunk-XGFB36A5.js";
+} from "./chunk-P53KIQU7.js";
 import "./chunk-64HPILVO.js";
 import {
   provideHighlightOptions
 } from "./chunk-ICIB3IHR.js";
 import {
   FontIconComponent
-} from "./chunk-K3WRTE43.js";
+} from "./chunk-MTAP3RFR.js";
 import {
   DomRendererFactory2,
   bootstrapApplication,
@@ -302,7 +302,7 @@ var GUIDES_ROUTES = {
     }, false ? { \u0275entryName: "src/app/features/introduction-page/introduction-page.component.ts" } : {}),
     __spreadValues({
       path: "installation",
-      loadComponent: () => import("./chunk-VZVZUREE.js").then((i) => i.InstallationPageComponent)
+      loadComponent: () => import("./chunk-WZEP347E.js").then((i) => i.InstallationPageComponent)
     }, false ? { \u0275entryName: "src/app/features/installation-page/installation-page.component.ts" } : {}),
     {
       path: "schematics-usage",
@@ -323,159 +323,159 @@ var UI_ROUTES = {
   children: [
     __spreadValues({
       path: "schematics",
-      loadComponent: () => import("./chunk-JYHMKXQG.js").then((b) => b.UiSchematicsPageComponent)
+      loadComponent: () => import("./chunk-MDDJTBBF.js").then((b) => b.UiSchematicsPageComponent)
     }, false ? { \u0275entryName: "src/app/pages/ui/ui-schematics-page/ui-schematics-page.component.ts" } : {}),
     __spreadValues({
       path: "theming",
-      loadComponent: () => import("./chunk-P334GZSR.js").then((b) => b.UiThemingPageComponent)
+      loadComponent: () => import("./chunk-DXFZIV54.js").then((b) => b.UiThemingPageComponent)
     }, false ? { \u0275entryName: "src/app/pages/ui/ui-theming-page/ui-theming-page.component.ts" } : {}),
     __spreadValues({
       path: "font-icon",
-      loadComponent: () => import("./chunk-G5HJT6VM.js").then((f) => f.FontIconPageComponent)
+      loadComponent: () => import("./chunk-ZHFQ5LBS.js").then((f) => f.FontIconPageComponent)
     }, false ? { \u0275entryName: "src/app/pages/ui/font-icon-page/font-icon-page.component.ts" } : {}),
     __spreadValues({
       path: "accordion",
-      loadComponent: () => import("./chunk-RBJ7LBIA.js").then((b) => b.AccordionPageComponent)
+      loadComponent: () => import("./chunk-GQYIW6VS.js").then((b) => b.AccordionPageComponent)
     }, false ? { \u0275entryName: "src/app/features/accordion-page/accordion-page.component.ts" } : {}),
     __spreadValues({
       path: "autocomplete",
-      loadComponent: () => import("./chunk-IZ4NRWBK.js").then((b) => b.AutocompletePageComponent)
+      loadComponent: () => import("./chunk-52UL3ZON.js").then((b) => b.AutocompletePageComponent)
     }, false ? { \u0275entryName: "src/app/features/autocomplete-page/autocomplete-page.component.ts" } : {}),
     __spreadValues({
       path: "alert",
-      loadComponent: () => import("./chunk-7OR3DZE3.js").then((b) => b.AlertPageComponent)
+      loadComponent: () => import("./chunk-IBRQ2DNF.js").then((b) => b.AlertPageComponent)
     }, false ? { \u0275entryName: "src/app/features/alert-page/alert-page.component.ts" } : {}),
     __spreadValues({
       path: "badge",
-      loadComponent: () => import("./chunk-YUQYZIJS.js").then((b) => b.BadgePageComponent)
+      loadComponent: () => import("./chunk-E6OBBU4M.js").then((b) => b.BadgePageComponent)
     }, false ? { \u0275entryName: "src/app/features/badge-page/badge-page.component.ts" } : {}),
     __spreadValues({
       path: "card",
-      loadComponent: () => import("./chunk-RGMGQYHC.js").then((b) => b.CardPageComponent)
+      loadComponent: () => import("./chunk-4X4UJBOV.js").then((b) => b.CardPageComponent)
     }, false ? { \u0275entryName: "src/app/features/card-page/card-page.component.ts" } : {}),
     __spreadValues({
       path: "divider",
-      loadComponent: () => import("./chunk-WZTXUUEP.js").then((b) => b.DividerPageComponent)
+      loadComponent: () => import("./chunk-FBBHF3MP.js").then((b) => b.DividerPageComponent)
     }, false ? { \u0275entryName: "src/app/features/divider-page/divider-page.component.ts" } : {}),
     __spreadValues({
       path: "drawer",
-      loadComponent: () => import("./chunk-IFWQTH2L.js").then((b) => b.DrawerPageComponent)
+      loadComponent: () => import("./chunk-7A4LPJFC.js").then((b) => b.DrawerPageComponent)
     }, false ? { \u0275entryName: "src/app/features/drawer-page/drawer-page.component.ts" } : {}),
     __spreadValues({
       path: "otp-input",
-      loadComponent: () => import("./chunk-QF4KQNPR.js").then((b) => b.OtpInputPageComponent)
+      loadComponent: () => import("./chunk-FA45M6YV.js").then((b) => b.OtpInputPageComponent)
     }, false ? { \u0275entryName: "src/app/features/otp-input-page/otp-input-page.component.ts" } : {}),
     __spreadValues({
       path: "progress-bar",
-      loadComponent: () => import("./chunk-GWL4UJRY.js").then((b) => b.ProgressBarPageComponent)
+      loadComponent: () => import("./chunk-ERTYY7KJ.js").then((b) => b.ProgressBarPageComponent)
     }, false ? { \u0275entryName: "src/app/features/progress-bar-page/progress-bar-page.component.ts" } : {}),
     __spreadValues({
       path: "tooltip",
-      loadComponent: () => import("./chunk-FARQPKSR.js").then((b) => b.TooltipPageComponent)
+      loadComponent: () => import("./chunk-OOAVSIE5.js").then((b) => b.TooltipPageComponent)
     }, false ? { \u0275entryName: "src/app/features/tooltip-page/tooltip-page.component.ts" } : {}),
     __spreadValues({
       path: "toast",
-      loadComponent: () => import("./chunk-XPDEVAB3.js").then((b) => b.ToastPageComponent)
+      loadComponent: () => import("./chunk-67A46DZV.js").then((b) => b.ToastPageComponent)
     }, false ? { \u0275entryName: "src/app/features/toast-page/toast-page.component.ts" } : {}),
     __spreadValues({
       path: "button",
-      loadComponent: () => import("./chunk-3ZIJXRFI.js").then((b) => b.ButtonPageComponent)
+      loadComponent: () => import("./chunk-X6OC6PAU.js").then((b) => b.ButtonPageComponent)
     }, false ? { \u0275entryName: "src/app/features/button-page/button-page.component.ts" } : {}),
     __spreadValues({
       path: "button-group",
-      loadComponent: () => import("./chunk-XWRVQSVJ.js").then((b) => b.ButtonGroupPageComponent)
+      loadComponent: () => import("./chunk-BRKXMKEL.js").then((b) => b.ButtonGroupPageComponent)
     }, false ? { \u0275entryName: "src/app/features/button-group-page/button-group-page.component.ts" } : {}),
     __spreadValues({
       path: "outside-click",
-      loadComponent: () => import("./chunk-CTV4E3FL.js").then((b) => b.OutsideClickPageComponent)
+      loadComponent: () => import("./chunk-IL2CKQSN.js").then((b) => b.OutsideClickPageComponent)
     }, false ? { \u0275entryName: "src/app/features/outside-click-page/outside-click-page.component.ts" } : {}),
     __spreadValues({
       path: "checkbox",
-      loadComponent: () => import("./chunk-M7Q3FBLW.js").then((c) => c.CheckboxPageComponent)
+      loadComponent: () => import("./chunk-NOZ66RUT.js").then((c) => c.CheckboxPageComponent)
     }, false ? { \u0275entryName: "src/app/features/checkbox-page/checkbox-page.component.ts" } : {}),
     __spreadValues({
       path: "radio-button",
-      loadComponent: () => import("./chunk-QUQC2CCV.js").then((c) => c.RadioButtonPageComponent)
+      loadComponent: () => import("./chunk-UEETDS4Z.js").then((c) => c.RadioButtonPageComponent)
     }, false ? { \u0275entryName: "src/app/features/radio-button-page/radio-button-page.component.ts" } : {}),
     __spreadValues({
       path: "select",
-      loadComponent: () => import("./chunk-OUFJLVF6.js").then((c) => c.SelectPageComponent)
+      loadComponent: () => import("./chunk-55YOBRN6.js").then((c) => c.SelectPageComponent)
     }, false ? { \u0275entryName: "src/app/features/select-page/select-page.component.ts" } : {}),
     __spreadValues({
       path: "multi-select",
-      loadComponent: () => import("./chunk-RGKOZQST.js").then((c) => c.MultiSelectPageComponent)
+      loadComponent: () => import("./chunk-C6E7KAA4.js").then((c) => c.MultiSelectPageComponent)
     }, false ? { \u0275entryName: "src/app/pages/ui/multi-select-page/multi-select-page.component.ts" } : {}),
     __spreadValues({
       path: "dialog",
-      loadComponent: () => import("./chunk-EQIXSVMR.js").then((d) => d.DialogPageComponent)
+      loadComponent: () => import("./chunk-K2OLVB44.js").then((d) => d.DialogPageComponent)
     }, false ? { \u0275entryName: "src/app/features/dialog-page/dialog-page.component.ts" } : {}),
     __spreadValues({
       path: "skeleton",
-      loadComponent: () => import("./chunk-LF4EMPQ3.js").then((d) => d.SkeletonPageComponent)
+      loadComponent: () => import("./chunk-EBKWSNNC.js").then((d) => d.SkeletonPageComponent)
     }, false ? { \u0275entryName: "src/app/features/skeleton-page/skeleton-page.component.ts" } : {}),
     __spreadValues({
       path: "switch",
-      loadComponent: () => import("./chunk-JVTSSBD3.js").then((d) => d.SwitchPageComponent)
+      loadComponent: () => import("./chunk-P4XKXH73.js").then((d) => d.SwitchPageComponent)
     }, false ? { \u0275entryName: "src/app/features/switch-page/switch-page.component.ts" } : {}),
     __spreadValues({
       path: "tab",
-      loadComponent: () => import("./chunk-7WKKJODJ.js").then((d) => d.TabPageComponent)
+      loadComponent: () => import("./chunk-KDXAE33A.js").then((d) => d.TabPageComponent)
     }, false ? { \u0275entryName: "src/app/features/tab-page/tab-page.component.ts" } : {}),
     __spreadValues({
       path: "tab-nav-bar",
-      loadComponent: () => import("./chunk-AME7LQUX.js").then((d) => d.TabNavBarPageComponent)
+      loadComponent: () => import("./chunk-V3BDFO6J.js").then((d) => d.TabNavBarPageComponent)
     }, false ? { \u0275entryName: "src/app/features/tab-nav-bar-page/tab-nav-bar-page.component.ts" } : {}),
     __spreadValues({
       path: "textarea",
-      loadComponent: () => import("./chunk-3IP2C722.js").then((d) => d.TextareaPageComponent)
+      loadComponent: () => import("./chunk-SFQPQYGB.js").then((d) => d.TextareaPageComponent)
     }, false ? { \u0275entryName: "src/app/features/textarea-page/textarea-page.component.ts" } : {}),
     __spreadValues({
       path: "input",
-      loadComponent: () => import("./chunk-LSAIXSEH.js").then((d) => d.InputPageComponent)
+      loadComponent: () => import("./chunk-XYTGMXYP.js").then((d) => d.InputPageComponent)
     }, false ? { \u0275entryName: "src/app/features/input-page/input-page.component.ts" } : {}),
     __spreadValues({
       path: "form-field",
-      loadComponent: () => import("./chunk-Z3EFT4AR.js").then((d) => d.FormFieldPageComponent)
+      loadComponent: () => import("./chunk-UITRBVUK.js").then((d) => d.FormFieldPageComponent)
     }, false ? { \u0275entryName: "src/app/features/form-field-page/form-field-page.component.ts" } : {}),
     __spreadValues({
       path: "icon",
-      loadComponent: () => import("./chunk-SB6AKDR4.js").then((b) => b.IconPageComponent)
+      loadComponent: () => import("./chunk-OIMWQQJY.js").then((b) => b.IconPageComponent)
     }, false ? { \u0275entryName: "src/app/features/icon-page/icon-page.component.ts" } : {}),
     __spreadValues({
       path: "popover",
-      loadComponent: () => import("./chunk-X7TT6UNO.js").then((p) => p.PopoverPageComponent)
+      loadComponent: () => import("./chunk-WIKWASB3.js").then((p) => p.PopoverPageComponent)
     }, false ? { \u0275entryName: "src/app/features/popover-page/popover-page.component.ts" } : {}),
     __spreadValues({
       path: "pagination",
-      loadComponent: () => import("./chunk-AEVCD44C.js").then((b) => b.PaginationPageComponent)
+      loadComponent: () => import("./chunk-CLIYD2LL.js").then((b) => b.PaginationPageComponent)
     }, false ? { \u0275entryName: "src/app/features/pagination-page/pagination-page.component.ts" } : {}),
     __spreadValues({
       path: "context-menu",
-      loadComponent: () => import("./chunk-EGLYXBCB.js").then((p) => p.ContextMenuPageComponent)
+      loadComponent: () => import("./chunk-T3FN455Z.js").then((p) => p.ContextMenuPageComponent)
     }, false ? { \u0275entryName: "src/app/features/context-menu-page/context-menu-page.component.ts" } : {}),
     __spreadValues({
       path: "loader",
-      loadComponent: () => import("./chunk-Z26NJT7T.js").then((p) => p.LoaderPageComponent)
+      loadComponent: () => import("./chunk-OFYG5S3K.js").then((p) => p.LoaderPageComponent)
     }, false ? { \u0275entryName: "src/app/features/loader-page/loader-page.component.ts" } : {}),
     __spreadValues({
       path: "local-storage",
-      loadComponent: () => import("./chunk-JXOBW4C2.js").then((p) => p.LocalStoragePageComponent)
+      loadComponent: () => import("./chunk-2LITCVVM.js").then((p) => p.LocalStoragePageComponent)
     }, false ? { \u0275entryName: "src/app/features/local-storage-page/local-storage-page.component.ts" } : {}),
     __spreadValues({
       path: "session-storage",
-      loadComponent: () => import("./chunk-4K3NWSXQ.js").then((p) => p.SessionStoragePageComponent)
+      loadComponent: () => import("./chunk-EAIKKI4M.js").then((p) => p.SessionStoragePageComponent)
     }, false ? { \u0275entryName: "src/app/features/session-storage-page/session-storage-page.component.ts" } : {}),
     __spreadValues({
       path: "dark-mode",
-      loadComponent: () => import("./chunk-BM2QCEFI.js").then((p) => p.DarkModePageComponent)
+      loadComponent: () => import("./chunk-4AESUS57.js").then((p) => p.DarkModePageComponent)
     }, false ? { \u0275entryName: "src/app/features/dark-mode-page/dark-mode-page.component.ts" } : {}),
     __spreadValues({
       path: "table",
-      loadComponent: () => import("./chunk-KODFTNRV.js").then((p) => p.TablePageComponent)
+      loadComponent: () => import("./chunk-AATLVKII.js").then((p) => p.TablePageComponent)
     }, false ? { \u0275entryName: "src/app/features/table-page/table-page.component.ts" } : {}),
     __spreadValues({
       path: "datepicker",
-      loadComponent: () => import("./chunk-PEKJ55WV.js").then((d) => d.DatepickerPageComponent)
+      loadComponent: () => import("./chunk-4BGOT5YP.js").then((d) => d.DatepickerPageComponent)
     }, false ? { \u0275entryName: "src/app/pages/datepicker-page/datepicker-page.component.ts" } : {}),
     {
       path: "",
@@ -489,12 +489,12 @@ var UI_ROUTES = {
 var routes = [
   __spreadValues({
     path: "doc",
-    loadComponent: () => import("./chunk-CCHYEI2F.js").then((d) => d.DocContainerPageComponent),
+    loadComponent: () => import("./chunk-CXHZUFSW.js").then((d) => d.DocContainerPageComponent),
     children: [GUIDES_ROUTES, UI_ROUTES]
   }, false ? { \u0275entryName: "src/app/features/doc-container-page/doc-container-page.component.ts" } : {}),
   __spreadValues({
     path: "",
-    loadComponent: () => import("./chunk-RHTGH3ZL.js").then((h) => h.HomePageComponent)
+    loadComponent: () => import("./chunk-EV4GCOHM.js").then((h) => h.HomePageComponent)
   }, false ? { \u0275entryName: "src/app/pages/home-page/home-page.component.ts" } : {})
 ];
 

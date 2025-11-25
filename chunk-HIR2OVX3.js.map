@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["projects/ngverse/src/lib/ui/divider/divider.component.ts"],
+  "sourcesContent": ["import { ChangeDetectionStrategy, Component, input } from '@angular/core';\n\n@Component({\n  selector: 'app-divider',\n  imports: [],\n  template: ``,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n  styles: `\n    :host {\n      display: block;\n      background-color: var(--color-divider);\n      height: 1px;\n      width: 100%;\n\n      &.vertical {\n        height: 100%;\n        width: 1px;\n      }\n    }\n  `,\n  host: {\n    role: 'separator',\n    '[class.vertical]': 'vertical()',\n    '[attr.aria-orientation]': 'vertical() ? \"vertical\" : \"horizontal\"',\n  },\n})\nexport class DividerComponent {\n  vertical = input(false);\n}\n"],
+  "mappings": ";;;;;;;;;;;;;AA0BM,IAAO,mBAAP,MAAO,kBAAgB;EAC3B,WAAW,MAAM,OAAK,GAAA,YAAA,CAAA,EAAA,WAAA,WAAA,CAAA,IAAA,CAAA,CAAA;;qCADX,mBAAgB;EAAA;yEAAhB,mBAAgB,WAAA,CAAA,CAAA,aAAA,CAAA,GAAA,WAAA,CAAA,QAAA,WAAA,GAAA,UAAA,GAAA,cAAA,SAAA,8BAAA,IAAA,KAAA;AAAA,QAAA,KAAA,GAAA;gDAAhB,IAAA,SAAA,IAAa,aACnB,YAAY;AADN,MAAA,sBAAA,YAAA,IAAA,SAAA,CAAU;;;;;;sEAAV,kBAAgB,CAAA;UAxB5B;uBACW,eAAa,SACd,CAAA,GAAE,UACD,IAAE,iBACK,wBAAwB,QAAM,MAczC;MACJ,MAAM;MACN,oBAAoB;MACpB,2BAA2B;OAC5B,QAAA,CAAA,oZAAA,EAAA,CAAA;;;;6EAEU,kBAAgB,EAAA,WAAA,oBAAA,UAAA,4DAAA,YAAA,GAAA,CAAA;AAAA,GAAA;",
+  "names": []
+}
