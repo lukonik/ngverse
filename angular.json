@@ -115,7 +115,7 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "buildTarget": "docs:build:production"
+            "buildTarget": "docs:build:development"
           }
         }
       }
